@@ -46,6 +46,8 @@ true-heldout split.
 
 - Benchmark CLI for AliMeeting diarization experiments:
   `alimeeting_diarization_bench/run.py`
+- One-command quick start:
+  `scripts/quick_start.py`
 - Model wrappers for Sortformer, DiariZen, PyAnnote, Qwen/DashScope, Omni, and
   GPT audio paths under `alimeeting_diarization_bench/models/`.
 - Offline realtime enhancement pipeline:
@@ -229,6 +231,35 @@ It should also include this speaker-count option:
 ```text
 --speaker-count-mode {oracle,none,bounds,hint}
 ```
+
+## Quick Start
+
+Run the shortest offline reproduction path:
+
+```bash
+python scripts/quick_start.py
+```
+
+This regenerates the all-cached default system under:
+
+```text
+outputs/quick_start/all_cached_recordings/
+```
+
+Expected terminal summary:
+
+```text
+final DER: 16.4923%
+margin vs best baseline: 0.3886pp
+beats all tracked baselines: true
+processed audio: 3600.0s
+offline replay RTF: prints the current machine's measured value
+live API calls: DeepSeek=0, Qwen=0, Omni=0
+```
+
+This command does not call live LLM/API services and does not rerun
+Sortformer or DiariZen. It only replays cached model outputs and frozen
+enhancement artifacts.
 
 ## Reproduction Path A: Reuse Cached Outputs
 

@@ -11,8 +11,9 @@ AliMeeting diarization development-pool result.
   setup.
 - `alimeeting_diarization_bench/`: benchmark package and model/evaluation code.
 - `scripts/`: reproducibility, batch, regression, self-check, audit, and search
-  scripts. Presentation-generation scripts are intentionally excluded from the
-  final code package; only the finished deck is retained.
+  scripts. `scripts/quick_start.py` is the shortest offline reproduction
+  entrypoint. Presentation-generation scripts are intentionally excluded from
+  the final code package; only the finished deck is retained.
 - `docs/`: report-generation support files retained from the source workspace.
 - `outputs/`: curated result and cache subset needed for the documented
   offline reproduction paths.
@@ -79,6 +80,7 @@ python -m py_compile \
   alimeeting_diarization_bench/evaluation/runner.py \
   scripts/run_realtime_diarization_system.py \
   scripts/run_realtime_batch.py \
+  scripts/quick_start.py \
   scripts/run_realtime_system_regression.py \
   scripts/check_realtime_system_outputs.py \
   scripts/search_external_candidate_surfaces.py
