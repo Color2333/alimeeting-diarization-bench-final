@@ -1,0 +1,11 @@
+{
+  "windows": 104,
+  "patches": 1917,
+  "current_safety": "conservative_block 1811 / safe_accept 63 / safe_block 43",
+  "window_decisions": "quarantine 1740 / review 177",
+  "best_zero_harm_policy": "combined_review0.5_keepfast0.5",
+  "best_zero_harm_conservative_recovered": 260,
+  "best_zero_harm_safe_accepts_after": 323,
+  "best_zero_harm_conservative_blocks_after": 1551,
+  "best_zero_harm_harmful_accepts": 0
+}

@@ -1,0 +1,307 @@
+{
+  "runtime_contract": "offline_realtime_diarization_system_no_live_calls",
+  "execution_mode": "offline_replay_existing_fast_slow_outputs_with_rule_writeback",
+  "run_scope": "single_recording_or_audio",
+  "audio": {
+    "path": null,
+    "exists": false
+  },
+  "recording_id": "R8009_M8020",
+  "recording_ids": [
+    "R8009_M8020"
+  ],
+  "window_size": 30,
+  "segment_idx": null,
+  "windows_processed": 15,
+  "cached_windows_available": 120,
+  "cached_window_coverage": 0.125,
+  "recordings_processed": 1,
+  "selected_window_ids": [
+    "R8009_M8020:30:0",
+    "R8009_M8020:30:1",
+    "R8009_M8020:30:2",
+    "R8009_M8020:30:3",
+    "R8009_M8020:30:4",
+    "R8009_M8020:30:5",
+    "R8009_M8020:30:6",
+    "R8009_M8020:30:7",
+    "R8009_M8020:30:8",
+    "R8009_M8020:30:9",
+    "R8009_M8020:30:10",
+    "R8009_M8020:30:11",
+    "R8009_M8020:30:12",
+    "R8009_M8020:30:13",
+    "R8009_M8020:30:14"
+  ],
+  "evaluation_status": "scored_with_cached_reference",
+  "fast_summary": "/Users/haojiang/Documents/2026/school/AI+/alimeeting-diarization-bench-final/outputs/sortformer_uv_120/nemo-sortformer-4spk-v1/default__spk_none/summary.json",
+  "slow_summary": "/Users/haojiang/Documents/2026/school/AI+/alimeeting-diarization-bench-final/outputs/diarizen_uv_120/diarizen-large-v2/default__spk_none/summary.json",
+  "gate_decisions": "/Users/haojiang/Documents/2026/school/AI+/alimeeting-diarization-bench-final/outputs/writeback_gate_120/gate_decisions.csv",
+  "patches": "/Users/haojiang/Documents/2026/school/AI+/alimeeting-diarization-bench-final/outputs/segment_patches/sortformer_diarizen_120_patches.csv",
+  "timeline_results": "/Users/haojiang/Documents/2026/school/AI+/alimeeting-diarization-bench-final/outputs/rule_writeback_timeline_120/rule_writeback_timeline_results.csv",
+  "audio_features": "/Users/haojiang/Documents/2026/school/AI+/alimeeting-diarization-bench-final/outputs/audio_window_features/audio_window_features_120.csv",
+  "window_features": "/Users/haojiang/Documents/2026/school/AI+/alimeeting-diarization-bench-final/outputs/segment_patches/sortformer_diarizen_120_patches_windows.csv",
+  "external_candidate_summary": "/Users/haojiang/Documents/2026/school/AI+/alimeeting-diarization-bench-final/outputs/diarizen_uv_48/diarizen-large-v2/default__spk_none/summary.json",
+  "variant": "slow_guarded_fast_fallback_rare_audio_rule_recover",
+  "guard_quarantine_threshold": 1,
+  "rare_audio_speech_sec_threshold": 18.605,
+  "rare_slow_segments_max": 3,
+  "balanced_align_slow_segment_min": 18,
+  "balanced_keep_fast_supported_min": 6,
+  "context_audio_p50_db_min": -36.6753,
+  "context_prev_audio_dynamic_range_db_max": 10.1179,
+  "external_fast_audio_speech_ratio_max": 1.64195,
+  "external_fast_speech_max": 19.52,
+  "fast_model": "nemo-sortformer-4spk-v1",
+  "slow_model": "diarizen-large-v2",
+  "external_candidate_model": "diarizen-large-v2",
+  "baseline_comparison": [
+    {
+      "baseline_id": "fast_base",
+      "windows": 15,
+      "der": 0.13310666666666665,
+      "miss_rate": 0.08709333333333331,
+      "fa_rate": 0.04300666666666666,
+      "conf_rate": 0.0029933333333333335
+    },
+    {
+      "baseline_id": "slow_base",
+      "windows": 15,
+      "der": 0.05281333333333333,
+      "miss_rate": 0.03614,
+      "fa_rate": 0.016366666666666668,
+      "conf_rate": 0.0003133333333333333
+    },
+    {
+      "baseline_id": "rule_recover_policy_sweep_best",
+      "windows": 15,
+      "der": 0.13016666666666665,
+      "miss_rate": 0.08202,
+      "fa_rate": 0.044033333333333334,
+      "conf_rate": 0.00412
+    },
+    {
+      "baseline_id": "rule_recover_matched_label",
+      "windows": 15,
+      "der": 0.13268666666666665,
+      "miss_rate": 0.08152,
+      "fa_rate": 0.04708,
+      "conf_rate": 0.004093333333333333
+    },
+    {
+      "baseline_id": "rule_recover_uncovered_only",
+      "windows": 15,
+      "der": 0.13016666666666665,
+      "miss_rate": 0.08202,
+      "fa_rate": 0.044033333333333334,
+      "conf_rate": 0.00412
+    }
+  ],
+  "best_baseline": {
+    "baseline_id": "slow_base",
+    "windows": 15,
+    "der": 0.05281333333333333,
+    "miss_rate": 0.03614,
+    "fa_rate": 0.016366666666666668,
+    "conf_rate": 0.0003133333333333333
+  },
+  "baseline_win_summary": {
+    "baseline_count": 5,
+    "beaten_baselines": 5,
+    "beats_all_baselines": true,
+    "deltas": [
+      {
+        "baseline_id": "fast_base",
+        "baseline_der": 0.13310666666666665,
+        "final_der": 0.05278,
+        "delta_vs_baseline": 0.08032666666666666,
+        "delta_vs_baseline_pp": 8.032666666666666,
+        "beats_baseline": true
+      },
+      {
+        "baseline_id": "slow_base",
+        "baseline_der": 0.05281333333333333,
+        "final_der": 0.05278,
+        "delta_vs_baseline": 3.333333333332966e-05,
+        "delta_vs_baseline_pp": 0.0033333333333329662,
+        "beats_baseline": true
+      },
+      {
+        "baseline_id": "rule_recover_policy_sweep_best",
+        "baseline_der": 0.13016666666666665,
+        "final_der": 0.05278,
+        "delta_vs_baseline": 0.07738666666666666,
+        "delta_vs_baseline_pp": 7.738666666666666,
+        "beats_baseline": true
+      },
+      {
+        "baseline_id": "rule_recover_matched_label",
+        "baseline_der": 0.13268666666666665,
+        "final_der": 0.05278,
+        "delta_vs_baseline": 0.07990666666666665,
+        "delta_vs_baseline_pp": 7.990666666666665,
+        "beats_baseline": true
+      },
+      {
+        "baseline_id": "rule_recover_uncovered_only",
+        "baseline_der": 0.13016666666666665,
+        "final_der": 0.05278,
+        "delta_vs_baseline": 0.07738666666666666,
+        "delta_vs_baseline_pp": 7.738666666666666,
+        "beats_baseline": true
+      }
+    ]
+  },
+  "selector_validation": {
+    "path": "/Users/haojiang/Documents/2026/school/AI+/alimeeting-diarization-bench-final/outputs/system_selector_validation/guarded_slow_selector_validation.json",
+    "exists": true,
+    "status": "weak_dev_gain_not_robust",
+    "metric_claim_boundary": "development_pool_validation_not_true_heldout",
+    "fixed_delta_vs_slow_pp": 0.2908333333333346,
+    "fixed_beats_slow": true,
+    "bootstrap_prob_beats_slow": 0.6335,
+    "bootstrap_delta_ci_low": 0.0,
+    "bootstrap_delta_ci_high": 0.008725000000000038,
+    "holdout_positive_splits_vs_slow": 1,
+    "holdout_splits": 8
+  },
+  "selector_policy_search": {
+    "path": "/Users/haojiang/Documents/2026/school/AI+/alimeeting-diarization-bench-final/outputs/system_selector_search/system_selector_policy_search.json",
+    "exists": true,
+    "status": "no_robust_candidate_found",
+    "best_policy_id": "if_guard_count_>=_19_and_fast_spk_>=_slow_spk_then_fast_base_else_slow_base",
+    "best_final_der": 0.16590083333333333,
+    "best_delta_vs_slow_pp": 0.2908333333333346,
+    "holdout_positive_splits_vs_slow": 0,
+    "holdout_splits": 8,
+    "holdout_weighted_delta_vs_slow_pp": -0.2736666666666665,
+    "metric_claim_boundary": "development_pool_search_not_true_heldout"
+  },
+  "slow_sanitization_search": {
+    "path": "/Users/haojiang/Documents/2026/school/AI+/alimeeting-diarization-bench-final/outputs/slow_sanitization_search/slow_sanitization_policy_search.json",
+    "exists": true,
+    "status": "no_robust_sanitizer_found",
+    "policy_set": "core",
+    "candidate_policies": 14,
+    "best_policy_id": "slow",
+    "best_der": 0.16880916666666668,
+    "slow_der": 0.16880916666666668,
+    "best_delta_vs_slow_pp": 0.0,
+    "bootstrap_prob_beats_slow": 0.0,
+    "bootstrap_delta_ci_low": 0.0,
+    "bootstrap_delta_ci_high": 0.0,
+    "holdout_positive_splits_vs_slow": 0,
+    "holdout_splits": 8,
+    "holdout_weighted_delta_vs_slow_pp": -0.020500000000001073,
+    "metric_claim_boundary": "development_pool_search_not_true_heldout"
+  },
+  "source_artifacts_exist": {
+    "fast_summary": true,
+    "slow_summary": true,
+    "gate_decisions": true,
+    "patches": true,
+    "timeline_results": true,
+    "window_features": true,
+    "external_candidate_summary": true,
+    "guard_summary": true,
+    "selector_validation": true,
+    "selector_search": true,
+    "slow_sanitization_search": true
+  },
+  "recording_metrics": [
+    {
+      "recording_id": "R8009_M8020",
+      "windows": 15,
+      "fast_der": 0.13310666666666665,
+      "final_der": 0.05278,
+      "der_delta_vs_fast_pp": 8.032666666666666,
+      "first_output_latency_proxy_avg_sec": 0.366119114557902,
+      "first_output_latency_proxy_p95_sec": 0.37763261795043945,
+      "rule_writeback_latency_proxy_avg_sec": 25.263820711771647,
+      "rule_writeback_latency_proxy_p95_sec": 28.096867084503174
+    }
+  ],
+  "metrics": {
+    "fast_der": 0.13310666666666665,
+    "fast_miss_rate": 0.08709333333333331,
+    "fast_fa_rate": 0.04300666666666666,
+    "fast_conf_rate": 0.0029933333333333335,
+    "final_der": 0.05278,
+    "final_miss_rate": 0.03613333333333334,
+    "final_fa_rate": 0.016346666666666666,
+    "final_conf_rate": 0.0003133333333333333,
+    "der_delta_vs_fast": 0.08032666666666666,
+    "der_delta_vs_fast_pp": 8.032666666666666,
+    "der_delta_vs_best_baseline": 3.333333333332966e-05,
+    "der_delta_vs_best_baseline_pp": 0.0033333333333329662,
+    "beats_best_baseline": true,
+    "correction_count": 257,
+    "accepted_correction_count": 3,
+    "blocked_or_quarantined_correction_count": 254,
+    "gate_category_counts": {
+      "rule_auto_writeback": 79,
+      "rule_accept_needs_review": 25,
+      "rule_reference_only": 121,
+      "llm_defer_review": 6,
+      "rule_label_only_writeback": 23,
+      "rule_recover_writeback": 3
+    },
+    "correction_action_counts": {
+      "accepted_by_gate_not_applied_by_conservative_variant": 102,
+      "blocked_or_deferred": 152,
+      "accepted_writeback": 3
+    },
+    "final_source_counts": {
+      "slow": 15
+    },
+    "accepted_window_correction_count": 15,
+    "guard_fallback_window_count": 0,
+    "materialization_counters": {
+      "rare_audio_rule_recover_windows": 0,
+      "rare_short_slow_rule_recover_windows": 0,
+      "slow_windows_selected": 15,
+      "fast_guard_fallback_windows": 0,
+      "guard_or_quarantine_patches": 0,
+      "fallback_blocked_by_speaker_count": 0,
+      "fast_speaker_count": 27,
+      "slow_speaker_count": 27,
+      "window_clip_adjusted_segments": 11,
+      "window_clip_trimmed_ms": 1062
+    },
+    "guard_status": "active_offline_runtime_safe_gate",
+    "guard_harmful_accepts": 0,
+    "guard_safe_accepts": 323,
+    "guard_conservative_blocks": 1551,
+    "first_output_latency_proxy_avg_sec": 0.366119114557902,
+    "first_output_latency_proxy_p95_sec": 0.37763261795043945,
+    "rule_writeback_latency_proxy_avg_sec": 25.263820711771647,
+    "rule_writeback_latency_proxy_p95_sec": 28.096867084503174,
+    "processed_audio_sec": 450.0,
+    "total_processing_wall_time_sec": 0.4120969772338867,
+    "offline_replay_rtf": 0.0009157710605197483,
+    "deepseek_api_calls": 0,
+    "qwen_api_calls": 0,
+    "omni_api_calls": 0
+  },
+  "outputs": {
+    "fast_timeline_json": "outputs/realtime_batch/all_cached/items/R8009_M8020/fast_timeline.json",
+    "fast_timeline_csv": "outputs/realtime_batch/all_cached/items/R8009_M8020/fast_timeline.csv",
+    "fast_timeline_rttm": "outputs/realtime_batch/all_cached/items/R8009_M8020/fast_timeline.rttm",
+    "final_timeline_json": "outputs/realtime_batch/all_cached/items/R8009_M8020/final_timeline.json",
+    "final_timeline_csv": "outputs/realtime_batch/all_cached/items/R8009_M8020/final_timeline.csv",
+    "final_timeline_rttm": "outputs/realtime_batch/all_cached/items/R8009_M8020/final_timeline.rttm",
+    "correction_log_json": "outputs/realtime_batch/all_cached/items/R8009_M8020/correction_log.json",
+    "correction_log_csv": "outputs/realtime_batch/all_cached/items/R8009_M8020/correction_log.csv",
+    "recording_metrics_json": "outputs/realtime_batch/all_cached/items/R8009_M8020/recording_metrics.json",
+    "recording_metrics_csv": "outputs/realtime_batch/all_cached/items/R8009_M8020/recording_metrics.csv",
+    "baseline_comparison_json": "outputs/realtime_batch/all_cached/items/R8009_M8020/baseline_comparison.json",
+    "baseline_comparison_csv": "outputs/realtime_batch/all_cached/items/R8009_M8020/baseline_comparison.csv",
+    "metrics_json": "outputs/realtime_batch/all_cached/items/R8009_M8020/metrics.json",
+    "metrics_md": "outputs/realtime_batch/all_cached/items/R8009_M8020/metrics.md"
+  },
+  "notes": [
+    "This command uses cached local model outputs; it does not rerun acoustic models or live LLM APIs.",
+    "DeepSeek is not used and remains excluded from the system path.",
+    "If evaluation_status is no_reference/no_cached_model_outputs, DER fields are not trustworthy and runtime outputs should be treated as surface validation only."
+  ]
+}

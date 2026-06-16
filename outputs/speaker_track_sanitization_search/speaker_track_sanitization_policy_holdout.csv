@@ -1,0 +1,9 @@
+heldout_beats_slow,heldout_delta_vs_slow,heldout_delta_vs_slow_pp,heldout_der,heldout_recording_id,heldout_slow_der,selected_policy_id,train_der
+False,0.0,0.0,0.17919999999999994,R8001_M8004,0.17919999999999994,slow,0.16732476190476192
+False,-0.0004066666666666663,-0.04066666666666663,0.3826133333333333,R8003_M8001,0.38220666666666664,speaker_track_filter__min_track_total_sec0p5__require_remaining_speakers1,0.1381838095238095
+False,-7.999999999999674e-05,-0.007999999999999674,0.2439,R8007_M8010,0.24382,speaker_track_filter__min_track_total_sec0p5__require_remaining_speakers1,0.158
+False,-0.0005800000000000249,-0.058000000000002494,0.16527333333333333,R8007_M8011,0.1646933333333333,speaker_track_filter__min_track_total_sec0p5__require_remaining_speakers1,0.169232380952381
+False,0.0,0.0,0.16668666666666665,R8008_M8013,0.16668666666666665,slow,0.16911238095238101
+False,0.0,0.0,0.10336666666666665,R8009_M8018,0.10336666666666665,speaker_track_filter__min_track_total_sec0p5__require_remaining_speakers1,0.17807619047619047
+False,0.0,0.0,0.057686666666666664,R8009_M8019,0.057686666666666664,speaker_track_filter__min_track_total_sec0p5__require_remaining_speakers1,0.18460190476190474
+False,0.0,0.0,0.05281333333333333,R8009_M8020,0.05281333333333333,speaker_track_filter__min_track_total_sec0p5__require_remaining_speakers1,0.18529809523809523

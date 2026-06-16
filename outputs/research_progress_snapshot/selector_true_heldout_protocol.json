@@ -1,0 +1,97 @@
+{
+  "runtime_contract": "selector_true_heldout_protocol_no_metric_claim",
+  "protocol_status": "needs_new_recording_split",
+  "fixed_policy": "ratio_le_0.65_else_uncovered",
+  "split_file": "data/selector_true_heldout_split.csv",
+  "required_split_columns": [
+    "recording_id",
+    "split",
+    "source_manifest",
+    "audio_path"
+  ],
+  "minimum_true_heldout_recordings": 8,
+  "development_evidence": {
+    "dev_recordings": [
+      "R8001_M8004",
+      "R8003_M8001",
+      "R8007_M8010",
+      "R8007_M8011",
+      "R8008_M8013",
+      "R8009_M8018",
+      "R8009_M8019",
+      "R8009_M8020"
+    ],
+    "dev_recording_count": 8,
+    "dev_windows": 120,
+    "recording_holdout_splits": 8,
+    "recording_holdout_positive_splits": 8,
+    "recording_holdout_weighted_der": 0.265118,
+    "recording_holdout_fast_der": 0.285638,
+    "recording_holdout_delta_vs_fast": 0.02052,
+    "development_scope": "dev_only_validation_same_sampled_pool"
+  },
+  "sealed_split_state": {
+    "exists": false,
+    "rows": 0,
+    "split_has_required_columns": false,
+    "train_recordings": [],
+    "true_heldout_recordings": [],
+    "true_heldout_recording_count": 0,
+    "overlap_with_dev_recordings": [],
+    "overlap_with_train_recordings": [],
+    "missing_audio_count": 0,
+    "missing_audio": []
+  },
+  "candidate_scan": {
+    "runtime_contract": "selector_true_heldout_candidate_scan_no_metric_claim",
+    "status": "not_enough_new_local_recordings",
+    "local_recordings": 8,
+    "eligible_true_heldout_recordings": 0,
+    "missing_new_recordings_to_minimum": 8,
+    "recommendation": "Need 8 new recordings outside the current development pool before creating data/selector_true_heldout_split.csv."
+  },
+  "blockers": [
+    "missing_sealed_split_file",
+    "not_enough_true_heldout_recordings"
+  ],
+  "success_gates": [
+    {
+      "gate_id": "sealed_split_exists",
+      "status": "blocked",
+      "evidence": "data/selector_true_heldout_split.csv",
+      "requirement": "Provide a sealed split CSV before running any metric claim."
+    },
+    {
+      "gate_id": "true_heldout_not_in_dev",
+      "status": "blocked",
+      "evidence": "split missing",
+      "requirement": "No true-heldout recording can appear in the 120-window development/selector pool."
+    },
+    {
+      "gate_id": "fixed_policy_before_scoring",
+      "status": "pass",
+      "evidence": "ratio_le_0.65_else_uncovered",
+      "requirement": "Use the frozen selector policy selected before true-heldout scoring."
+    },
+    {
+      "gate_id": "runtime_feature_surface",
+      "status": "pass",
+      "evidence": "fast_speech / slow_speech / speaker counts / recover patch deployable features",
+      "requirement": "Selector inputs must not include DER, GT speaker count, oracle labels, or support from held-out scoring."
+    },
+    {
+      "gate_id": "metric_success_threshold",
+      "status": "pending",
+      "evidence": "target delta > 0 vs Fast on at least 8 recordings",
+      "requirement": "Weighted DER below Fast, with Miss/FA/Conf and arrival latency reported per recording."
+    }
+  ],
+  "run_plan": [
+    "Create data/selector_true_heldout_split.csv with new recording ids and audio paths.",
+    "Run Fast/Slow window extraction on the sealed true-heldout recordings without changing selector thresholds.",
+    "Apply fixed selector policy ratio_le_0.65_else_uncovered to materialized timeline variants.",
+    "Report weighted DER/Miss/FA/Conf and rule-writeback arrival latency per recording.",
+    "Promote selector claim only if weighted DER beats Fast and leakage checks pass."
+  ],
+  "no_metric_claim": true
+}

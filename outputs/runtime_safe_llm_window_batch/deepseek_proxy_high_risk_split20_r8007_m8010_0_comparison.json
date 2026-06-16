@@ -1,0 +1,24 @@
+{
+  "parent_window_id": "R8007_M8010:30:0",
+  "patches": 45,
+  "original_call_seconds": 48.465,
+  "original_total_tokens": 17217,
+  "split_calls": 3,
+  "split_call_seconds": [
+    24.493,
+    22.637,
+    10.752
+  ],
+  "split_parallel_call_seconds": 24.493,
+  "split_sequential_call_seconds": 57.882,
+  "split_total_tokens": 19619,
+  "parallel_call_reduction_seconds": 23.972000000000005,
+  "parallel_call_reduction_rate": 0.49462498710409586,
+  "token_multiplier": 1.1395132717662775,
+  "window_decisions": "quarantine 3",
+  "harmful_accepts": 0,
+  "conservative_blocks": 45,
+  "window_quarantine_accept_overrides": 1,
+  "parent_window_decision_override": true,
+  "runtime_contract": "live_split20_top1; parent_window_quarantine_override; sequential_script_parallel_deploy_estimate"
+}

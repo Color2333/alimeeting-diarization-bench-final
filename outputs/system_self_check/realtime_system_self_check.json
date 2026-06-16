@@ -1,0 +1,2092 @@
+{
+  "status": "warn",
+  "pass_count": 40,
+  "warn_count": 4,
+  "fail_count": 0,
+  "checks": [
+    {
+      "status": "pass",
+      "code": "metrics_exists",
+      "message": "metrics.json exists and is readable",
+      "detail": {
+        "path": "outputs/system_demo/all_cached_recordings/metrics.json"
+      }
+    },
+    {
+      "status": "pass",
+      "code": "scored_with_reference",
+      "message": "system run is scored with cached AliMeeting reference windows",
+      "detail": {
+        "evaluation_status": "scored_with_cached_reference"
+      }
+    },
+    {
+      "status": "pass",
+      "code": "cached_window_coverage",
+      "message": "selected windows are fully covered by cached Fast/Slow outputs",
+      "detail": {
+        "windows_processed": 120,
+        "cached_windows_available": 120
+      }
+    },
+    {
+      "status": "pass",
+      "code": "no_live_api_calls",
+      "message": "offline system path performs zero live DeepSeek/Qwen/Omni calls",
+      "detail": {
+        "deepseek": 0,
+        "qwen": 0,
+        "omni": 0
+      }
+    },
+    {
+      "status": "pass",
+      "code": "beats_all_baselines",
+      "message": "final DER beats every tracked same-window baseline",
+      "detail": {
+        "baseline_count": 5,
+        "beaten_baselines": 5,
+        "beats_all_baselines": true,
+        "deltas": [
+          {
+            "baseline_id": "fast_base",
+            "baseline_der": 0.28563749999999977,
+            "final_der": 0.16492333333333334,
+            "delta_vs_baseline": 0.12071416666666643,
+            "delta_vs_baseline_pp": 12.071416666666643,
+            "beats_baseline": true
+          },
+          {
+            "baseline_id": "slow_base",
+            "baseline_der": 0.16880916666666668,
+            "final_der": 0.16492333333333334,
+            "delta_vs_baseline": 0.0038858333333333384,
+            "delta_vs_baseline_pp": 0.38858333333333384,
+            "beats_baseline": true
+          },
+          {
+            "baseline_id": "rule_recover_policy_sweep_best",
+            "baseline_der": 0.2639749999999999,
+            "final_der": 0.16492333333333334,
+            "delta_vs_baseline": 0.09905166666666657,
+            "delta_vs_baseline_pp": 9.905166666666657,
+            "beats_baseline": true
+          },
+          {
+            "baseline_id": "rule_recover_matched_label",
+            "baseline_der": 0.26431499999999986,
+            "final_der": 0.16492333333333334,
+            "delta_vs_baseline": 0.09939166666666652,
+            "delta_vs_baseline_pp": 9.939166666666651,
+            "beats_baseline": true
+          },
+          {
+            "baseline_id": "rule_recover_uncovered_only",
+            "baseline_der": 0.26526083333333317,
+            "final_der": 0.16492333333333334,
+            "delta_vs_baseline": 0.10033749999999983,
+            "delta_vs_baseline_pp": 10.033749999999984,
+            "beats_baseline": true
+          }
+        ]
+      }
+    },
+    {
+      "status": "pass",
+      "code": "positive_best_baseline_margin",
+      "message": "final DER has positive margin against the best baseline",
+      "detail": {
+        "final_der": 0.16492333333333334,
+        "best_baseline": {
+          "baseline_id": "slow_base",
+          "windows": 120,
+          "der": 0.16880916666666668,
+          "miss_rate": 0.049854166666666665,
+          "fa_rate": 0.06916249999999999,
+          "conf_rate": 0.049790000000000015
+        },
+        "delta_pp": 0.38858333333333384
+      }
+    },
+    {
+      "status": "pass",
+      "code": "expected_default_variant",
+      "message": "default system variant is rare audio rule overlay on speaker-count-safe guarded fallback",
+      "detail": {
+        "variant": "slow_guarded_fast_fallback_rare_audio_rule_recover"
+      }
+    },
+    {
+      "status": "pass",
+      "code": "base_selector_validation_matches_runtime",
+      "message": "selector validation covers the base fallback policy and beats Slow on the development pool",
+      "detail": {
+        "policy_id": "slow_guarded_fast_fallback_speaker_count_safe",
+        "status": "weak_dev_gain_not_robust",
+        "fixed_policy": {
+          "threshold": 1,
+          "windows": 120,
+          "fast_fallback_windows": 1,
+          "slow_windows": 119,
+          "fallback_blocked_by_speaker_count": 1,
+          "fast_der": 0.28563749999999977,
+          "slow_der": 0.16880916666666668,
+          "final_der": 0.16590083333333333,
+          "final_miss_rate": 0.050721666666666665,
+          "final_fa_rate": 0.06473833333333333,
+          "final_conf_rate": 0.050439166666666695,
+          "delta_vs_slow": 0.002908333333333346,
+          "delta_vs_slow_pp": 0.2908333333333346,
+          "beats_slow": true,
+          "delta_vs_fast": 0.11973666666666644,
+          "delta_vs_fast_pp": 11.973666666666643,
+          "beats_fast": true
+        }
+      }
+    },
+    {
+      "status": "warn",
+      "code": "selector_robust_validation",
+      "message": "selector has robust bootstrap evidence; warn until this becomes true",
+      "detail": {
+        "status": "weak_dev_gain_not_robust",
+        "bootstrap": {
+          "samples": 2000,
+          "seed": 42,
+          "threshold": 1,
+          "mean_delta_vs_slow": 0.002933054166666673,
+          "delta_ci_low": 0.0,
+          "delta_ci_high": 0.008725000000000038,
+          "prob_beats_slow": 0.6335,
+          "mean_final_der": 0.16604654166666682,
+          "mean_slow_der": 0.1689795958333332
+        },
+        "recording_holdout_summary": {
+          "splits": 8,
+          "positive_splits_vs_slow": 1,
+          "weighted_heldout_final_der": 0.1659008333333333,
+          "weighted_heldout_slow_der": 0.16880916666666665,
+          "weighted_heldout_delta_vs_slow": 0.002908333333333346,
+          "weighted_heldout_delta_vs_slow_pp": 0.2908333333333346
+        }
+      }
+    },
+    {
+      "status": "pass",
+      "code": "selector_search_tracks_base_fallback_rule",
+      "message": "selector search identifies the speaker-count-safe guard family as the best full-pool base fallback policy",
+      "detail": {
+        "best_full_policy": {
+          "policy_kind": "speaker_count_safe_guard",
+          "policy_id": "if_guard_count_>=_19_and_fast_spk_>=_slow_spk_then_fast_base_else_slow_base",
+          "feature": "guard_count+speaker_count",
+          "op": "speaker_count_safe_guard",
+          "threshold": 19.0,
+          "true_variant": "fast_base",
+          "false_variant": "slow_base",
+          "windows": 120,
+          "final_der": 0.16590083333333333,
+          "slow_der": 0.16880916666666668,
+          "fast_der": 0.28563749999999977,
+          "delta_vs_slow": 0.002908333333333346,
+          "delta_vs_slow_pp": 0.2908333333333346,
+          "beats_slow": true,
+          "delta_vs_fast": 0.11973666666666644,
+          "delta_vs_fast_pp": 11.973666666666643,
+          "choice_counts": {
+            "slow_base": 119,
+            "fast_base": 1
+          },
+          "fallback_blocked_by_speaker_count": 1
+        }
+      }
+    },
+    {
+      "status": "pass",
+      "code": "rare_selector_overlay_search_present",
+      "message": "rare selector overlay search artifact is present and reports a known status",
+      "detail": {
+        "status": "weak_dev_gain_not_robust",
+        "best_policy": {
+          "policy_kind": "rare_overlay",
+          "policy_id": "if_audio_speech_sec_>=_18.605_then_rule_recover_uncovered_only_else_default_guarded_selector",
+          "description": "audio_speech_sec >= 18.605",
+          "true_variant": "rule_recover_uncovered_only",
+          "windows": 120,
+          "selected_windows": 1,
+          "overlay_wins_vs_base": 1,
+          "overlay_losses_vs_base": 0,
+          "final_der": 0.16519250000000002,
+          "base_der": 0.16590083333333333,
+          "slow_der": 0.16880916666666668,
+          "delta_vs_base": 0.0007083333333333108,
+          "delta_vs_base_pp": 0.07083333333333108,
+          "delta_vs_slow": 0.003616666666666657,
+          "delta_vs_slow_pp": 0.3616666666666657,
+          "beats_base": true,
+          "beats_slow": true,
+          "choice_counts": {
+            "slow_base": 118,
+            "fast_base": 1,
+            "rule_recover_uncovered_only": 1
+          },
+          "selected_window_details": [
+            {
+              "window_id": "R8007_M8011:30:8",
+              "base_variant": "slow_base",
+              "base_der": 0.4266,
+              "overlay_der": 0.3416,
+              "delta_vs_base_pp": 8.499999999999996
+            }
+          ],
+          "feature_a": "audio_speech_sec",
+          "op_a": ">=",
+          "threshold_a": 18.604999999999997,
+          "selected": 1
+        }
+      }
+    },
+    {
+      "status": "pass",
+      "code": "rare_selector_overlay_matches_runtime",
+      "message": "rare selector overlay search supports the runtime stacked rare rule candidates on the development pool",
+      "detail": {
+        "runtime_policy": {
+          "policy_kind": "rare_overlay",
+          "policy_id": "runtime_stack_audio_speech_ge_18p605_or_slow_segments_le_3_then_rule_recover_uncovered_only_else_default_guarded_selector",
+          "description": "audio_speech_sec >= 18.605 OR slow_segments <= 3",
+          "true_variant": "rule_recover_uncovered_only",
+          "windows": 120,
+          "selected_windows": 3,
+          "overlay_wins_vs_base": 3,
+          "overlay_losses_vs_base": 0,
+          "final_der": 0.16502000000000003,
+          "base_der": 0.16590083333333333,
+          "slow_der": 0.16880916666666668,
+          "delta_vs_base": 0.0008808333333333029,
+          "delta_vs_base_pp": 0.0880833333333303,
+          "delta_vs_slow": 0.003789166666666649,
+          "delta_vs_slow_pp": 0.3789166666666649,
+          "beats_base": true,
+          "beats_slow": true,
+          "choice_counts": {
+            "slow_base": 116,
+            "fast_base": 1,
+            "rule_recover_uncovered_only": 3
+          },
+          "selected_window_details": [
+            {
+              "window_id": "R8007_M8011:30:0",
+              "base_variant": "slow_base",
+              "base_der": 0.0324,
+              "overlay_der": 0.0292,
+              "delta_vs_base_pp": 0.3199999999999998
+            },
+            {
+              "window_id": "R8007_M8011:30:8",
+              "base_variant": "slow_base",
+              "base_der": 0.4266,
+              "overlay_der": 0.3416,
+              "delta_vs_base_pp": 8.499999999999996
+            },
+            {
+              "window_id": "R8009_M8019:30:12",
+              "base_variant": "slow_base",
+              "base_der": 0.0333,
+              "overlay_der": 0.0158,
+              "delta_vs_base_pp": 1.7500000000000002
+            }
+          ],
+          "stacked_conditions": [
+            "audio_speech_sec >= 18.605",
+            "slow_segments <= 3"
+          ]
+        }
+      }
+    },
+    {
+      "status": "warn",
+      "code": "rare_selector_robust_validation",
+      "message": "rare selector overlay has robust bootstrap/recording-holdout evidence; warn until this becomes true",
+      "detail": {
+        "status": "weak_dev_gain_not_robust",
+        "bootstrap": {
+          "samples": 500,
+          "seed": 42,
+          "mean_delta_vs_base": 0.0006927500000000022,
+          "delta_ci_low": 0.0,
+          "delta_ci_high": 0.0021250000000000158,
+          "prob_beats_base": 0.622
+        },
+        "runtime_bootstrap": {
+          "samples": 500,
+          "seed": 42,
+          "mean_delta_vs_base": 0.0008685833333333434,
+          "delta_ci_low": 0.0,
+          "delta_ci_high": 0.002416666666666678,
+          "prob_beats_base": 0.942
+        },
+        "holdout_summary": {
+          "splits": 8,
+          "positive_splits_vs_base": 0,
+          "weighted_holdout_final_der": 0.17087666666666662,
+          "weighted_holdout_base_der": 0.1659008333333333,
+          "weighted_delta_vs_base": -0.004975833333333318,
+          "weighted_delta_vs_base_pp": -0.4975833333333318
+        }
+      }
+    },
+    {
+      "status": "pass",
+      "code": "slow_sanitization_search_present",
+      "message": "Slow sanitizer search artifact is present and reports a known status",
+      "detail": {
+        "status": "no_robust_sanitizer_found",
+        "best_policy": {
+          "policy_id": "slow",
+          "policy": "{\"base\": \"slow\"}",
+          "windows": 120,
+          "success_windows": 120,
+          "avg_der": 0.16880916666666668,
+          "avg_miss_rate": 0.049854166666666665,
+          "avg_fa_rate": 0.06916249999999999,
+          "avg_conf_rate": 0.049790000000000015,
+          "avg_pred_segments": 11.283333333333333,
+          "avg_pred_speech_sec": 34.760937500000004,
+          "counters": {}
+        }
+      }
+    },
+    {
+      "status": "pass",
+      "code": "speaker_track_sanitization_search_present",
+      "message": "speaker-track sanitizer search artifact is present and reports whether low-evidence speaker-track pruning is robust",
+      "detail": {
+        "status": "no_robust_speaker_track_sanitizer_found",
+        "best_policy": {
+          "policy_id": "speaker_track_filter__min_track_total_sec0p5__require_remaining_speakers1",
+          "policy": "{\"base\": \"speaker_track_filter\", \"min_track_total_sec\": 0.5, \"require_remaining_speakers\": 1}",
+          "windows": 120,
+          "success_windows": 120,
+          "avg_der": 0.1687375,
+          "avg_miss_rate": 0.050170000000000006,
+          "avg_fa_rate": 0.06873083333333331,
+          "avg_conf_rate": 0.049839166666666684,
+          "avg_pred_segments": 11.191666666666666,
+          "avg_pred_speech_sec": 34.734208333333335,
+          "counters": {
+            "dropped_speaker_tracks": 11,
+            "dropped_segments": 11,
+            "score_cache_hits": 120,
+            "score_cache_misses": 0
+          },
+          "delta_vs_slow": 7.166666666666432e-05,
+          "delta_vs_slow_pp": 0.0071666666666664325,
+          "beats_slow": true
+        },
+        "holdout_summary": {
+          "splits": 8,
+          "positive_splits_vs_slow": 0,
+          "weighted_delta_vs_slow": -0.000133333333333336,
+          "weighted_delta_vs_slow_pp": -0.0133333333333336
+        }
+      }
+    },
+    {
+      "status": "pass",
+      "code": "speaker_track_score_cache_present",
+      "message": "speaker-track sanitizer search records score-cache state so repeated regression runs stay fast",
+      "detail": {
+        "score_cache": {
+          "enabled": true,
+          "path": "outputs/speaker_track_sanitization_search/speaker_track_sanitization_score_cache.csv",
+          "loaded_entries": 3000,
+          "new_entries": 0,
+          "hits": 3000.0,
+          "misses": 0.0
+        }
+      }
+    },
+    {
+      "status": "pass",
+      "code": "audio_guided_sanitization_search_present",
+      "message": "audio-guided sanitizer search artifact is present and reports a known status",
+      "detail": {
+        "status": "no_robust_audio_sanitizer_found",
+        "best_policy": {
+          "policy_id": "slow",
+          "policy": "{\"base\": \"slow\"}",
+          "windows": 120,
+          "success_windows": 120,
+          "avg_der": 0.16880916666666668,
+          "avg_miss_rate": 0.049854166666666665,
+          "avg_fa_rate": 0.06916249999999999,
+          "avg_conf_rate": 0.049790000000000015,
+          "avg_pred_segments": 11.316666666666666,
+          "avg_pred_speech_sec": 34.95233333333332,
+          "counters": {
+            "slow_base": 120
+          }
+        }
+      }
+    },
+    {
+      "status": "pass",
+      "code": "audio_boundary_adjustment_search_present",
+      "message": "audio-guided boundary adjustment search artifact is present and reports a known status",
+      "detail": {
+        "status": "no_robust_audio_boundary_policy_found",
+        "best_policy": {
+          "policy_id": "boundary_expand__modemean__pad0p1__search_pad0p25__max_total_expand_sec0p1__min_active_sec0p05__prevent_same_speaker_overlapTrue",
+          "policy": "{\"base\": \"boundary_expand\", \"max_total_expand_sec\": 0.1, \"min_active_sec\": 0.05, \"mode\": \"mean\", \"pad\": 0.1, \"prevent_same_speaker_overlap\": true, \"search_pad\": 0.25}",
+          "windows": 120,
+          "success_windows": 120,
+          "avg_der": 0.1687766666666666,
+          "avg_miss_rate": 0.04912749999999996,
+          "avg_fa_rate": 0.06980416666666665,
+          "avg_conf_rate": 0.04984583333333336,
+          "avg_pred_segments": 11.316666666666666,
+          "avg_pred_speech_sec": 34.878208333333326,
+          "counters": {
+            "same_speaker_overlap_capped": 111,
+            "expanded": 183,
+            "expand_blocked": 778,
+            "unchanged_no_activity": 154,
+            "same_speaker_overlap_pairs": 3,
+            "overlap_reverted_windows": 3
+          }
+        }
+      }
+    },
+    {
+      "status": "pass",
+      "code": "final_timeline_integrity_pass",
+      "message": "final timeline artifacts are internally consistent and contain no same-speaker self-overlap",
+      "detail": {
+        "status": "pass",
+        "summary": {
+          "timeline_rows": 1402,
+          "csv_rows": 1402,
+          "rttm_rows": 1402,
+          "window_rows": 120,
+          "window_segments_total": 1402,
+          "same_speaker_overlap_count": 0,
+          "fail_count": 0,
+          "warn_count": 0
+        },
+        "issues": []
+      }
+    },
+    {
+      "status": "pass",
+      "code": "beats_all_clipped_baselines",
+      "message": "final DER beats every tracked same-window baseline after applying the same runtime window clipping",
+      "detail": {
+        "status": "pass",
+        "final_der": 0.16492333333333334,
+        "best_clipped_baseline": {
+          "baseline_id": "slow_base",
+          "windows": 120,
+          "der": 0.1687966666666667,
+          "miss_rate": 0.049855000000000003,
+          "fa_rate": 0.06916166666666665,
+          "conf_rate": 0.049790000000000015,
+          "delta_vs_final_pp": 0.38733333333333675,
+          "beats_final": false,
+          "clip_counters": {
+            "window_clip_adjusted_segments": 103,
+            "window_clip_trimmed_ms": 22664,
+            "window_clip_dropped_segments": 4
+          }
+        },
+        "delta_pp": 0.38733333333333675
+      }
+    },
+    {
+      "status": "pass",
+      "code": "beats_all_full_coverage_baselines",
+      "message": "final DER beats every discovered baseline artifact that covers the full current 120-window pool",
+      "detail": {
+        "status": "pass",
+        "summary": {
+          "final_der": 0.16492333333333334,
+          "final_der_pct": "16.4923%",
+          "selected_windows": 120,
+          "discovered_candidates": 8,
+          "full_coverage_baselines": 8,
+          "partial_or_noncomparable_candidates": 0,
+          "beats_all_full_coverage_baselines": true,
+          "best_full_coverage_baseline": "runtime_same_window/slow_base",
+          "best_full_coverage_der": 0.16880916666666668,
+          "best_full_coverage_der_pct": "16.8809%",
+          "delta_vs_best_full_coverage_pp": 0.38858333333333384,
+          "stronger_full_coverage_baselines": [],
+          "metric_claim_boundary": "full_current_window_pool_only"
+        },
+        "stronger_full_coverage_baselines": []
+      }
+    },
+    {
+      "status": "pass",
+      "code": "runtime_overlay_contributions_pass",
+      "message": "active runtime overlays have positive clipped-Slow contribution and no negative overlay windows",
+      "detail": {
+        "status": "pass",
+        "summary": {
+          "windows": 120,
+          "overlay_windows": 6,
+          "overlay_sources": 5,
+          "overlay_contribution_vs_slow_pp": 0.3873333333333335,
+          "final_margin_vs_clipped_slow_pp": 0.38733333333333675,
+          "overlay_margin_gap_pp": 3.2751579226442118e-15,
+          "negative_overlay_windows_vs_slow": 0
+        },
+        "source_summary": [
+          {
+            "final_source": "fast_guard_fallback",
+            "windows": 1,
+            "recording_ids": [
+              "R8003_M8001"
+            ],
+            "avg_final_der": 3.2459,
+            "avg_slow_der": 3.5947,
+            "avg_delta_vs_slow_pp": 34.880000000000024,
+            "total_delta_vs_slow_pp": 34.880000000000024,
+            "global_contribution_vs_slow_pp": 0.29066666666666685,
+            "negative_windows_vs_slow": 0
+          },
+          {
+            "final_source": "rare_audio_rule_recover",
+            "windows": 1,
+            "recording_ids": [
+              "R8007_M8011"
+            ],
+            "avg_final_der": 0.3416,
+            "avg_slow_der": 0.4266,
+            "avg_delta_vs_slow_pp": 8.499999999999996,
+            "total_delta_vs_slow_pp": 8.499999999999996,
+            "global_contribution_vs_slow_pp": 0.0708333333333333,
+            "negative_windows_vs_slow": 0
+          },
+          {
+            "final_source": "rare_short_slow_rule_recover",
+            "windows": 2,
+            "recording_ids": [
+              "R8007_M8011",
+              "R8009_M8019"
+            ],
+            "avg_final_der": 0.0225,
+            "avg_slow_der": 0.0329,
+            "avg_delta_vs_slow_pp": 1.04,
+            "total_delta_vs_slow_pp": 2.08,
+            "global_contribution_vs_slow_pp": 0.017333333333333336,
+            "negative_windows_vs_slow": 0
+          },
+          {
+            "final_source": "recording_balanced_fast_overlay",
+            "windows": 1,
+            "recording_ids": [
+              "R8009_M8018"
+            ],
+            "avg_final_der": 0.1608,
+            "avg_slow_der": 0.1657,
+            "avg_delta_vs_slow_pp": 0.48999999999999877,
+            "total_delta_vs_slow_pp": 0.48999999999999877,
+            "global_contribution_vs_slow_pp": 0.004083333333333323,
+            "negative_windows_vs_slow": 0
+          },
+          {
+            "final_source": "recording_context_fast_overlay",
+            "windows": 1,
+            "recording_ids": [
+              "R8007_M8010"
+            ],
+            "avg_final_der": 0.2936,
+            "avg_slow_der": 0.2989,
+            "avg_delta_vs_slow_pp": 0.5299999999999971,
+            "total_delta_vs_slow_pp": 0.5299999999999971,
+            "global_contribution_vs_slow_pp": 0.0044166666666666425,
+            "negative_windows_vs_slow": 0
+          },
+          {
+            "final_source": "slow",
+            "windows": 114,
+            "recording_ids": [
+              "R8001_M8004",
+              "R8003_M8001",
+              "R8007_M8010",
+              "R8007_M8011",
+              "R8008_M8013",
+              "R8009_M8018",
+              "R8009_M8019",
+              "R8009_M8020"
+            ],
+            "avg_final_der": 0.1377535087719298,
+            "avg_slow_der": 0.1377535087719298,
+            "avg_delta_vs_slow_pp": 0.0,
+            "total_delta_vs_slow_pp": 0.0,
+            "global_contribution_vs_slow_pp": 0.0,
+            "negative_windows_vs_slow": 0
+          }
+        ]
+      }
+    },
+    {
+      "status": "pass",
+      "code": "headroom_audit_gap",
+      "message": "current final path is close to analysis-only oracle over existing candidates",
+      "detail": {
+        "final_der": 0.16492333333333334,
+        "oracle_der": 0.16480583333333332,
+        "gap_pp": 0.011750000000002037,
+        "max_headroom_gap_pp": 0.2
+      }
+    },
+    {
+      "status": "pass",
+      "code": "promotion_gate_dev_metric_pass",
+      "message": "promotion gate confirms the development-pool metric beats tracked baselines",
+      "detail": {
+        "status": "dev_metric_pass_promotion_blocked",
+        "summary": {
+          "variant": "slow_guarded_fast_fallback_rare_audio_rule_recover",
+          "final_der": 0.16492333333333334,
+          "final_der_pct": "16.4923%",
+          "delta_vs_best_baseline_pp": 0.38858333333333384,
+          "delta_vs_best_clipped_baseline_pp": 0.38733333333333675,
+          "timeline_integrity_status": "pass",
+          "recording_level_stability_status": "weak_recording_level_gain_not_robust",
+          "recording_level_positive_recordings": 5,
+          "recording_level_recordings": 8,
+          "base_selector_status": "weak_dev_gain_not_robust",
+          "rare_selector_status": "weak_dev_gain_not_robust",
+          "true_heldout_status": "blocked_waiting_for_valid_sealed_split",
+          "headroom_gap_pp": 0.011750000000002037
+        }
+      }
+    },
+    {
+      "status": "warn",
+      "code": "promotion_gate_generalization_pass",
+      "message": "promotion gate confirms robust selector evidence and true-heldout readiness; warn until this becomes true",
+      "detail": {
+        "status": "dev_metric_pass_promotion_blocked",
+        "gates": [
+          {
+            "gate_id": "beats_all_tracked_baselines",
+            "status": "pass",
+            "required_for": "development_metric",
+            "evidence": {
+              "beats_all_baselines": true,
+              "delta_vs_best_baseline_pp": 0.38858333333333384
+            }
+          },
+          {
+            "gate_id": "offline_no_live_calls",
+            "status": "pass",
+            "required_for": "development_metric",
+            "evidence": {
+              "deepseek": 0,
+              "qwen": 0,
+              "omni": 0
+            }
+          },
+          {
+            "gate_id": "final_timeline_integrity",
+            "status": "pass",
+            "required_for": "development_metric",
+            "evidence": {
+              "status": "pass",
+              "summary": {
+                "timeline_rows": 1402,
+                "csv_rows": 1402,
+                "rttm_rows": 1402,
+                "window_rows": 120,
+                "window_segments_total": 1402,
+                "same_speaker_overlap_count": 0,
+                "fail_count": 0,
+                "warn_count": 0
+              },
+              "issues": []
+            }
+          },
+          {
+            "gate_id": "beats_all_clipped_baselines",
+            "status": "pass",
+            "required_for": "development_metric",
+            "evidence": {
+              "status": "pass",
+              "beats_all_clipped_baselines": true,
+              "best_clipped_baseline": {
+                "baseline_id": "slow_base",
+                "windows": 120,
+                "der": 0.1687966666666667,
+                "miss_rate": 0.049855000000000003,
+                "fa_rate": 0.06916166666666665,
+                "conf_rate": 0.049790000000000015,
+                "delta_vs_final_pp": 0.38733333333333675,
+                "beats_final": false,
+                "clip_counters": {
+                  "window_clip_adjusted_segments": 103,
+                  "window_clip_trimmed_ms": 22664,
+                  "window_clip_dropped_segments": 4
+                }
+              },
+              "delta_vs_best_clipped_baseline_pp": 0.38733333333333675
+            }
+          },
+          {
+            "gate_id": "base_selector_robust_dev_validation",
+            "status": "blocked",
+            "required_for": "promotion",
+            "evidence": {
+              "status": "weak_dev_gain_not_robust",
+              "bootstrap": {
+                "samples": 2000,
+                "seed": 42,
+                "threshold": 1,
+                "mean_delta_vs_slow": 0.002933054166666673,
+                "delta_ci_low": 0.0,
+                "delta_ci_high": 0.008725000000000038,
+                "prob_beats_slow": 0.6335,
+                "mean_final_der": 0.16604654166666682,
+                "mean_slow_der": 0.1689795958333332
+              },
+              "recording_holdout_summary": {
+                "splits": 8,
+                "positive_splits_vs_slow": 1,
+                "weighted_heldout_final_der": 0.1659008333333333,
+                "weighted_heldout_slow_der": 0.16880916666666665,
+                "weighted_heldout_delta_vs_slow": 0.002908333333333346,
+                "weighted_heldout_delta_vs_slow_pp": 0.2908333333333346
+              }
+            }
+          },
+          {
+            "gate_id": "rare_selector_robust_dev_validation",
+            "status": "blocked",
+            "required_for": "promotion",
+            "evidence": {
+              "runtime_uses_rare_overlay": true,
+              "status": "weak_dev_gain_not_robust",
+              "bootstrap": {
+                "samples": 500,
+                "seed": 42,
+                "mean_delta_vs_base": 0.0006927500000000022,
+                "delta_ci_low": 0.0,
+                "delta_ci_high": 0.0021250000000000158,
+                "prob_beats_base": 0.622
+              },
+              "runtime_bootstrap": {
+                "samples": 500,
+                "seed": 42,
+                "mean_delta_vs_base": 0.0008685833333333434,
+                "delta_ci_low": 0.0,
+                "delta_ci_high": 0.002416666666666678,
+                "prob_beats_base": 0.942
+              },
+              "holdout_summary": {
+                "splits": 8,
+                "positive_splits_vs_base": 0,
+                "weighted_holdout_final_der": 0.17087666666666662,
+                "weighted_holdout_base_der": 0.1659008333333333,
+                "weighted_delta_vs_base": -0.004975833333333318,
+                "weighted_delta_vs_base_pp": -0.4975833333333318
+              },
+              "runtime_policy": {
+                "policy_kind": "rare_overlay",
+                "policy_id": "runtime_stack_audio_speech_ge_18p605_or_slow_segments_le_3_then_rule_recover_uncovered_only_else_default_guarded_selector",
+                "description": "audio_speech_sec >= 18.605 OR slow_segments <= 3",
+                "true_variant": "rule_recover_uncovered_only",
+                "windows": 120,
+                "selected_windows": 3,
+                "overlay_wins_vs_base": 3,
+                "overlay_losses_vs_base": 0,
+                "final_der": 0.16502000000000003,
+                "base_der": 0.16590083333333333,
+                "slow_der": 0.16880916666666668,
+                "delta_vs_base": 0.0008808333333333029,
+                "delta_vs_base_pp": 0.0880833333333303,
+                "delta_vs_slow": 0.003789166666666649,
+                "delta_vs_slow_pp": 0.3789166666666649,
+                "beats_base": true,
+                "beats_slow": true,
+                "choice_counts": {
+                  "slow_base": 116,
+                  "fast_base": 1,
+                  "rule_recover_uncovered_only": 3
+                },
+                "selected_window_details": [
+                  {
+                    "window_id": "R8007_M8011:30:0",
+                    "base_variant": "slow_base",
+                    "base_der": 0.0324,
+                    "overlay_der": 0.0292,
+                    "delta_vs_base_pp": 0.3199999999999998
+                  },
+                  {
+                    "window_id": "R8007_M8011:30:8",
+                    "base_variant": "slow_base",
+                    "base_der": 0.4266,
+                    "overlay_der": 0.3416,
+                    "delta_vs_base_pp": 8.499999999999996
+                  },
+                  {
+                    "window_id": "R8009_M8019:30:12",
+                    "base_variant": "slow_base",
+                    "base_der": 0.0333,
+                    "overlay_der": 0.0158,
+                    "delta_vs_base_pp": 1.7500000000000002
+                  }
+                ],
+                "stacked_conditions": [
+                  "audio_speech_sec >= 18.605",
+                  "slow_segments <= 3"
+                ]
+              }
+            }
+          },
+          {
+            "gate_id": "recording_level_stability",
+            "status": "blocked",
+            "required_for": "promotion",
+            "evidence": {
+              "status": "weak_recording_level_gain_not_robust",
+              "summary": {
+                "recordings": 8,
+                "windows": 120,
+                "positive_recordings": 5,
+                "mean_final_der": 0.16492333333333334,
+                "mean_baseline_der": 0.16879666666666665,
+                "mean_delta_vs_baseline": 0.003873333333333312,
+                "mean_delta_vs_baseline_pp": 0.3873333333333312,
+                "all_recordings_positive": false
+              },
+              "recording_bootstrap": {
+                "samples": 5000,
+                "seed": 42,
+                "mean_delta_vs_baseline": 0.0038519408333333063,
+                "mean_delta_vs_baseline_pp": 0.3851940833333306,
+                "delta_ci_low": 0.00019000000000002348,
+                "delta_ci_high": 0.009686666666666621,
+                "delta_ci_low_pp": 0.01900000000000235,
+                "delta_ci_high_pp": 0.9686666666666621,
+                "prob_beats_baseline": 0.9994,
+                "mean_final_der": 0.16434053883333377,
+                "mean_baseline_der": 0.16819247966666742
+              }
+            }
+          },
+          {
+            "gate_id": "true_heldout_split_ready",
+            "status": "blocked",
+            "required_for": "promotion",
+            "evidence": {
+              "split_status": "blocked_waiting_for_valid_sealed_split",
+              "split_summary": {
+                "split_exists": false,
+                "rows": 0,
+                "true_heldout_rows": 0,
+                "true_heldout_recordings": 0,
+                "development_recordings": 8,
+                "overlap_with_development": 0,
+                "missing_required_columns": 4,
+                "invalid_role_count": 0,
+                "duplicate_recordings": 0,
+                "missing_audio_count": 0,
+                "missing_textgrid_count": 0,
+                "eligible_local_candidates": 0,
+                "missing_new_recordings_to_minimum": 8,
+                "no_metric_claim": true,
+                "sealed_split_written_by_validator": false
+              },
+              "candidate_scan_status": "not_enough_new_local_recordings",
+              "candidate_scan_summary": {
+                "local_recordings": 8,
+                "development_recordings": 8,
+                "local_dev_overlap": 8,
+                "eligible_true_heldout_recordings": 0,
+                "missing_new_recordings_to_minimum": 8,
+                "far_audio_count": 8,
+                "far_textgrid_count": 8,
+                "near_recording_count": 8,
+                "no_metric_claim": true,
+                "sealed_split_written": false
+              }
+            }
+          },
+          {
+            "gate_id": "current_candidate_oracle_gap_tracked",
+            "status": "pass",
+            "required_for": "diagnostic",
+            "evidence": {
+              "final_der": 0.16492333333333334,
+              "oracle_der": 0.16480583333333332,
+              "final_gap_to_oracle_pp": 0.011750000000002037
+            }
+          }
+        ]
+      }
+    },
+    {
+      "status": "pass",
+      "code": "true_heldout_readiness_present",
+      "message": "true-heldout readiness diagnosis exists, reports a known state, and makes no metric claim",
+      "detail": {
+        "status": "blocked_missing_sealed_split_and_new_recordings",
+        "summary": {
+          "split_file": "data/selector_true_heldout_split.csv",
+          "minimum_true_heldout_recordings": 8,
+          "split_exists": false,
+          "true_heldout_recordings": 0,
+          "eligible_local_candidates": 0,
+          "missing_new_recordings_to_minimum": 8,
+          "development_recordings": 8,
+          "local_dev_overlap": 8,
+          "promotion_gate_status": "dev_metric_pass_promotion_blocked",
+          "promotion_status": "blocked",
+          "candidate_scan_status": "not_enough_new_local_recordings",
+          "split_validation_status": "blocked_waiting_for_valid_sealed_split",
+          "protocol_status": "needs_new_recording_split",
+          "no_metric_claim": true
+        },
+        "blockers": [
+          "sealed_split_exists",
+          "required_columns_present",
+          "true_heldout_count",
+          "no_development_overlap",
+          "not_enough_new_local_recordings"
+        ],
+        "recommended_next_actions": [
+          "add_8_new_recordings_outside_development_pool",
+          "create_data_selector_true_heldout_split_csv",
+          "run_fast_slow_extraction_without_changing_selector_thresholds",
+          "score_frozen_selector_on_true_heldout"
+        ]
+      }
+    },
+    {
+      "status": "pass",
+      "code": "selector_robustness_diagnosis_present",
+      "message": "selector robustness diagnosis explains current promotion blockers or confirms readiness",
+      "detail": {
+        "status": "diagnosed_not_robust",
+        "blocking_reasons": [
+          "base_selector_gain_not_recording_stable",
+          "base_selector_bootstrap_lower_bound_not_positive",
+          "rare_overlay_holdout_not_positive",
+          "rare_overlay_often_selects_no_heldout_windows",
+          "rare_overlay_has_negative_heldout_split",
+          "rare_overlay_development_gain_concentrated"
+        ],
+        "base_selector": {
+          "status": "weak_dev_gain_not_robust",
+          "recordings": 8,
+          "positive_recordings_vs_slow": 1,
+          "positive_recording_ids": [
+            "R8003_M8001"
+          ],
+          "holdout_splits": 8,
+          "holdout_positive_splits_vs_slow": 1,
+          "bootstrap": {
+            "samples": 2000,
+            "seed": 42,
+            "threshold": 1,
+            "mean_delta_vs_slow": 0.002933054166666673,
+            "delta_ci_low": 0.0,
+            "delta_ci_high": 0.008725000000000038,
+            "prob_beats_slow": 0.6335,
+            "mean_final_der": 0.16604654166666682,
+            "mean_slow_der": 0.1689795958333332
+          },
+          "holdout_summary": {
+            "splits": 8,
+            "positive_splits_vs_slow": 1,
+            "weighted_heldout_final_der": 0.1659008333333333,
+            "weighted_heldout_slow_der": 0.16880916666666665,
+            "weighted_heldout_delta_vs_slow": 0.002908333333333346,
+            "weighted_heldout_delta_vs_slow_pp": 0.2908333333333346
+          }
+        },
+        "rare_overlay": {
+          "status": "weak_dev_gain_not_robust",
+          "runtime_selected_windows": 3,
+          "runtime_selected_recording_counts": {
+            "R8007_M8011": 2,
+            "R8009_M8019": 1
+          },
+          "runtime_max_selected_recording_share": 0.6666666666666666,
+          "runtime_max_window_delta_share": 0.8041627246925259,
+          "runtime_selected_window_details": [
+            {
+              "window_id": "R8007_M8011:30:0",
+              "base_variant": "slow_base",
+              "base_der": 0.0324,
+              "overlay_der": 0.0292,
+              "delta_vs_base_pp": 0.3199999999999998,
+              "recording_id": "R8007_M8011"
+            },
+            {
+              "window_id": "R8007_M8011:30:8",
+              "base_variant": "slow_base",
+              "base_der": 0.4266,
+              "overlay_der": 0.3416,
+              "delta_vs_base_pp": 8.499999999999996,
+              "recording_id": "R8007_M8011"
+            },
+            {
+              "window_id": "R8009_M8019:30:12",
+              "base_variant": "slow_base",
+              "base_der": 0.0333,
+              "overlay_der": 0.0158,
+              "delta_vs_base_pp": 1.7500000000000002,
+              "recording_id": "R8009_M8019"
+            }
+          ],
+          "holdout_splits": 8,
+          "holdout_positive_splits_vs_base": 0,
+          "holdout_zero_selection_splits": 7,
+          "holdout_negative_splits": [
+            {
+              "heldout_recording_id": "R8009_M8020",
+              "heldout_delta_vs_base_pp": -3.9806666666666666,
+              "heldout_selected_windows": 4,
+              "selected_policy_id": "if_audio_max_speech_sec_>=_17.12_AND_keep_fast_supported_>=_5_then_rule_recover_uncovered_only_else_default_guarded_selector"
+            }
+          ],
+          "runtime_bootstrap": {
+            "samples": 500,
+            "seed": 42,
+            "mean_delta_vs_base": 0.0008685833333333434,
+            "delta_ci_low": 0.0,
+            "delta_ci_high": 0.002416666666666678,
+            "prob_beats_base": 0.942
+          },
+          "holdout_summary": {
+            "splits": 8,
+            "positive_splits_vs_base": 0,
+            "weighted_holdout_final_der": 0.17087666666666662,
+            "weighted_holdout_base_der": 0.1659008333333333,
+            "weighted_delta_vs_base": -0.004975833333333318,
+            "weighted_delta_vs_base_pp": -0.4975833333333318
+          }
+        }
+      }
+    },
+    {
+      "status": "pass",
+      "code": "realtime_batch_smoke_pass",
+      "message": "manifest-style batch runner processes multiple recordings with per-item integrity checks and zero live API calls",
+      "detail": {
+        "status": "pass",
+        "summary": {
+          "items": 2,
+          "passed_items": 2,
+          "failed_items": 0,
+          "windows_processed": 30,
+          "recordings_processed": 2,
+          "final_der": 0.20770333333333332,
+          "final_der_pct": "20.77%",
+          "final_der_item_avg": 0.20770333333333335,
+          "final_der_item_avg_pct": "20.77%",
+          "fast_der": 0.2907666666666667,
+          "fast_der_item_avg": 0.29076666666666673,
+          "aggregation": "window_weighted_by_windows_processed",
+          "timeline_integrity_passed_items": 2,
+          "deepseek_api_calls": 0,
+          "qwen_api_calls": 0,
+          "omni_api_calls": 0,
+          "duration_sec": 1.0990750789642334
+        },
+        "items": [
+          {
+            "recording_id": "R8003_M8001",
+            "status": "pass",
+            "timeline_integrity_status": "pass",
+            "windows_processed": 15
+          },
+          {
+            "recording_id": "R8009_M8019",
+            "status": "pass",
+            "timeline_integrity_status": "pass",
+            "windows_processed": 15
+          }
+        ]
+      }
+    },
+    {
+      "status": "pass",
+      "code": "realtime_batch_all_cached_pass",
+      "message": "all-cached batch runner processes every cached recording with per-item integrity checks and zero live API calls",
+      "detail": {
+        "status": "pass",
+        "summary": {
+          "items": 8,
+          "passed_items": 8,
+          "failed_items": 0,
+          "windows_processed": 120,
+          "recordings_processed": 8,
+          "final_der": 0.16492333333333334,
+          "final_der_pct": "16.49%",
+          "final_der_item_avg": 0.16492333333333334,
+          "final_der_item_avg_pct": "16.49%",
+          "fast_der": 0.2856375,
+          "fast_der_item_avg": 0.2856375,
+          "aggregation": "window_weighted_by_windows_processed",
+          "timeline_integrity_passed_items": 8,
+          "deepseek_api_calls": 0,
+          "qwen_api_calls": 0,
+          "omni_api_calls": 0,
+          "duration_sec": 4.600389719009399
+        }
+      }
+    },
+    {
+      "status": "pass",
+      "code": "realtime_batch_consistency_pass",
+      "message": "all-cached batch weighted DER matches the corpus-level all-cached system demo",
+      "detail": {
+        "status": "pass",
+        "summary": {
+          "batch_summary": "outputs/realtime_batch/all_cached/batch_summary.json",
+          "system_metrics": "outputs/system_demo/all_cached_recordings/metrics.json",
+          "batch_weighted_final_der": 0.16492333333333334,
+          "reported_batch_final_der": 0.16492333333333334,
+          "batch_final_der_item_avg": 0.16492333333333334,
+          "batch_weighted_final_der_pct": "16.4923%",
+          "corpus_final_der": 0.16492333333333334,
+          "corpus_final_der_pct": "16.4923%",
+          "final_der_abs_gap_pp": 0.0
+        },
+        "checks": [
+          {
+            "status": "pass",
+            "code": "batch_summary_exists",
+            "message": "all-cached batch summary exists",
+            "detail": {
+              "path": "outputs/realtime_batch/all_cached/batch_summary.json"
+            }
+          },
+          {
+            "status": "pass",
+            "code": "batch_status_pass",
+            "message": "all-cached batch completed with pass status",
+            "detail": {
+              "status": "pass"
+            }
+          },
+          {
+            "status": "pass",
+            "code": "all_recordings_processed",
+            "message": "all expected cached recordings are processed and passed",
+            "detail": {
+              "summary": {
+                "items": 8,
+                "passed_items": 8,
+                "failed_items": 0,
+                "windows_processed": 120,
+                "recordings_processed": 8,
+                "final_der": 0.16492333333333334,
+                "final_der_pct": "16.49%",
+                "final_der_item_avg": 0.16492333333333334,
+                "final_der_item_avg_pct": "16.49%",
+                "fast_der": 0.2856375,
+                "fast_der_item_avg": 0.2856375,
+                "aggregation": "window_weighted_by_windows_processed",
+                "timeline_integrity_passed_items": 8,
+                "deepseek_api_calls": 0,
+                "qwen_api_calls": 0,
+                "omni_api_calls": 0,
+                "duration_sec": 4.600389719009399
+              },
+              "expected_recordings": 8
+            }
+          },
+          {
+            "status": "pass",
+            "code": "all_windows_processed",
+            "message": "all expected cached windows are processed",
+            "detail": {
+              "windows_processed": 120,
+              "expected_windows": 120
+            }
+          },
+          {
+            "status": "pass",
+            "code": "all_item_timeline_integrity_pass",
+            "message": "every batch item passed timeline integrity",
+            "detail": {
+              "summary": {
+                "items": 8,
+                "passed_items": 8,
+                "failed_items": 0,
+                "windows_processed": 120,
+                "recordings_processed": 8,
+                "final_der": 0.16492333333333334,
+                "final_der_pct": "16.49%",
+                "final_der_item_avg": 0.16492333333333334,
+                "final_der_item_avg_pct": "16.49%",
+                "fast_der": 0.2856375,
+                "fast_der_item_avg": 0.2856375,
+                "aggregation": "window_weighted_by_windows_processed",
+                "timeline_integrity_passed_items": 8,
+                "deepseek_api_calls": 0,
+                "qwen_api_calls": 0,
+                "omni_api_calls": 0,
+                "duration_sec": 4.600389719009399
+              }
+            }
+          },
+          {
+            "status": "pass",
+            "code": "batch_zero_live_api_calls",
+            "message": "all-cached batch performs zero live API calls",
+            "detail": {
+              "deepseek": 0,
+              "qwen": 0,
+              "omni": 0
+            }
+          },
+          {
+            "status": "pass",
+            "code": "batch_uses_window_weighted_aggregation",
+            "message": "batch summary reports corpus DER using window-weighted aggregation rather than item-average aggregation",
+            "detail": {
+              "aggregation": "window_weighted_by_windows_processed"
+            }
+          },
+          {
+            "status": "pass",
+            "code": "batch_reported_der_is_weighted",
+            "message": "reported batch final DER equals recomputed window-weighted final DER",
+            "detail": {
+              "reported_batch_final_der": 0.16492333333333334,
+              "recomputed_batch_weighted_final_der": 0.16492333333333334
+            }
+          },
+          {
+            "status": "pass",
+            "code": "batch_der_matches_corpus_demo",
+            "message": "weighted batch final DER matches corpus-level all-cached demo DER",
+            "detail": {
+              "batch_weighted_final_der": 0.16492333333333334,
+              "corpus_final_der": 0.16492333333333334,
+              "final_der_abs_gap_pp": 0.0,
+              "max_final_der_gap_pp": 0.0001
+            }
+          }
+        ]
+      }
+    },
+    {
+      "status": "pass",
+      "code": "recording_level_stability_present",
+      "message": "recording-level stability audit exists and reports final-vs-clipped-baseline resampling evidence",
+      "detail": {
+        "status": "weak_recording_level_gain_not_robust",
+        "summary": {
+          "recordings": 8,
+          "windows": 120,
+          "positive_recordings": 5,
+          "mean_final_der": 0.16492333333333334,
+          "mean_baseline_der": 0.16879666666666665,
+          "mean_delta_vs_baseline": 0.003873333333333312,
+          "mean_delta_vs_baseline_pp": 0.3873333333333312,
+          "all_recordings_positive": false
+        },
+        "recording_bootstrap": {
+          "samples": 5000,
+          "seed": 42,
+          "mean_delta_vs_baseline": 0.0038519408333333063,
+          "mean_delta_vs_baseline_pp": 0.3851940833333306,
+          "delta_ci_low": 0.00019000000000002348,
+          "delta_ci_high": 0.009686666666666621,
+          "delta_ci_low_pp": 0.01900000000000235,
+          "delta_ci_high_pp": 0.9686666666666621,
+          "prob_beats_baseline": 0.9994,
+          "mean_final_der": 0.16434053883333377,
+          "mean_baseline_der": 0.16819247966666742
+        }
+      }
+    },
+    {
+      "status": "warn",
+      "code": "recording_level_stability_robust",
+      "message": "recording-level gain is positive across recordings with a positive recording-bootstrap lower bound; warn until this becomes true",
+      "detail": {
+        "status": "weak_recording_level_gain_not_robust",
+        "summary": {
+          "recordings": 8,
+          "windows": 120,
+          "positive_recordings": 5,
+          "mean_final_der": 0.16492333333333334,
+          "mean_baseline_der": 0.16879666666666665,
+          "mean_delta_vs_baseline": 0.003873333333333312,
+          "mean_delta_vs_baseline_pp": 0.3873333333333312,
+          "all_recordings_positive": false
+        },
+        "recording_bootstrap": {
+          "samples": 5000,
+          "seed": 42,
+          "mean_delta_vs_baseline": 0.0038519408333333063,
+          "mean_delta_vs_baseline_pp": 0.3851940833333306,
+          "delta_ci_low": 0.00019000000000002348,
+          "delta_ci_high": 0.009686666666666621,
+          "delta_ci_low_pp": 0.01900000000000235,
+          "delta_ci_high_pp": 0.9686666666666621,
+          "prob_beats_baseline": 0.9994,
+          "mean_final_der": 0.16434053883333377,
+          "mean_baseline_der": 0.16819247966666742
+        }
+      }
+    },
+    {
+      "status": "pass",
+      "code": "recording_balanced_overlay_search_present",
+      "message": "recording-balanced overlay search exists and reports whether another deployable stability candidate remains",
+      "detail": {
+        "status": "no_deployable_recording_balanced_candidate_found",
+        "current_policy": {
+          "policy_kind": "recording_balanced_overlay",
+          "policy_id": "if_never_then_slow_base_else_current_final",
+          "description": "never",
+          "true_variant": "slow_base",
+          "windows": 120,
+          "selected_windows": 0,
+          "overlay_wins_vs_current": 0,
+          "overlay_losses_vs_current": 0,
+          "current_final_der": 0.16492333333333334,
+          "final_der": 0.16492333333333334,
+          "clipped_slow_der": 0.1687966666666667,
+          "delta_vs_current": 0.0,
+          "delta_vs_current_pp": 0.0,
+          "delta_vs_clipped_slow": 0.0038733333333333675,
+          "delta_vs_clipped_slow_pp": 0.38733333333333675,
+          "positive_recordings_vs_clipped_slow": 5,
+          "negative_recordings_vs_clipped_slow": 0,
+          "choice_counts": {
+            "current_final": 120
+          },
+          "selected_window_details": [],
+          "per_recording": [
+            {
+              "recording_id": "R8001_M8004",
+              "windows": 15,
+              "final_der": 0.17919999999999997,
+              "slow_der": 0.17919999999999997,
+              "delta_vs_slow_pp": 0.0,
+              "beats_slow": false,
+              "negative_vs_slow": false
+            },
+            {
+              "recording_id": "R8003_M8001",
+              "windows": 15,
+              "final_der": 0.35889333333333334,
+              "slow_der": 0.38214666666666663,
+              "delta_vs_slow_pp": 2.3253333333333295,
+              "beats_slow": true,
+              "negative_vs_slow": false
+            },
+            {
+              "recording_id": "R8007_M8010",
+              "windows": 15,
+              "final_der": 0.24348000000000003,
+              "slow_der": 0.24383333333333337,
+              "delta_vs_slow_pp": 0.03533333333333444,
+              "beats_slow": true,
+              "negative_vs_slow": false
+            },
+            {
+              "recording_id": "R8007_M8011",
+              "windows": 15,
+              "final_der": 0.1588,
+              "slow_der": 0.16468666666666668,
+              "delta_vs_slow_pp": 0.5886666666666679,
+              "beats_slow": true,
+              "negative_vs_slow": false
+            },
+            {
+              "recording_id": "R8008_M8013",
+              "windows": 15,
+              "final_der": 0.16668666666666668,
+              "slow_der": 0.16668666666666668,
+              "delta_vs_slow_pp": 0.0,
+              "beats_slow": false,
+              "negative_vs_slow": false
+            },
+            {
+              "recording_id": "R8009_M8018",
+              "windows": 15,
+              "final_der": 0.10303333333333332,
+              "slow_der": 0.10335999999999998,
+              "delta_vs_slow_pp": 0.03266666666666557,
+              "beats_slow": true,
+              "negative_vs_slow": false
+            },
+            {
+              "recording_id": "R8009_M8019",
+              "windows": 15,
+              "final_der": 0.05651333333333333,
+              "slow_der": 0.057679999999999995,
+              "delta_vs_slow_pp": 0.11666666666666631,
+              "beats_slow": true,
+              "negative_vs_slow": false
+            },
+            {
+              "recording_id": "R8009_M8020",
+              "windows": 15,
+              "final_der": 0.05278,
+              "slow_der": 0.05278,
+              "delta_vs_slow_pp": 0.0,
+              "beats_slow": false,
+              "negative_vs_slow": false
+            }
+          ]
+        },
+        "best_policy": {
+          "policy_kind": "recording_balanced_overlay",
+          "policy_id": "if_audio_max_minus_mean_p90_db_>=_5.4712_AND_seg_diff_<=_-9_then_rule_recover_policy_sweep_best_else_current_final",
+          "description": "audio_max_minus_mean_p90_db >= 5.4712 AND seg_diff <= -9",
+          "true_variant": "rule_recover_policy_sweep_best",
+          "windows": 120,
+          "selected_windows": 1,
+          "overlay_wins_vs_current": 1,
+          "overlay_losses_vs_current": 0,
+          "current_final_der": 0.16492333333333334,
+          "final_der": 0.16489416666666667,
+          "clipped_slow_der": 0.1687966666666667,
+          "delta_vs_current": 2.9166666666663454e-05,
+          "delta_vs_current_pp": 0.0029166666666663454,
+          "delta_vs_clipped_slow": 0.003902500000000031,
+          "delta_vs_clipped_slow_pp": 0.3902500000000031,
+          "positive_recordings_vs_clipped_slow": 5,
+          "negative_recordings_vs_clipped_slow": 0,
+          "choice_counts": {
+            "current_final": 119,
+            "rule_recover_policy_sweep_best": 1
+          },
+          "selected_window_details": [
+            {
+              "window_id": "R8009_M8018:30:3",
+              "recording_id": "R8009_M8018",
+              "current_der": 0.2048,
+              "overlay_der": 0.2013,
+              "delta_vs_current_pp": 0.3500000000000003
+            }
+          ],
+          "per_recording": [
+            {
+              "recording_id": "R8001_M8004",
+              "windows": 15,
+              "final_der": 0.17919999999999997,
+              "slow_der": 0.17919999999999997,
+              "delta_vs_slow_pp": 0.0,
+              "beats_slow": false,
+              "negative_vs_slow": false
+            },
+            {
+              "recording_id": "R8003_M8001",
+              "windows": 15,
+              "final_der": 0.35889333333333334,
+              "slow_der": 0.38214666666666663,
+              "delta_vs_slow_pp": 2.3253333333333295,
+              "beats_slow": true,
+              "negative_vs_slow": false
+            },
+            {
+              "recording_id": "R8007_M8010",
+              "windows": 15,
+              "final_der": 0.24348000000000003,
+              "slow_der": 0.24383333333333337,
+              "delta_vs_slow_pp": 0.03533333333333444,
+              "beats_slow": true,
+              "negative_vs_slow": false
+            },
+            {
+              "recording_id": "R8007_M8011",
+              "windows": 15,
+              "final_der": 0.1588,
+              "slow_der": 0.16468666666666668,
+              "delta_vs_slow_pp": 0.5886666666666679,
+              "beats_slow": true,
+              "negative_vs_slow": false
+            },
+            {
+              "recording_id": "R8008_M8013",
+              "windows": 15,
+              "final_der": 0.16668666666666668,
+              "slow_der": 0.16668666666666668,
+              "delta_vs_slow_pp": 0.0,
+              "beats_slow": false,
+              "negative_vs_slow": false
+            },
+            {
+              "recording_id": "R8009_M8018",
+              "windows": 15,
+              "final_der": 0.10279999999999999,
+              "slow_der": 0.10335999999999998,
+              "delta_vs_slow_pp": 0.055999999999999106,
+              "beats_slow": true,
+              "negative_vs_slow": false
+            },
+            {
+              "recording_id": "R8009_M8019",
+              "windows": 15,
+              "final_der": 0.05651333333333333,
+              "slow_der": 0.057679999999999995,
+              "delta_vs_slow_pp": 0.11666666666666631,
+              "beats_slow": true,
+              "negative_vs_slow": false
+            },
+            {
+              "recording_id": "R8009_M8020",
+              "windows": 15,
+              "final_der": 0.05278,
+              "slow_der": 0.05278,
+              "delta_vs_slow_pp": 0.0,
+              "beats_slow": false,
+              "negative_vs_slow": false
+            }
+          ],
+          "feature_a": "audio_max_minus_mean_p90_db",
+          "op_a": ">=",
+          "threshold_a": 5.4712,
+          "feature_b": "seg_diff",
+          "op_b": "<=",
+          "threshold_b": -9.0,
+          "selected": 1
+        }
+      }
+    },
+    {
+      "status": "pass",
+      "code": "recording_context_overlay_search_present",
+      "message": "previous-window context overlay search exists and reports whether another deployable stability candidate remains",
+      "detail": {
+        "status": "no_deployable_recording_balanced_candidate_found",
+        "current_policy": {
+          "policy_kind": "recording_balanced_overlay",
+          "policy_id": "if_never_then_slow_base_else_current_final",
+          "description": "never",
+          "true_variant": "slow_base",
+          "windows": 120,
+          "selected_windows": 0,
+          "overlay_wins_vs_current": 0,
+          "overlay_losses_vs_current": 0,
+          "current_final_der": 0.16492333333333334,
+          "final_der": 0.16492333333333334,
+          "clipped_slow_der": 0.1687966666666667,
+          "delta_vs_current": 0.0,
+          "delta_vs_current_pp": 0.0,
+          "delta_vs_clipped_slow": 0.0038733333333333675,
+          "delta_vs_clipped_slow_pp": 0.38733333333333675,
+          "positive_recordings_vs_clipped_slow": 5,
+          "negative_recordings_vs_clipped_slow": 0,
+          "choice_counts": {
+            "current_final": 120
+          },
+          "selected_window_details": [],
+          "per_recording": [
+            {
+              "recording_id": "R8001_M8004",
+              "windows": 15,
+              "final_der": 0.17919999999999997,
+              "slow_der": 0.17919999999999997,
+              "delta_vs_slow_pp": 0.0,
+              "beats_slow": false,
+              "negative_vs_slow": false
+            },
+            {
+              "recording_id": "R8003_M8001",
+              "windows": 15,
+              "final_der": 0.35889333333333334,
+              "slow_der": 0.38214666666666663,
+              "delta_vs_slow_pp": 2.3253333333333295,
+              "beats_slow": true,
+              "negative_vs_slow": false
+            },
+            {
+              "recording_id": "R8007_M8010",
+              "windows": 15,
+              "final_der": 0.24348000000000003,
+              "slow_der": 0.24383333333333337,
+              "delta_vs_slow_pp": 0.03533333333333444,
+              "beats_slow": true,
+              "negative_vs_slow": false
+            },
+            {
+              "recording_id": "R8007_M8011",
+              "windows": 15,
+              "final_der": 0.1588,
+              "slow_der": 0.16468666666666668,
+              "delta_vs_slow_pp": 0.5886666666666679,
+              "beats_slow": true,
+              "negative_vs_slow": false
+            },
+            {
+              "recording_id": "R8008_M8013",
+              "windows": 15,
+              "final_der": 0.16668666666666668,
+              "slow_der": 0.16668666666666668,
+              "delta_vs_slow_pp": 0.0,
+              "beats_slow": false,
+              "negative_vs_slow": false
+            },
+            {
+              "recording_id": "R8009_M8018",
+              "windows": 15,
+              "final_der": 0.10303333333333332,
+              "slow_der": 0.10335999999999998,
+              "delta_vs_slow_pp": 0.03266666666666557,
+              "beats_slow": true,
+              "negative_vs_slow": false
+            },
+            {
+              "recording_id": "R8009_M8019",
+              "windows": 15,
+              "final_der": 0.05651333333333333,
+              "slow_der": 0.057679999999999995,
+              "delta_vs_slow_pp": 0.11666666666666631,
+              "beats_slow": true,
+              "negative_vs_slow": false
+            },
+            {
+              "recording_id": "R8009_M8020",
+              "windows": 15,
+              "final_der": 0.05278,
+              "slow_der": 0.05278,
+              "delta_vs_slow_pp": 0.0,
+              "beats_slow": false,
+              "negative_vs_slow": false
+            }
+          ]
+        },
+        "best_policy": {
+          "policy_kind": "recording_balanced_overlay",
+          "policy_id": "if_align_slow_segment_<=_4_AND_prev_audio_dynamic_range_db_>=_21.35_then_rule_recover_policy_sweep_best_else_current_final",
+          "description": "align_slow_segment <= 4 AND prev_audio_dynamic_range_db >= 21.35",
+          "true_variant": "rule_recover_policy_sweep_best",
+          "windows": 120,
+          "selected_windows": 1,
+          "overlay_wins_vs_current": 1,
+          "overlay_losses_vs_current": 0,
+          "current_final_der": 0.16492333333333334,
+          "final_der": 0.16489416666666667,
+          "clipped_slow_der": 0.1687966666666667,
+          "delta_vs_current": 2.9166666666663454e-05,
+          "delta_vs_current_pp": 0.0029166666666663454,
+          "delta_vs_clipped_slow": 0.003902500000000031,
+          "delta_vs_clipped_slow_pp": 0.3902500000000031,
+          "positive_recordings_vs_clipped_slow": 5,
+          "negative_recordings_vs_clipped_slow": 0,
+          "choice_counts": {
+            "current_final": 119,
+            "rule_recover_policy_sweep_best": 1
+          },
+          "selected_window_details": [
+            {
+              "window_id": "R8009_M8018:30:3",
+              "recording_id": "R8009_M8018",
+              "current_der": 0.2048,
+              "overlay_der": 0.2013,
+              "delta_vs_current_pp": 0.3500000000000003
+            }
+          ],
+          "per_recording": [
+            {
+              "recording_id": "R8001_M8004",
+              "windows": 15,
+              "final_der": 0.17919999999999997,
+              "slow_der": 0.17919999999999997,
+              "delta_vs_slow_pp": 0.0,
+              "beats_slow": false,
+              "negative_vs_slow": false
+            },
+            {
+              "recording_id": "R8003_M8001",
+              "windows": 15,
+              "final_der": 0.35889333333333334,
+              "slow_der": 0.38214666666666663,
+              "delta_vs_slow_pp": 2.3253333333333295,
+              "beats_slow": true,
+              "negative_vs_slow": false
+            },
+            {
+              "recording_id": "R8007_M8010",
+              "windows": 15,
+              "final_der": 0.24348000000000003,
+              "slow_der": 0.24383333333333337,
+              "delta_vs_slow_pp": 0.03533333333333444,
+              "beats_slow": true,
+              "negative_vs_slow": false
+            },
+            {
+              "recording_id": "R8007_M8011",
+              "windows": 15,
+              "final_der": 0.1588,
+              "slow_der": 0.16468666666666668,
+              "delta_vs_slow_pp": 0.5886666666666679,
+              "beats_slow": true,
+              "negative_vs_slow": false
+            },
+            {
+              "recording_id": "R8008_M8013",
+              "windows": 15,
+              "final_der": 0.16668666666666668,
+              "slow_der": 0.16668666666666668,
+              "delta_vs_slow_pp": 0.0,
+              "beats_slow": false,
+              "negative_vs_slow": false
+            },
+            {
+              "recording_id": "R8009_M8018",
+              "windows": 15,
+              "final_der": 0.10279999999999999,
+              "slow_der": 0.10335999999999998,
+              "delta_vs_slow_pp": 0.055999999999999106,
+              "beats_slow": true,
+              "negative_vs_slow": false
+            },
+            {
+              "recording_id": "R8009_M8019",
+              "windows": 15,
+              "final_der": 0.05651333333333333,
+              "slow_der": 0.057679999999999995,
+              "delta_vs_slow_pp": 0.11666666666666631,
+              "beats_slow": true,
+              "negative_vs_slow": false
+            },
+            {
+              "recording_id": "R8009_M8020",
+              "windows": 15,
+              "final_der": 0.05278,
+              "slow_der": 0.05278,
+              "delta_vs_slow_pp": 0.0,
+              "beats_slow": false,
+              "negative_vs_slow": false
+            }
+          ],
+          "feature_a": "align_slow_segment",
+          "op_a": "<=",
+          "threshold_a": 4.0,
+          "feature_b": "prev_audio_dynamic_range_db",
+          "op_b": ">=",
+          "threshold_b": 21.35,
+          "selected": 1
+        }
+      }
+    },
+    {
+      "status": "pass",
+      "code": "external_candidate_surface_search_present",
+      "message": "external candidate surface search exists and reports whether historical model outputs can create a new candidate surface",
+      "detail": {
+        "status": "external_candidate_surface_not_deployable",
+        "candidate_sources": 3,
+        "best_policy": {
+          "source_id": "diarizen-large-v2/diarizen-large-v2/spk_none::outputs/diarizen_uv_48/diarizen-large-v2/default__spk_none",
+          "source_coverage_windows": 120,
+          "selected_windows": 2,
+          "delta_vs_current_pp": 0.00016666666666498298,
+          "positive_recordings_vs_clipped_slow": 7,
+          "overlay_losses_vs_current": 0
+        },
+        "deployability_gates": {
+          "min_deployable_delta_pp": 0.05,
+          "requires_source_full_coverage": true,
+          "requires_positive_recording_gain": true,
+          "requires_zero_overlay_losses": true,
+          "requires_zero_negative_recordings": true,
+          "deployable": false,
+          "promising_not_default_runtime": false
+        }
+      }
+    },
+    {
+      "status": "pass",
+      "code": "external_candidate_search_gt_filtered",
+      "message": "external candidate search excludes stale same-key windows whose GT fingerprint does not match the current runtime pool",
+      "detail": {
+        "status": "external_candidate_surface_not_deployable",
+        "best_policy": {
+          "source_path": "outputs/diarizen_uv_48/diarizen-large-v2/default__spk_none/summary.json",
+          "source_coverage_windows": 120,
+          "source_stale_gt_mismatch_windows": 0,
+          "delta_vs_current_pp": 0.00016666666666498298
+        },
+        "inputs": {
+          "window_metrics": "outputs/system_demo/all_cached_recordings/window_metrics.csv",
+          "clipped_baseline_scores": "outputs/clipped_baseline_audit/clipped_baseline_scores.csv",
+          "window_features": "outputs/segment_patches/sortformer_diarizen_120_patches_windows.csv",
+          "gate_decisions": "outputs/writeback_gate_120/gate_decisions.csv",
+          "audio_features": "outputs/audio_window_features/audio_window_features_120.csv",
+          "reference_summary": "outputs/sortformer_uv_120/nemo-sortformer-4spk-v1/default__spk_none/summary.json",
+          "scan_root": "outputs",
+          "include_oracle_sources": false
+        }
+      }
+    },
+    {
+      "status": "pass",
+      "code": "external_candidate_oracle_sources_excluded",
+      "message": "default external candidate deployability search excludes speaker_count_mode=oracle summaries as eval-only upper bounds",
+      "detail": {
+        "include_oracle_sources": false,
+        "eval_only_oracle_sources_excluded": 0,
+        "candidate_sources": 3
+      }
+    },
+    {
+      "status": "pass",
+      "code": "external_candidate_source_inventory_present",
+      "message": "external candidate source inventory exists and uses GT-fingerprint filtering over the current runtime window pool",
+      "detail": {
+        "status": "pass",
+        "summary": {
+          "runtime_windows": 120,
+          "sources_scanned": 4,
+          "sources_with_matching_windows": 3,
+          "sources_with_valid_windows": 3,
+          "full_coverage_clean_sources": 3,
+          "sources_with_stale_gt_mismatch": 0,
+          "stale_gt_mismatch_windows": 0
+        },
+        "non_positive_recordings": [
+          "R8001_M8004",
+          "R8008_M8013",
+          "R8009_M8020"
+        ]
+      }
+    },
+    {
+      "status": "pass",
+      "code": "external_candidate_reproduction_plan_present",
+      "message": "external candidate reproduction plan exists and records the missing-window/resume gate before default runtime promotion",
+      "detail": {
+        "status": "ready_for_default_runtime_promotion_check",
+        "summary": {
+          "source_id": "diarizen-large-v2/diarizen-large-v2/spk_none::outputs/diarizen_uv_48/diarizen-large-v2/default__spk_none",
+          "source_path": "outputs/diarizen_uv_48/diarizen-large-v2/default__spk_none/summary.json",
+          "source_output_base": "outputs/diarizen_uv_48",
+          "expected_windows": 120,
+          "covered_windows": 120,
+          "missing_windows": 0,
+          "stale_checkpoint_windows": 0,
+          "best_policy_selected_windows": 2,
+          "missing_best_policy_windows": 0,
+          "checkpoint_path": "outputs/diarizen_uv_48/diarizen-large-v2/default__spk_none/checkpoint.json",
+          "checkpoint_exists": true,
+          "checkpoint_entries": 120,
+          "resume_supported_by_checkpoint": true,
+          "avg_observed_latency_sec": 20.5,
+          "estimated_remaining_latency_sec": 0.0,
+          "best_delta_vs_current_pp": 0.00016666666666498298,
+          "best_positive_recordings": 7,
+          "best_overlay_losses": 0,
+          "source_full_coverage": true
+        },
+        "promotion_gates": [
+          {
+            "gate_id": "source_full_current_pool_coverage",
+            "status": "pass",
+            "evidence": "120/120 windows covered"
+          },
+          {
+            "gate_id": "best_policy_windows_available",
+            "status": "pass",
+            "evidence": "2/2 selected windows available"
+          },
+          {
+            "gate_id": "meaningful_development_delta",
+            "status": "blocked",
+            "evidence": "0.00016666666666498298pp vs minimum 0.05pp"
+          },
+          {
+            "gate_id": "zero_overlay_losses",
+            "status": "pass",
+            "evidence": "0"
+          },
+          {
+            "gate_id": "zero_negative_recordings",
+            "status": "pass",
+            "evidence": "0"
+          }
+        ]
+      }
+    },
+    {
+      "status": "pass",
+      "code": "external_candidate_manifest_resume_command_ready",
+      "message": "external candidate reproduction plan exposes a manifest-only resume command with distinct summary/results filenames",
+      "detail": {
+        "manifest_resume_command": [
+          ".venv_diarizen/bin/python",
+          "-m",
+          "alimeeting_diarization_bench.run",
+          "--model",
+          "diarizen",
+          "--window-size",
+          "30",
+          "--sampling-mode",
+          "stratified",
+          "--total-samples",
+          "120",
+          "--seed",
+          "42",
+          "--speaker-count-mode",
+          "none",
+          "--output-dir",
+          "outputs/diarizen_uv_48",
+          "--segments-manifest",
+          "outputs/external_candidate_reproduction_plan/missing_external_candidate_windows.csv",
+          "--summary-name",
+          "missing_external_candidate_windows_summary.json",
+          "--results-name",
+          "missing_external_candidate_windows_results.csv"
+        ],
+        "missing_window_manifest": "outputs/external_candidate_reproduction_plan/missing_external_candidate_windows.csv"
+      }
+    },
+    {
+      "status": "pass",
+      "code": "external_candidate_full_refresh_command_ready",
+      "message": "external candidate reproduction plan also exposes a full 120-window refresh command for promotion scoring",
+      "detail": {
+        "full_resume_command": [
+          ".venv_diarizen/bin/python",
+          "-m",
+          "alimeeting_diarization_bench.run",
+          "--model",
+          "diarizen",
+          "--window-size",
+          "30",
+          "--sampling-mode",
+          "stratified",
+          "--total-samples",
+          "120",
+          "--seed",
+          "42",
+          "--speaker-count-mode",
+          "none",
+          "--output-dir",
+          "outputs/diarizen_uv_48"
+        ]
+      }
+    },
+    {
+      "status": "pass",
+      "code": "external_candidate_missing_manifest_consistent",
+      "message": "missing-window manifest row count matches the reproduction-plan coverage gap",
+      "detail": {
+        "manifest_path": "outputs/external_candidate_reproduction_plan/missing_external_candidate_windows.csv",
+        "manifest_rows": 0,
+        "summary": {
+          "source_id": "diarizen-large-v2/diarizen-large-v2/spk_none::outputs/diarizen_uv_48/diarizen-large-v2/default__spk_none",
+          "source_path": "outputs/diarizen_uv_48/diarizen-large-v2/default__spk_none/summary.json",
+          "source_output_base": "outputs/diarizen_uv_48",
+          "expected_windows": 120,
+          "covered_windows": 120,
+          "missing_windows": 0,
+          "stale_checkpoint_windows": 0,
+          "best_policy_selected_windows": 2,
+          "missing_best_policy_windows": 0,
+          "checkpoint_path": "outputs/diarizen_uv_48/diarizen-large-v2/default__spk_none/checkpoint.json",
+          "checkpoint_exists": true,
+          "checkpoint_entries": 120,
+          "resume_supported_by_checkpoint": true,
+          "avg_observed_latency_sec": 20.5,
+          "estimated_remaining_latency_sec": 0.0,
+          "best_delta_vs_current_pp": 0.00016666666666498298,
+          "best_positive_recordings": 7,
+          "best_overlay_losses": 0,
+          "source_full_coverage": true
+        }
+      }
+    },
+    {
+      "status": "pass",
+      "code": "external_candidate_stale_reprocess_command_ready",
+      "message": "external candidate reproduction plan requires force reprocess whenever stale checkpoint windows are present",
+      "detail": {
+        "stale_checkpoint_windows": 0,
+        "manifest_resume_command": [
+          ".venv_diarizen/bin/python",
+          "-m",
+          "alimeeting_diarization_bench.run",
+          "--model",
+          "diarizen",
+          "--window-size",
+          "30",
+          "--sampling-mode",
+          "stratified",
+          "--total-samples",
+          "120",
+          "--seed",
+          "42",
+          "--speaker-count-mode",
+          "none",
+          "--output-dir",
+          "outputs/diarizen_uv_48",
+          "--segments-manifest",
+          "outputs/external_candidate_reproduction_plan/missing_external_candidate_windows.csv",
+          "--summary-name",
+          "missing_external_candidate_windows_summary.json",
+          "--results-name",
+          "missing_external_candidate_windows_results.csv"
+        ]
+      }
+    },
+    {
+      "status": "pass",
+      "code": "recording_stability_blockers_present",
+      "message": "recording stability blocker diagnosis exists and explains whether current candidate pools can improve non-positive recordings",
+      "detail": {
+        "status": "candidate_pool_exhausted_for_non_positive_recordings",
+        "summary": {
+          "recordings": 8,
+          "non_positive_recordings": 3,
+          "non_positive_oracle_delta_vs_baseline_pp": 0.0,
+          "global_oracle_gap_vs_current_pp": 0.012833333333333273,
+          "candidate_exhausted_oracle_gain_pp": 0.01,
+          "no_remaining_deployable_search": true,
+          "external_candidate_best_delta_vs_current_pp": 0.00016666666666498298,
+          "external_candidate_oracle_gain_vs_current_pp": 0.010999999999999899
+        },
+        "recommended_next_actions": [
+          "generate_new_correction_candidates_for_non_positive_recordings",
+          "add_stronger_speaker_activity_or_speaker_count_evidence",
+          "avoid_claiming_generalization_until_true_heldout_or_all_recording_positive_evidence_exists"
+        ]
+      }
+    }
+  ],
+  "inputs": {
+    "metrics": "outputs/system_demo/all_cached_recordings/metrics.json",
+    "selector_validation": "outputs/system_selector_validation/guarded_slow_selector_validation.json",
+    "selector_search": "outputs/system_selector_search/system_selector_policy_search.json",
+    "rare_selector_search": "outputs/rare_selector_search/rare_selector_policy_search.json",
+    "slow_sanitization_search": "outputs/slow_sanitization_search/slow_sanitization_policy_search.json",
+    "speaker_track_sanitization_search": "outputs/speaker_track_sanitization_search/speaker_track_sanitization_policy_search.json",
+    "audio_guided_sanitization_search": "outputs/audio_guided_sanitization_search/audio_guided_sanitization_policy_search.json",
+    "audio_boundary_adjustment_search": "outputs/audio_boundary_adjustment_search/audio_boundary_adjustment_policy_search.json",
+    "timeline_integrity": "outputs/timeline_integrity/final_timeline_integrity.json",
+    "clipped_baseline_audit": "outputs/clipped_baseline_audit/clipped_baseline_audit.json",
+    "baseline_leaderboard_audit": "outputs/baseline_leaderboard_audit/baseline_leaderboard_audit.json",
+    "runtime_overlay_contributions": "outputs/runtime_overlay_contributions/runtime_overlay_contributions.json",
+    "headroom_audit": "outputs/baseline_headroom_audit/baseline_headroom_audit.json",
+    "promotion_gate": "outputs/system_promotion_gate/system_promotion_gate.json",
+    "true_heldout_readiness": "outputs/true_heldout_readiness/true_heldout_readiness.json",
+    "selector_robustness_diagnosis": "outputs/selector_robustness_diagnosis/selector_robustness_diagnosis.json",
+    "batch_smoke": "outputs/realtime_batch/smoke/batch_summary.json",
+    "batch_all_cached": "outputs/realtime_batch/all_cached/batch_summary.json",
+    "batch_consistency": "outputs/realtime_batch/audit/realtime_batch_consistency.json",
+    "recording_level_stability": "outputs/recording_level_stability/recording_level_stability.json",
+    "recording_balanced_overlay_search": "outputs/recording_balanced_overlay_search/recording_balanced_overlay_search.json",
+    "recording_context_overlay_search": "outputs/recording_context_overlay_search/recording_balanced_overlay_search.json",
+    "external_candidate_surface_search": "outputs/external_candidate_surface_search/external_candidate_surface_search.json",
+    "external_candidate_source_inventory": "outputs/external_candidate_source_inventory/external_candidate_source_inventory.json",
+    "external_candidate_reproduction_plan": "outputs/external_candidate_reproduction_plan/external_candidate_reproduction_plan.json",
+    "external_candidate_missing_manifest": "outputs/external_candidate_reproduction_plan/missing_external_candidate_windows.csv",
+    "recording_stability_blockers": "outputs/recording_stability_blockers/recording_stability_blockers.json"
+  }
+}

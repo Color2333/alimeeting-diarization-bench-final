@@ -1,0 +1,118 @@
+{
+  "runtime_contract": "selector_robustness_diagnosis_no_live_calls_no_new_scoring",
+  "status": "diagnosed_not_robust",
+  "diagnosis": "selector_gain_is_real_on_development_pool_but_not_stable_across_recordings",
+  "base_selector": {
+    "status": "weak_dev_gain_not_robust",
+    "recordings": 8,
+    "positive_recordings_vs_slow": 1,
+    "positive_recording_ids": [
+      "R8003_M8001"
+    ],
+    "holdout_splits": 8,
+    "holdout_positive_splits_vs_slow": 1,
+    "bootstrap": {
+      "samples": 2000,
+      "seed": 42,
+      "threshold": 1,
+      "mean_delta_vs_slow": 0.002933054166666673,
+      "delta_ci_low": 0.0,
+      "delta_ci_high": 0.008725000000000038,
+      "prob_beats_slow": 0.6335,
+      "mean_final_der": 0.16604654166666682,
+      "mean_slow_der": 0.1689795958333332
+    },
+    "holdout_summary": {
+      "splits": 8,
+      "positive_splits_vs_slow": 1,
+      "weighted_heldout_final_der": 0.1659008333333333,
+      "weighted_heldout_slow_der": 0.16880916666666665,
+      "weighted_heldout_delta_vs_slow": 0.002908333333333346,
+      "weighted_heldout_delta_vs_slow_pp": 0.2908333333333346
+    }
+  },
+  "selector_policy_search": {
+    "holdout_splits": 8,
+    "positive_splits_vs_slow": 0,
+    "negative_split_ids": [
+      "R8009_M8020"
+    ]
+  },
+  "rare_overlay": {
+    "status": "weak_dev_gain_not_robust",
+    "runtime_selected_windows": 3,
+    "runtime_selected_recording_counts": {
+      "R8007_M8011": 2,
+      "R8009_M8019": 1
+    },
+    "runtime_max_selected_recording_share": 0.6666666666666666,
+    "runtime_max_window_delta_share": 0.8041627246925259,
+    "runtime_selected_window_details": [
+      {
+        "window_id": "R8007_M8011:30:0",
+        "base_variant": "slow_base",
+        "base_der": 0.0324,
+        "overlay_der": 0.0292,
+        "delta_vs_base_pp": 0.3199999999999998,
+        "recording_id": "R8007_M8011"
+      },
+      {
+        "window_id": "R8007_M8011:30:8",
+        "base_variant": "slow_base",
+        "base_der": 0.4266,
+        "overlay_der": 0.3416,
+        "delta_vs_base_pp": 8.499999999999996,
+        "recording_id": "R8007_M8011"
+      },
+      {
+        "window_id": "R8009_M8019:30:12",
+        "base_variant": "slow_base",
+        "base_der": 0.0333,
+        "overlay_der": 0.0158,
+        "delta_vs_base_pp": 1.7500000000000002,
+        "recording_id": "R8009_M8019"
+      }
+    ],
+    "holdout_splits": 8,
+    "holdout_positive_splits_vs_base": 0,
+    "holdout_zero_selection_splits": 7,
+    "holdout_negative_splits": [
+      {
+        "heldout_recording_id": "R8009_M8020",
+        "heldout_delta_vs_base_pp": -3.9806666666666666,
+        "heldout_selected_windows": 4,
+        "selected_policy_id": "if_audio_max_speech_sec_>=_17.12_AND_keep_fast_supported_>=_5_then_rule_recover_uncovered_only_else_default_guarded_selector"
+      }
+    ],
+    "runtime_bootstrap": {
+      "samples": 500,
+      "seed": 42,
+      "mean_delta_vs_base": 0.0008685833333333434,
+      "delta_ci_low": 0.0,
+      "delta_ci_high": 0.002416666666666678,
+      "prob_beats_base": 0.942
+    },
+    "holdout_summary": {
+      "splits": 8,
+      "positive_splits_vs_base": 0,
+      "weighted_holdout_final_der": 0.17087666666666662,
+      "weighted_holdout_base_der": 0.1659008333333333,
+      "weighted_delta_vs_base": -0.004975833333333318,
+      "weighted_delta_vs_base_pp": -0.4975833333333318
+    }
+  },
+  "blocking_reasons": [
+    "base_selector_gain_not_recording_stable",
+    "base_selector_bootstrap_lower_bound_not_positive",
+    "rare_overlay_holdout_not_positive",
+    "rare_overlay_often_selects_no_heldout_windows",
+    "rare_overlay_has_negative_heldout_split",
+    "rare_overlay_development_gain_concentrated"
+  ],
+  "next_optimization_targets": [
+    "prefer features that fire on multiple recordings rather than sparse single-recording gains",
+    "require leave-one-recording selected-window coverage before promoting a rare overlay",
+    "treat additional threshold tuning on the same 120-window pool as low-value unless it improves holdout splits",
+    "prioritize calibrated VAD/speaker-activity features or new held-out recordings for stronger selector evidence"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "fast_model": "nemo-sortformer-4spk-v1",
+  "slow_model": "diarizen-large-v2",
+  "windows": 24,
+  "patch_rows": 467,
+  "patch_csv": "outputs/segment_patches/sortformer_diarizen_24_patches.csv",
+  "window_csv": "outputs/segment_patches/sortformer_diarizen_24_patches_windows.csv",
+  "avg_fast_der": 0.23452499999999998,
+  "avg_slow_der": 0.11760416666666669,
+  "total_fast_miss_sec": 46.68,
+  "total_slow_recovers_fast_miss_sec": 42.319999999999986,
+  "fast_miss_recovery_rate": 0.9065981148243356,
+  "total_fast_fa_sec": 13.280000000000001,
+  "total_slow_suppresses_fast_fa_sec": 8.059999999999999,
+  "fast_fa_suppression_rate": 0.6069277108433734,
+  "total_slow_added_fa_sec": 6.26,
+  "total_label_correct_gain_sec": 122.91250000000002,
+  "avg_disagreement_sec": 2.4358333333333335,
+  "patch_counts": {
+    "keep_fast_supported": 57,
+    "boundary_fix_or_relabel": 168,
+    "align_slow_segment": 221,
+    "recover_slow_segment": 21
+  },
+  "true_recover_slow_segments": 21,
+  "true_recover_slow_segment_rate": 1.0,
+  "true_suppress_fast_segments": 0,
+  "true_suppress_fast_segment_rate": 0.0
+}

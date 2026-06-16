@@ -1,0 +1,21 @@
+{
+  "runtime_contract": "audio_window_energy_features_no_live_calls_no_gt_metrics",
+  "status": "pass",
+  "windows": 120,
+  "ok_rows": 120,
+  "missing_audio_rows": 0,
+  "mean_audio_speech_ratio": 0.32855333333333336,
+  "mean_audio_max_speech_ratio": 0.4482483333333333,
+  "mean_audio_channel_activity_ratio": 0.2867575,
+  "output_csv": "outputs/audio_window_features/audio_window_features_120.csv",
+  "summary_md": "outputs/audio_window_features/audio_window_features.md",
+  "feature_params": {
+    "frame_ms": 30.0,
+    "hop_ms": 10.0,
+    "noise_percentile": 20.0,
+    "threshold_margin_db": 8.0,
+    "min_threshold_db": -45.0,
+    "mixdown": "mean",
+    "channel": 0
+  }
+}

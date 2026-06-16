@@ -1,0 +1,53 @@
+{
+  "manifest_source": "shared_cached_recordings",
+  "items": [
+    {
+      "recording_id": "R8001_M8004",
+      "audio": null,
+      "label": "R8001_M8004",
+      "output_subdir": "R8001_M8004"
+    },
+    {
+      "recording_id": "R8003_M8001",
+      "audio": null,
+      "label": "R8003_M8001",
+      "output_subdir": "R8003_M8001"
+    },
+    {
+      "recording_id": "R8007_M8010",
+      "audio": null,
+      "label": "R8007_M8010",
+      "output_subdir": "R8007_M8010"
+    },
+    {
+      "recording_id": "R8007_M8011",
+      "audio": null,
+      "label": "R8007_M8011",
+      "output_subdir": "R8007_M8011"
+    },
+    {
+      "recording_id": "R8008_M8013",
+      "audio": null,
+      "label": "R8008_M8013",
+      "output_subdir": "R8008_M8013"
+    },
+    {
+      "recording_id": "R8009_M8018",
+      "audio": null,
+      "label": "R8009_M8018",
+      "output_subdir": "R8009_M8018"
+    },
+    {
+      "recording_id": "R8009_M8019",
+      "audio": null,
+      "label": "R8009_M8019",
+      "output_subdir": "R8009_M8019"
+    },
+    {
+      "recording_id": "R8009_M8020",
+      "audio": null,
+      "label": "R8009_M8020",
+      "output_subdir": "R8009_M8020"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+[
+  {
+    "recording_id": "R8007_M8011",
+    "windows": 15,
+    "fast_der": 0.30169999999999997,
+    "final_der": 0.1588,
+    "der_delta_vs_fast_pp": 14.289999999999997,
+    "first_output_latency_proxy_avg_sec": 0.38335590362548827,
+    "first_output_latency_proxy_p95_sec": 0.4245281219482422,
+    "rule_writeback_latency_proxy_avg_sec": 23.91274948120117,
+    "rule_writeback_latency_proxy_p95_sec": 25.3293399810791
+  }
+]

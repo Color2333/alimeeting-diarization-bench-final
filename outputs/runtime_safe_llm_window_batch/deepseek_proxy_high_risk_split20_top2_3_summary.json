@@ -1,0 +1,15 @@
+{
+  "windows": 2,
+  "calls": 5,
+  "successful_windows": 2,
+  "successful_calls": 5,
+  "patches": 82,
+  "split_calls": 5,
+  "window_decision_counts": {
+    "quarantine": 5
+  },
+  "avg_call_seconds": 21.473399999999998,
+  "total_tokens": 37043,
+  "output_jsonl": "outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_split20_top2_3.jsonl",
+  "output_csv": "outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_split20_top2_3.csv"
+}

@@ -1,0 +1,16 @@
+{
+  "windows": 1,
+  "calls": 3,
+  "successful_windows": 1,
+  "successful_calls": 3,
+  "patches": 45,
+  "split_calls": 3,
+  "window_decision_counts": {
+    "quarantine": 2,
+    "review": 1
+  },
+  "avg_call_seconds": 19.294,
+  "total_tokens": 19619,
+  "output_jsonl": "outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_split20_r8007_m8010_0.jsonl",
+  "output_csv": "outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_split20_r8007_m8010_0.csv"
+}

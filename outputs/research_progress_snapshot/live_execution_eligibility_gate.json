@@ -1,0 +1,171 @@
+{
+  "runtime_contract": "live_execution_eligibility_gate_no_live_calls_no_secret_values",
+  "status": "blocked_waiting_credentials_quota_or_execute_flag",
+  "source_contracts": {
+    "live_run_readiness": "live_run_readiness_non_secret_no_live_calls",
+    "live_input_integrity_audit": "live_input_integrity_audit_no_live_calls",
+    "live_command_surface_audit": "live_command_surface_audit_no_live_calls",
+    "live_runtime_environment_audit": "live_runtime_environment_audit_no_live_calls",
+    "live_execution_handoff_packet": "live_execution_handoff_packet_no_live_calls",
+    "live_execution_launcher": "live_execution_launcher_dry_run_no_live_calls",
+    "live_provider_routing_decision": "live_provider_routing_decision_no_live_calls_no_secret_values",
+    "post_live_promotion_preflight_audit": "post_live_promotion_preflight_audit_no_live_or_scoring_calls",
+    "report_ppt_traceability": "report_ppt_traceability_from_existing_artifacts_no_live_calls"
+  },
+  "summary": {
+    "eligibility_rows": 8,
+    "pass_rows": 2,
+    "blocked_rows": 6,
+    "missing_source_rows": 0,
+    "ready_to_execute_live": false,
+    "input_ready_surfaces": 3,
+    "command_ready_count": 3,
+    "credential_ready": false,
+    "known_provider_quota_blockers": 1,
+    "ready_runs": 0,
+    "selected_live_calls": 0,
+    "p0_selected_live_calls": 0,
+    "provider_route_default_scope": "none",
+    "provider_route_blocks_default": true,
+    "provider_route_deepseek_no_go": true,
+    "provider_route_default_selected_routes": 0,
+    "execute_live": false,
+    "execution_allowed": false,
+    "handoff_blocked_rows": 6,
+    "promotion_preflight_ready": false,
+    "traceability_rows": 54,
+    "traceability_fully_covered_rows": 54,
+    "live_calls_performed_by_builder": 0,
+    "no_live_calls_performed": true,
+    "no_secret_values_written": true,
+    "no_new_metric_claim": true
+  },
+  "recommended_first_execute_command": "none_default_blocked_by_provider_route",
+  "explicit_fallback_commands": [
+    "python scripts/run_live_execution_sequence.py --execute-live --live-scope qwen",
+    "python scripts/run_live_execution_sequence.py --execute-live --live-scope omni"
+  ],
+  "rows": [
+    {
+      "gate_id": "live_input_surface_gate",
+      "stage": "input_integrity",
+      "status": "pass",
+      "observed_state": "input-ready surfaces 3/3; missing inputs 0",
+      "pass_condition": "all three live input surfaces are locally complete",
+      "blocker": "",
+      "next_action": "keep input manifests unchanged unless live plan changes",
+      "source_artifacts": [
+        "outputs/research_progress_snapshot/live_input_integrity_audit.md"
+      ],
+      "source_artifacts_exist": true,
+      "claim_boundary": "input_integrity_no_live_metric_claim",
+      "live_calls_performed_by_builder": 0
+    },
+    {
+      "gate_id": "live_command_surface_gate",
+      "stage": "command_surface",
+      "status": "pass",
+      "observed_state": "command-ready 3/3; planned live calls 382",
+      "pass_condition": "all live command surfaces parse, use skip-existing, bounded retry, and no secret literals",
+      "blocker": "",
+      "next_action": "use live launcher instead of manually copying raw commands",
+      "source_artifacts": [
+        "outputs/research_progress_snapshot/live_command_surface_audit.md"
+      ],
+      "source_artifacts_exist": true,
+      "claim_boundary": "command_surface_no_live_metric_claim",
+      "live_calls_performed_by_builder": 0
+    },
+    {
+      "gate_id": "live_runtime_credential_gate",
+      "stage": "runtime_environment",
+      "status": "blocked",
+      "observed_state": "checks 14/14; credential ready False; quota blockers 1",
+      "pass_condition": "runtime checks pass, credential is present in runner env, and quota blocker count is zero",
+      "blocker": "credentials_or_quota_not_ready",
+      "next_action": "set provider credentials only in runner shell and clear/verify quota before execute-live",
+      "source_artifacts": [
+        "outputs/research_progress_snapshot/live_runtime_environment_audit.md"
+      ],
+      "source_artifacts_exist": true,
+      "claim_boundary": "runtime_env_no_secret_values_no_live_metric_claim",
+      "live_calls_performed_by_builder": 0
+    },
+    {
+      "gate_id": "live_readiness_gate",
+      "stage": "live_readiness",
+      "status": "blocked",
+      "observed_state": "ready runs 0/3; blocked runs 3",
+      "pass_condition": "all planned live runs are ready",
+      "blocker": "planned_runs_blocked",
+      "next_action": "rerun readiness after credential/quota state changes",
+      "source_artifacts": [
+        "outputs/research_progress_snapshot/live_run_readiness.md"
+      ],
+      "source_artifacts_exist": true,
+      "claim_boundary": "readiness_no_live_metric_claim",
+      "live_calls_performed_by_builder": 0
+    },
+    {
+      "gate_id": "live_launcher_execute_gate",
+      "stage": "live_launcher",
+      "status": "blocked",
+      "observed_state": "execute_live False; execution_allowed False; selected calls 0; provider default none",
+      "pass_condition": "launcher is invoked with explicit execute flag and selected scope has ready commands",
+      "blocker": "execute_live_flag_credentials_or_provider_route_missing",
+      "next_action": "do not use default P0; choose explicit qwen/omni only after credentials and route review",
+      "source_artifacts": [
+        "outputs/research_progress_snapshot/live_execution_launcher.md"
+      ],
+      "source_artifacts_exist": true,
+      "claim_boundary": "launcher_execute_requires_explicit_flag",
+      "live_calls_performed_by_builder": 0
+    },
+    {
+      "gate_id": "provider_route_gate",
+      "stage": "provider_routing",
+      "status": "blocked",
+      "observed_state": "default scope none; deepseek no-go True; default selected routes 0",
+      "pass_condition": "provider route selects a non-empty default execution scope",
+      "blocker": "default_provider_route_none",
+      "next_action": "keep default live execution blocked; use explicit qwen/omni fallback only after credentials are ready",
+      "source_artifacts": [
+        "outputs/research_progress_snapshot/live_provider_routing_decision.md"
+      ],
+      "source_artifacts_exist": true,
+      "claim_boundary": "provider_route_blocks_default_execute",
+      "live_calls_performed_by_builder": 0
+    },
+    {
+      "gate_id": "operator_handoff_gate",
+      "stage": "handoff_packet",
+      "status": "blocked",
+      "observed_state": "handoff status blocked_waiting_credentials_or_quota; blocked rows 6; P0 calls 139",
+      "pass_condition": "handoff packet is ready for live execution",
+      "blocker": "handoff_waiting_credentials_or_quota",
+      "next_action": "follow handoff packet from credential preflight through P0 DeepSeek resume",
+      "source_artifacts": [
+        "outputs/research_progress_snapshot/live_execution_handoff_packet.md"
+      ],
+      "source_artifacts_exist": true,
+      "claim_boundary": "handoff_no_live_metric_claim",
+      "live_calls_performed_by_builder": 0
+    },
+    {
+      "gate_id": "post_live_promotion_preflight_gate",
+      "stage": "post_live_promotion_preflight",
+      "status": "blocked",
+      "observed_state": "promotion review ready False; blocked preflight rows 4; traceability 54/54",
+      "pass_condition": "post-live promotion preflight is ready and report/PPT traceability remains fully covered",
+      "blocker": "post_live_evidence_missing",
+      "next_action": "keep promotion blocked until live outputs, scoring outputs, and time metrics exist",
+      "source_artifacts": [
+        "outputs/research_progress_snapshot/post_live_promotion_preflight_audit.md",
+        "outputs/research_progress_snapshot/report_ppt_traceability.md"
+      ],
+      "source_artifacts_exist": true,
+      "claim_boundary": "post_live_claim_promotion_not_live_execution_prerequisite",
+      "live_calls_performed_by_builder": 0
+    }
+  ]
+}

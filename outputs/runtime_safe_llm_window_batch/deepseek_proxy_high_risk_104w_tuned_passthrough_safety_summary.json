@@ -1,0 +1,20 @@
+{
+  "windows": 104,
+  "patches": 1917,
+  "window_decisions": "quarantine 96 / review 8",
+  "patch_decisions": "accept 323 / defer 585 / quarantine 1009",
+  "safe_accepts": 323,
+  "harmful_accepts": 0,
+  "conservative_blocks": 1551,
+  "safe_blocks": 43,
+  "missing_patch_eval": 0,
+  "window_quarantine_accept_overrides": 2,
+  "parent_window_decision_override": false,
+  "avg_call_seconds": 20.27077884615384,
+  "p95_call_seconds": 35.515,
+  "avg_correction_delay_seconds": 44.91766093711975,
+  "p95_correction_delay_seconds": 63.848572399616245,
+  "batch_jsonl": "outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_tuned.jsonl",
+  "patches_eval": "outputs/segment_patches/sortformer_diarizen_120_patches.csv",
+  "runtime_contract": "prompt_passed_runtime_evidence_audit; window_quarantine_accept_override; keep_fast_supported_passthrough_exception"
+}

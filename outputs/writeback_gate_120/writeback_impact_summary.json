@@ -1,0 +1,28 @@
+{
+  "gate_decisions": "outputs/writeback_gate_120/gate_decisions.csv",
+  "patches": "outputs/segment_patches/sortformer_diarizen_120_patches.csv",
+  "missing_eval_rows": 0,
+  "slow_avg_latency_seconds": 24.65,
+  "writeback_patches": 599,
+  "writeback_gt_overlap_sec": 2147.637,
+  "rule_auto_gt_overlap_sec": 1367.23,
+  "rule_label_only_gt_overlap_sec": 40.45,
+  "rule_recover_gt_overlap_sec": 739.957,
+  "rule_recover_unique_fast_miss_sec": 197.36,
+  "fast_miss_sec": 327.9,
+  "slow_recovered_fast_miss_sec": 308.12,
+  "rule_recover_vs_fast_miss_rate": 0.6019,
+  "rule_recover_vs_slow_recovered_miss_rate": 0.6405,
+  "fast_fa_sec": 98.96,
+  "slow_suppressed_fast_fa_sec": 41.64,
+  "category_counts": {
+    "guard_or_quarantine": 39,
+    "llm_defer_review": 88,
+    "non_accept_review": 2,
+    "rule_accept_needs_review": 761,
+    "rule_auto_writeback": 418,
+    "rule_label_only_writeback": 86,
+    "rule_recover_writeback": 95,
+    "rule_reference_only": 1175
+  }
+}

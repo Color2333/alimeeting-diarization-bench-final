@@ -1,0 +1,9 @@
+baseline_der,beats_baseline,delta_vs_baseline_pp,final_der,non_positive_vs_baseline,oracle_delta_vs_baseline_pp,oracle_der,oracle_gap_vs_current_pp,oracle_variant_counts,recording_id,source_counts,windows,windows_with_candidate_better_than_baseline,windows_with_candidate_better_than_current
+0.17919999999999997,False,0.0,0.17919999999999997,True,0.0,0.17919999999999997,0.0,{'slow_base': 15},R8001_M8004,{'slow': 15},15,0,0
+0.38214666666666663,True,2.3253333333333295,0.35889333333333334,False,2.3253333333333295,0.35889333333333334,0.0,"{'slow_base': 14, 'fast_base': 1}",R8003_M8001,"{'slow': 14, 'fast_guard_fallback': 1}",15,1,0
+0.24383333333333337,True,0.03533333333333444,0.24348000000000003,False,0.03533333333333444,0.24348000000000003,0.0,"{'slow_base': 14, 'fast_base': 1}",R8007_M8010,"{'slow': 14, 'recording_context_fast_overlay': 1}",15,1,0
+0.16468666666666668,True,0.5886666666666679,0.1588,False,0.5886666666666679,0.1588,0.0,"{'fast_base': 1, 'slow_base': 13, 'rule_recover_matched_label': 1}",R8007_M8011,"{'rare_short_slow_rule_recover': 1, 'slow': 13, 'rare_audio_rule_recover': 1}",15,2,0
+0.16668666666666668,False,0.0,0.16668666666666668,True,0.0,0.16668666666666668,0.0,{'slow_base': 15},R8008_M8013,{'slow': 15},15,0,0
+0.10335999999999998,True,0.03266666666666557,0.10303333333333332,False,0.055999999999999106,0.10279999999999999,0.02333333333333354,"{'slow_base': 13, 'rule_recover_policy_sweep_best': 1, 'fast_base': 1}",R8009_M8018,"{'slow': 14, 'recording_balanced_fast_overlay': 1}",15,2,1
+0.057679999999999995,True,0.11666666666666631,0.05651333333333333,False,0.19599999999999895,0.055720000000000006,0.07933333333333265,"{'slow_base': 13, 'fast_base': 1, 'rule_recover_matched_label': 1}",R8009_M8019,"{'slow': 14, 'rare_short_slow_rule_recover': 1}",15,2,1
+0.05278,False,0.0,0.05278,True,0.0,0.05278,0.0,{'slow_base': 15},R8009_M8020,{'slow': 15},15,0,0

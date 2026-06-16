@@ -1,0 +1,8 @@
+surface_id,kind,expected_calls,observed_calls,successful_calls,failed_calls,parent_windows,status,latency_evidence,claim_status
+deepseek_top3_parallel_smoke,llm_split20,8,8,8,0,3,completed_limited_smoke,wall 29.014s vs original max 48.465s,supporting_smoke_only
+deepseek_top4_5_quota_attempt,llm_split20,4,4,0,4,2,failed_AllocationQuota.FreeTierOnly,no generation before quota failure,blocking_full_surface_claim
+deepseek_resume_after_top3,llm_split20,139,0,0,0,0,pending_live_output,resume wall not measured yet,blocked_by_quota_or_missing_resume
+qwen_top4_5_backup,llm_split20_backup,4,4,4,0,2,completed_backup_not_latency_supporting,wall 44.024s; verdict slower_than_original_max,execution_fallback_only
+qwen_full_backup,llm_split20_backup,147,0,0,0,0,pending_live_output,full backup wall not measured yet,fallback_only_not_primary_latency_claim
+omni48_label_only,omni_label_only,96,0,0,0,0,pending_live_output,first text/total latency not measured for Omni48 yet,pending_omni48_live_outputs
+omni_realtime_single_smoke,omni_realtime_smoke,1,1,1,0,1,completed_single_latency_smoke,first_text 0.744s; total 1.356s,smoke_only_not_omni48_claim

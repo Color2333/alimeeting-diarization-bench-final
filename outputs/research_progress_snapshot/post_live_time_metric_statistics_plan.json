@@ -1,0 +1,184 @@
+{
+  "runtime_contract": "post_live_time_metric_statistics_plan_no_live_calls",
+  "status": "blocked_waiting_live_outputs",
+  "source_contracts": {
+    "runtime_latency_budget_ledger": "runtime_latency_budget_ledger_from_existing_artifacts",
+    "stage_latency_slo_audit": "stage_latency_slo_audit_from_latency_ledger_no_live_calls",
+    "latency_risk_margin_audit": "latency_risk_margin_audit_from_slo_no_live_calls",
+    "live_metric_extraction_contract": "live_metric_extraction_contract_no_live_calls",
+    "live_output_schema_contract": "live_output_schema_contract_no_live_calls",
+    "post_live_latency_claim_matrix": "post_live_latency_claim_matrix_no_live_calls",
+    "live_execution_bundle": "live_execution_bundle_no_live_calls_no_secret_values",
+    "live_output_audit": "live_output_audit_no_live_calls",
+    "post_live_claim_promotion_gate": "post_live_claim_promotion_gate_no_live_calls",
+    "report_ppt_traceability": "report_ppt_traceability_from_existing_artifacts_no_live_calls"
+  },
+  "summary": {
+    "time_stat_rows": 9,
+    "p0_time_stat_rows": 7,
+    "p1_time_stat_rows": 2,
+    "claim_now_preserve_rows": 4,
+    "blocked_or_waiting_rows": 5,
+    "fallback_only_rows": 1,
+    "label_only_rows": 1,
+    "stage_arrival_rows": 4,
+    "post_live_stat_rows": 4,
+    "formula_count": 9,
+    "claim_now_slo_pass": 4,
+    "claim_now_slo_rows": 4,
+    "guard_p95_margin_seconds": 1.151,
+    "metric_contract_count": 8,
+    "schema_contract_count": 8,
+    "latency_claim_rows": 8,
+    "planned_live_calls": 382,
+    "p0_planned_live_calls": 139,
+    "expected_live_calls": 382,
+    "missing_output_surfaces": 3,
+    "ready_to_promote_count": 0,
+    "traceability_rows": 54,
+    "live_calls_performed_by_builder": 0,
+    "no_scoring_commands_executed": true,
+    "no_secret_values_written": true,
+    "no_new_metric_claim": true
+  },
+  "rows": [
+    {
+      "time_metric_id": "fast_first_output_latency_current",
+      "priority": "P0",
+      "surface_id": "runtime_120_windows",
+      "current_state": "claim_now_preserve",
+      "statistic_family": "stage_arrival_latency",
+      "source_artifacts": [
+        "outputs/research_progress_snapshot/runtime_latency_budget_ledger.md"
+      ],
+      "statistic_formula": "avg_seconds=0.383; p95_seconds=0.445; SLO avg<=1s and p95<=1s",
+      "promotion_gate": "current_claim_now_slo",
+      "report_ppt_effect": "keep current first visible update timing claim",
+      "claim_boundary": "claim_now_latency_preserve",
+      "expected_rows": 0
+    },
+    {
+      "time_metric_id": "rule_writeback_latency_current",
+      "priority": "P0",
+      "surface_id": "runtime_120_windows",
+      "current_state": "claim_now_preserve",
+      "statistic_family": "stage_arrival_latency",
+      "source_artifacts": [
+        "outputs/research_progress_snapshot/runtime_latency_budget_ledger.md"
+      ],
+      "statistic_formula": "avg_seconds=24.647; p95_seconds=28.334; SLO avg<=30s and p95<=35s",
+      "promotion_gate": "current_claim_now_slo",
+      "report_ppt_effect": "keep bounded rule-writeback timing claim",
+      "claim_boundary": "claim_now_latency_preserve",
+      "expected_rows": 0
+    },
+    {
+      "time_metric_id": "runtime_safe_guard_latency_current",
+      "priority": "P0",
+      "surface_id": "104_proxy_flagged_windows",
+      "current_state": "claim_now_preserve_with_tight_margin_watch",
+      "statistic_family": "stage_arrival_latency",
+      "source_artifacts": [
+        "outputs/research_progress_snapshot/runtime_latency_budget_ledger.md",
+        "outputs/research_progress_snapshot/latency_risk_margin_audit.md"
+      ],
+      "statistic_formula": "avg_seconds=44.918; p95_seconds=63.849; margin_seconds=1.151",
+      "promotion_gate": "current_claim_now_slo_and_risk_watch",
+      "report_ppt_effect": "keep current guard timing claim but retain tight-margin warning",
+      "claim_boundary": "claim_now_latency_preserve_no_broader_claim",
+      "expected_rows": 0
+    },
+    {
+      "time_metric_id": "llm_review_signal_latency_current",
+      "priority": "P0",
+      "surface_id": "4_review_cases",
+      "current_state": "claim_now_memory_protection_preserve",
+      "statistic_family": "stage_arrival_latency",
+      "source_artifacts": [
+        "outputs/research_progress_snapshot/runtime_latency_budget_ledger.md"
+      ],
+      "statistic_formula": "avg_seconds=46.097; p95_seconds=55.8; memory-protection only",
+      "promotion_gate": "current_claim_now_review_only",
+      "report_ppt_effect": "keep review timing as memory-protection evidence only",
+      "claim_boundary": "review_only_no_timeline_override",
+      "expected_rows": 0
+    },
+    {
+      "time_metric_id": "deepseek_resume_call_latency_stats",
+      "priority": "P0",
+      "surface_id": "deepseek_resume_after_top3",
+      "current_state": "blocked_waiting_live_outputs",
+      "statistic_family": "llm_call_latency",
+      "source_artifacts": [
+        "outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_split20_resume_after_top3.jsonl",
+        "outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_split20_resume_after_top3_summary.json"
+      ],
+      "statistic_formula": "from successful JSONL rows: count, avg(call_seconds), p50, p95, max, wall_seconds, retry_count",
+      "promotion_gate": "deepseek_split20_resume_latency",
+      "report_ppt_effect": "feed full-surface split20 latency only after safety and comparison summaries pass",
+      "claim_boundary": "not_claimable_until_resume_output_audit_scoring_and_traceability",
+      "expected_rows": 139
+    },
+    {
+      "time_metric_id": "deepseek_parent_completion_latency_stats",
+      "priority": "P0",
+      "surface_id": "deepseek_resume_after_top3",
+      "current_state": "blocked_waiting_comparison_summary",
+      "statistic_family": "parent_window_completion_latency",
+      "source_artifacts": [
+        "outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_split20_full_live_comparison.json"
+      ],
+      "statistic_formula": "from split comparison: original_max_call_seconds vs split_max_call_seconds; parent avg/max; token_multiplier",
+      "promotion_gate": "deepseek_split20_resume_latency",
+      "report_ppt_effect": "promote split20 latency only if 104 parents / 147 calls are covered and harmful_accepts == 0",
+      "claim_boundary": "required_before_full_surface_latency_claim",
+      "expected_rows": 147
+    },
+    {
+      "time_metric_id": "qwen_backup_latency_stats",
+      "priority": "P1",
+      "surface_id": "qwen_full_backup",
+      "current_state": "fallback_only_waiting_credentials",
+      "statistic_family": "fallback_llm_call_latency",
+      "source_artifacts": [
+        "outputs/runtime_safe_llm_window_batch/qwen36_flash_high_risk_104w_split20_live.jsonl"
+      ],
+      "statistic_formula": "fallback-only: count, avg(call_seconds), p95, max, wall_seconds, token_multiplier",
+      "promotion_gate": "qwen_full_backup_claim",
+      "report_ppt_effect": "keep as fallback timing context, not primary latency claim",
+      "claim_boundary": "fallback_only_not_primary_latency_claim",
+      "expected_rows": 147
+    },
+    {
+      "time_metric_id": "omni48_label_latency_stats",
+      "priority": "P1",
+      "surface_id": "omni48_label_only",
+      "current_state": "blocked_waiting_live_outputs",
+      "statistic_family": "omni_label_call_latency",
+      "source_artifacts": [
+        "outputs/omni_guard/omni_expansion_48_live.jsonl"
+      ],
+      "statistic_formula": "label-only: avg(first_text_seconds if present), avg/p95/max(call_seconds), per-model split",
+      "promotion_gate": "omni48_label_metrics",
+      "report_ppt_effect": "report only as label latency and quality; never timeline writeback",
+      "claim_boundary": "label_only_latency_not_guard_or_timeline_claim",
+      "expected_rows": 96
+    },
+    {
+      "time_metric_id": "report_ppt_time_claim_refresh",
+      "priority": "P0",
+      "surface_id": "report_ppt",
+      "current_state": "waiting_post_live_promotion",
+      "statistic_family": "time_claim_traceability",
+      "source_artifacts": [
+        "outputs/research_progress_snapshot/post_live_latency_claim_matrix.md",
+        "outputs/research_progress_snapshot/report_ppt_traceability.md"
+      ],
+      "statistic_formula": "after refresh: latest_artifact_validation pass; traceability fully covered; no missing source rows",
+      "promotion_gate": "report_ppt_traceability_after_promotion",
+      "report_ppt_effect": "force report/PPT wording to match claim-now, promoted, fallback-only, and blocked time surfaces",
+      "claim_boundary": "report_ppt_sync_required_before_time_metric_claim_promotion",
+      "expected_rows": 0
+    }
+  ]
+}

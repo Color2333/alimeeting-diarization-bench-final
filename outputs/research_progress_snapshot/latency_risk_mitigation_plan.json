@@ -1,0 +1,154 @@
+{
+  "runtime_contract": "latency_risk_mitigation_plan_no_live_calls",
+  "status": "blocked_waiting_for_primary_live_resume",
+  "source_contracts": {
+    "latency_risk_margin": "latency_risk_margin_audit_from_slo_no_live_calls",
+    "split_policy_optimization": "split_policy_optimization_from_existing_artifacts_no_live_calls",
+    "split15_stretch_reexport_audit": "split15_stretch_reexport_audit_no_live_calls",
+    "promotion_gate": "post_live_claim_promotion_gate_no_live_calls",
+    "live_readiness": "live_run_readiness_non_secret_no_live_calls",
+    "live_execution_runbook": "live_execution_runbook_no_live_calls_no_secret_values"
+  },
+  "summary": {
+    "action_count": 6,
+    "p0_action_count": 2,
+    "active_current_claim_count": 1,
+    "mitigation_ready_count": 0,
+    "blocked_action_count": 3,
+    "fallback_only_count": 1,
+    "stretch_candidate_count": 1,
+    "guard_risk_level": "tight_margin",
+    "guard_p95_margin_seconds": 1.151,
+    "guard_p95_margin_ratio": 0.0177,
+    "primary_policy": "max20",
+    "primary_resume_calls": 139,
+    "primary_simulated_p95_call_seconds": 21.358,
+    "primary_token_multiplier": 1.118,
+    "stretch_policy": "max15",
+    "stretch_calls": 178,
+    "stretch_simulated_p95_call_seconds": 18.047,
+    "stretch_token_multiplier": 1.182,
+    "stretch_requires_reexport": true,
+    "stretch_call_delta": 31,
+    "stretch_p95_call_gain_seconds": 3.311,
+    "stretch_export_status": "pass",
+    "stretch_export_prompts": 178,
+    "stretch_export_parent_windows": 104,
+    "stretch_export_split_parent_windows": 58,
+    "stretch_export_prompt_jsonl": "outputs/research_progress_snapshot/split15_stretch_reexport_prompts.jsonl",
+    "stretch_export_live_calls_performed": 0,
+    "post_live_ready_to_promote": 0,
+    "live_ready_runs": 0,
+    "runbook_p0_planned_live_calls": 139,
+    "missing_output_surfaces": 3,
+    "live_calls_performed_by_builder": 0,
+    "no_secret_values_written": true,
+    "no_new_metric_claim": true
+  },
+  "blocked_action_ids": [
+    "deepseek_max20_resume_primary",
+    "omni48_label_only_not_guard_latency",
+    "selector_true_heldout_not_latency_mitigation"
+  ],
+  "fallback_only_action_ids": [
+    "qwen_backup_not_primary_latency"
+  ],
+  "stretch_candidate_action_ids": [
+    "max15_stretch_reexport"
+  ],
+  "actions": [
+    {
+      "action_id": "preserve_current_slo_with_guard_risk_tag",
+      "priority": "P0",
+      "action_type": "preserve_current_claim",
+      "status": "active_current_claim",
+      "decision": "Keep current 4/4 claim-now SLO rows, but label runtime-safe LLM guard as tight-margin.",
+      "success_gate": "claim_now_slo_pass == claim_now_slo_rows == 4 and guard risk remains explicit",
+      "blocked_by": "",
+      "source_artifacts": [
+        "outputs/research_progress_snapshot/stage_latency_slo_audit.json",
+        "outputs/research_progress_snapshot/latency_risk_margin_audit.json"
+      ],
+      "claim_boundary": "preserve_existing_slo_no_new_metric_claim",
+      "live_calls_performed_by_builder": 0
+    },
+    {
+      "action_id": "deepseek_max20_resume_primary",
+      "priority": "P0",
+      "action_type": "primary_latency_mitigation",
+      "status": "blocked_waiting_credentials_quota_or_live_output",
+      "decision": "Run DeepSeek max20 resume first: 139 calls / 101 parents after top3.",
+      "success_gate": "resume JSONL complete, output audit passes, safety/comparison scoring passes",
+      "blocked_by": "missing credentials or provider quota/capacity and missing resume live output",
+      "source_artifacts": [
+        "outputs/research_progress_snapshot/split20_full_live_manifest.json",
+        "outputs/research_progress_snapshot/split20_resume_export_audit.json",
+        "outputs/research_progress_snapshot/split_policy_optimization.json",
+        "outputs/research_progress_snapshot/live_execution_runbook.json"
+      ],
+      "claim_boundary": "blocked_until_full_surface_live_output_and_scoring",
+      "live_calls_performed_by_builder": 0
+    },
+    {
+      "action_id": "max15_stretch_reexport",
+      "priority": "P1",
+      "action_type": "stretch_latency_candidate",
+      "status": "prepared_export_audited_waiting_live_output",
+      "decision": "Keep max15 ready as a stretch comparison: 178 exported calls, simulated P95 18.047s.",
+      "success_gate": "fresh max15 prompt export, live output, and scoring exist before any latency claim",
+      "blocked_by": "fresh prompt export is audited, but live output and scoring are still missing",
+      "source_artifacts": [
+        "outputs/research_progress_snapshot/split_policy_optimization.json",
+        "outputs/research_progress_snapshot/split15_stretch_reexport_audit.json",
+        "outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_split_simulation_summary.json"
+      ],
+      "claim_boundary": "stretch_plan_no_new_metric_claim",
+      "live_calls_performed_by_builder": 0
+    },
+    {
+      "action_id": "qwen_backup_not_primary_latency",
+      "priority": "P1",
+      "action_type": "fallback_boundary",
+      "status": "fallback_only",
+      "decision": "Keep Qwen backup as execution/safety fallback, not as primary latency mitigation.",
+      "success_gate": "may support fallback safety only after full output and scoring",
+      "blocked_by": "top4/top5 backup wall is slower than original max and full output is missing",
+      "source_artifacts": [
+        "outputs/research_progress_snapshot/split_policy_optimization.json",
+        "outputs/runtime_safe_llm_window_batch/qwen36_flash_split20_top4_5_parallel_comparison.json"
+      ],
+      "claim_boundary": "fallback_only_not_primary_latency_claim",
+      "live_calls_performed_by_builder": 0
+    },
+    {
+      "action_id": "omni48_label_only_not_guard_latency",
+      "priority": "P1",
+      "action_type": "scope_boundary",
+      "status": "blocked_waiting_omni48_live_outputs",
+      "decision": "Keep Omni48 as label-only risk tagging; do not use it as timeline writeback or guard latency mitigation.",
+      "success_gate": "96 label-only live calls complete and Omni scoring passes",
+      "blocked_by": "missing Omni credentials or outputs",
+      "source_artifacts": [
+        "outputs/research_progress_snapshot/omni48_live_call_manifest.json",
+        "outputs/research_progress_snapshot/live_output_audit.json"
+      ],
+      "claim_boundary": "label_only_no_timeline_writeback",
+      "live_calls_performed_by_builder": 0
+    },
+    {
+      "action_id": "selector_true_heldout_not_latency_mitigation",
+      "priority": "P1",
+      "action_type": "scope_boundary",
+      "status": "blocked_waiting_valid_sealed_split",
+      "decision": "Keep selector true-heldout as generalization evidence, not as a guard latency mitigation path.",
+      "success_gate": "sealed split with at least 8 new recordings and no development overlap",
+      "blocked_by": "missing 8 new recordings",
+      "source_artifacts": [
+        "outputs/research_progress_snapshot/selector_true_heldout_split_validation.json",
+        "outputs/research_progress_snapshot/selector_true_heldout_candidate_scan.json"
+      ],
+      "claim_boundary": "data_generalization_not_latency_claim",
+      "live_calls_performed_by_builder": 0
+    }
+  ]
+}

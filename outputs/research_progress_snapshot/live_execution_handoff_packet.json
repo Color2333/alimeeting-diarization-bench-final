@@ -1,0 +1,143 @@
+{
+  "runtime_contract": "live_execution_handoff_packet_no_live_calls",
+  "secret_policy": "env_presence_only_no_secret_values_written",
+  "status": "blocked_waiting_credentials_or_quota",
+  "source_contracts": {
+    "live_run_readiness": "live_run_readiness_non_secret_no_live_calls",
+    "live_runtime_environment_audit": "live_runtime_environment_audit_no_live_calls",
+    "live_input_integrity_audit": "live_input_integrity_audit_no_live_calls",
+    "live_execution_runbook": "live_execution_runbook_no_live_calls_no_secret_values",
+    "live_command_surface_audit": "live_command_surface_audit_no_live_calls",
+    "live_execution_timing_plan": "live_execution_timing_plan_no_live_calls",
+    "live_retry_budget_audit": "live_retry_budget_audit_no_live_calls",
+    "live_token_quota_budget_audit": "live_token_quota_budget_audit_no_live_calls",
+    "live_failure_recovery_playbook": "live_failure_recovery_playbook_no_live_calls",
+    "live_scoring_readiness": "live_scoring_readiness_no_live_calls",
+    "post_live_claim_promotion_gate": "post_live_claim_promotion_gate_no_live_calls",
+    "post_live_acceptance_scorecard": "post_live_acceptance_scorecard_no_live_calls"
+  },
+  "summary": {
+    "packet_rows": 7,
+    "p0_packet_rows": 5,
+    "p1_packet_rows": 2,
+    "handoff_blocked_rows": 6,
+    "credential_ready": false,
+    "known_provider_quota_blockers": 1,
+    "ready_runs": 0,
+    "blocked_runs": 3,
+    "input_ready_surfaces": 3,
+    "command_ready_count": 3,
+    "command_count": 3,
+    "planned_live_calls": 382,
+    "p0_planned_live_calls": 139,
+    "runbook_steps": 7,
+    "deepseek_estimated_wall_seconds": 384.444,
+    "max_attempted_requests": 764,
+    "llm_retry_token_proxy_ceiling": 1658856,
+    "ready_recovery_actions": 8,
+    "missing_output_surfaces": 3,
+    "ready_to_score_steps": 0,
+    "ready_to_promote_count": 0,
+    "scorecard_rows": 9,
+    "live_calls_performed_by_builder": 0,
+    "no_secret_values_written": true,
+    "no_new_metric_claim": true
+  },
+  "rows": [
+    {
+      "packet_id": "credential_quota_preflight",
+      "priority": "P0",
+      "execution_stage": "preflight",
+      "current_state": "blocked_missing_credentials_or_provider_quota",
+      "required_action": "Set DashScope/Bailian credentials only in the runner shell, then rerun readiness/runtime environment audits.",
+      "success_gate": "credential_ready true, known provider quota blocker cleared, and no secret literal appears in artifacts",
+      "evidence_artifacts": [
+        "outputs/research_progress_snapshot/live_run_readiness.json",
+        "outputs/research_progress_snapshot/live_runtime_environment_audit.json"
+      ],
+      "claim_boundary": "no_secret_values_no_live_metric_claim"
+    },
+    {
+      "packet_id": "deepseek_resume_primary_command",
+      "priority": "P0",
+      "execution_stage": "primary_live_call",
+      "current_state": "command_ready_waiting_credentials_or_quota",
+      "required_action": "python scripts/llm_window_batch_policy_eval.py --mode call --decisions outputs/runtime_safe_policy_agent/sortformer_diarizen_120_decisions.jsonl --trigger-policy proxy_flagged_window --window-evidence outputs/deployable_abnormal_windows/sortformer_diarizen_120_proxy.csv --patch-id-file outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_patch_ids.txt --window-id-file outputs/research_progress_snapshot/split20_deepseek_resume_after_top3_window_ids.txt --max-patches-per-call 20 --model deepseek-v4-flash --parallel-workers 8 --skip-existing-output --max-call-attempts 2 --retry-backoff-seconds 2.0 --output-jsonl outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_split20_resume_after_top3.jsonl",
+      "success_gate": "139 successful resume rows, 101 parent windows, no parse/duplicate/extra/missing call errors",
+      "evidence_artifacts": [
+        "outputs/research_progress_snapshot/live_command_surface_audit.json",
+        "outputs/research_progress_snapshot/live_input_integrity_audit.json",
+        "outputs/research_progress_snapshot/split20_resume_export_audit.json"
+      ],
+      "claim_boundary": "block_or_quarantine_only_until_postrun_scoring_passes"
+    },
+    {
+      "packet_id": "deepseek_postrun_scoring_gate",
+      "priority": "P0",
+      "execution_stage": "postrun_scoring",
+      "current_state": "blocked_waiting_live_outputs",
+      "required_action": "Run output audit, DeepSeek safety scoring, full split20 comparison, then promotion gate.",
+      "success_gate": "harmful_accepts == 0, 104 parent windows, 147 split calls, token multiplier and latency summary present",
+      "evidence_artifacts": [
+        "outputs/research_progress_snapshot/live_output_audit.json",
+        "outputs/research_progress_snapshot/live_scoring_readiness.json",
+        "outputs/research_progress_snapshot/live_metric_extraction_contract.json"
+      ],
+      "claim_boundary": "post_live_metrics_only_after_output_audit_and_scoring"
+    },
+    {
+      "packet_id": "claim_preservation_boundary",
+      "priority": "P0",
+      "execution_stage": "claim_guard",
+      "current_state": "preserve_current_claims_only",
+      "required_action": "Keep current 4/4 SLO claims; do not promote split20/Omni/Qwen until scorecard and promotion gates pass.",
+      "success_gate": "ready_to_promote remains 0 until live outputs, scoring, SLO, and traceability are complete",
+      "evidence_artifacts": [
+        "outputs/research_progress_snapshot/stage_latency_slo_audit.json",
+        "outputs/research_progress_snapshot/post_live_acceptance_scorecard.json",
+        "outputs/research_progress_snapshot/post_live_claim_promotion_gate.json"
+      ],
+      "claim_boundary": "no_new_metric_claim"
+    },
+    {
+      "packet_id": "omni48_label_only_boundary",
+      "priority": "P1",
+      "execution_stage": "label_only_live_call",
+      "current_state": "command_ready_waiting_credentials",
+      "required_action": "python scripts/omni_guard_window_batch.py --input-windows-csv outputs/research_progress_snapshot/omni_expansion_manifest.csv --model qwen3.5-omni-flash --model qwen3.5-omni-plus-2026-03-15 --skip-existing-output --max-call-attempts 2 --retry-backoff-seconds 2.0 --output-jsonl outputs/omni_guard/omni_expansion_48_live.jsonl",
+      "success_gate": "96 successful Omni rows, schema_ok true, label metrics present, no timeline writeback",
+      "evidence_artifacts": [
+        "outputs/research_progress_snapshot/omni48_live_call_manifest.json",
+        "outputs/research_progress_snapshot/live_command_surface_audit.json"
+      ],
+      "claim_boundary": "label_only_no_timeline_writeback"
+    },
+    {
+      "packet_id": "qwen_full_backup_boundary",
+      "priority": "P1",
+      "execution_stage": "fallback_live_call",
+      "current_state": "fallback_only_waiting_credentials",
+      "required_action": "python scripts/llm_window_batch_policy_eval.py --mode call --decisions outputs/runtime_safe_policy_agent/sortformer_diarizen_120_decisions.jsonl --trigger-policy proxy_flagged_window --window-evidence outputs/deployable_abnormal_windows/sortformer_diarizen_120_proxy.csv --patch-id-file outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_patch_ids.txt --max-patches-per-call 20 --model qwen3.6-flash-2026-04-16 --parallel-workers 8 --skip-existing-output --max-call-attempts 2 --retry-backoff-seconds 2.0 --output-jsonl outputs/runtime_safe_llm_window_batch/qwen36_flash_high_risk_104w_split20_live.jsonl",
+      "success_gate": "fallback safety/comparison can be reported only as backup unless the promotion gate changes boundary",
+      "evidence_artifacts": [
+        "outputs/research_progress_snapshot/live_command_surface_audit.json",
+        "outputs/research_progress_snapshot/live_metric_extraction_contract.json"
+      ],
+      "claim_boundary": "fallback_only_not_primary_latency_claim"
+    },
+    {
+      "packet_id": "final_refresh_validation_sync",
+      "priority": "P0",
+      "execution_stage": "refresh_and_validate",
+      "current_state": "waiting_live_outputs",
+      "required_action": "Run python scripts/refresh_latest_research_artifacts.py after live output and scoring artifacts are present.",
+      "success_gate": "refresh pass, latest validator failed_checks empty, report/PPT traceability fully covered",
+      "evidence_artifacts": [
+        "outputs/research_progress_snapshot/refresh_latest_artifacts.json",
+        "outputs/research_progress_snapshot/latest_artifact_validation.json",
+        "outputs/research_progress_snapshot/report_ppt_traceability.json"
+      ],
+      "claim_boundary": "report_ppt_sync_required_before_claim_promotion"
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "runtime_contract": "live_input_integrity_audit_no_live_calls",
+  "status": "inputs_ready_waiting_credentials_or_quota",
+  "source_contracts": {
+    "split20_resume_export_audit": "split20_resume_export_audit_no_live_calls",
+    "split20_full_live_manifest": "split20_full_live_manifest_no_live_calls",
+    "omni48_live_call_manifest": "omni48_live_call_manifest_no_live_calls_label_only",
+    "live_run_readiness": "live_run_readiness_non_secret_no_live_calls",
+    "live_output_audit": "live_output_audit_no_live_calls",
+    "live_parallelism_sensitivity": "live_parallelism_sensitivity_no_live_calls"
+  },
+  "summary": {
+    "surface_count": 3,
+    "input_ready_surfaces": 3,
+    "p0_input_ready_surfaces": 1,
+    "missing_input_surfaces": 0,
+    "output_missing_surfaces": 3,
+    "credential_or_quota_blocked_runs": 3,
+    "deepseek_resume_prompt_calls": 139,
+    "deepseek_resume_parent_windows": 101,
+    "deepseek_resume_pending_ids": 101,
+    "qwen_full_prompt_calls": 147,
+    "qwen_full_parent_windows": 104,
+    "omni48_manifest_windows": 48,
+    "omni48_planned_calls": 96,
+    "recommended_policy": "max20",
+    "recommended_workers": 8,
+    "live_calls_performed_by_builder": 0,
+    "no_secret_values_written": true,
+    "no_new_metric_claim": true
+  },
+  "input_ready_surface_ids": [
+    "deepseek_resume_inputs",
+    "qwen_full_backup_inputs",
+    "omni48_label_only_inputs"
+  ],
+  "output_missing_surface_ids": [
+    "deepseek_resume_inputs",
+    "qwen_full_backup_inputs",
+    "omni48_label_only_inputs"
+  ],
+  "rows": [
+    {
+      "surface_id": "deepseek_resume_inputs",
+      "priority": "P0",
+      "input_type": "llm_resume_prompts",
+      "status": "input_ready_waiting_credentials_or_quota",
+      "expected_calls": 139,
+      "observed_calls": 139,
+      "expected_parent_windows": 101,
+      "observed_parent_windows": 101,
+      "parse_errors": 0,
+      "missing_input_files": [],
+      "input_consistency": true,
+      "credential_or_quota_blocker": "known_deepseek_top4_5_failure_AllocationQuota.FreeTierOnly",
+      "output_status": "missing_output",
+      "writeback_right": "block_or_quarantine_only",
+      "source_artifacts": [
+        "outputs/research_progress_snapshot/split20_resume_after_top3_export_prompts.jsonl",
+        "outputs/research_progress_snapshot/split20_deepseek_resume_after_top3_window_ids.txt",
+        "outputs/research_progress_snapshot/split20_resume_export_audit.json"
+      ],
+      "live_calls_performed_by_builder": 0,
+      "input_ready": true
+    },
+    {
+      "surface_id": "qwen_full_backup_inputs",
+      "priority": "P1",
+      "input_type": "llm_full_prompts",
+      "status": "input_ready_waiting_credentials",
+      "expected_calls": 147,
+      "observed_calls": 147,
+      "expected_parent_windows": 104,
+      "observed_parent_windows": 104,
+      "parse_errors": 0,
+      "missing_input_files": [],
+      "input_consistency": true,
+      "credential_or_quota_blocker": "missing_dashscope_or_bailian_api_key_env",
+      "output_status": "missing_output",
+      "writeback_right": "block_or_quarantine_only",
+      "source_artifacts": [
+        "outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_split20_replay_prompts.jsonl",
+        "outputs/research_progress_snapshot/split20_full_live_manifest.json"
+      ],
+      "live_calls_performed_by_builder": 0,
+      "input_ready": true
+    },
+    {
+      "surface_id": "omni48_label_only_inputs",
+      "priority": "P1",
+      "input_type": "omni_audio_manifest",
+      "status": "input_ready_waiting_credentials",
+      "expected_calls": 96,
+      "observed_calls": 96,
+      "expected_parent_windows": 48,
+      "observed_parent_windows": 48,
+      "parse_errors": 0,
+      "missing_input_files": [],
+      "input_consistency": true,
+      "credential_or_quota_blocker": "missing_dashscope_or_bailian_api_key_env",
+      "output_status": "missing_output",
+      "writeback_right": "label_only_no_timeline_writeback",
+      "source_artifacts": [
+        "outputs/research_progress_snapshot/omni_expansion_manifest.csv",
+        "outputs/research_progress_snapshot/omni48_live_call_manifest.json"
+      ],
+      "live_calls_performed_by_builder": 0,
+      "input_ready": true
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+variant,windows,successful,avg_der,median_der,avg_miss_rate,avg_fa_rate,avg_conf_rate,spk_match_rate,avg_pred_segments,avg_pred_speech_sec,fast_boundary_replaced,recover_added,recover_label_matched,recover_label_new,recover_split_segments,speaker_union_removed_segments
+fast_base,120,120,0.2856,0.2129,0.1996,0.0541,0.032,0.5417,10.88,28.303,0,0,0,0,0,0
+fast_base_speaker_union,120,120,0.2856,0.2129,0.1996,0.0541,0.032,0.5417,10.88,28.303,0,0,0,0,0,0
+rule_boundary_recover,120,120,0.3384,0.2881,0.1277,0.1614,0.0493,0.5417,11.68,53.276,403,95,70,25,95,0
+rule_boundary_recover_no_same_overlap,120,120,0.3384,0.2881,0.1277,0.1614,0.0493,0.5417,10.47,34.678,403,75,70,25,136,0
+rule_boundary_recover_speaker_union,120,120,0.3384,0.2881,0.1277,0.1614,0.0493,0.5417,8.47,34.643,403,95,70,25,95,384
+rule_recover_identity_selector,120,120,0.264,0.2016,0.1557,0.0577,0.0505,0.5417,12.33,31.131,0,93,70,25,174,0
+rule_recover_matched_label,120,120,0.2643,0.2016,0.1539,0.0602,0.0502,0.5417,11.68,32.722,0,95,70,25,95,0
+rule_recover_matched_label_speaker_union,120,120,0.2643,0.2016,0.1539,0.0602,0.0502,0.5417,10.09,30.429,0,95,70,25,95,190
+rule_recover_matched_no_same_overlap,120,120,0.2643,0.2016,0.1539,0.0601,0.0502,0.5417,12.68,30.429,0,93,70,25,216,0
+rule_recover_new_label,120,120,0.3007,0.2592,0.1417,0.1153,0.0437,0.525,11.68,32.722,0,95,0,95,95,0
+rule_recover_policy_sweep_best,120,120,0.264,0.2016,0.1557,0.0577,0.0505,0.5417,12.33,31.131,0,93,70,25,174,0
+rule_recover_uncovered_only,120,120,0.2653,0.2016,0.1595,0.0554,0.0503,0.5417,12.57,30.008,0,83,70,25,203,0
+rule_recover_uncovered_only_speaker_union,120,120,0.2653,0.2016,0.1595,0.0554,0.0503,0.5417,10.38,30.008,0,83,70,25,203,263
+slow_base,120,120,0.1688,0.1092,0.0499,0.0692,0.0498,0.675,11.32,34.952,0,0,0,0,0,0

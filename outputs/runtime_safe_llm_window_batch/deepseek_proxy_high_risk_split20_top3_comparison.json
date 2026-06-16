@@ -1,0 +1,62 @@
+{
+  "parent_windows": 3,
+  "patches": 127,
+  "original_calls": 3,
+  "split_calls": 8,
+  "original_avg_call_seconds": 44.24766666666667,
+  "split_parallel_avg_call_seconds": 25.11233333333333,
+  "original_max_call_seconds": 48.465,
+  "split_parallel_max_call_seconds": 27.795,
+  "original_total_call_seconds": 132.743,
+  "split_sequential_total_call_seconds": 165.249,
+  "parallel_avg_reduction_seconds": 19.135333333333335,
+  "parallel_avg_reduction_rate": 0.4324597153898888,
+  "token_multiplier": 1.12035590706871,
+  "harmful_accepts": 0,
+  "safe_accepts": 0,
+  "conservative_blocks": 126,
+  "window_quarantine_accept_overrides": 1,
+  "parent_window_decision_override": true,
+  "parents": [
+    {
+      "parent_window_id": "R8007_M8010:30:0",
+      "patches": 45,
+      "original_call_seconds": 48.465,
+      "original_total_tokens": 17217,
+      "split_calls": 3,
+      "split_parallel_call_seconds": 24.493,
+      "split_sequential_call_seconds": 57.882,
+      "split_total_tokens": 19619,
+      "parallel_call_reduction_seconds": 23.972000000000005,
+      "parallel_call_reduction_rate": 0.49462498710409586,
+      "token_multiplier": 1.1395132717662775
+    },
+    {
+      "parent_window_id": "R8007_M8010:30:6",
+      "patches": 40,
+      "original_call_seconds": 44.557,
+      "original_total_tokens": 17354,
+      "split_calls": 2,
+      "split_parallel_call_seconds": 27.795,
+      "split_sequential_call_seconds": 52.758,
+      "split_total_tokens": 17682,
+      "parallel_call_reduction_seconds": 16.762,
+      "parallel_call_reduction_rate": 0.3761922930179321,
+      "token_multiplier": 1.0189005416618646
+    },
+    {
+      "parent_window_id": "R8007_M8010:30:3",
+      "patches": 42,
+      "original_call_seconds": 39.721,
+      "original_total_tokens": 16004,
+      "split_calls": 3,
+      "split_parallel_call_seconds": 23.049,
+      "split_sequential_call_seconds": 54.609,
+      "split_total_tokens": 19361,
+      "parallel_call_reduction_seconds": 16.671999999999997,
+      "parallel_call_reduction_rate": 0.41972760001007026,
+      "token_multiplier": 1.2097600599850038
+    }
+  ],
+  "runtime_contract": "live_split20_top3; parent_window_quarantine_override; sequential_script_parallel_deploy_estimate"
+}

@@ -1,0 +1,137 @@
+{
+  "runtime_contract": "live_command_surface_audit_no_live_calls",
+  "secret_policy": "commands_scanned_no_secret_values_written",
+  "status": "commands_ready_waiting_credentials_or_quota",
+  "source_contracts": {
+    "live_execution_runbook": "live_execution_runbook_no_live_calls_no_secret_values",
+    "live_run_readiness": "live_run_readiness_non_secret_no_live_calls",
+    "live_input_integrity_audit": "live_input_integrity_audit_no_live_calls",
+    "live_output_audit": "live_output_audit_no_live_calls"
+  },
+  "blockers": [
+    "credentials_or_provider_quota_not_ready"
+  ],
+  "summary": {
+    "command_count": 3,
+    "command_ready_count": 3,
+    "p0_command_ready_count": 1,
+    "missing_input_commands": 0,
+    "duplicate_output_paths": 0,
+    "secret_literal_commands": 0,
+    "missing_required_flag_commands": 0,
+    "skip_existing_output_commands": 3,
+    "bounded_retry_commands": 3,
+    "planned_live_calls": 382,
+    "p0_planned_live_calls": 139,
+    "deepseek_resume_calls": 139,
+    "qwen_backup_calls": 147,
+    "omni48_calls": 96,
+    "readiness_ready_runs": 0,
+    "input_ready_surfaces": 3,
+    "missing_output_surfaces": 3,
+    "live_calls_performed_by_builder": 0,
+    "no_secret_values_written": true,
+    "no_new_metric_claim": true
+  },
+  "rows": [
+    {
+      "command_id": "deepseek_resume_primary",
+      "priority": "P0",
+      "phase": "live_call",
+      "kind": "llm_window_batch_policy_eval",
+      "status": "command_surface_ready",
+      "command_ready": true,
+      "planned_live_calls": 139,
+      "writeback_right": "block_or_quarantine_only",
+      "model_count": 1,
+      "models": [
+        "deepseek-v4-flash"
+      ],
+      "parallel_workers": "8",
+      "max_patches_per_call": "20",
+      "skip_existing_output": true,
+      "max_call_attempts": "2",
+      "retry_backoff_seconds": "2.0",
+      "input_files": [
+        "outputs/runtime_safe_policy_agent/sortformer_diarizen_120_decisions.jsonl",
+        "outputs/deployable_abnormal_windows/sortformer_diarizen_120_proxy.csv",
+        "outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_patch_ids.txt",
+        "outputs/research_progress_snapshot/split20_deepseek_resume_after_top3_window_ids.txt"
+      ],
+      "input_file_count": 4,
+      "missing_input_files": [],
+      "output_jsonl": "outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_split20_resume_after_top3.jsonl",
+      "output_parent_exists": true,
+      "output_duplicate_with": "",
+      "missing_required_flags": [],
+      "parse_error": "",
+      "secret_literal_present": false,
+      "command": "python scripts/llm_window_batch_policy_eval.py --mode call --decisions outputs/runtime_safe_policy_agent/sortformer_diarizen_120_decisions.jsonl --trigger-policy proxy_flagged_window --window-evidence outputs/deployable_abnormal_windows/sortformer_diarizen_120_proxy.csv --patch-id-file outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_patch_ids.txt --window-id-file outputs/research_progress_snapshot/split20_deepseek_resume_after_top3_window_ids.txt --max-patches-per-call 20 --model deepseek-v4-flash --parallel-workers 8 --skip-existing-output --max-call-attempts 2 --retry-backoff-seconds 2.0 --output-jsonl outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_split20_resume_after_top3.jsonl"
+    },
+    {
+      "command_id": "omni48_label_only_live",
+      "priority": "P1",
+      "phase": "live_call",
+      "kind": "omni_guard_window_batch",
+      "status": "command_surface_ready",
+      "command_ready": true,
+      "planned_live_calls": 96,
+      "writeback_right": "label_only_no_timeline_writeback",
+      "model_count": 2,
+      "models": [
+        "qwen3.5-omni-flash",
+        "qwen3.5-omni-plus-2026-03-15"
+      ],
+      "parallel_workers": "",
+      "max_patches_per_call": "",
+      "skip_existing_output": true,
+      "max_call_attempts": "2",
+      "retry_backoff_seconds": "2.0",
+      "input_files": [
+        "outputs/research_progress_snapshot/omni_expansion_manifest.csv"
+      ],
+      "input_file_count": 1,
+      "missing_input_files": [],
+      "output_jsonl": "outputs/omni_guard/omni_expansion_48_live.jsonl",
+      "output_parent_exists": true,
+      "output_duplicate_with": "",
+      "missing_required_flags": [],
+      "parse_error": "",
+      "secret_literal_present": false,
+      "command": "python scripts/omni_guard_window_batch.py --input-windows-csv outputs/research_progress_snapshot/omni_expansion_manifest.csv --model qwen3.5-omni-flash --model qwen3.5-omni-plus-2026-03-15 --skip-existing-output --max-call-attempts 2 --retry-backoff-seconds 2.0 --output-jsonl outputs/omni_guard/omni_expansion_48_live.jsonl"
+    },
+    {
+      "command_id": "qwen_full_backup_optional",
+      "priority": "P1",
+      "phase": "fallback_live_call",
+      "kind": "llm_window_batch_policy_eval",
+      "status": "command_surface_ready",
+      "command_ready": true,
+      "planned_live_calls": 147,
+      "writeback_right": "block_or_quarantine_only",
+      "model_count": 1,
+      "models": [
+        "qwen3.6-flash-2026-04-16"
+      ],
+      "parallel_workers": "8",
+      "max_patches_per_call": "20",
+      "skip_existing_output": true,
+      "max_call_attempts": "2",
+      "retry_backoff_seconds": "2.0",
+      "input_files": [
+        "outputs/runtime_safe_policy_agent/sortformer_diarizen_120_decisions.jsonl",
+        "outputs/deployable_abnormal_windows/sortformer_diarizen_120_proxy.csv",
+        "outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_patch_ids.txt"
+      ],
+      "input_file_count": 3,
+      "missing_input_files": [],
+      "output_jsonl": "outputs/runtime_safe_llm_window_batch/qwen36_flash_high_risk_104w_split20_live.jsonl",
+      "output_parent_exists": true,
+      "output_duplicate_with": "",
+      "missing_required_flags": [],
+      "parse_error": "",
+      "secret_literal_present": false,
+      "command": "python scripts/llm_window_batch_policy_eval.py --mode call --decisions outputs/runtime_safe_policy_agent/sortformer_diarizen_120_decisions.jsonl --trigger-policy proxy_flagged_window --window-evidence outputs/deployable_abnormal_windows/sortformer_diarizen_120_proxy.csv --patch-id-file outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_patch_ids.txt --max-patches-per-call 20 --model qwen3.6-flash-2026-04-16 --parallel-workers 8 --skip-existing-output --max-call-attempts 2 --retry-backoff-seconds 2.0 --output-jsonl outputs/runtime_safe_llm_window_batch/qwen36_flash_high_risk_104w_split20_live.jsonl"
+    }
+  ]
+}

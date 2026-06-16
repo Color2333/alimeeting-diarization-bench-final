@@ -1,0 +1,335 @@
+{
+  "runtime_contract": "analysis_only_recording_stability_blocker_diagnosis_no_live_calls",
+  "status": "candidate_pool_exhausted_for_non_positive_recordings",
+  "baseline_id": "slow_base",
+  "variants": [
+    "fast_base",
+    "slow_base",
+    "rule_recover_policy_sweep_best",
+    "rule_recover_matched_label",
+    "rule_recover_uncovered_only"
+  ],
+  "summary": {
+    "recordings": 8,
+    "non_positive_recordings": 3,
+    "non_positive_oracle_delta_vs_baseline_pp": 0.0,
+    "global_oracle_gap_vs_current_pp": 0.012833333333333273,
+    "candidate_exhausted_oracle_gain_pp": 0.01,
+    "no_remaining_deployable_search": true,
+    "external_candidate_best_delta_vs_current_pp": 0.00016666666666498298,
+    "external_candidate_oracle_gain_vs_current_pp": 0.010999999999999899
+  },
+  "non_positive_recordings": [
+    {
+      "recording_id": "R8001_M8004",
+      "windows": 15,
+      "final_der": 0.17919999999999997,
+      "baseline_der": 0.17919999999999997,
+      "oracle_der": 0.17919999999999997,
+      "delta_vs_baseline_pp": 0.0,
+      "oracle_delta_vs_baseline_pp": 0.0,
+      "oracle_gap_vs_current_pp": 0.0,
+      "beats_baseline": false,
+      "non_positive_vs_baseline": true,
+      "windows_with_candidate_better_than_current": 0,
+      "windows_with_candidate_better_than_baseline": 0,
+      "source_counts": {
+        "slow": 15
+      },
+      "oracle_variant_counts": {
+        "slow_base": 15
+      }
+    },
+    {
+      "recording_id": "R8008_M8013",
+      "windows": 15,
+      "final_der": 0.16668666666666668,
+      "baseline_der": 0.16668666666666668,
+      "oracle_der": 0.16668666666666668,
+      "delta_vs_baseline_pp": 0.0,
+      "oracle_delta_vs_baseline_pp": 0.0,
+      "oracle_gap_vs_current_pp": 0.0,
+      "beats_baseline": false,
+      "non_positive_vs_baseline": true,
+      "windows_with_candidate_better_than_current": 0,
+      "windows_with_candidate_better_than_baseline": 0,
+      "source_counts": {
+        "slow": 15
+      },
+      "oracle_variant_counts": {
+        "slow_base": 15
+      }
+    },
+    {
+      "recording_id": "R8009_M8020",
+      "windows": 15,
+      "final_der": 0.05278,
+      "baseline_der": 0.05278,
+      "oracle_der": 0.05278,
+      "delta_vs_baseline_pp": 0.0,
+      "oracle_delta_vs_baseline_pp": 0.0,
+      "oracle_gap_vs_current_pp": 0.0,
+      "beats_baseline": false,
+      "non_positive_vs_baseline": true,
+      "windows_with_candidate_better_than_current": 0,
+      "windows_with_candidate_better_than_baseline": 0,
+      "source_counts": {
+        "slow": 15
+      },
+      "oracle_variant_counts": {
+        "slow_base": 15
+      }
+    }
+  ],
+  "per_recording": [
+    {
+      "recording_id": "R8001_M8004",
+      "windows": 15,
+      "final_der": 0.17919999999999997,
+      "baseline_der": 0.17919999999999997,
+      "oracle_der": 0.17919999999999997,
+      "delta_vs_baseline_pp": 0.0,
+      "oracle_delta_vs_baseline_pp": 0.0,
+      "oracle_gap_vs_current_pp": 0.0,
+      "beats_baseline": false,
+      "non_positive_vs_baseline": true,
+      "windows_with_candidate_better_than_current": 0,
+      "windows_with_candidate_better_than_baseline": 0,
+      "source_counts": {
+        "slow": 15
+      },
+      "oracle_variant_counts": {
+        "slow_base": 15
+      }
+    },
+    {
+      "recording_id": "R8003_M8001",
+      "windows": 15,
+      "final_der": 0.35889333333333334,
+      "baseline_der": 0.38214666666666663,
+      "oracle_der": 0.35889333333333334,
+      "delta_vs_baseline_pp": 2.3253333333333295,
+      "oracle_delta_vs_baseline_pp": 2.3253333333333295,
+      "oracle_gap_vs_current_pp": 0.0,
+      "beats_baseline": true,
+      "non_positive_vs_baseline": false,
+      "windows_with_candidate_better_than_current": 0,
+      "windows_with_candidate_better_than_baseline": 1,
+      "source_counts": {
+        "slow": 14,
+        "fast_guard_fallback": 1
+      },
+      "oracle_variant_counts": {
+        "slow_base": 14,
+        "fast_base": 1
+      }
+    },
+    {
+      "recording_id": "R8007_M8010",
+      "windows": 15,
+      "final_der": 0.24348000000000003,
+      "baseline_der": 0.24383333333333337,
+      "oracle_der": 0.24348000000000003,
+      "delta_vs_baseline_pp": 0.03533333333333444,
+      "oracle_delta_vs_baseline_pp": 0.03533333333333444,
+      "oracle_gap_vs_current_pp": 0.0,
+      "beats_baseline": true,
+      "non_positive_vs_baseline": false,
+      "windows_with_candidate_better_than_current": 0,
+      "windows_with_candidate_better_than_baseline": 1,
+      "source_counts": {
+        "slow": 14,
+        "recording_context_fast_overlay": 1
+      },
+      "oracle_variant_counts": {
+        "slow_base": 14,
+        "fast_base": 1
+      }
+    },
+    {
+      "recording_id": "R8007_M8011",
+      "windows": 15,
+      "final_der": 0.1588,
+      "baseline_der": 0.16468666666666668,
+      "oracle_der": 0.1588,
+      "delta_vs_baseline_pp": 0.5886666666666679,
+      "oracle_delta_vs_baseline_pp": 0.5886666666666679,
+      "oracle_gap_vs_current_pp": 0.0,
+      "beats_baseline": true,
+      "non_positive_vs_baseline": false,
+      "windows_with_candidate_better_than_current": 0,
+      "windows_with_candidate_better_than_baseline": 2,
+      "source_counts": {
+        "rare_short_slow_rule_recover": 1,
+        "slow": 13,
+        "rare_audio_rule_recover": 1
+      },
+      "oracle_variant_counts": {
+        "fast_base": 1,
+        "slow_base": 13,
+        "rule_recover_matched_label": 1
+      }
+    },
+    {
+      "recording_id": "R8008_M8013",
+      "windows": 15,
+      "final_der": 0.16668666666666668,
+      "baseline_der": 0.16668666666666668,
+      "oracle_der": 0.16668666666666668,
+      "delta_vs_baseline_pp": 0.0,
+      "oracle_delta_vs_baseline_pp": 0.0,
+      "oracle_gap_vs_current_pp": 0.0,
+      "beats_baseline": false,
+      "non_positive_vs_baseline": true,
+      "windows_with_candidate_better_than_current": 0,
+      "windows_with_candidate_better_than_baseline": 0,
+      "source_counts": {
+        "slow": 15
+      },
+      "oracle_variant_counts": {
+        "slow_base": 15
+      }
+    },
+    {
+      "recording_id": "R8009_M8018",
+      "windows": 15,
+      "final_der": 0.10303333333333332,
+      "baseline_der": 0.10335999999999998,
+      "oracle_der": 0.10279999999999999,
+      "delta_vs_baseline_pp": 0.03266666666666557,
+      "oracle_delta_vs_baseline_pp": 0.055999999999999106,
+      "oracle_gap_vs_current_pp": 0.02333333333333354,
+      "beats_baseline": true,
+      "non_positive_vs_baseline": false,
+      "windows_with_candidate_better_than_current": 1,
+      "windows_with_candidate_better_than_baseline": 2,
+      "source_counts": {
+        "slow": 14,
+        "recording_balanced_fast_overlay": 1
+      },
+      "oracle_variant_counts": {
+        "slow_base": 13,
+        "rule_recover_policy_sweep_best": 1,
+        "fast_base": 1
+      }
+    },
+    {
+      "recording_id": "R8009_M8019",
+      "windows": 15,
+      "final_der": 0.05651333333333333,
+      "baseline_der": 0.057679999999999995,
+      "oracle_der": 0.055720000000000006,
+      "delta_vs_baseline_pp": 0.11666666666666631,
+      "oracle_delta_vs_baseline_pp": 0.19599999999999895,
+      "oracle_gap_vs_current_pp": 0.07933333333333265,
+      "beats_baseline": true,
+      "non_positive_vs_baseline": false,
+      "windows_with_candidate_better_than_current": 1,
+      "windows_with_candidate_better_than_baseline": 2,
+      "source_counts": {
+        "slow": 14,
+        "rare_short_slow_rule_recover": 1
+      },
+      "oracle_variant_counts": {
+        "slow_base": 13,
+        "fast_base": 1,
+        "rule_recover_matched_label": 1
+      }
+    },
+    {
+      "recording_id": "R8009_M8020",
+      "windows": 15,
+      "final_der": 0.05278,
+      "baseline_der": 0.05278,
+      "oracle_der": 0.05278,
+      "delta_vs_baseline_pp": 0.0,
+      "oracle_delta_vs_baseline_pp": 0.0,
+      "oracle_gap_vs_current_pp": 0.0,
+      "beats_baseline": false,
+      "non_positive_vs_baseline": true,
+      "windows_with_candidate_better_than_current": 0,
+      "windows_with_candidate_better_than_baseline": 0,
+      "source_counts": {
+        "slow": 15
+      },
+      "oracle_variant_counts": {
+        "slow_base": 15
+      }
+    }
+  ],
+  "top_opportunity_windows": [
+    {
+      "recording_id": "R8009_M8019",
+      "window_id": "R8009_M8019:30:11",
+      "final_der": 0.0659,
+      "baseline_der": 0.0659,
+      "oracle_der": 0.054,
+      "oracle_variant": "fast_base",
+      "gap_vs_current_pp": 1.1900000000000002,
+      "gap_vs_baseline_pp": 1.1900000000000002,
+      "final_source": "slow"
+    },
+    {
+      "recording_id": "R8009_M8018",
+      "window_id": "R8009_M8018:30:3",
+      "final_der": 0.2048,
+      "baseline_der": 0.2048,
+      "oracle_der": 0.2013,
+      "oracle_variant": "rule_recover_policy_sweep_best",
+      "gap_vs_current_pp": 0.3500000000000003,
+      "gap_vs_baseline_pp": 0.3500000000000003,
+      "final_source": "slow"
+    }
+  ],
+  "overlay_searches": [
+    {
+      "path": "outputs/recording_balanced_overlay_search/recording_balanced_overlay_search.json",
+      "exists": true,
+      "status": "no_deployable_recording_balanced_candidate_found",
+      "feature_context": "current_window_only",
+      "current_positive_recordings": 5,
+      "best_positive_recordings": 5,
+      "best_negative_recordings": 0,
+      "best_delta_vs_current_pp": 0.0029166666666663454,
+      "best_policy_id": "if_audio_max_minus_mean_p90_db_>=_5.4712_AND_seg_diff_<=_-9_then_rule_recover_policy_sweep_best_else_current_final",
+      "best_selected_windows": 1
+    },
+    {
+      "path": "outputs/recording_context_overlay_search/recording_balanced_overlay_search.json",
+      "exists": true,
+      "status": "no_deployable_recording_balanced_candidate_found",
+      "feature_context": "current_plus_previous_window",
+      "current_positive_recordings": 5,
+      "best_positive_recordings": 5,
+      "best_negative_recordings": 0,
+      "best_delta_vs_current_pp": 0.0029166666666663454,
+      "best_policy_id": "if_align_slow_segment_<=_4_AND_prev_audio_dynamic_range_db_>=_21.35_then_rule_recover_policy_sweep_best_else_current_final",
+      "best_selected_windows": 1
+    }
+  ],
+  "external_candidate_surface": {
+    "path": "outputs/external_candidate_surface_search/external_candidate_surface_search.json",
+    "exists": true,
+    "status": "external_candidate_surface_not_deployable",
+    "candidate_sources": 3,
+    "candidate_policies": 826,
+    "current_positive_recordings": 5,
+    "best_positive_recordings": 7,
+    "best_negative_recordings": 0,
+    "best_delta_vs_current_pp": 0.00016666666666498298,
+    "best_selected_windows": 2,
+    "best_source_full_coverage": true,
+    "best_source_stale_gt_mismatch_windows": 0,
+    "oracle_gain_vs_current_pp": 0.010999999999999899,
+    "oracle_positive_recordings_vs_clipped_slow": 8,
+    "oracle_negative_recordings_vs_clipped_slow": 0,
+    "deployable": false,
+    "promising_not_default_runtime": false
+  },
+  "recommended_next_actions": [
+    "generate_new_correction_candidates_for_non_positive_recordings",
+    "add_stronger_speaker_activity_or_speaker_count_evidence",
+    "avoid_claiming_generalization_until_true_heldout_or_all_recording_positive_evidence_exists"
+  ],
+  "metric_claim_boundary": "development_pool_diagnosis_not_runtime_policy_not_true_heldout"
+}

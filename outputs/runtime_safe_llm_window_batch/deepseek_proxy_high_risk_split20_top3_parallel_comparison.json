@@ -1,0 +1,52 @@
+{
+  "parent_windows": 3,
+  "patches": 127,
+  "split_calls": 8,
+  "parallel_workers": 8,
+  "measured_wall_seconds": 29.014,
+  "original_avg_call_seconds": 44.24766666666667,
+  "split_parent_avg_max_call_seconds": 24.809,
+  "original_max_call_seconds": 48.465,
+  "split_max_call_seconds": 28.986,
+  "wall_reduction_vs_original_max_rate": 0.40134117404312397,
+  "token_multiplier": 1.0999703410776076,
+  "harmful_accepts": 0,
+  "conservative_blocks": 126,
+  "parent_window_decision_override": true,
+  "parents": [
+    {
+      "parent_window_id": "R8007_M8010:30:0",
+      "patches": 45,
+      "original_call_seconds": 48.465,
+      "split_calls": 3,
+      "split_max_call_seconds": 22.141,
+      "split_total_tokens": 18588,
+      "original_total_tokens": 17217,
+      "token_multiplier": 1.0796305976650984,
+      "parallel_reduction_rate": 0.5431548540183638
+    },
+    {
+      "parent_window_id": "R8007_M8010:30:6",
+      "patches": 40,
+      "original_call_seconds": 44.557,
+      "split_calls": 2,
+      "split_max_call_seconds": 23.3,
+      "split_total_tokens": 16552,
+      "original_total_tokens": 17354,
+      "token_multiplier": 0.9537858706926357,
+      "parallel_reduction_rate": 0.47707430931166817
+    },
+    {
+      "parent_window_id": "R8007_M8010:30:3",
+      "patches": 42,
+      "original_call_seconds": 39.721,
+      "split_calls": 3,
+      "split_max_call_seconds": 28.986,
+      "split_total_tokens": 20491,
+      "original_total_tokens": 16004,
+      "token_multiplier": 1.280367408147963,
+      "parallel_reduction_rate": 0.2702600639460234
+    }
+  ],
+  "runtime_contract": "live_split20_top3_parallel; measured_parallel_wall_clock; parent_window_quarantine_override"
+}

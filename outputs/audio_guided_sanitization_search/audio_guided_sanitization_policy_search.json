@@ -1,0 +1,448 @@
+{
+  "runtime_contract": "audio_guided_slow_sanitization_no_live_calls_audio_features_only",
+  "status": "no_robust_audio_sanitizer_found",
+  "windows": 120,
+  "audio_mask_coverage": "120/120",
+  "candidate_policies": 56,
+  "no_live_calls_performed": true,
+  "no_deepseek_api_calls": true,
+  "metric_claim_boundary": "development_pool_search_not_true_heldout",
+  "best_policy": {
+    "policy_id": "slow",
+    "policy": "{\"base\": \"slow\"}",
+    "windows": 120,
+    "success_windows": 120,
+    "avg_der": 0.16880916666666668,
+    "avg_miss_rate": 0.049854166666666665,
+    "avg_fa_rate": 0.06916249999999999,
+    "avg_conf_rate": 0.049790000000000015,
+    "avg_pred_segments": 11.316666666666666,
+    "avg_pred_speech_sec": 34.95233333333332,
+    "counters": {
+      "slow_base": 120
+    }
+  },
+  "slow_baseline": {
+    "policy_id": "slow",
+    "policy": "{\"base\": \"slow\"}",
+    "windows": 120,
+    "success_windows": 120,
+    "avg_der": 0.16880916666666668,
+    "avg_miss_rate": 0.049854166666666665,
+    "avg_fa_rate": 0.06916249999999999,
+    "avg_conf_rate": 0.049790000000000015,
+    "avg_pred_segments": 11.316666666666666,
+    "avg_pred_speech_sec": 34.95233333333332,
+    "counters": {
+      "slow_base": 120
+    }
+  },
+  "best_delta_vs_slow": 0.0,
+  "best_delta_vs_slow_pp": 0.0,
+  "top_policies": [
+    {
+      "policy_id": "slow",
+      "policy": "{\"base\": \"slow\"}",
+      "windows": 120,
+      "success_windows": 120,
+      "avg_der": 0.16880916666666668,
+      "avg_miss_rate": 0.049854166666666665,
+      "avg_fa_rate": 0.06916249999999999,
+      "avg_conf_rate": 0.049790000000000015,
+      "avg_pred_segments": 11.316666666666666,
+      "avg_pred_speech_sec": 34.95233333333332,
+      "counters": {
+        "slow_base": 120
+      }
+    },
+    {
+      "policy_id": "audio_support_filter__modemax__min_support_sec0p05",
+      "policy": "{\"base\": \"audio_support_filter\", \"min_support_sec\": 0.05, \"mode\": \"max\"}",
+      "windows": 120,
+      "success_windows": 120,
+      "avg_der": 0.17151083333333336,
+      "avg_miss_rate": 0.05773333333333333,
+      "avg_fa_rate": 0.06637249999999999,
+      "avg_conf_rate": 0.047400000000000005,
+      "avg_pred_segments": 10.083333333333334,
+      "avg_pred_speech_sec": 34.558,
+      "counters": {
+        "drop_low_support_sec": 148
+      }
+    },
+    {
+      "policy_id": "audio_support_filter__modemax__min_support_sec0p1",
+      "policy": "{\"base\": \"audio_support_filter\", \"min_support_sec\": 0.1, \"mode\": \"max\"}",
+      "windows": 120,
+      "success_windows": 120,
+      "avg_der": 0.17415250000000002,
+      "avg_miss_rate": 0.062010833333333334,
+      "avg_fa_rate": 0.06550833333333331,
+      "avg_conf_rate": 0.04662833333333332,
+      "avg_pred_segments": 9.625,
+      "avg_pred_speech_sec": 34.37516666666667,
+      "counters": {
+        "drop_low_support_sec": 203
+      }
+    },
+    {
+      "policy_id": "audio_support_filter__modemax__min_support_ratio0p05",
+      "policy": "{\"base\": \"audio_support_filter\", \"min_support_ratio\": 0.05, \"mode\": \"max\"}",
+      "windows": 120,
+      "success_windows": 120,
+      "avg_der": 0.1745625000000001,
+      "avg_miss_rate": 0.05996166666666666,
+      "avg_fa_rate": 0.06656083333333333,
+      "avg_conf_rate": 0.048037500000000025,
+      "avg_pred_segments": 10.3,
+      "avg_pred_speech_sec": 34.50699999999999,
+      "counters": {
+        "drop_low_support_ratio": 122
+      }
+    },
+    {
+      "policy_id": "audio_support_filter__modemax__min_active_channels0p25",
+      "policy": "{\"base\": \"audio_support_filter\", \"min_active_channels\": 0.25, \"mode\": \"max\"}",
+      "windows": 120,
+      "success_windows": 120,
+      "avg_der": 0.17932583333333335,
+      "avg_miss_rate": 0.06718916666666666,
+      "avg_fa_rate": 0.06571916666666668,
+      "avg_conf_rate": 0.046414166666666666,
+      "avg_pred_segments": 10.008333333333333,
+      "avg_pred_speech_sec": 34.23333333333333,
+      "counters": {
+        "drop_low_active_channels": 157
+      }
+    },
+    {
+      "policy_id": "audio_support_filter__modemean__min_active_channels0p25",
+      "policy": "{\"base\": \"audio_support_filter\", \"min_active_channels\": 0.25, \"mode\": \"mean\"}",
+      "windows": 120,
+      "success_windows": 120,
+      "avg_der": 0.17932583333333335,
+      "avg_miss_rate": 0.06718916666666666,
+      "avg_fa_rate": 0.06571916666666668,
+      "avg_conf_rate": 0.046414166666666666,
+      "avg_pred_segments": 10.008333333333333,
+      "avg_pred_speech_sec": 34.23333333333333,
+      "counters": {
+        "drop_low_active_channels": 157
+      }
+    },
+    {
+      "policy_id": "audio_support_filter__modemax__min_support_sec0p2",
+      "policy": "{\"base\": \"audio_support_filter\", \"min_support_sec\": 0.2, \"mode\": \"max\"}",
+      "windows": 120,
+      "success_windows": 120,
+      "avg_der": 0.17969000000000007,
+      "avg_miss_rate": 0.070825,
+      "avg_fa_rate": 0.06368166666666665,
+      "avg_conf_rate": 0.04518083333333333,
+      "avg_pred_segments": 8.916666666666666,
+      "avg_pred_speech_sec": 34.000166666666665,
+      "counters": {
+        "drop_low_support_sec": 288
+      }
+    },
+    {
+      "policy_id": "audio_support_filter__modemax__min_support_ratio0p1",
+      "policy": "{\"base\": \"audio_support_filter\", \"min_support_ratio\": 0.1, \"mode\": \"max\"}",
+      "windows": 120,
+      "success_windows": 120,
+      "avg_der": 0.18029500000000004,
+      "avg_miss_rate": 0.0676408333333333,
+      "avg_fa_rate": 0.06565583333333332,
+      "avg_conf_rate": 0.04699666666666667,
+      "avg_pred_segments": 10.033333333333333,
+      "avg_pred_speech_sec": 34.230999999999995,
+      "counters": {
+        "drop_low_support_ratio": 154
+      }
+    },
+    {
+      "policy_id": "audio_support_filter__modemax__min_support_ratio0p1__min_segment_duration0p2",
+      "policy": "{\"base\": \"audio_support_filter\", \"min_segment_duration\": 0.2, \"min_support_ratio\": 0.1, \"mode\": \"max\"}",
+      "windows": 120,
+      "success_windows": 120,
+      "avg_der": 0.18043666666666663,
+      "avg_miss_rate": 0.068465,
+      "avg_fa_rate": 0.06526416666666665,
+      "avg_conf_rate": 0.04670333333333333,
+      "avg_pred_segments": 9.625,
+      "avg_pred_speech_sec": 34.185333333333325,
+      "counters": {
+        "drop_low_support_ratio": 103,
+        "drop_short": 100
+      }
+    },
+    {
+      "policy_id": "audio_support_filter__modemax__min_support_ratio0p1__min_support_sec0p1",
+      "policy": "{\"base\": \"audio_support_filter\", \"min_support_ratio\": 0.1, \"min_support_sec\": 0.1, \"mode\": \"max\"}",
+      "windows": 120,
+      "success_windows": 120,
+      "avg_der": 0.1814475,
+      "avg_miss_rate": 0.069795,
+      "avg_fa_rate": 0.06507249999999996,
+      "avg_conf_rate": 0.04657416666666667,
+      "avg_pred_segments": 9.55,
+      "avg_pred_speech_sec": 34.1245,
+      "counters": {
+        "drop_low_support_sec": 203,
+        "drop_low_support_ratio": 9
+      }
+    },
+    {
+      "policy_id": "audio_support_filter__modemean__min_support_sec0p05",
+      "policy": "{\"base\": \"audio_support_filter\", \"min_support_sec\": 0.05, \"mode\": \"mean\"}",
+      "windows": 120,
+      "success_windows": 120,
+      "avg_der": 0.18369666666666673,
+      "avg_miss_rate": 0.07475416666666666,
+      "avg_fa_rate": 0.06376416666666665,
+      "avg_conf_rate": 0.04517166666666665,
+      "avg_pred_segments": 9.475,
+      "avg_pred_speech_sec": 33.97549999999999,
+      "counters": {
+        "drop_low_support_sec": 221
+      }
+    },
+    {
+      "policy_id": "audio_support_filter__modemax__min_support_ratio0p1__min_support_sec0p2",
+      "policy": "{\"base\": \"audio_support_filter\", \"min_support_ratio\": 0.1, \"min_support_sec\": 0.2, \"mode\": \"max\"}",
+      "windows": 120,
+      "success_windows": 120,
+      "avg_der": 0.18439416666666672,
+      "avg_miss_rate": 0.07562500000000003,
+      "avg_fa_rate": 0.06348916666666665,
+      "avg_conf_rate": 0.04527833333333333,
+      "avg_pred_segments": 8.883333333333333,
+      "avg_pred_speech_sec": 33.841833333333334,
+      "counters": {
+        "drop_low_support_sec": 288,
+        "drop_low_support_ratio": 4
+      }
+    },
+    {
+      "policy_id": "audio_support_filter__modemean__min_support_sec0p1",
+      "policy": "{\"base\": \"audio_support_filter\", \"min_support_sec\": 0.1, \"mode\": \"mean\"}",
+      "windows": 120,
+      "success_windows": 120,
+      "avg_der": 0.19081750000000003,
+      "avg_miss_rate": 0.08436666666666667,
+      "avg_fa_rate": 0.062027499999999965,
+      "avg_conf_rate": 0.04442250000000001,
+      "avg_pred_segments": 8.866666666666667,
+      "avg_pred_speech_sec": 33.59566666666665,
+      "counters": {
+        "drop_low_support_sec": 294
+      }
+    },
+    {
+      "policy_id": "audio_support_filter__modemax__min_active_channels0p5",
+      "policy": "{\"base\": \"audio_support_filter\", \"min_active_channels\": 0.5, \"mode\": \"max\"}",
+      "windows": 120,
+      "success_windows": 120,
+      "avg_der": 0.19476500000000005,
+      "avg_miss_rate": 0.08667666666666668,
+      "avg_fa_rate": 0.06465083333333331,
+      "avg_conf_rate": 0.04343749999999999,
+      "avg_pred_segments": 9.6,
+      "avg_pred_speech_sec": 33.42566666666668,
+      "counters": {
+        "drop_low_active_channels": 206
+      }
+    },
+    {
+      "policy_id": "audio_support_filter__modemean__min_active_channels0p5",
+      "policy": "{\"base\": \"audio_support_filter\", \"min_active_channels\": 0.5, \"mode\": \"mean\"}",
+      "windows": 120,
+      "success_windows": 120,
+      "avg_der": 0.19476500000000005,
+      "avg_miss_rate": 0.08667666666666668,
+      "avg_fa_rate": 0.06465083333333331,
+      "avg_conf_rate": 0.04343749999999999,
+      "avg_pred_segments": 9.6,
+      "avg_pred_speech_sec": 33.42566666666668,
+      "counters": {
+        "drop_low_active_channels": 206
+      }
+    },
+    {
+      "policy_id": "audio_support_filter__modemax__min_support_sec0p5",
+      "policy": "{\"base\": \"audio_support_filter\", \"min_support_sec\": 0.5, \"mode\": \"max\"}",
+      "windows": 120,
+      "success_windows": 120,
+      "avg_der": 0.20225083333333335,
+      "avg_miss_rate": 0.10547000000000005,
+      "avg_fa_rate": 0.05649750000000001,
+      "avg_conf_rate": 0.040289166666666675,
+      "avg_pred_segments": 6.841666666666667,
+      "avg_pred_speech_sec": 32.51783333333334,
+      "counters": {
+        "drop_low_support_sec": 537
+      }
+    },
+    {
+      "policy_id": "audio_support_filter__modemax__min_support_ratio0p1__min_support_sec0p5",
+      "policy": "{\"base\": \"audio_support_filter\", \"min_support_ratio\": 0.1, \"min_support_sec\": 0.5, \"mode\": \"max\"}",
+      "windows": 120,
+      "success_windows": 120,
+      "avg_der": 0.20392083333333338,
+      "avg_miss_rate": 0.10722166666666672,
+      "avg_fa_rate": 0.05641583333333335,
+      "avg_conf_rate": 0.040289166666666675,
+      "avg_pred_segments": 6.833333333333333,
+      "avg_pred_speech_sec": 32.46166666666667,
+      "counters": {
+        "drop_low_support_sec": 537,
+        "drop_low_support_ratio": 1
+      }
+    },
+    {
+      "policy_id": "audio_support_filter__modemax__min_support_ratio0p2",
+      "policy": "{\"base\": \"audio_support_filter\", \"min_support_ratio\": 0.2, \"mode\": \"max\"}",
+      "windows": 120,
+      "success_windows": 120,
+      "avg_der": 0.21031500000000003,
+      "avg_miss_rate": 0.10558416666666669,
+      "avg_fa_rate": 0.06364916666666666,
+      "avg_conf_rate": 0.04107916666666666,
+      "avg_pred_segments": 9.491666666666667,
+      "avg_pred_speech_sec": 32.65033333333333,
+      "counters": {
+        "drop_low_support_ratio": 219
+      }
+    },
+    {
+      "policy_id": "audio_support_filter__modemax__min_support_ratio0p2__min_segment_duration0p2",
+      "policy": "{\"base\": \"audio_support_filter\", \"min_segment_duration\": 0.2, \"min_support_ratio\": 0.2, \"mode\": \"max\"}",
+      "windows": 120,
+      "success_windows": 120,
+      "avg_der": 0.21052583333333333,
+      "avg_miss_rate": 0.10640000000000002,
+      "avg_fa_rate": 0.06328833333333331,
+      "avg_conf_rate": 0.040833333333333326,
+      "avg_pred_segments": 9.1,
+      "avg_pred_speech_sec": 32.6065,
+      "counters": {
+        "drop_low_support_ratio": 166,
+        "drop_short": 100
+      }
+    },
+    {
+      "policy_id": "audio_support_filter__modemax__min_support_ratio0p2__min_support_sec0p1",
+      "policy": "{\"base\": \"audio_support_filter\", \"min_support_ratio\": 0.2, \"min_support_sec\": 0.1, \"mode\": \"max\"}",
+      "windows": 120,
+      "success_windows": 120,
+      "avg_der": 0.21075250000000004,
+      "avg_miss_rate": 0.10660750000000004,
+      "avg_fa_rate": 0.06336583333333332,
+      "avg_conf_rate": 0.04077249999999999,
+      "avg_pred_segments": 9.158333333333333,
+      "avg_pred_speech_sec": 32.59983333333332,
+      "counters": {
+        "drop_low_support_sec": 203,
+        "drop_low_support_ratio": 56
+      }
+    }
+  ],
+  "holdout": [
+    {
+      "heldout_recording_id": "R8001_M8004",
+      "selected_policy_id": "slow",
+      "train_der": 0.16732476190476192,
+      "heldout_der": 0.17919999999999994,
+      "heldout_slow_der": 0.17919999999999994,
+      "heldout_delta_vs_slow": 0.0,
+      "heldout_delta_vs_slow_pp": 0.0,
+      "heldout_beats_slow": false
+    },
+    {
+      "heldout_recording_id": "R8003_M8001",
+      "selected_policy_id": "slow",
+      "train_der": 0.13832380952380946,
+      "heldout_der": 0.38220666666666664,
+      "heldout_slow_der": 0.38220666666666664,
+      "heldout_delta_vs_slow": 0.0,
+      "heldout_delta_vs_slow_pp": 0.0,
+      "heldout_beats_slow": false
+    },
+    {
+      "heldout_recording_id": "R8007_M8010",
+      "selected_policy_id": "slow",
+      "train_der": 0.1580933333333333,
+      "heldout_der": 0.24382,
+      "heldout_slow_der": 0.24382,
+      "heldout_delta_vs_slow": 0.0,
+      "heldout_delta_vs_slow_pp": 0.0,
+      "heldout_beats_slow": false
+    },
+    {
+      "heldout_recording_id": "R8007_M8011",
+      "selected_policy_id": "slow",
+      "train_der": 0.16939714285714288,
+      "heldout_der": 0.1646933333333333,
+      "heldout_slow_der": 0.1646933333333333,
+      "heldout_delta_vs_slow": 0.0,
+      "heldout_delta_vs_slow_pp": 0.0,
+      "heldout_beats_slow": false
+    },
+    {
+      "heldout_recording_id": "R8008_M8013",
+      "selected_policy_id": "slow",
+      "train_der": 0.16911238095238101,
+      "heldout_der": 0.16668666666666665,
+      "heldout_slow_der": 0.16668666666666665,
+      "heldout_delta_vs_slow": 0.0,
+      "heldout_delta_vs_slow_pp": 0.0,
+      "heldout_beats_slow": false
+    },
+    {
+      "heldout_recording_id": "R8009_M8018",
+      "selected_policy_id": "slow",
+      "train_der": 0.17815809523809525,
+      "heldout_der": 0.10336666666666665,
+      "heldout_slow_der": 0.10336666666666665,
+      "heldout_delta_vs_slow": 0.0,
+      "heldout_delta_vs_slow_pp": 0.0,
+      "heldout_beats_slow": false
+    },
+    {
+      "heldout_recording_id": "R8009_M8019",
+      "selected_policy_id": "slow",
+      "train_der": 0.18468380952380953,
+      "heldout_der": 0.057686666666666664,
+      "heldout_slow_der": 0.057686666666666664,
+      "heldout_delta_vs_slow": 0.0,
+      "heldout_delta_vs_slow_pp": 0.0,
+      "heldout_beats_slow": false
+    },
+    {
+      "heldout_recording_id": "R8009_M8020",
+      "selected_policy_id": "slow",
+      "train_der": 0.18538,
+      "heldout_der": 0.05281333333333333,
+      "heldout_slow_der": 0.05281333333333333,
+      "heldout_delta_vs_slow": 0.0,
+      "heldout_delta_vs_slow_pp": 0.0,
+      "heldout_beats_slow": false
+    }
+  ],
+  "holdout_summary": {
+    "splits": 8,
+    "positive_splits_vs_slow": 0,
+    "weighted_holdout_final_der": 0.16880916666666665,
+    "weighted_holdout_slow_der": 0.16880916666666665,
+    "weighted_delta_vs_slow": 0.0,
+    "weighted_delta_vs_slow_pp": 0.0
+  },
+  "bootstrap": {
+    "samples": 500,
+    "seed": 42,
+    "mean_delta_vs_slow": 0.0,
+    "delta_ci_low": 0.0,
+    "delta_ci_high": 0.0,
+    "prob_beats_slow": 0.0
+  }
+}

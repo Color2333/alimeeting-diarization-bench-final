@@ -1,0 +1,128 @@
+{
+  "runtime_contract": "post_live_claim_promotion_receipt_audit_no_live_or_scoring_or_claim_writes_no_secret_values",
+  "status": "blocked_no_claim_promotion_receipt",
+  "source_contracts": {
+    "post_live_claim_promotion_gate": "post_live_claim_promotion_gate_no_live_calls",
+    "post_live_promotion_preflight_audit": "post_live_promotion_preflight_audit_no_live_or_scoring_calls",
+    "post_live_scoring_receipt_audit": "post_live_scoring_receipt_audit_no_live_or_scoring_calls_no_secret_values",
+    "post_live_time_metric_receipt_audit": "post_live_time_metric_receipt_audit_no_live_or_scoring_calls_no_secret_values",
+    "report_ppt_traceability": "report_ppt_traceability_from_existing_artifacts_no_live_calls",
+    "latest_artifact_validation": "latest_research_artifact_validation"
+  },
+  "summary": {
+    "receipt_rows": 6,
+    "pass_rows": 3,
+    "blocked_rows": 3,
+    "missing_source_rows": 0,
+    "promotion_gate_count": 8,
+    "ready_to_promote_count": 0,
+    "blocked_promotion_count": 5,
+    "fallback_only_count": 1,
+    "preflight_ready": false,
+    "promotion_preflight_pass_rows": 2,
+    "promotion_preflight_blocked_rows": 4,
+    "scoring_receipt_ready": false,
+    "time_metric_receipt_ready": false,
+    "computed_time_metric_rows": 0,
+    "report_ppt_synced": true,
+    "validation_passed": true,
+    "validation_failed_checks": 0,
+    "validation_non_self_failed_checks": 0,
+    "ready_for_claim_write": false,
+    "traceability_rows": 54,
+    "traceability_fully_covered_rows": 54,
+    "live_calls_performed_by_builder": 0,
+    "no_live_calls_performed_by_auditor": true,
+    "no_scoring_commands_executed_by_auditor": true,
+    "no_claim_writes_performed_by_auditor": true,
+    "no_secret_values_written": true,
+    "no_new_metric_claim": true
+  },
+  "rows": [
+    {
+      "receipt_id": "promotion_gate_presence",
+      "status": "pass",
+      "observed_state": "gate status pass; gates 8; missing sources 0",
+      "success_gate": "promotion gate exists, sources are present, and policy is auditable",
+      "blocker": "",
+      "next_action": "keep promotion gate in the refresh chain before any report/PPT promotion",
+      "source_artifacts": [
+        "outputs/research_progress_snapshot/post_live_claim_promotion_gate.md"
+      ],
+      "source_artifacts_exist": true,
+      "claim_boundary": "promotion_gate_presence_no_claim_write",
+      "live_calls_performed_by_builder": 0
+    },
+    {
+      "receipt_id": "promotion_decision_receipt",
+      "status": "blocked",
+      "observed_state": "ready to promote 0; blocked 5; fallback-only 1",
+      "success_gate": "one or more gates are ready_to_promote after live/scoring/time evidence",
+      "blocker": "no_post_live_gate_ready_to_promote",
+      "next_action": "preserve current claims until live output, scoring, time metrics, and preflight pass",
+      "source_artifacts": [
+        "outputs/research_progress_snapshot/post_live_claim_promotion_gate.md"
+      ],
+      "source_artifacts_exist": true,
+      "claim_boundary": "no_claim_promotion_without_ready_gate",
+      "live_calls_performed_by_builder": 0
+    },
+    {
+      "receipt_id": "promotion_preflight_receipt",
+      "status": "blocked",
+      "observed_state": "preflight ready False; pass rows 2; blocked rows 4",
+      "success_gate": "promotion preflight has no blocked rows and is ready for review",
+      "blocker": "promotion_preflight_not_ready",
+      "next_action": "clear live/scoring/time blockers before claim promotion",
+      "source_artifacts": [
+        "outputs/research_progress_snapshot/post_live_promotion_preflight_audit.md"
+      ],
+      "source_artifacts_exist": true,
+      "claim_boundary": "preflight_required_before_claim_write",
+      "live_calls_performed_by_builder": 0
+    },
+    {
+      "receipt_id": "scoring_and_time_receipts",
+      "status": "blocked",
+      "observed_state": "scoring ready False; time ready False; computed time rows 0",
+      "success_gate": "scoring receipt and time metric receipt are both promotion-ready",
+      "blocker": "scoring_or_time_receipts_not_ready",
+      "next_action": "run scoring and time extraction only after live outputs are complete",
+      "source_artifacts": [
+        "outputs/research_progress_snapshot/post_live_scoring_receipt_audit.md",
+        "outputs/research_progress_snapshot/post_live_time_metric_receipt_audit.md"
+      ],
+      "source_artifacts_exist": true,
+      "claim_boundary": "scoring_and_time_receipts_required_before_claim_write",
+      "live_calls_performed_by_builder": 0
+    },
+    {
+      "receipt_id": "report_ppt_traceability_receipt",
+      "status": "pass",
+      "observed_state": "traceability 54/54; missing report 0; missing PPT 0",
+      "success_gate": "report/PPT/source traceability is fully covered",
+      "blocker": "",
+      "next_action": "rerun report/PPT refresh after any promoted claim wording changes",
+      "source_artifacts": [
+        "outputs/research_progress_snapshot/report_ppt_traceability.md"
+      ],
+      "source_artifacts_exist": true,
+      "claim_boundary": "report_ppt_sync_required_before_claim_write",
+      "live_calls_performed_by_builder": 0
+    },
+    {
+      "receipt_id": "validation_after_promotion_receipt",
+      "status": "pass",
+      "observed_state": "validation status pass; failed checks 0; non-self failed checks 0",
+      "success_gate": "latest artifact validation passes after promotion state is represented",
+      "blocker": "",
+      "next_action": "rerun validation after report/PPT and traceability changes",
+      "source_artifacts": [
+        "outputs/research_progress_snapshot/latest_artifact_validation.md"
+      ],
+      "source_artifacts_exist": true,
+      "claim_boundary": "validation_required_before_claim_write",
+      "live_calls_performed_by_builder": 0
+    }
+  ]
+}

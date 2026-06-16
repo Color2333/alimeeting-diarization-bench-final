@@ -1,0 +1,141 @@
+{
+  "runtime_contract": "recording_level_stability_no_live_calls_no_new_model_inference",
+  "status": "weak_recording_level_gain_not_robust",
+  "baseline_id": "slow_base",
+  "summary": {
+    "recordings": 8,
+    "windows": 120,
+    "positive_recordings": 5,
+    "mean_final_der": 0.16492333333333334,
+    "mean_baseline_der": 0.16879666666666665,
+    "mean_delta_vs_baseline": 0.003873333333333312,
+    "mean_delta_vs_baseline_pp": 0.3873333333333312,
+    "all_recordings_positive": false
+  },
+  "recording_bootstrap": {
+    "samples": 5000,
+    "seed": 42,
+    "mean_delta_vs_baseline": 0.0038519408333333063,
+    "mean_delta_vs_baseline_pp": 0.3851940833333306,
+    "delta_ci_low": 0.00019000000000002348,
+    "delta_ci_high": 0.009686666666666621,
+    "delta_ci_low_pp": 0.01900000000000235,
+    "delta_ci_high_pp": 0.9686666666666621,
+    "prob_beats_baseline": 0.9994,
+    "mean_final_der": 0.16434053883333377,
+    "mean_baseline_der": 0.16819247966666742
+  },
+  "per_recording": [
+    {
+      "recording_id": "R8001_M8004",
+      "windows": 15,
+      "final_der": 0.17919999999999997,
+      "baseline_der": 0.17919999999999997,
+      "delta_vs_baseline": 0.0,
+      "delta_vs_baseline_pp": 0.0,
+      "beats_baseline": false,
+      "ties_or_no_gain": true,
+      "source_counts": {
+        "slow": 15
+      }
+    },
+    {
+      "recording_id": "R8003_M8001",
+      "windows": 15,
+      "final_der": 0.35889333333333334,
+      "baseline_der": 0.38214666666666663,
+      "delta_vs_baseline": 0.023253333333333293,
+      "delta_vs_baseline_pp": 2.3253333333333295,
+      "beats_baseline": true,
+      "ties_or_no_gain": false,
+      "source_counts": {
+        "slow": 14,
+        "fast_guard_fallback": 1
+      }
+    },
+    {
+      "recording_id": "R8007_M8010",
+      "windows": 15,
+      "final_der": 0.24348000000000003,
+      "baseline_der": 0.24383333333333337,
+      "delta_vs_baseline": 0.0003533333333333444,
+      "delta_vs_baseline_pp": 0.03533333333333444,
+      "beats_baseline": true,
+      "ties_or_no_gain": false,
+      "source_counts": {
+        "slow": 14,
+        "recording_context_fast_overlay": 1
+      }
+    },
+    {
+      "recording_id": "R8007_M8011",
+      "windows": 15,
+      "final_der": 0.1588,
+      "baseline_der": 0.16468666666666668,
+      "delta_vs_baseline": 0.005886666666666679,
+      "delta_vs_baseline_pp": 0.5886666666666679,
+      "beats_baseline": true,
+      "ties_or_no_gain": false,
+      "source_counts": {
+        "rare_short_slow_rule_recover": 1,
+        "slow": 13,
+        "rare_audio_rule_recover": 1
+      }
+    },
+    {
+      "recording_id": "R8008_M8013",
+      "windows": 15,
+      "final_der": 0.16668666666666668,
+      "baseline_der": 0.16668666666666668,
+      "delta_vs_baseline": 0.0,
+      "delta_vs_baseline_pp": 0.0,
+      "beats_baseline": false,
+      "ties_or_no_gain": true,
+      "source_counts": {
+        "slow": 15
+      }
+    },
+    {
+      "recording_id": "R8009_M8018",
+      "windows": 15,
+      "final_der": 0.10303333333333332,
+      "baseline_der": 0.10335999999999998,
+      "delta_vs_baseline": 0.00032666666666665567,
+      "delta_vs_baseline_pp": 0.03266666666666557,
+      "beats_baseline": true,
+      "ties_or_no_gain": false,
+      "source_counts": {
+        "slow": 14,
+        "recording_balanced_fast_overlay": 1
+      }
+    },
+    {
+      "recording_id": "R8009_M8019",
+      "windows": 15,
+      "final_der": 0.05651333333333333,
+      "baseline_der": 0.057679999999999995,
+      "delta_vs_baseline": 0.001166666666666663,
+      "delta_vs_baseline_pp": 0.11666666666666631,
+      "beats_baseline": true,
+      "ties_or_no_gain": false,
+      "source_counts": {
+        "slow": 14,
+        "rare_short_slow_rule_recover": 1
+      }
+    },
+    {
+      "recording_id": "R8009_M8020",
+      "windows": 15,
+      "final_der": 0.05278,
+      "baseline_der": 0.05278,
+      "delta_vs_baseline": 0.0,
+      "delta_vs_baseline_pp": 0.0,
+      "beats_baseline": false,
+      "ties_or_no_gain": true,
+      "source_counts": {
+        "slow": 15
+      }
+    }
+  ],
+  "metric_claim_boundary": "development_recording_level_resampling_not_true_heldout"
+}

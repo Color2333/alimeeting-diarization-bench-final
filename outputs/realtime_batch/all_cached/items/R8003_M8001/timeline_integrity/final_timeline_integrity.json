@@ -1,0 +1,21 @@
+{
+  "runtime_contract": "timeline_integrity_no_gt_no_live_calls",
+  "status": "pass",
+  "summary": {
+    "timeline_rows": 164,
+    "csv_rows": 164,
+    "rttm_rows": 164,
+    "window_rows": 15,
+    "window_segments_total": 164,
+    "same_speaker_overlap_count": 0,
+    "fail_count": 0,
+    "warn_count": 0
+  },
+  "inputs": {
+    "timeline_json": "outputs/realtime_batch/all_cached/items/R8003_M8001/final_timeline.json",
+    "timeline_csv": "outputs/realtime_batch/all_cached/items/R8003_M8001/final_timeline.csv",
+    "timeline_rttm": "outputs/realtime_batch/all_cached/items/R8003_M8001/final_timeline.rttm",
+    "window_metrics": "outputs/realtime_batch/all_cached/items/R8003_M8001/window_metrics.json"
+  },
+  "issues": []
+}

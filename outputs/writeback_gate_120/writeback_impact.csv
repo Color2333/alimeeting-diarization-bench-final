@@ -1,0 +1,9 @@
+gate_category,patches,windows,duration_sec,gt_overlap_sec,true_supported_patches,true_supported_rate,patch_types
+guard_or_quarantine,39,2,109.15,61.128,24,0.6154,align_slow_segment 10 / boundary_fix_or_relabel 27 / recover_slow_segment 2
+llm_defer_review,88,46,69.03,81.56,80,0.9091,recover_slow_segment 74 / suppress_fast_candidate 14
+non_accept_review,2,2,1.34,0.287,0,0.0,recover_slow_segment 2
+rule_accept_needs_review,761,95,2058.02,2995.34,750,0.9855,boundary_fix_or_relabel 605 / keep_fast_supported 152 / suppress_fast_candidate 4
+rule_auto_writeback,418,54,1214.57,1367.23,417,0.9976,boundary_fix_or_relabel 273 / keep_fast_supported 145
+rule_label_only_writeback,86,38,27.3,40.45,83,0.9651,boundary_fix_or_relabel 86
+rule_recover_writeback,95,47,530.28,739.957,95,1.0,recover_slow_segment 95
+rule_reference_only,1175,118,3581.0,5168.888,1168,0.994,align_slow_segment 1175

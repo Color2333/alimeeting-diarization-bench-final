@@ -1,0 +1,121 @@
+{
+  "runtime_contract": "external_candidate_reproduction_plan_no_inference",
+  "status": "ready_for_default_runtime_promotion_check",
+  "summary": {
+    "source_id": "diarizen-large-v2/diarizen-large-v2/spk_none::outputs/diarizen_uv_48/diarizen-large-v2/default__spk_none",
+    "source_path": "outputs/diarizen_uv_48/diarizen-large-v2/default__spk_none/summary.json",
+    "source_output_base": "outputs/diarizen_uv_48",
+    "expected_windows": 120,
+    "covered_windows": 120,
+    "missing_windows": 0,
+    "stale_checkpoint_windows": 0,
+    "best_policy_selected_windows": 2,
+    "missing_best_policy_windows": 0,
+    "checkpoint_path": "outputs/diarizen_uv_48/diarizen-large-v2/default__spk_none/checkpoint.json",
+    "checkpoint_exists": true,
+    "checkpoint_entries": 120,
+    "resume_supported_by_checkpoint": true,
+    "avg_observed_latency_sec": 20.5,
+    "estimated_remaining_latency_sec": 0.0,
+    "best_delta_vs_current_pp": 0.00016666666666498298,
+    "best_positive_recordings": 7,
+    "best_overlay_losses": 0,
+    "source_full_coverage": true
+  },
+  "promotion_gates": [
+    {
+      "gate_id": "source_full_current_pool_coverage",
+      "status": "pass",
+      "evidence": "120/120 windows covered"
+    },
+    {
+      "gate_id": "best_policy_windows_available",
+      "status": "pass",
+      "evidence": "2/2 selected windows available"
+    },
+    {
+      "gate_id": "meaningful_development_delta",
+      "status": "blocked",
+      "evidence": "0.00016666666666498298pp vs minimum 0.05pp"
+    },
+    {
+      "gate_id": "zero_overlay_losses",
+      "status": "pass",
+      "evidence": "0"
+    },
+    {
+      "gate_id": "zero_negative_recordings",
+      "status": "pass",
+      "evidence": "0"
+    }
+  ],
+  "manifest_resume_command": [
+    ".venv_diarizen/bin/python",
+    "-m",
+    "alimeeting_diarization_bench.run",
+    "--model",
+    "diarizen",
+    "--window-size",
+    "30",
+    "--sampling-mode",
+    "stratified",
+    "--total-samples",
+    "120",
+    "--seed",
+    "42",
+    "--speaker-count-mode",
+    "none",
+    "--output-dir",
+    "outputs/diarizen_uv_48",
+    "--segments-manifest",
+    "outputs/external_candidate_reproduction_plan/missing_external_candidate_windows.csv",
+    "--summary-name",
+    "missing_external_candidate_windows_summary.json",
+    "--results-name",
+    "missing_external_candidate_windows_results.csv"
+  ],
+  "full_resume_command": [
+    ".venv_diarizen/bin/python",
+    "-m",
+    "alimeeting_diarization_bench.run",
+    "--model",
+    "diarizen",
+    "--window-size",
+    "30",
+    "--sampling-mode",
+    "stratified",
+    "--total-samples",
+    "120",
+    "--seed",
+    "42",
+    "--speaker-count-mode",
+    "none",
+    "--output-dir",
+    "outputs/diarizen_uv_48"
+  ],
+  "resume_command": [
+    ".venv_diarizen/bin/python",
+    "-m",
+    "alimeeting_diarization_bench.run",
+    "--model",
+    "diarizen",
+    "--window-size",
+    "30",
+    "--sampling-mode",
+    "stratified",
+    "--total-samples",
+    "120",
+    "--seed",
+    "42",
+    "--speaker-count-mode",
+    "none",
+    "--output-dir",
+    "outputs/diarizen_uv_48"
+  ],
+  "missing_window_manifest": "outputs/external_candidate_reproduction_plan/missing_external_candidate_windows.csv",
+  "inputs": {
+    "external_search": "outputs/external_candidate_surface_search/external_candidate_surface_search.json",
+    "metrics": "outputs/system_demo/all_cached_recordings/metrics.json",
+    "reference_summary": "outputs/sortformer_uv_120/nemo-sortformer-4spk-v1/default__spk_none/summary.json"
+  }
+}

@@ -1,0 +1,348 @@
+{
+  "runtime_contract": "slow_sanitization_policy_search_no_live_calls_predicted_timeline_features_only",
+  "status": "no_robust_sanitizer_found",
+  "fast_summary": "outputs/sortformer_uv_120/nemo-sortformer-4spk-v1/default__spk_none/summary.json",
+  "slow_summary": "outputs/diarizen_uv_120/diarizen-large-v2/default__spk_none/summary.json",
+  "windows": 120,
+  "policy_set": "core",
+  "candidate_policies": 14,
+  "no_live_calls_performed": true,
+  "no_deepseek_api_calls": true,
+  "metric_claim_boundary": "development_pool_search_not_true_heldout",
+  "best_policy": {
+    "policy_id": "slow",
+    "policy": "{\"base\": \"slow\"}",
+    "windows": 120,
+    "success_windows": 120,
+    "avg_der": 0.16880916666666668,
+    "avg_miss_rate": 0.049854166666666665,
+    "avg_fa_rate": 0.06916249999999999,
+    "avg_conf_rate": 0.049790000000000015,
+    "avg_pred_segments": 11.283333333333333,
+    "avg_pred_speech_sec": 34.760937500000004,
+    "counters": {}
+  },
+  "slow_baseline": {
+    "policy_id": "slow",
+    "policy": "{\"base\": \"slow\"}",
+    "windows": 120,
+    "success_windows": 120,
+    "avg_der": 0.16880916666666668,
+    "avg_miss_rate": 0.049854166666666665,
+    "avg_fa_rate": 0.06916249999999999,
+    "avg_conf_rate": 0.049790000000000015,
+    "avg_pred_segments": 11.283333333333333,
+    "avg_pred_speech_sec": 34.760937500000004,
+    "counters": {}
+  },
+  "best_delta_vs_slow": 0.0,
+  "best_delta_vs_slow_pp": 0.0,
+  "top_policies": [
+    {
+      "policy_id": "slow",
+      "policy": "{\"base\": \"slow\"}",
+      "windows": 120,
+      "success_windows": 120,
+      "avg_der": 0.16880916666666668,
+      "avg_miss_rate": 0.049854166666666665,
+      "avg_fa_rate": 0.06916249999999999,
+      "avg_conf_rate": 0.049790000000000015,
+      "avg_pred_segments": 11.283333333333333,
+      "avg_pred_speech_sec": 34.760937500000004,
+      "counters": {}
+    },
+    {
+      "policy_id": "slow__min_duration0p2",
+      "policy": "{\"base\": \"slow\", \"min_duration\": 0.2}",
+      "windows": 120,
+      "success_windows": 120,
+      "avg_der": 0.16883500000000004,
+      "avg_miss_rate": 0.051278333333333335,
+      "avg_fa_rate": 0.06840749999999997,
+      "avg_conf_rate": 0.04914500000000001,
+      "avg_pred_segments": 10.483333333333333,
+      "avg_pred_speech_sec": 34.680041666666675,
+      "counters": {
+        "drop_short": 96
+      }
+    },
+    {
+      "policy_id": "slow__merge_gap0p1",
+      "policy": "{\"base\": \"slow\", \"merge_gap\": 0.1}",
+      "windows": 120,
+      "success_windows": 120,
+      "avg_der": 0.16888083333333329,
+      "avg_miss_rate": 0.04969416666666667,
+      "avg_fa_rate": 0.06954583333333329,
+      "avg_conf_rate": 0.04963583333333336,
+      "avg_pred_segments": 10.916666666666666,
+      "avg_pred_speech_sec": 34.781937500000005,
+      "counters": {
+        "merge_removed": 44
+      }
+    },
+    {
+      "policy_id": "slow__merge_gap0p2",
+      "policy": "{\"base\": \"slow\", \"merge_gap\": 0.2}",
+      "windows": 120,
+      "success_windows": 120,
+      "avg_der": 0.1693508333333333,
+      "avg_miss_rate": 0.04915833333333333,
+      "avg_fa_rate": 0.0705383333333333,
+      "avg_conf_rate": 0.049653333333333355,
+      "avg_pred_segments": 10.575,
+      "avg_pred_speech_sec": 34.83727083333335,
+      "counters": {
+        "merge_removed": 85
+      }
+    },
+    {
+      "policy_id": "slow__min_duration0p4",
+      "policy": "{\"base\": \"slow\", \"min_duration\": 0.4}",
+      "windows": 120,
+      "success_windows": 120,
+      "avg_der": 0.1719308333333334,
+      "avg_miss_rate": 0.05951166666666667,
+      "avg_fa_rate": 0.06504999999999997,
+      "avg_conf_rate": 0.04737500000000001,
+      "avg_pred_segments": 9.075,
+      "avg_pred_speech_sec": 34.23760416666667,
+      "counters": {
+        "drop_short": 265
+      }
+    },
+    {
+      "policy_id": "slow__min_fast_overlap_sec0p05",
+      "policy": "{\"base\": \"slow\", \"min_fast_overlap_sec\": 0.05}",
+      "windows": 120,
+      "success_windows": 120,
+      "avg_der": 0.17745166666666673,
+      "avg_miss_rate": 0.06320083333333334,
+      "avg_fa_rate": 0.06707416666666667,
+      "avg_conf_rate": 0.04717000000000002,
+      "avg_pred_segments": 10.25,
+      "avg_pred_speech_sec": 34.1140625,
+      "counters": {
+        "drop_low_fast_overlap_sec": 124
+      }
+    },
+    {
+      "policy_id": "slow__min_fast_overlap_ratio0p05",
+      "policy": "{\"base\": \"slow\", \"min_fast_overlap_ratio\": 0.05}",
+      "windows": 120,
+      "success_windows": 120,
+      "avg_der": 0.17747916666666672,
+      "avg_miss_rate": 0.06295666666666667,
+      "avg_fa_rate": 0.06721749999999999,
+      "avg_conf_rate": 0.04730083333333336,
+      "avg_pred_segments": 10.566666666666666,
+      "avg_pred_speech_sec": 34.12789583333333,
+      "counters": {
+        "drop_low_fast_overlap_ratio": 86
+      }
+    },
+    {
+      "policy_id": "slow__min_fast_overlap_sec0p1",
+      "policy": "{\"base\": \"slow\", \"min_fast_overlap_sec\": 0.1}",
+      "windows": 120,
+      "success_windows": 120,
+      "avg_der": 0.17748916666666673,
+      "avg_miss_rate": 0.06397083333333334,
+      "avg_fa_rate": 0.06684749999999999,
+      "avg_conf_rate": 0.04666416666666668,
+      "avg_pred_segments": 10.075,
+      "avg_pred_speech_sec": 34.07866666666667,
+      "counters": {
+        "drop_low_fast_overlap_sec": 145
+      }
+    },
+    {
+      "policy_id": "slow__min_fast_overlap_ratio0p1",
+      "policy": "{\"base\": \"slow\", \"min_fast_overlap_ratio\": 0.1}",
+      "windows": 120,
+      "success_windows": 120,
+      "avg_der": 0.18649750000000004,
+      "avg_miss_rate": 0.07249666666666667,
+      "avg_fa_rate": 0.06708833333333333,
+      "avg_conf_rate": 0.04691000000000003,
+      "avg_pred_segments": 10.483333333333333,
+      "avg_pred_speech_sec": 33.71383333333334,
+      "counters": {
+        "drop_low_fast_overlap_ratio": 96
+      }
+    },
+    {
+      "policy_id": "slow__max_speech_ratio1p4__cap_actiondrop_unsupported",
+      "policy": "{\"base\": \"slow\", \"cap_action\": \"drop_unsupported\", \"max_speech_ratio\": 1.4}",
+      "windows": 120,
+      "success_windows": 120,
+      "avg_der": 0.1947041666666667,
+      "avg_miss_rate": 0.08129166666666672,
+      "avg_fa_rate": 0.066565,
+      "avg_conf_rate": 0.046844166666666694,
+      "avg_pred_segments": 10.691666666666666,
+      "avg_pred_speech_sec": 32.88095833333334,
+      "counters": {
+        "cap_drop": 71
+      }
+    },
+    {
+      "policy_id": "slow__max_speech_ratio1p4__cap_actionfast",
+      "policy": "{\"base\": \"slow\", \"cap_action\": \"fast\", \"max_speech_ratio\": 1.4}",
+      "windows": 120,
+      "success_windows": 120,
+      "avg_der": 0.2093175,
+      "avg_miss_rate": 0.10436666666666677,
+      "avg_fa_rate": 0.065625,
+      "avg_conf_rate": 0.039323333333333356,
+      "avg_pred_segments": 10.516666666666667,
+      "avg_pred_speech_sec": 31.74970833333334,
+      "counters": {
+        "cap_fast_fallback": 21
+      }
+    },
+    {
+      "policy_id": "slow__max_speech_ratio1p2__cap_actiondrop_unsupported",
+      "policy": "{\"base\": \"slow\", \"cap_action\": \"drop_unsupported\", \"max_speech_ratio\": 1.2}",
+      "windows": 120,
+      "success_windows": 120,
+      "avg_der": 0.24012083333333326,
+      "avg_miss_rate": 0.13288833333333336,
+      "avg_fa_rate": 0.06313916666666666,
+      "avg_conf_rate": 0.044096666666666694,
+      "avg_pred_segments": 10.125,
+      "avg_pred_speech_sec": 30.461520833333335,
+      "counters": {
+        "cap_drop": 139
+      }
+    },
+    {
+      "policy_id": "slow__max_speech_ratio1p2__cap_actionfast",
+      "policy": "{\"base\": \"slow\", \"cap_action\": \"fast\", \"max_speech_ratio\": 1.2}",
+      "windows": 120,
+      "success_windows": 120,
+      "avg_der": 0.2405575,
+      "avg_miss_rate": 0.1435416666666668,
+      "avg_fa_rate": 0.06193499999999999,
+      "avg_conf_rate": 0.035080000000000014,
+      "avg_pred_segments": 10.033333333333333,
+      "avg_pred_speech_sec": 30.140645833333334,
+      "counters": {
+        "cap_fast_fallback": 43
+      }
+    },
+    {
+      "policy_id": "fast",
+      "policy": "{\"base\": \"fast\"}",
+      "windows": 120,
+      "success_windows": 120,
+      "avg_der": 0.28563749999999977,
+      "avg_miss_rate": 0.19956583333333353,
+      "avg_fa_rate": 0.05408166666666665,
+      "avg_conf_rate": 0.03198083333333334,
+      "avg_pred_segments": 10.883333333333333,
+      "avg_pred_speech_sec": 28.303416666666674,
+      "counters": {
+        "fast_fallback": 120
+      }
+    }
+  ],
+  "holdout": [
+    {
+      "heldout_recording_id": "R8001_M8004",
+      "selected_policy_id": "slow",
+      "train_der": 0.16732476190476192,
+      "heldout_der": 0.17919999999999994,
+      "heldout_slow_der": 0.17919999999999994,
+      "heldout_delta_vs_slow": 0.0,
+      "heldout_delta_vs_slow_pp": 0.0,
+      "heldout_beats_slow": false
+    },
+    {
+      "heldout_recording_id": "R8003_M8001",
+      "selected_policy_id": "slow",
+      "train_der": 0.13832380952380946,
+      "heldout_der": 0.38220666666666664,
+      "heldout_slow_der": 0.38220666666666664,
+      "heldout_delta_vs_slow": 0.0,
+      "heldout_delta_vs_slow_pp": 0.0,
+      "heldout_beats_slow": false
+    },
+    {
+      "heldout_recording_id": "R8007_M8010",
+      "selected_policy_id": "slow__min_duration0p2",
+      "train_der": 0.15804190476190477,
+      "heldout_der": 0.2443866666666667,
+      "heldout_slow_der": 0.24382,
+      "heldout_delta_vs_slow": -0.0005666666666666875,
+      "heldout_delta_vs_slow_pp": -0.05666666666666875,
+      "heldout_beats_slow": false
+    },
+    {
+      "heldout_recording_id": "R8007_M8011",
+      "selected_policy_id": "slow",
+      "train_der": 0.16939714285714288,
+      "heldout_der": 0.1646933333333333,
+      "heldout_slow_der": 0.1646933333333333,
+      "heldout_delta_vs_slow": 0.0,
+      "heldout_delta_vs_slow_pp": 0.0,
+      "heldout_beats_slow": false
+    },
+    {
+      "heldout_recording_id": "R8008_M8013",
+      "selected_policy_id": "slow",
+      "train_der": 0.16911238095238101,
+      "heldout_der": 0.16668666666666665,
+      "heldout_slow_der": 0.16668666666666665,
+      "heldout_delta_vs_slow": 0.0,
+      "heldout_delta_vs_slow_pp": 0.0,
+      "heldout_beats_slow": false
+    },
+    {
+      "heldout_recording_id": "R8009_M8018",
+      "selected_policy_id": "slow__min_duration0p2",
+      "train_der": 0.17810476190476193,
+      "heldout_der": 0.10394666666666666,
+      "heldout_slow_der": 0.10336666666666665,
+      "heldout_delta_vs_slow": -0.0005800000000000111,
+      "heldout_delta_vs_slow_pp": -0.058000000000001106,
+      "heldout_beats_slow": false
+    },
+    {
+      "heldout_recording_id": "R8009_M8019",
+      "selected_policy_id": "slow__min_duration0p2",
+      "train_der": 0.18464285714285716,
+      "heldout_der": 0.05818,
+      "heldout_slow_der": 0.057686666666666664,
+      "heldout_delta_vs_slow": -0.0004933333333333387,
+      "heldout_delta_vs_slow_pp": -0.04933333333333387,
+      "heldout_beats_slow": false
+    },
+    {
+      "heldout_recording_id": "R8009_M8020",
+      "selected_policy_id": "slow",
+      "train_der": 0.18538,
+      "heldout_der": 0.05281333333333333,
+      "heldout_slow_der": 0.05281333333333333,
+      "heldout_delta_vs_slow": 0.0,
+      "heldout_delta_vs_slow_pp": 0.0,
+      "heldout_beats_slow": false
+    }
+  ],
+  "holdout_summary": {
+    "splits": 8,
+    "positive_splits_vs_slow": 0,
+    "weighted_holdout_final_der": 0.16901416666666666,
+    "weighted_holdout_slow_der": 0.16880916666666665,
+    "weighted_delta_vs_slow": -0.00020500000000001073,
+    "weighted_delta_vs_slow_pp": -0.020500000000001073
+  },
+  "bootstrap": {
+    "samples": 500,
+    "seed": 42,
+    "mean_delta_vs_slow": 0.0,
+    "delta_ci_low": 0.0,
+    "delta_ci_high": 0.0,
+    "prob_beats_slow": 0.0
+  }
+}

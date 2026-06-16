@@ -1,0 +1,85 @@
+{
+  "runtime_contract": "true_heldout_readiness_no_metric_claim",
+  "status": "blocked_missing_sealed_split_and_new_recordings",
+  "summary": {
+    "split_file": "data/selector_true_heldout_split.csv",
+    "minimum_true_heldout_recordings": 8,
+    "split_exists": false,
+    "true_heldout_recordings": 0,
+    "eligible_local_candidates": 0,
+    "missing_new_recordings_to_minimum": 8,
+    "development_recordings": 8,
+    "local_dev_overlap": 8,
+    "promotion_gate_status": "dev_metric_pass_promotion_blocked",
+    "promotion_status": "blocked",
+    "candidate_scan_status": "not_enough_new_local_recordings",
+    "split_validation_status": "blocked_waiting_for_valid_sealed_split",
+    "protocol_status": "needs_new_recording_split",
+    "no_metric_claim": true
+  },
+  "gates": [
+    {
+      "gate_id": "sealed_split_exists",
+      "status": "blocked",
+      "evidence": "data/selector_true_heldout_split.csv"
+    },
+    {
+      "gate_id": "required_columns_present",
+      "status": "blocked",
+      "evidence": {
+        "missing_required_columns": 4,
+        "required_columns": [
+          "recording_id",
+          "split",
+          "source_manifest",
+          "audio_path"
+        ]
+      }
+    },
+    {
+      "gate_id": "true_heldout_count",
+      "status": "blocked",
+      "evidence": "0/8"
+    },
+    {
+      "gate_id": "no_development_overlap",
+      "status": "blocked",
+      "evidence": {
+        "overlap_with_development": 0,
+        "overlap_recordings": []
+      }
+    },
+    {
+      "gate_id": "local_candidate_pool_available",
+      "status": "blocked",
+      "evidence": {
+        "eligible_local_candidates": 0,
+        "minimum_true_heldout_recordings": 8
+      }
+    },
+    {
+      "gate_id": "no_metric_claim",
+      "status": "pass",
+      "evidence": "readiness-only; no DER or support scoring"
+    }
+  ],
+  "blockers": [
+    "sealed_split_exists",
+    "required_columns_present",
+    "true_heldout_count",
+    "no_development_overlap",
+    "not_enough_new_local_recordings"
+  ],
+  "recommended_next_actions": [
+    "add_8_new_recordings_outside_development_pool",
+    "create_data_selector_true_heldout_split_csv",
+    "run_fast_slow_extraction_without_changing_selector_thresholds",
+    "score_frozen_selector_on_true_heldout"
+  ],
+  "inputs": {
+    "candidate_scan": "outputs/research_progress_snapshot/selector_true_heldout_candidate_scan.json",
+    "split_validation": "outputs/research_progress_snapshot/selector_true_heldout_split_validation.json",
+    "protocol": "outputs/research_progress_snapshot/selector_true_heldout_protocol.json",
+    "promotion_gate": "outputs/system_promotion_gate/system_promotion_gate.json"
+  }
+}

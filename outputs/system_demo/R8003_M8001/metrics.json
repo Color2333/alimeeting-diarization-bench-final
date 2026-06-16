@@ -1,0 +1,194 @@
+{
+  "runtime_contract": "offline_realtime_diarization_system_no_live_calls",
+  "execution_mode": "offline_replay_existing_fast_slow_outputs_with_rule_writeback",
+  "run_scope": "single_recording_or_audio",
+  "audio": {
+    "path": "/Users/haojiang/data/AliMeeting/Eval_Ali/Eval_Ali_far/audio_dir/R8003_M8001_MS801.wav",
+    "exists": true
+  },
+  "recording_id": "R8003_M8001",
+  "recording_ids": [
+    "R8003_M8001"
+  ],
+  "window_size": 30,
+  "segment_idx": null,
+  "windows_processed": 15,
+  "cached_windows_available": 120,
+  "cached_window_coverage": 0.125,
+  "recordings_processed": 1,
+  "selected_window_ids": [
+    "R8003_M8001:30:0",
+    "R8003_M8001:30:1",
+    "R8003_M8001:30:2",
+    "R8003_M8001:30:3",
+    "R8003_M8001:30:4",
+    "R8003_M8001:30:5",
+    "R8003_M8001:30:6",
+    "R8003_M8001:30:7",
+    "R8003_M8001:30:8",
+    "R8003_M8001:30:9",
+    "R8003_M8001:30:10",
+    "R8003_M8001:30:11",
+    "R8003_M8001:30:12",
+    "R8003_M8001:30:13",
+    "R8003_M8001:30:14"
+  ],
+  "evaluation_status": "scored_with_cached_reference",
+  "fast_summary": "/Users/haojiang/Documents/2026/school/AI+/alimeeting-diarization-bench/outputs/sortformer_uv_120/nemo-sortformer-4spk-v1/default__spk_none/summary.json",
+  "slow_summary": "/Users/haojiang/Documents/2026/school/AI+/alimeeting-diarization-bench/outputs/diarizen_uv_120/diarizen-large-v2/default__spk_none/summary.json",
+  "gate_decisions": "/Users/haojiang/Documents/2026/school/AI+/alimeeting-diarization-bench/outputs/writeback_gate_120/gate_decisions.csv",
+  "patches": "/Users/haojiang/Documents/2026/school/AI+/alimeeting-diarization-bench/outputs/segment_patches/sortformer_diarizen_120_patches.csv",
+  "timeline_results": "/Users/haojiang/Documents/2026/school/AI+/alimeeting-diarization-bench/outputs/rule_writeback_timeline_120/rule_writeback_timeline_results.csv",
+  "variant": "slow_guarded_fast_fallback",
+  "guard_quarantine_threshold": 1,
+  "fast_model": "nemo-sortformer-4spk-v1",
+  "slow_model": "diarizen-large-v2",
+  "baseline_comparison": [
+    {
+      "baseline_id": "fast_base",
+      "windows": 15,
+      "der": 0.4537866666666667,
+      "miss_rate": 0.17439333333333332,
+      "fa_rate": 0.2334933333333333,
+      "conf_rate": 0.04591333333333334
+    },
+    {
+      "baseline_id": "slow_base",
+      "windows": 15,
+      "der": 0.38220666666666664,
+      "miss_rate": 0.04054,
+      "fa_rate": 0.29153999999999997,
+      "conf_rate": 0.05009333333333334
+    },
+    {
+      "baseline_id": "rule_recover_policy_sweep_best",
+      "windows": 15,
+      "der": 0.43087333333333333,
+      "miss_rate": 0.1276,
+      "fa_rate": 0.23688666666666663,
+      "conf_rate": 0.06640666666666668
+    },
+    {
+      "baseline_id": "rule_recover_matched_label",
+      "windows": 15,
+      "der": 0.42982000000000004,
+      "miss_rate": 0.12638666666666667,
+      "fa_rate": 0.23784666666666662,
+      "conf_rate": 0.06562
+    },
+    {
+      "baseline_id": "rule_recover_uncovered_only",
+      "windows": 15,
+      "der": 0.43405333333333335,
+      "miss_rate": 0.13078666666666666,
+      "fa_rate": 0.23570666666666665,
+      "conf_rate": 0.06758
+    }
+  ],
+  "best_baseline": {
+    "baseline_id": "slow_base",
+    "windows": 15,
+    "der": 0.38220666666666664,
+    "miss_rate": 0.04054,
+    "fa_rate": 0.29153999999999997,
+    "conf_rate": 0.05009333333333334
+  },
+  "source_artifacts_exist": {
+    "fast_summary": true,
+    "slow_summary": true,
+    "gate_decisions": true,
+    "patches": true,
+    "timeline_results": true,
+    "guard_summary": true
+  },
+  "recording_metrics": [
+    {
+      "recording_id": "R8003_M8001",
+      "windows": 15,
+      "fast_der": 0.4537866666666667,
+      "final_der": 0.3721133333333333,
+      "der_delta_vs_fast_pp": 8.167333333333342,
+      "first_output_latency_proxy_avg_sec": 0.40273276964823407,
+      "first_output_latency_proxy_p95_sec": 0.4442613124847412,
+      "rule_writeback_latency_proxy_avg_sec": 22.71759425799052,
+      "rule_writeback_latency_proxy_p95_sec": 24.900646924972534
+    }
+  ],
+  "metrics": {
+    "fast_der": 0.4537866666666667,
+    "fast_miss_rate": 0.17439333333333332,
+    "fast_fa_rate": 0.2334933333333333,
+    "fast_conf_rate": 0.04591333333333334,
+    "final_der": 0.3721133333333333,
+    "final_miss_rate": 0.057793333333333335,
+    "final_fa_rate": 0.24807999999999997,
+    "final_conf_rate": 0.06621333333333333,
+    "der_delta_vs_fast": 0.08167333333333343,
+    "der_delta_vs_fast_pp": 8.167333333333342,
+    "der_delta_vs_best_baseline": 0.010093333333333343,
+    "der_delta_vs_best_baseline_pp": 1.0093333333333343,
+    "beats_best_baseline": true,
+    "correction_count": 349,
+    "accepted_correction_count": 12,
+    "blocked_or_quarantined_correction_count": 337,
+    "gate_category_counts": {
+      "rule_accept_needs_review": 108,
+      "rule_reference_only": 120,
+      "rule_recover_writeback": 12,
+      "rule_auto_writeback": 44,
+      "rule_label_only_writeback": 14,
+      "llm_defer_review": 12,
+      "guard_or_quarantine": 39
+    },
+    "correction_action_counts": {
+      "blocked_or_deferred": 240,
+      "accepted_writeback": 12,
+      "accepted_by_gate_not_applied_by_conservative_variant": 58,
+      "blocked_by_runtime_safe_guard": 39
+    },
+    "final_source_counts": {
+      "slow": 13,
+      "fast_guard_fallback": 2
+    },
+    "accepted_window_correction_count": 13,
+    "guard_fallback_window_count": 2,
+    "materialization_counters": {
+      "slow_windows_selected": 13,
+      "fast_guard_fallback_windows": 2,
+      "guard_or_quarantine_patches": 39
+    },
+    "guard_status": "active_offline_runtime_safe_gate",
+    "guard_harmful_accepts": 0,
+    "guard_safe_accepts": 323,
+    "guard_conservative_blocks": 1551,
+    "first_output_latency_proxy_avg_sec": 0.40273276964823407,
+    "first_output_latency_proxy_p95_sec": 0.4442613124847412,
+    "rule_writeback_latency_proxy_avg_sec": 22.71759425799052,
+    "rule_writeback_latency_proxy_p95_sec": 24.900646924972534,
+    "total_processing_wall_time_sec": 0.06198596954345703,
+    "deepseek_api_calls": 0,
+    "qwen_api_calls": 0,
+    "omni_api_calls": 0
+  },
+  "outputs": {
+    "fast_timeline_json": "outputs/system_demo/R8003_M8001/fast_timeline.json",
+    "fast_timeline_csv": "outputs/system_demo/R8003_M8001/fast_timeline.csv",
+    "fast_timeline_rttm": "outputs/system_demo/R8003_M8001/fast_timeline.rttm",
+    "final_timeline_json": "outputs/system_demo/R8003_M8001/final_timeline.json",
+    "final_timeline_csv": "outputs/system_demo/R8003_M8001/final_timeline.csv",
+    "final_timeline_rttm": "outputs/system_demo/R8003_M8001/final_timeline.rttm",
+    "correction_log_json": "outputs/system_demo/R8003_M8001/correction_log.json",
+    "correction_log_csv": "outputs/system_demo/R8003_M8001/correction_log.csv",
+    "recording_metrics_json": "outputs/system_demo/R8003_M8001/recording_metrics.json",
+    "recording_metrics_csv": "outputs/system_demo/R8003_M8001/recording_metrics.csv",
+    "baseline_comparison_json": "outputs/system_demo/R8003_M8001/baseline_comparison.json",
+    "baseline_comparison_csv": "outputs/system_demo/R8003_M8001/baseline_comparison.csv",
+    "metrics_json": "outputs/system_demo/R8003_M8001/metrics.json",
+    "metrics_md": "outputs/system_demo/R8003_M8001/metrics.md"
+  },
+  "notes": [
+    "This command uses cached local model outputs; it does not rerun acoustic models or live LLM APIs.",
+    "DeepSeek is not used and remains excluded from the system path.",
+    "If evaluation_status is no_reference/no_cached_model_outputs, DER fields are not trustworthy and runtime outputs should be treated as surface validation only."
+  ]
+}

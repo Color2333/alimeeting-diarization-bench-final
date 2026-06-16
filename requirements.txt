@@ -1,0 +1,21 @@
+# Core dependencies
+numpy>=1.24.0
+soundfile>=0.12.0
+torch>=2.0.0
+torchaudio>=2.0.0
+
+# DER/CER metrics
+meeteval>=0.4.0
+kaldialign>=0.8.0
+
+# API clients
+openai>=1.0.0
+dashscope>=1.14.0
+oss2>=2.18.0
+
+# PyAnnote (optional, requires HF token)
+pyannote.audio>=3.1.0
+huggingface_hub>=0.17.0
+
+# Utilities
+python-dotenv>=1.0.0

@@ -1,0 +1,2 @@
+recording_id,windows,fast_der,final_der,der_delta_vs_fast_pp,first_output_latency_proxy_avg_sec,first_output_latency_proxy_p95_sec,rule_writeback_latency_proxy_avg_sec,rule_writeback_latency_proxy_p95_sec
+R8008_M8013,15,0.28669999999999995,0.16668666666666668,12.001333333333328,0.40190598169962566,0.45487213134765625,24.405435689290364,25.52512216567993

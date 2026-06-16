@@ -1,0 +1,18 @@
+{
+  "windows": 8,
+  "patches": 78,
+  "window_decisions": "quarantine 8",
+  "patch_decisions": "quarantine 78",
+  "safe_accepts": 0,
+  "harmful_accepts": 0,
+  "conservative_blocks": 77,
+  "safe_blocks": 1,
+  "missing_patch_eval": 0,
+  "avg_call_seconds": 11.976625,
+  "p95_call_seconds": 16.737,
+  "avg_correction_delay_seconds": 36.62350709096591,
+  "p95_correction_delay_seconds": 45.07057239961624,
+  "batch_jsonl": "outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_8w.jsonl",
+  "patches_eval": "outputs/segment_patches/sortformer_diarizen_120_patches.csv",
+  "runtime_contract": "prompt_passed_runtime_evidence_audit"
+}

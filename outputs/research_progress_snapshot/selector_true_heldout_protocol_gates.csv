@@ -1,0 +1,6 @@
+gate_id,status,requirement,evidence
+sealed_split_exists,blocked,Provide a sealed split CSV before running any metric claim.,data/selector_true_heldout_split.csv
+true_heldout_not_in_dev,blocked,No true-heldout recording can appear in the 120-window development/selector pool.,split missing
+fixed_policy_before_scoring,pass,Use the frozen selector policy selected before true-heldout scoring.,ratio_le_0.65_else_uncovered
+runtime_feature_surface,pass,"Selector inputs must not include DER, GT speaker count, oracle labels, or support from held-out scoring.",fast_speech / slow_speech / speaker counts / recover patch deployable features
+metric_success_threshold,pending,"Weighted DER below Fast, with Miss/FA/Conf and arrival latency reported per recording.",target delta > 0 vs Fast on at least 8 recordings

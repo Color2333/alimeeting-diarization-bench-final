@@ -1,0 +1,369 @@
+{
+  "runtime_contract": "runtime_overlay_contribution_audit_no_live_calls_clipped_baseline_reference",
+  "status": "pass",
+  "pass_count": 5,
+  "warn_count": 0,
+  "fail_count": 0,
+  "checks": [
+    {
+      "status": "pass",
+      "code": "window_metrics_exist",
+      "message": "window metrics are readable",
+      "detail": {
+        "path": "outputs/system_demo/all_cached_recordings/window_metrics.csv"
+      }
+    },
+    {
+      "status": "pass",
+      "code": "clipped_scores_exist",
+      "message": "clipped baseline scores are readable",
+      "detail": {
+        "path": "outputs/clipped_baseline_audit/clipped_baseline_scores.csv"
+      }
+    },
+    {
+      "status": "pass",
+      "code": "overlay_sources_non_negative",
+      "message": "every active overlay source has non-negative aggregate contribution versus clipped Slow",
+      "detail": {
+        "source_summary": [
+          {
+            "final_source": "fast_guard_fallback",
+            "windows": 1,
+            "recording_ids": [
+              "R8003_M8001"
+            ],
+            "avg_final_der": 3.2459,
+            "avg_slow_der": 3.5947,
+            "avg_delta_vs_slow_pp": 34.880000000000024,
+            "total_delta_vs_slow_pp": 34.880000000000024,
+            "global_contribution_vs_slow_pp": 0.29066666666666685,
+            "negative_windows_vs_slow": 0
+          },
+          {
+            "final_source": "rare_audio_rule_recover",
+            "windows": 1,
+            "recording_ids": [
+              "R8007_M8011"
+            ],
+            "avg_final_der": 0.3416,
+            "avg_slow_der": 0.4266,
+            "avg_delta_vs_slow_pp": 8.499999999999996,
+            "total_delta_vs_slow_pp": 8.499999999999996,
+            "global_contribution_vs_slow_pp": 0.0708333333333333,
+            "negative_windows_vs_slow": 0
+          },
+          {
+            "final_source": "rare_short_slow_rule_recover",
+            "windows": 2,
+            "recording_ids": [
+              "R8007_M8011",
+              "R8009_M8019"
+            ],
+            "avg_final_der": 0.0225,
+            "avg_slow_der": 0.0329,
+            "avg_delta_vs_slow_pp": 1.04,
+            "total_delta_vs_slow_pp": 2.08,
+            "global_contribution_vs_slow_pp": 0.017333333333333336,
+            "negative_windows_vs_slow": 0
+          },
+          {
+            "final_source": "recording_balanced_fast_overlay",
+            "windows": 1,
+            "recording_ids": [
+              "R8009_M8018"
+            ],
+            "avg_final_der": 0.1608,
+            "avg_slow_der": 0.1657,
+            "avg_delta_vs_slow_pp": 0.48999999999999877,
+            "total_delta_vs_slow_pp": 0.48999999999999877,
+            "global_contribution_vs_slow_pp": 0.004083333333333323,
+            "negative_windows_vs_slow": 0
+          },
+          {
+            "final_source": "recording_context_fast_overlay",
+            "windows": 1,
+            "recording_ids": [
+              "R8007_M8010"
+            ],
+            "avg_final_der": 0.2936,
+            "avg_slow_der": 0.2989,
+            "avg_delta_vs_slow_pp": 0.5299999999999971,
+            "total_delta_vs_slow_pp": 0.5299999999999971,
+            "global_contribution_vs_slow_pp": 0.0044166666666666425,
+            "negative_windows_vs_slow": 0
+          }
+        ]
+      }
+    },
+    {
+      "status": "pass",
+      "code": "no_negative_overlay_windows",
+      "message": "no active overlay window regresses versus clipped Slow",
+      "detail": {
+        "source_summary": [
+          {
+            "final_source": "fast_guard_fallback",
+            "windows": 1,
+            "recording_ids": [
+              "R8003_M8001"
+            ],
+            "avg_final_der": 3.2459,
+            "avg_slow_der": 3.5947,
+            "avg_delta_vs_slow_pp": 34.880000000000024,
+            "total_delta_vs_slow_pp": 34.880000000000024,
+            "global_contribution_vs_slow_pp": 0.29066666666666685,
+            "negative_windows_vs_slow": 0
+          },
+          {
+            "final_source": "rare_audio_rule_recover",
+            "windows": 1,
+            "recording_ids": [
+              "R8007_M8011"
+            ],
+            "avg_final_der": 0.3416,
+            "avg_slow_der": 0.4266,
+            "avg_delta_vs_slow_pp": 8.499999999999996,
+            "total_delta_vs_slow_pp": 8.499999999999996,
+            "global_contribution_vs_slow_pp": 0.0708333333333333,
+            "negative_windows_vs_slow": 0
+          },
+          {
+            "final_source": "rare_short_slow_rule_recover",
+            "windows": 2,
+            "recording_ids": [
+              "R8007_M8011",
+              "R8009_M8019"
+            ],
+            "avg_final_der": 0.0225,
+            "avg_slow_der": 0.0329,
+            "avg_delta_vs_slow_pp": 1.04,
+            "total_delta_vs_slow_pp": 2.08,
+            "global_contribution_vs_slow_pp": 0.017333333333333336,
+            "negative_windows_vs_slow": 0
+          },
+          {
+            "final_source": "recording_balanced_fast_overlay",
+            "windows": 1,
+            "recording_ids": [
+              "R8009_M8018"
+            ],
+            "avg_final_der": 0.1608,
+            "avg_slow_der": 0.1657,
+            "avg_delta_vs_slow_pp": 0.48999999999999877,
+            "total_delta_vs_slow_pp": 0.48999999999999877,
+            "global_contribution_vs_slow_pp": 0.004083333333333323,
+            "negative_windows_vs_slow": 0
+          },
+          {
+            "final_source": "recording_context_fast_overlay",
+            "windows": 1,
+            "recording_ids": [
+              "R8007_M8010"
+            ],
+            "avg_final_der": 0.2936,
+            "avg_slow_der": 0.2989,
+            "avg_delta_vs_slow_pp": 0.5299999999999971,
+            "total_delta_vs_slow_pp": 0.5299999999999971,
+            "global_contribution_vs_slow_pp": 0.0044166666666666425,
+            "negative_windows_vs_slow": 0
+          }
+        ]
+      }
+    },
+    {
+      "status": "pass",
+      "code": "overlay_contribution_matches_margin",
+      "message": "sum of overlay contributions explains the final margin over clipped Slow",
+      "detail": {
+        "overlay_contribution_pp": 0.3873333333333335,
+        "final_margin_pp": 0.38733333333333675,
+        "gap_pp": 3.2751579226442118e-15
+      }
+    }
+  ],
+  "summary": {
+    "windows": 120,
+    "overlay_windows": 6,
+    "overlay_sources": 5,
+    "overlay_contribution_vs_slow_pp": 0.3873333333333335,
+    "final_margin_vs_clipped_slow_pp": 0.38733333333333675,
+    "overlay_margin_gap_pp": 3.2751579226442118e-15,
+    "negative_overlay_windows_vs_slow": 0
+  },
+  "source_summary": [
+    {
+      "final_source": "fast_guard_fallback",
+      "windows": 1,
+      "recording_ids": [
+        "R8003_M8001"
+      ],
+      "avg_final_der": 3.2459,
+      "avg_slow_der": 3.5947,
+      "avg_delta_vs_slow_pp": 34.880000000000024,
+      "total_delta_vs_slow_pp": 34.880000000000024,
+      "global_contribution_vs_slow_pp": 0.29066666666666685,
+      "negative_windows_vs_slow": 0
+    },
+    {
+      "final_source": "rare_audio_rule_recover",
+      "windows": 1,
+      "recording_ids": [
+        "R8007_M8011"
+      ],
+      "avg_final_der": 0.3416,
+      "avg_slow_der": 0.4266,
+      "avg_delta_vs_slow_pp": 8.499999999999996,
+      "total_delta_vs_slow_pp": 8.499999999999996,
+      "global_contribution_vs_slow_pp": 0.0708333333333333,
+      "negative_windows_vs_slow": 0
+    },
+    {
+      "final_source": "rare_short_slow_rule_recover",
+      "windows": 2,
+      "recording_ids": [
+        "R8007_M8011",
+        "R8009_M8019"
+      ],
+      "avg_final_der": 0.0225,
+      "avg_slow_der": 0.0329,
+      "avg_delta_vs_slow_pp": 1.04,
+      "total_delta_vs_slow_pp": 2.08,
+      "global_contribution_vs_slow_pp": 0.017333333333333336,
+      "negative_windows_vs_slow": 0
+    },
+    {
+      "final_source": "recording_balanced_fast_overlay",
+      "windows": 1,
+      "recording_ids": [
+        "R8009_M8018"
+      ],
+      "avg_final_der": 0.1608,
+      "avg_slow_der": 0.1657,
+      "avg_delta_vs_slow_pp": 0.48999999999999877,
+      "total_delta_vs_slow_pp": 0.48999999999999877,
+      "global_contribution_vs_slow_pp": 0.004083333333333323,
+      "negative_windows_vs_slow": 0
+    },
+    {
+      "final_source": "recording_context_fast_overlay",
+      "windows": 1,
+      "recording_ids": [
+        "R8007_M8010"
+      ],
+      "avg_final_der": 0.2936,
+      "avg_slow_der": 0.2989,
+      "avg_delta_vs_slow_pp": 0.5299999999999971,
+      "total_delta_vs_slow_pp": 0.5299999999999971,
+      "global_contribution_vs_slow_pp": 0.0044166666666666425,
+      "negative_windows_vs_slow": 0
+    },
+    {
+      "final_source": "slow",
+      "windows": 114,
+      "recording_ids": [
+        "R8001_M8004",
+        "R8003_M8001",
+        "R8007_M8010",
+        "R8007_M8011",
+        "R8008_M8013",
+        "R8009_M8018",
+        "R8009_M8019",
+        "R8009_M8020"
+      ],
+      "avg_final_der": 0.1377535087719298,
+      "avg_slow_der": 0.1377535087719298,
+      "avg_delta_vs_slow_pp": 0.0,
+      "total_delta_vs_slow_pp": 0.0,
+      "global_contribution_vs_slow_pp": 0.0,
+      "negative_windows_vs_slow": 0
+    }
+  ],
+  "overlay_windows": [
+    {
+      "window_id": "R8003_M8001:30:9",
+      "recording_id": "R8003_M8001",
+      "window_size": "30",
+      "segment_idx": "9",
+      "final_source": "fast_guard_fallback",
+      "final_der": 3.2459,
+      "slow_der": 3.5947,
+      "fast_der": 3.2459,
+      "delta_vs_slow": 0.3488000000000002,
+      "delta_vs_slow_pp": 34.880000000000024,
+      "is_overlay": true,
+      "negative_vs_slow": false
+    },
+    {
+      "window_id": "R8007_M8010:30:3",
+      "recording_id": "R8007_M8010",
+      "window_size": "30",
+      "segment_idx": "3",
+      "final_source": "recording_context_fast_overlay",
+      "final_der": 0.2936,
+      "slow_der": 0.2989,
+      "fast_der": 0.2936,
+      "delta_vs_slow": 0.005299999999999971,
+      "delta_vs_slow_pp": 0.5299999999999971,
+      "is_overlay": true,
+      "negative_vs_slow": false
+    },
+    {
+      "window_id": "R8007_M8011:30:0",
+      "recording_id": "R8007_M8011",
+      "window_size": "30",
+      "segment_idx": "0",
+      "final_source": "rare_short_slow_rule_recover",
+      "final_der": 0.0292,
+      "slow_der": 0.0325,
+      "fast_der": 0.0292,
+      "delta_vs_slow": 0.003300000000000001,
+      "delta_vs_slow_pp": 0.33000000000000007,
+      "is_overlay": true,
+      "negative_vs_slow": false
+    },
+    {
+      "window_id": "R8007_M8011:30:8",
+      "recording_id": "R8007_M8011",
+      "window_size": "30",
+      "segment_idx": "8",
+      "final_source": "rare_audio_rule_recover",
+      "final_der": 0.3416,
+      "slow_der": 0.4266,
+      "fast_der": 0.3675,
+      "delta_vs_slow": 0.08499999999999996,
+      "delta_vs_slow_pp": 8.499999999999996,
+      "is_overlay": true,
+      "negative_vs_slow": false
+    },
+    {
+      "window_id": "R8009_M8018:30:12",
+      "recording_id": "R8009_M8018",
+      "window_size": "30",
+      "segment_idx": "12",
+      "final_source": "recording_balanced_fast_overlay",
+      "final_der": 0.1608,
+      "slow_der": 0.1657,
+      "fast_der": 0.1608,
+      "delta_vs_slow": 0.004899999999999988,
+      "delta_vs_slow_pp": 0.48999999999999877,
+      "is_overlay": true,
+      "negative_vs_slow": false
+    },
+    {
+      "window_id": "R8009_M8019:30:12",
+      "recording_id": "R8009_M8019",
+      "window_size": "30",
+      "segment_idx": "12",
+      "final_source": "rare_short_slow_rule_recover",
+      "final_der": 0.0158,
+      "slow_der": 0.0333,
+      "fast_der": 0.1292,
+      "delta_vs_slow": 0.0175,
+      "delta_vs_slow_pp": 1.7500000000000002,
+      "is_overlay": true,
+      "negative_vs_slow": false
+    }
+  ],
+  "metric_claim_boundary": "same_window_clipped_slow_comparison_not_true_heldout"
+}

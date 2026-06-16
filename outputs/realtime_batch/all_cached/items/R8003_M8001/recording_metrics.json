@@ -1,0 +1,13 @@
+[
+  {
+    "recording_id": "R8003_M8001",
+    "windows": 15,
+    "fast_der": 0.4537866666666667,
+    "final_der": 0.35889333333333334,
+    "der_delta_vs_fast_pp": 9.489333333333338,
+    "first_output_latency_proxy_avg_sec": 0.40273276964823407,
+    "first_output_latency_proxy_p95_sec": 0.4442613124847412,
+    "rule_writeback_latency_proxy_avg_sec": 22.71759425799052,
+    "rule_writeback_latency_proxy_p95_sec": 24.900646924972534
+  }
+]

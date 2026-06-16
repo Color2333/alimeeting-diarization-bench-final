@@ -1,0 +1,17 @@
+{
+  "windows": 3,
+  "calls": 8,
+  "successful_windows": 3,
+  "successful_calls": 8,
+  "patches": 127,
+  "split_calls": 8,
+  "window_decision_counts": {
+    "quarantine": 8
+  },
+  "avg_call_seconds": 20.031125,
+  "wall_seconds": 29.014,
+  "parallel_workers": 8,
+  "total_tokens": 55631,
+  "output_jsonl": "outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_split20_top3_parallel.jsonl",
+  "output_csv": "outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_split20_top3_parallel.csv"
+}

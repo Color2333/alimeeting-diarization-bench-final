@@ -1,0 +1,205 @@
+{
+  "runtime_contract": "research_next_experiment_queue_from_validated_claims",
+  "can_claim_now": [
+    {
+      "claim_id": "four_stage_realtime_route",
+      "contract_scope": "runtime_pass",
+      "writeback_right": "fast_first_output_and_rule_writeback_only",
+      "claim": "Fast first output arrives at 0.38s, rule writeback at 24.65s, LLM guard at 44.92s, and LLM review at 46.10s."
+    },
+    {
+      "claim_id": "runtime_evidence_contract_clean",
+      "contract_scope": "runtime_pass",
+      "writeback_right": "contract_audit_only",
+      "claim": "Runtime evidence audit is pass with 16 artifacts and 0 runtime-blocking artifacts."
+    },
+    {
+      "claim_id": "rule_writeback_primary_correction",
+      "contract_scope": "runtime_pass",
+      "writeback_right": "bounded_timeline_writeback",
+      "claim": "Rule writeback applies 599 patches and recovers 60.2% of Fast miss (197.36s unique miss seconds)."
+    },
+    {
+      "claim_id": "runtime_safe_llm_guard_zero_harm",
+      "contract_scope": "runtime_pass",
+      "writeback_right": "block_or_quarantine_only",
+      "claim": "Runtime-safe LLM guard covers 104 windows / 1917 patches with harmful accept 0, average delay 44.92s and P95 63.85s."
+    },
+    {
+      "claim_id": "guard_tuning_passthrough_safe",
+      "contract_scope": "runtime_pass_with_passthrough_exception",
+      "writeback_right": "keep_fast_supported_passthrough_exception",
+      "claim": "Guard tuning policy combined_review0.5_keepfast0.5 recovers 260 conservative blocks; materialized safe 323 / harmful 0."
+    },
+    {
+      "claim_id": "llm_review_memory_not_timeline",
+      "contract_scope": "runtime_pass",
+      "writeback_right": "memory_protection_only",
+      "claim": "LLM review has 4 cases, blocks timeline writeback 0, and blocks memory update 4 at arrival 46.10s."
+    },
+    {
+      "claim_id": "voiceprint_rule_handles_clean_high",
+      "contract_scope": "runtime_candidate_gate",
+      "writeback_right": "rule_auto_for_clean_high",
+      "claim": "Voiceprint gate has 620/620 clean patches with voiceprint, 226 high bucket, 138 high rule-auto, and 0 LLM candidates."
+    }
+  ],
+  "next_experiments": [
+    {
+      "experiment_id": "full_split20_live_104w",
+      "priority": "P0",
+      "status": "blocked_by_deepseek_top4_5_quota",
+      "target_claim": "split20_latency_path_limited",
+      "current_evidence": "top3 live wall 29.01s vs original max 48.47s; harmful 0; deepseek top4/5 AllocationQuota.FreeTierOnly; readiness blocked_by_provider_quota_or_capacity; manifest resume calls 139; Agent plan calls 382; postrun closure blocked_by_quota_or_missing_resume; output audit missing 3 surfaces; scoring readiness P0 steps 2; split policy primary max20 vs stretch max15; runbook steps 7.",
+      "why_next": "This is the direct path from latency smoke evidence to full-surface LLM guard latency evidence.",
+      "success_gates": [
+        "Run all 104 parent windows with split<=20 live parallel calls.",
+        "Keep effective harmful_accepts at 0 after runtime-safe quarantine override.",
+        "Show measured wall-time improvement over unsplit max-call baseline on the full surface.",
+        "Record token multiplier and provider failure rate."
+      ],
+      "required_inputs": [
+        "outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_split20_replay_prompts.jsonl",
+        "outputs/research_progress_snapshot/split20_full_live_manifest.json",
+        "outputs/research_progress_snapshot/live_agent_execution_plan.json",
+        "outputs/research_progress_snapshot/live_postrun_metrics_closure.json",
+        "outputs/research_progress_snapshot/live_output_audit.json",
+        "outputs/research_progress_snapshot/live_scoring_readiness.json",
+        "outputs/research_progress_snapshot/live_execution_runbook.json",
+        "outputs/research_progress_snapshot/split_policy_optimization.json",
+        "outputs/research_progress_snapshot/live_run_readiness.json",
+        "DeepSeek quota or equivalent provider capacity for top4/5 high-risk windows"
+      ],
+      "report_surface": "LLM POLICY / next-step queue"
+    },
+    {
+      "experiment_id": "true_heldout_selector_recordings",
+      "priority": "P0",
+      "status": "needs_new_recording_split",
+      "target_claim": "selector_generalization_positive",
+      "current_evidence": "recording holdout 8/8 positive; heldout DER 26.5% vs Fast 28.6%; bootstrap delta 2.2%; protocol needs_new_recording_split; candidate scan eligible 0 / missing 8; sealed split validation blocked_waiting_for_valid_sealed_split.",
+      "why_next": "The selector is promising, but it is still development validation and should not be promoted to runtime evidence.",
+      "success_gates": [
+        "Use recordings not involved in threshold selection.",
+        "Keep weighted DER below Fast and below rule writeback fallback.",
+        "Report DER/Miss/FA/Conf plus arrival latency for each recording.",
+        "Keep all selector prompt/runtime surfaces free of DER, GT support, and oracle labels."
+      ],
+      "required_inputs": [
+        "New AliMeeting recordings or a sealed split file",
+        "outputs/research_progress_snapshot/selector_true_heldout_candidate_scan.json",
+        "outputs/research_progress_snapshot/selector_true_heldout_split_validation.json",
+        "outputs/research_progress_snapshot/selector_true_heldout_protocol.json",
+        "outputs/realtime_contract_recording_stability_120/per_recording.csv"
+      ],
+      "report_surface": "EXPERIMENT PROTOCOL / selector validation"
+    },
+    {
+      "experiment_id": "new_candidate_surface_for_non_positive_recordings",
+      "priority": "P0",
+      "status": "ready_to_design_from_blocker_audit",
+      "target_claim": "recording_level_stability_positive",
+      "current_evidence": "recording stability blocker status candidate_pool_exhausted_for_non_positive_recordings; non-positive recordings 3/8; non-positive candidate-pool oracle gain 0.0pp; global candidate oracle gap 0.012833333333333273pp; full baseline leaderboard 8 baselines, beats all True; external candidate surface external_candidate_surface_not_deployable with best delta 0.00016666666666498298pp, coverage 120 windows, positive recordings 7/8; reproduction plan ready_for_default_runtime_promotion_check, missing 0 windows, resume supported True.",
+      "why_next": "The current Fast/Slow/rule candidate pool is exhausted on the three non-positive recordings, so more threshold search is unlikely to make the recording-level gain robust.",
+      "success_gates": [
+        "Create at least one new runtime-eligible candidate timeline for R8001_M8004, R8008_M8013, or R8009_M8020.",
+        "Use prediction/audio/runtime features only; do not use DER, GT speaker labels, oracle support, or evaluation-only abnormal flags at selection time.",
+        "Show candidate-level clipped DER improves at least one currently non-positive recording without adding negative overlay windows elsewhere.",
+        "Promote to default runtime only after all-cached DER still beats the full-coverage baseline leaderboard and recording-level stability improves."
+      ],
+      "required_inputs": [
+        "outputs/recording_stability_blockers/recording_stability_blockers.json",
+        "outputs/baseline_headroom_audit/baseline_headroom_audit.json",
+        "outputs/baseline_leaderboard_audit/baseline_leaderboard_audit.json",
+        "outputs/external_candidate_surface_search/external_candidate_surface_search.json",
+        "outputs/external_candidate_reproduction_plan/external_candidate_reproduction_plan.json",
+        "outputs/audio_window_features/audio_window_features.csv",
+        "New candidate source: stronger VAD/speaker activity, pyannote/diarization rerun, or constrained segment repair"
+      ],
+      "report_surface": "OPTIMIZATION / candidate generation"
+    },
+    {
+      "experiment_id": "omni_fusion_expand_48_or_120",
+      "priority": "P1",
+      "status": "prepared_manifest_pending_live_calls",
+      "target_claim": "omni_fusion_label_only",
+      "current_evidence": "12 windows; high sentinel recall 1/4 (25.0%); clean sentinel FP 0/4 (0.0%); review FP 4/4 (100.0%); expansion manifest 48 windows; readiness blocked_missing_credentials; Agent plan label-only calls 96; postrun closure pending_omni48_live_outputs; output audit claim-ready 0 surfaces; scoring readiness blocked 5 steps.",
+      "why_next": "The current 12-window smoke proves fusion wiring and no-writeback safety, not final recall or precision.",
+      "success_gates": [
+        "Expand to at least 48 windows, preferably 120.",
+        "Keep Omni output label-only with no timeline writeback.",
+        "Separate high sentinel precision/recall from ordinary review hint false positives.",
+        "Report first text latency, total latency, and acoustic-fusion arrival time."
+      ],
+      "required_inputs": [
+        "outputs/omni_guard/omni_flash_plus_window_batch_12.csv",
+        "outputs/research_progress_snapshot/omni_expansion_manifest.csv",
+        "outputs/research_progress_snapshot/live_agent_execution_plan.json",
+        "outputs/research_progress_snapshot/live_postrun_metrics_closure.json",
+        "outputs/research_progress_snapshot/live_output_audit.json",
+        "outputs/research_progress_snapshot/live_scoring_readiness.json",
+        "outputs/research_progress_snapshot/live_run_readiness.json",
+        "audio windows selected from runtime-safe proxy buckets"
+      ],
+      "report_surface": "PARETO ROUTE / Omni fusion"
+    },
+    {
+      "experiment_id": "memory_update_audit_replay",
+      "priority": "P1",
+      "status": "completed_validated_artifact",
+      "target_claim": "llm_review_memory_not_timeline",
+      "current_evidence": "4 review cases; timeline writeback blocks 0; memory update blocks 4; replay blocked 4.",
+      "why_next": "Memory protection is the long-term contamination boundary; it needs a replay artifact, not just an audit count.",
+      "success_gates": [
+        "Replay all review/defer/repeatability-drift cases through the memory update gate.",
+        "Show memory updates are blocked without changing timeline writeback.",
+        "Emit before/after memory candidate counts and blocked reasons.",
+        "Keep prompt/runtime surface free of GT and DER fields."
+      ],
+      "required_inputs": [
+        "outputs/timeline_review_audit/llm_review_signal_timeline_audit.csv",
+        "outputs/llm_window_batch/qwen36_flash_clean_high_rule_auto_audit_disagreement_cases.csv",
+        "outputs/research_progress_snapshot/memory_update_replay.json"
+      ],
+      "report_surface": "ROUTE VALIDATION / speaker memory"
+    },
+    {
+      "experiment_id": "end_to_end_runtime_replay_manifest",
+      "priority": "P1",
+      "status": "completed_validated_artifact",
+      "target_claim": "runtime_evidence_contract_clean",
+      "current_evidence": "runtime evidence audit pass; 16 artifacts; blocking 0; replay stages 6.",
+      "why_next": "The current pieces pass separately; an end-to-end replay manifest would prove stage ordering and artifact lineage in one place.",
+      "success_gates": [
+        "Emit one manifest row per stage: Fast, Rule, LLM guard, LLM review, Omni label, memory gate.",
+        "For each row, include arrival time, writeback right, source artifact, and validation check.",
+        "Verify no runtime row references DER, GT support, oracle labels, or eval-only abnormal flags.",
+        "Keep report/PPT derived from this manifest or explicitly linked to it."
+      ],
+      "required_inputs": [
+        "outputs/research_progress_snapshot/claims_manifest.json",
+        "outputs/research_progress_snapshot/runtime_replay_manifest.json",
+        "outputs/runtime_evidence_audit/runtime_evidence_audit.json",
+        "outputs/system_timeline/summary.json"
+      ],
+      "report_surface": "SYSTEM TIMELINE / runtime contract"
+    }
+  ],
+  "do_not_deploy": [
+    {
+      "item_id": "boundary_auto_writeback",
+      "source_claim": "boundary_auto_writeback_negative_control",
+      "reason": "negative-control DER 33.8% vs recover-best 26.4%; claim strength is do_not_deploy."
+    }
+  ],
+  "summary": {
+    "claim_now_count": 7,
+    "next_experiment_count": 6,
+    "p0_count": 3,
+    "blocked_count": 1,
+    "ready_count": 1,
+    "prepared_count": 1,
+    "completed_count": 2,
+    "do_not_deploy_count": 1
+  }
+}

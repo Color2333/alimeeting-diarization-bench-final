@@ -1,0 +1,13 @@
+[
+  {
+    "recording_id": "R8009_M8019",
+    "windows": 15,
+    "fast_der": 0.12774666666666668,
+    "final_der": 0.05651333333333333,
+    "der_delta_vs_fast_pp": 7.123333333333334,
+    "first_output_latency_proxy_avg_sec": 0.3767347971598307,
+    "first_output_latency_proxy_p95_sec": 0.40117406845092773,
+    "rule_writeback_latency_proxy_avg_sec": 25.42807610829671,
+    "rule_writeback_latency_proxy_p95_sec": 26.66541290283203
+  }
+]

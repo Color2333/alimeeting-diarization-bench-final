@@ -1,0 +1,12 @@
+{
+  "windows": 8,
+  "successful_windows": 8,
+  "patches": 78,
+  "window_decision_counts": {
+    "quarantine": 8
+  },
+  "avg_call_seconds": 11.976625,
+  "total_tokens": 44114,
+  "output_jsonl": "outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_8w.jsonl",
+  "output_csv": "outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_8w.csv"
+}

@@ -1,0 +1,4 @@
+command_id,priority,planned_live_calls,max_call_attempts,retry_backoff_seconds,max_attempted_requests,additional_retry_attempt_budget,backoff_ceiling_seconds,parallel_workers,waves,per_attempt_wall_seconds,retry_ceiling_wall_seconds,retry_wall_overhead_seconds,claim_status
+deepseek_resume_primary,P0,139,2,2.0,278,139,278.0,8,18,384.444,804.888,420.444,retry_budget_planning_only_no_live_metric_claim
+omni48_label_only_live,P1,96,2,2.0,192,96,192.0,0,0,,,,retry_budget_planning_only_no_live_metric_claim
+qwen_full_backup_optional,P1,147,2,2.0,294,147,294.0,8,19,836.456,1710.912,874.456,retry_budget_planning_only_no_live_metric_claim

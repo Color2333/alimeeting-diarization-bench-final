@@ -1,0 +1,17 @@
+{
+  "manifest_source": "recording_ids_arg",
+  "items": [
+    {
+      "recording_id": "R8003_M8001",
+      "audio": null,
+      "label": "R8003_M8001",
+      "output_subdir": "R8003_M8001"
+    },
+    {
+      "recording_id": "R8009_M8019",
+      "audio": null,
+      "label": "R8009_M8019",
+      "output_subdir": "R8009_M8019"
+    }
+  ]
+}

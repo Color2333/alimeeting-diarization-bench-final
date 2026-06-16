@@ -1,0 +1,48 @@
+{
+  "decisions": "outputs/policy_agent/sortformer_diarizen_120_decisions.jsonl",
+  "voiceprint_evidence": "outputs/voiceprint_patch_evidence/real_semantic_120_patch_evidence.csv",
+  "total_patches": 2664,
+  "semantic_patches": 88,
+  "category_counts": {
+    "rule_accept_needs_review": 761,
+    "rule_reference_only": 1175,
+    "rule_recover_writeback": 95,
+    "llm_defer_review": 88,
+    "rule_auto_writeback": 418,
+    "rule_label_only_writeback": 86,
+    "guard_or_quarantine": 39,
+    "non_accept_review": 2
+  },
+  "blocker_counts": {
+    "abnormal_flags": 764,
+    "low_cross_model_support": 179,
+    "short_duration": 296,
+    "slow_reference_segment": 1175,
+    "unsupported_patch_type": 18,
+    "voiceprint_low": 55,
+    "voiceprint_missing": 6,
+    "voiceprint_status_missing_patch_embedding": 6,
+    "voiceprint_medium": 18,
+    "do_not_update_memory_on_short_segment": 86,
+    "high_error_or_quarantine": 39,
+    "non_semantic_non_accept": 2,
+    "enrollment_or_first_window": 1
+  },
+  "semantic_blocker_counts": {
+    "abnormal_flags": 66,
+    "short_duration": 85,
+    "low_cross_model_support": 88,
+    "voiceprint_low": 55,
+    "voiceprint_missing": 6,
+    "voiceprint_status_missing_patch_embedding": 6,
+    "voiceprint_medium": 18,
+    "enrollment_or_first_window": 1,
+    "unsupported_patch_type": 14
+  },
+  "gate": {
+    "min_duration": 0.6,
+    "min_support": 0.8,
+    "min_segment_idx": 1,
+    "voiceprint_required": "high"
+  }
+}

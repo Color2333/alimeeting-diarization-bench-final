@@ -1,0 +1,146 @@
+{
+  "runtime_contract": "live_agent_execution_plan_no_live_calls",
+  "secret_policy": "env_presence_only_no_secret_values_written",
+  "source_artifacts": [
+    "outputs/research_progress_snapshot/live_run_readiness.json",
+    "outputs/research_progress_snapshot/split20_full_live_manifest.json",
+    "outputs/research_progress_snapshot/split20_resume_export_audit.json",
+    "outputs/research_progress_snapshot/omni48_live_call_manifest.json"
+  ],
+  "missing_sources": [],
+  "status": "pass",
+  "summary": {
+    "step_count": 5,
+    "live_step_count": 3,
+    "blocked_step_count": 5,
+    "p0_live_step_count": 1,
+    "planned_live_calls": 382,
+    "p0_planned_live_calls": 139,
+    "omni_label_only_calls": 96,
+    "deepseek_resume_calls": 139,
+    "qwen_backup_calls": 147,
+    "deepseek_resume_estimated_wall_seconds": 384.444,
+    "qwen_backup_estimated_wall_seconds": 836.456,
+    "live_calls_performed": 0,
+    "no_secret_values_written": true
+  },
+  "steps": [
+    {
+      "step_id": "credential_preflight",
+      "priority": "P0",
+      "run_id": "credential_preflight",
+      "status": "blocked_missing_credentials",
+      "planned_calls": 0,
+      "planned_windows": 0,
+      "parallel_workers": 0,
+      "target_models": [],
+      "estimated_wall_seconds": 0.0,
+      "latency_metric_status": "gate_only",
+      "blockers": [
+        "missing_dashscope_or_bailian_api_key_env"
+      ],
+      "run_command": "export DASHSCOPE_API_KEY=...  # or BAILIAN_API_KEY / ALIYUN_BAILIAN_API_KEY; do not write secrets to artifacts",
+      "postrun_artifacts": [
+        "outputs/research_progress_snapshot/live_run_readiness.json"
+      ],
+      "writeback_right": "none"
+    },
+    {
+      "step_id": "split20_deepseek_resume_after_top3",
+      "priority": "P0",
+      "run_id": "split20_deepseek_full",
+      "status": "blocked_by_provider_quota_or_capacity",
+      "planned_calls": 139,
+      "planned_windows": 101,
+      "parallel_workers": 8,
+      "target_models": [
+        "deepseek-v4-flash"
+      ],
+      "estimated_wall_seconds": 384.444,
+      "estimated_waves": 18,
+      "latency_metric_status": "resume_budget_from_split20_simulated_p95",
+      "blockers": [
+        "missing_dashscope_or_bailian_api_key_env",
+        "known_deepseek_top4_5_failure_AllocationQuota.FreeTierOnly"
+      ],
+      "run_command": "python scripts/llm_window_batch_policy_eval.py --mode call --decisions outputs/runtime_safe_policy_agent/sortformer_diarizen_120_decisions.jsonl --trigger-policy proxy_flagged_window --window-evidence outputs/deployable_abnormal_windows/sortformer_diarizen_120_proxy.csv --patch-id-file outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_patch_ids.txt --window-id-file outputs/research_progress_snapshot/split20_deepseek_resume_after_top3_window_ids.txt --max-patches-per-call 20 --model deepseek-v4-flash --parallel-workers 8 --skip-existing-output --max-call-attempts 2 --retry-backoff-seconds 2.0 --output-jsonl outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_split20_resume_after_top3.jsonl",
+      "postrun_artifacts": [
+        "outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_split20_resume_after_top3.jsonl",
+        "outputs/research_progress_snapshot/split20_full_live_manifest.json",
+        "outputs/research_progress_snapshot/latest_artifact_validation.md"
+      ],
+      "writeback_right": "block_or_quarantine_only"
+    },
+    {
+      "step_id": "split20_qwen_backup_full_surface",
+      "priority": "P1",
+      "run_id": "split20_qwen_backup",
+      "status": "blocked_missing_credentials",
+      "planned_calls": 147,
+      "planned_windows": 104,
+      "parallel_workers": 8,
+      "target_models": [
+        "qwen3.6-flash-2026-04-16"
+      ],
+      "estimated_wall_seconds": 836.456,
+      "estimated_waves": 19,
+      "latency_metric_status": "backup_path_budget_not_latency_supporting",
+      "blockers": [
+        "missing_dashscope_or_bailian_api_key_env"
+      ],
+      "run_command": "python scripts/llm_window_batch_policy_eval.py --mode call --decisions outputs/runtime_safe_policy_agent/sortformer_diarizen_120_decisions.jsonl --trigger-policy proxy_flagged_window --window-evidence outputs/deployable_abnormal_windows/sortformer_diarizen_120_proxy.csv --patch-id-file outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_patch_ids.txt --max-patches-per-call 20 --model qwen3.6-flash-2026-04-16 --parallel-workers 8 --skip-existing-output --max-call-attempts 2 --retry-backoff-seconds 2.0 --output-jsonl outputs/runtime_safe_llm_window_batch/qwen36_flash_high_risk_104w_split20_live.jsonl",
+      "postrun_artifacts": [
+        "outputs/runtime_safe_llm_window_batch/qwen36_flash_high_risk_104w_split20_live.jsonl",
+        "outputs/research_progress_snapshot/latest_artifact_validation.md"
+      ],
+      "writeback_right": "block_or_quarantine_only"
+    },
+    {
+      "step_id": "omni48_label_only_live",
+      "priority": "P1",
+      "run_id": "omni48_live",
+      "status": "blocked_missing_credentials",
+      "planned_calls": 96,
+      "planned_windows": 48,
+      "parallel_workers": 0,
+      "target_models": [
+        "qwen3.5-omni-flash",
+        "qwen3.5-omni-plus-2026-03-15"
+      ],
+      "estimated_wall_seconds": null,
+      "clip_model_seconds_proxy": 768.0,
+      "latency_metric_status": "needs_live_first_text_and_total_latency_measurement",
+      "blockers": [
+        "missing_dashscope_or_bailian_api_key_env"
+      ],
+      "run_command": "python scripts/omni_guard_window_batch.py --input-windows-csv outputs/research_progress_snapshot/omni_expansion_manifest.csv --model qwen3.5-omni-flash --model qwen3.5-omni-plus-2026-03-15 --skip-existing-output --max-call-attempts 2 --retry-backoff-seconds 2.0 --output-jsonl outputs/omni_guard/omni_expansion_48_live.jsonl",
+      "postrun_artifacts": [
+        "outputs/omni_guard/omni_expansion_48_live.jsonl",
+        "outputs/research_progress_snapshot/latest_artifact_validation.md"
+      ],
+      "writeback_right": "label_only_no_timeline_writeback"
+    },
+    {
+      "step_id": "postrun_refresh_and_validation",
+      "priority": "P0",
+      "run_id": "postrun_refresh_and_validation",
+      "status": "waiting_for_live_outputs",
+      "planned_calls": 0,
+      "planned_windows": 0,
+      "parallel_workers": 0,
+      "target_models": [],
+      "estimated_wall_seconds": null,
+      "latency_metric_status": "validation_only",
+      "blockers": [
+        "requires_completed_live_outputs"
+      ],
+      "run_command": "python scripts/refresh_latest_research_artifacts.py",
+      "postrun_artifacts": [
+        "outputs/research_progress_snapshot/refresh_latest_artifacts.md",
+        "outputs/research_progress_snapshot/latest_artifact_validation.md",
+        "../研究进展汇报.pptx"
+      ],
+      "writeback_right": "none"
+    }
+  ]
+}

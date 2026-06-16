@@ -1,0 +1,17 @@
+{
+  "windows": 2,
+  "calls": 4,
+  "successful_windows": 0,
+  "successful_calls": 0,
+  "patches": 60,
+  "split_calls": 4,
+  "window_decision_counts": {
+    "error": 4
+  },
+  "avg_call_seconds": 0.0,
+  "wall_seconds": 0.376,
+  "parallel_workers": 4,
+  "total_tokens": 0,
+  "output_jsonl": "outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_split20_top4_5_parallel.jsonl",
+  "output_csv": "outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_split20_top4_5_parallel.csv"
+}

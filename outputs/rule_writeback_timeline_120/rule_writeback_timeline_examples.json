@@ -1,0 +1,1036 @@
+{
+  "rule_recover_new_label": {
+    "key": [
+      "R8001_M8004",
+      30,
+      0
+    ],
+    "pred_segments": [
+      {
+        "start": 0.0,
+        "end": 9.92,
+        "speaker": "speaker_0",
+        "text": ""
+      },
+      {
+        "start": 4.64,
+        "end": 4.8,
+        "speaker": "speaker_1",
+        "text": ""
+      },
+      {
+        "start": 5.2,
+        "end": 5.68,
+        "speaker": "speaker_1",
+        "text": ""
+      },
+      {
+        "start": 9.92,
+        "end": 11.12,
+        "speaker": "speaker_1",
+        "text": ""
+      },
+      {
+        "start": 11.2,
+        "end": 18.16,
+        "speaker": "speaker_0",
+        "text": ""
+      },
+      {
+        "start": 18.96,
+        "end": 22.08,
+        "speaker": "speaker_0",
+        "text": ""
+      },
+      {
+        "start": 22.24,
+        "end": 22.96,
+        "speaker": "speaker_0",
+        "text": ""
+      },
+      {
+        "start": 23.76,
+        "end": 29.52,
+        "speaker": "speaker_1",
+        "text": ""
+      }
+    ],
+    "gt_segments": [
+      {
+        "start": 0.0,
+        "end": 6.72,
+        "speaker": "8015"
+      },
+      {
+        "start": 4.48,
+        "end": 6.62,
+        "speaker": "8013"
+      },
+      {
+        "start": 6.72,
+        "end": 21.83,
+        "speaker": "8015"
+      },
+      {
+        "start": 9.68,
+        "end": 11.95,
+        "speaker": "8013"
+      },
+      {
+        "start": 22.25,
+        "end": 22.83,
+        "speaker": "8015"
+      },
+      {
+        "start": 22.41,
+        "end": 22.65,
+        "speaker": "8013"
+      },
+      {
+        "start": 23.78,
+        "end": 30.0,
+        "speaker": "8016"
+      }
+    ]
+  },
+  "rule_recover_matched_label": {
+    "key": [
+      "R8001_M8004",
+      30,
+      0
+    ],
+    "pred_segments": [
+      {
+        "start": 0.0,
+        "end": 9.92,
+        "speaker": "speaker_0",
+        "text": ""
+      },
+      {
+        "start": 4.64,
+        "end": 4.8,
+        "speaker": "speaker_1",
+        "text": ""
+      },
+      {
+        "start": 5.2,
+        "end": 5.68,
+        "speaker": "speaker_1",
+        "text": ""
+      },
+      {
+        "start": 9.92,
+        "end": 11.12,
+        "speaker": "speaker_1",
+        "text": ""
+      },
+      {
+        "start": 11.2,
+        "end": 18.16,
+        "speaker": "speaker_0",
+        "text": ""
+      },
+      {
+        "start": 18.96,
+        "end": 22.08,
+        "speaker": "speaker_0",
+        "text": ""
+      },
+      {
+        "start": 22.24,
+        "end": 22.96,
+        "speaker": "speaker_0",
+        "text": ""
+      },
+      {
+        "start": 23.76,
+        "end": 29.52,
+        "speaker": "speaker_1",
+        "text": ""
+      }
+    ],
+    "gt_segments": [
+      {
+        "start": 0.0,
+        "end": 6.72,
+        "speaker": "8015"
+      },
+      {
+        "start": 4.48,
+        "end": 6.62,
+        "speaker": "8013"
+      },
+      {
+        "start": 6.72,
+        "end": 21.83,
+        "speaker": "8015"
+      },
+      {
+        "start": 9.68,
+        "end": 11.95,
+        "speaker": "8013"
+      },
+      {
+        "start": 22.25,
+        "end": 22.83,
+        "speaker": "8015"
+      },
+      {
+        "start": 22.41,
+        "end": 22.65,
+        "speaker": "8013"
+      },
+      {
+        "start": 23.78,
+        "end": 30.0,
+        "speaker": "8016"
+      }
+    ]
+  },
+  "rule_recover_matched_label_speaker_union": {
+    "key": [
+      "R8001_M8004",
+      30,
+      0
+    ],
+    "pred_segments": [
+      {
+        "start": 0.0,
+        "end": 9.92,
+        "speaker": "speaker_0",
+        "text": ""
+      },
+      {
+        "start": 4.64,
+        "end": 4.8,
+        "speaker": "speaker_1",
+        "text": ""
+      },
+      {
+        "start": 5.2,
+        "end": 5.68,
+        "speaker": "speaker_1",
+        "text": ""
+      },
+      {
+        "start": 9.92,
+        "end": 11.12,
+        "speaker": "speaker_1",
+        "text": ""
+      },
+      {
+        "start": 11.2,
+        "end": 18.16,
+        "speaker": "speaker_0",
+        "text": ""
+      },
+      {
+        "start": 18.96,
+        "end": 22.08,
+        "speaker": "speaker_0",
+        "text": ""
+      },
+      {
+        "start": 22.24,
+        "end": 22.96,
+        "speaker": "speaker_0",
+        "text": ""
+      },
+      {
+        "start": 23.76,
+        "end": 29.52,
+        "speaker": "speaker_1",
+        "text": ""
+      }
+    ],
+    "gt_segments": [
+      {
+        "start": 0.0,
+        "end": 6.72,
+        "speaker": "8015"
+      },
+      {
+        "start": 4.48,
+        "end": 6.62,
+        "speaker": "8013"
+      },
+      {
+        "start": 6.72,
+        "end": 21.83,
+        "speaker": "8015"
+      },
+      {
+        "start": 9.68,
+        "end": 11.95,
+        "speaker": "8013"
+      },
+      {
+        "start": 22.25,
+        "end": 22.83,
+        "speaker": "8015"
+      },
+      {
+        "start": 22.41,
+        "end": 22.65,
+        "speaker": "8013"
+      },
+      {
+        "start": 23.78,
+        "end": 30.0,
+        "speaker": "8016"
+      }
+    ]
+  },
+  "rule_recover_matched_no_same_overlap": {
+    "key": [
+      "R8001_M8004",
+      30,
+      0
+    ],
+    "pred_segments": [
+      {
+        "start": 0.0,
+        "end": 9.92,
+        "speaker": "speaker_0",
+        "text": ""
+      },
+      {
+        "start": 4.64,
+        "end": 4.8,
+        "speaker": "speaker_1",
+        "text": ""
+      },
+      {
+        "start": 5.2,
+        "end": 5.68,
+        "speaker": "speaker_1",
+        "text": ""
+      },
+      {
+        "start": 9.92,
+        "end": 11.12,
+        "speaker": "speaker_1",
+        "text": ""
+      },
+      {
+        "start": 11.2,
+        "end": 18.16,
+        "speaker": "speaker_0",
+        "text": ""
+      },
+      {
+        "start": 18.96,
+        "end": 22.08,
+        "speaker": "speaker_0",
+        "text": ""
+      },
+      {
+        "start": 22.24,
+        "end": 22.96,
+        "speaker": "speaker_0",
+        "text": ""
+      },
+      {
+        "start": 23.76,
+        "end": 29.52,
+        "speaker": "speaker_1",
+        "text": ""
+      }
+    ],
+    "gt_segments": [
+      {
+        "start": 0.0,
+        "end": 6.72,
+        "speaker": "8015"
+      },
+      {
+        "start": 4.48,
+        "end": 6.62,
+        "speaker": "8013"
+      },
+      {
+        "start": 6.72,
+        "end": 21.83,
+        "speaker": "8015"
+      },
+      {
+        "start": 9.68,
+        "end": 11.95,
+        "speaker": "8013"
+      },
+      {
+        "start": 22.25,
+        "end": 22.83,
+        "speaker": "8015"
+      },
+      {
+        "start": 22.41,
+        "end": 22.65,
+        "speaker": "8013"
+      },
+      {
+        "start": 23.78,
+        "end": 30.0,
+        "speaker": "8016"
+      }
+    ]
+  },
+  "rule_recover_uncovered_only": {
+    "key": [
+      "R8001_M8004",
+      30,
+      0
+    ],
+    "pred_segments": [
+      {
+        "start": 0.0,
+        "end": 9.92,
+        "speaker": "speaker_0",
+        "text": ""
+      },
+      {
+        "start": 4.64,
+        "end": 4.8,
+        "speaker": "speaker_1",
+        "text": ""
+      },
+      {
+        "start": 5.2,
+        "end": 5.68,
+        "speaker": "speaker_1",
+        "text": ""
+      },
+      {
+        "start": 9.92,
+        "end": 11.12,
+        "speaker": "speaker_1",
+        "text": ""
+      },
+      {
+        "start": 11.2,
+        "end": 18.16,
+        "speaker": "speaker_0",
+        "text": ""
+      },
+      {
+        "start": 18.96,
+        "end": 22.08,
+        "speaker": "speaker_0",
+        "text": ""
+      },
+      {
+        "start": 22.24,
+        "end": 22.96,
+        "speaker": "speaker_0",
+        "text": ""
+      },
+      {
+        "start": 23.76,
+        "end": 29.52,
+        "speaker": "speaker_1",
+        "text": ""
+      }
+    ],
+    "gt_segments": [
+      {
+        "start": 0.0,
+        "end": 6.72,
+        "speaker": "8015"
+      },
+      {
+        "start": 4.48,
+        "end": 6.62,
+        "speaker": "8013"
+      },
+      {
+        "start": 6.72,
+        "end": 21.83,
+        "speaker": "8015"
+      },
+      {
+        "start": 9.68,
+        "end": 11.95,
+        "speaker": "8013"
+      },
+      {
+        "start": 22.25,
+        "end": 22.83,
+        "speaker": "8015"
+      },
+      {
+        "start": 22.41,
+        "end": 22.65,
+        "speaker": "8013"
+      },
+      {
+        "start": 23.78,
+        "end": 30.0,
+        "speaker": "8016"
+      }
+    ]
+  },
+  "rule_recover_uncovered_only_speaker_union": {
+    "key": [
+      "R8001_M8004",
+      30,
+      0
+    ],
+    "pred_segments": [
+      {
+        "start": 0.0,
+        "end": 9.92,
+        "speaker": "speaker_0",
+        "text": ""
+      },
+      {
+        "start": 4.64,
+        "end": 4.8,
+        "speaker": "speaker_1",
+        "text": ""
+      },
+      {
+        "start": 5.2,
+        "end": 5.68,
+        "speaker": "speaker_1",
+        "text": ""
+      },
+      {
+        "start": 9.92,
+        "end": 11.12,
+        "speaker": "speaker_1",
+        "text": ""
+      },
+      {
+        "start": 11.2,
+        "end": 18.16,
+        "speaker": "speaker_0",
+        "text": ""
+      },
+      {
+        "start": 18.96,
+        "end": 22.08,
+        "speaker": "speaker_0",
+        "text": ""
+      },
+      {
+        "start": 22.24,
+        "end": 22.96,
+        "speaker": "speaker_0",
+        "text": ""
+      },
+      {
+        "start": 23.76,
+        "end": 29.52,
+        "speaker": "speaker_1",
+        "text": ""
+      }
+    ],
+    "gt_segments": [
+      {
+        "start": 0.0,
+        "end": 6.72,
+        "speaker": "8015"
+      },
+      {
+        "start": 4.48,
+        "end": 6.62,
+        "speaker": "8013"
+      },
+      {
+        "start": 6.72,
+        "end": 21.83,
+        "speaker": "8015"
+      },
+      {
+        "start": 9.68,
+        "end": 11.95,
+        "speaker": "8013"
+      },
+      {
+        "start": 22.25,
+        "end": 22.83,
+        "speaker": "8015"
+      },
+      {
+        "start": 22.41,
+        "end": 22.65,
+        "speaker": "8013"
+      },
+      {
+        "start": 23.78,
+        "end": 30.0,
+        "speaker": "8016"
+      }
+    ]
+  },
+  "rule_recover_identity_selector": {
+    "key": [
+      "R8001_M8004",
+      30,
+      0
+    ],
+    "pred_segments": [
+      {
+        "start": 0.0,
+        "end": 9.92,
+        "speaker": "speaker_0",
+        "text": ""
+      },
+      {
+        "start": 4.64,
+        "end": 4.8,
+        "speaker": "speaker_1",
+        "text": ""
+      },
+      {
+        "start": 5.2,
+        "end": 5.68,
+        "speaker": "speaker_1",
+        "text": ""
+      },
+      {
+        "start": 9.92,
+        "end": 11.12,
+        "speaker": "speaker_1",
+        "text": ""
+      },
+      {
+        "start": 11.2,
+        "end": 18.16,
+        "speaker": "speaker_0",
+        "text": ""
+      },
+      {
+        "start": 18.96,
+        "end": 22.08,
+        "speaker": "speaker_0",
+        "text": ""
+      },
+      {
+        "start": 22.24,
+        "end": 22.96,
+        "speaker": "speaker_0",
+        "text": ""
+      },
+      {
+        "start": 23.76,
+        "end": 29.52,
+        "speaker": "speaker_1",
+        "text": ""
+      }
+    ],
+    "gt_segments": [
+      {
+        "start": 0.0,
+        "end": 6.72,
+        "speaker": "8015"
+      },
+      {
+        "start": 4.48,
+        "end": 6.62,
+        "speaker": "8013"
+      },
+      {
+        "start": 6.72,
+        "end": 21.83,
+        "speaker": "8015"
+      },
+      {
+        "start": 9.68,
+        "end": 11.95,
+        "speaker": "8013"
+      },
+      {
+        "start": 22.25,
+        "end": 22.83,
+        "speaker": "8015"
+      },
+      {
+        "start": 22.41,
+        "end": 22.65,
+        "speaker": "8013"
+      },
+      {
+        "start": 23.78,
+        "end": 30.0,
+        "speaker": "8016"
+      }
+    ]
+  },
+  "rule_recover_policy_sweep_best": {
+    "key": [
+      "R8001_M8004",
+      30,
+      0
+    ],
+    "pred_segments": [
+      {
+        "start": 0.0,
+        "end": 9.92,
+        "speaker": "speaker_0",
+        "text": ""
+      },
+      {
+        "start": 4.64,
+        "end": 4.8,
+        "speaker": "speaker_1",
+        "text": ""
+      },
+      {
+        "start": 5.2,
+        "end": 5.68,
+        "speaker": "speaker_1",
+        "text": ""
+      },
+      {
+        "start": 9.92,
+        "end": 11.12,
+        "speaker": "speaker_1",
+        "text": ""
+      },
+      {
+        "start": 11.2,
+        "end": 18.16,
+        "speaker": "speaker_0",
+        "text": ""
+      },
+      {
+        "start": 18.96,
+        "end": 22.08,
+        "speaker": "speaker_0",
+        "text": ""
+      },
+      {
+        "start": 22.24,
+        "end": 22.96,
+        "speaker": "speaker_0",
+        "text": ""
+      },
+      {
+        "start": 23.76,
+        "end": 29.52,
+        "speaker": "speaker_1",
+        "text": ""
+      }
+    ],
+    "gt_segments": [
+      {
+        "start": 0.0,
+        "end": 6.72,
+        "speaker": "8015"
+      },
+      {
+        "start": 4.48,
+        "end": 6.62,
+        "speaker": "8013"
+      },
+      {
+        "start": 6.72,
+        "end": 21.83,
+        "speaker": "8015"
+      },
+      {
+        "start": 9.68,
+        "end": 11.95,
+        "speaker": "8013"
+      },
+      {
+        "start": 22.25,
+        "end": 22.83,
+        "speaker": "8015"
+      },
+      {
+        "start": 22.41,
+        "end": 22.65,
+        "speaker": "8013"
+      },
+      {
+        "start": 23.78,
+        "end": 30.0,
+        "speaker": "8016"
+      }
+    ]
+  },
+  "rule_boundary_recover": {
+    "key": [
+      "R8001_M8004",
+      30,
+      0
+    ],
+    "pred_segments": [
+      {
+        "start": 0.0,
+        "end": 9.92,
+        "speaker": "speaker_0",
+        "text": ""
+      },
+      {
+        "start": 4.64,
+        "end": 4.8,
+        "speaker": "speaker_1",
+        "text": ""
+      },
+      {
+        "start": 5.2,
+        "end": 5.68,
+        "speaker": "speaker_1",
+        "text": ""
+      },
+      {
+        "start": 9.92,
+        "end": 11.12,
+        "speaker": "speaker_1",
+        "text": ""
+      },
+      {
+        "start": 11.2,
+        "end": 18.16,
+        "speaker": "speaker_0",
+        "text": ""
+      },
+      {
+        "start": 18.96,
+        "end": 22.08,
+        "speaker": "speaker_0",
+        "text": ""
+      },
+      {
+        "start": 22.24,
+        "end": 22.96,
+        "speaker": "speaker_0",
+        "text": ""
+      },
+      {
+        "start": 23.76,
+        "end": 29.52,
+        "speaker": "speaker_1",
+        "text": ""
+      }
+    ],
+    "gt_segments": [
+      {
+        "start": 0.0,
+        "end": 6.72,
+        "speaker": "8015"
+      },
+      {
+        "start": 4.48,
+        "end": 6.62,
+        "speaker": "8013"
+      },
+      {
+        "start": 6.72,
+        "end": 21.83,
+        "speaker": "8015"
+      },
+      {
+        "start": 9.68,
+        "end": 11.95,
+        "speaker": "8013"
+      },
+      {
+        "start": 22.25,
+        "end": 22.83,
+        "speaker": "8015"
+      },
+      {
+        "start": 22.41,
+        "end": 22.65,
+        "speaker": "8013"
+      },
+      {
+        "start": 23.78,
+        "end": 30.0,
+        "speaker": "8016"
+      }
+    ]
+  },
+  "rule_boundary_recover_speaker_union": {
+    "key": [
+      "R8001_M8004",
+      30,
+      0
+    ],
+    "pred_segments": [
+      {
+        "start": 0.0,
+        "end": 9.92,
+        "speaker": "speaker_0",
+        "text": ""
+      },
+      {
+        "start": 4.64,
+        "end": 4.8,
+        "speaker": "speaker_1",
+        "text": ""
+      },
+      {
+        "start": 5.2,
+        "end": 5.68,
+        "speaker": "speaker_1",
+        "text": ""
+      },
+      {
+        "start": 9.92,
+        "end": 11.12,
+        "speaker": "speaker_1",
+        "text": ""
+      },
+      {
+        "start": 11.2,
+        "end": 18.16,
+        "speaker": "speaker_0",
+        "text": ""
+      },
+      {
+        "start": 18.96,
+        "end": 22.08,
+        "speaker": "speaker_0",
+        "text": ""
+      },
+      {
+        "start": 22.24,
+        "end": 22.96,
+        "speaker": "speaker_0",
+        "text": ""
+      },
+      {
+        "start": 23.76,
+        "end": 29.52,
+        "speaker": "speaker_1",
+        "text": ""
+      }
+    ],
+    "gt_segments": [
+      {
+        "start": 0.0,
+        "end": 6.72,
+        "speaker": "8015"
+      },
+      {
+        "start": 4.48,
+        "end": 6.62,
+        "speaker": "8013"
+      },
+      {
+        "start": 6.72,
+        "end": 21.83,
+        "speaker": "8015"
+      },
+      {
+        "start": 9.68,
+        "end": 11.95,
+        "speaker": "8013"
+      },
+      {
+        "start": 22.25,
+        "end": 22.83,
+        "speaker": "8015"
+      },
+      {
+        "start": 22.41,
+        "end": 22.65,
+        "speaker": "8013"
+      },
+      {
+        "start": 23.78,
+        "end": 30.0,
+        "speaker": "8016"
+      }
+    ]
+  },
+  "rule_boundary_recover_no_same_overlap": {
+    "key": [
+      "R8001_M8004",
+      30,
+      0
+    ],
+    "pred_segments": [
+      {
+        "start": 0.0,
+        "end": 9.92,
+        "speaker": "speaker_0",
+        "text": ""
+      },
+      {
+        "start": 4.64,
+        "end": 4.8,
+        "speaker": "speaker_1",
+        "text": ""
+      },
+      {
+        "start": 5.2,
+        "end": 5.68,
+        "speaker": "speaker_1",
+        "text": ""
+      },
+      {
+        "start": 9.92,
+        "end": 11.12,
+        "speaker": "speaker_1",
+        "text": ""
+      },
+      {
+        "start": 11.2,
+        "end": 18.16,
+        "speaker": "speaker_0",
+        "text": ""
+      },
+      {
+        "start": 18.96,
+        "end": 22.08,
+        "speaker": "speaker_0",
+        "text": ""
+      },
+      {
+        "start": 22.24,
+        "end": 22.96,
+        "speaker": "speaker_0",
+        "text": ""
+      },
+      {
+        "start": 23.76,
+        "end": 29.52,
+        "speaker": "speaker_1",
+        "text": ""
+      }
+    ],
+    "gt_segments": [
+      {
+        "start": 0.0,
+        "end": 6.72,
+        "speaker": "8015"
+      },
+      {
+        "start": 4.48,
+        "end": 6.62,
+        "speaker": "8013"
+      },
+      {
+        "start": 6.72,
+        "end": 21.83,
+        "speaker": "8015"
+      },
+      {
+        "start": 9.68,
+        "end": 11.95,
+        "speaker": "8013"
+      },
+      {
+        "start": 22.25,
+        "end": 22.83,
+        "speaker": "8015"
+      },
+      {
+        "start": 22.41,
+        "end": 22.65,
+        "speaker": "8013"
+      },
+      {
+        "start": 23.78,
+        "end": 30.0,
+        "speaker": "8016"
+      }
+    ]
+  }
+}

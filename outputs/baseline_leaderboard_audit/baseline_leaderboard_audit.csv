@@ -1,0 +1,9 @@
+rank,candidate_id,source_type,comparable_scope,coverage_windows,expected_windows,der,delta_vs_final_pp,beats_final,avg_latency,path
+1,runtime_same_window/slow_base,runtime_baseline_comparison,full_current_window_pool,120,120,0.16880917,0.388583,False,,outputs/system_demo/all_cached_recordings/baseline_comparison.json
+2,diarizen-large-v2/diarizen-large-v2/spk_none,historical_summary_results,full_current_window_pool,120,120,0.16880917,0.388583,False,24.6469,outputs/diarizen_uv_120/diarizen-large-v2/default__spk_none/summary.json
+3,diarizen-large-v2/diarizen-large-v2/spk_none,historical_summary_results,full_current_window_pool,120,120,0.16880917,0.388583,False,20.4951,outputs/diarizen_uv_48/diarizen-large-v2/default__spk_none/summary.json
+4,runtime_same_window/rule_recover_policy_sweep_best,runtime_baseline_comparison,full_current_window_pool,120,120,0.26397500,9.905167,False,,outputs/system_demo/all_cached_recordings/baseline_comparison.json
+5,runtime_same_window/rule_recover_matched_label,runtime_baseline_comparison,full_current_window_pool,120,120,0.26431500,9.939167,False,,outputs/system_demo/all_cached_recordings/baseline_comparison.json
+6,runtime_same_window/rule_recover_uncovered_only,runtime_baseline_comparison,full_current_window_pool,120,120,0.26526083,10.033750,False,,outputs/system_demo/all_cached_recordings/baseline_comparison.json
+7,runtime_same_window/fast_base,runtime_baseline_comparison,full_current_window_pool,120,120,0.28563750,12.071417,False,,outputs/system_demo/all_cached_recordings/baseline_comparison.json
+8,nemo-sortformer-4spk-v1/nemo-sortformer-4spk-v1/spk_none,historical_summary_results,full_current_window_pool,120,120,0.28563750,12.071417,False,0.3830,outputs/sortformer_uv_120/nemo-sortformer-4spk-v1/default__spk_none/summary.json

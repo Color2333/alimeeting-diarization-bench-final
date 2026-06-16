@@ -1,0 +1,28 @@
+{
+  "runtime_contract": "split20_resume_export_audit_no_live_calls",
+  "status": "pass",
+  "export_prompt_jsonl": "outputs/research_progress_snapshot/split20_resume_after_top3_export_prompts.jsonl",
+  "export_command": "/opt/homebrew/opt/python@3.11/bin/python3.11 scripts/llm_window_batch_policy_eval.py --mode export --decisions outputs/runtime_safe_policy_agent/sortformer_diarizen_120_decisions.jsonl --trigger-policy proxy_flagged_window --window-evidence outputs/deployable_abnormal_windows/sortformer_diarizen_120_proxy.csv --patch-id-file outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_patch_ids.txt --window-id-file outputs/research_progress_snapshot/split20_deepseek_resume_after_top3_window_ids.txt --max-patches-per-call 20 --model deepseek-v4-flash --output-jsonl outputs/research_progress_snapshot/split20_resume_after_top3_export_prompts.jsonl",
+  "summary": {
+    "export_prompts": 139,
+    "export_parent_windows": 101,
+    "prompt_patch_references": 1790,
+    "expected_prompts": 139,
+    "expected_parent_windows": 101,
+    "pending_window_id_file": "outputs/research_progress_snapshot/split20_deepseek_resume_after_top3_window_ids.txt",
+    "pending_ids": 101,
+    "completed_ids": 3,
+    "failed_ids": 2,
+    "completed_overlap": [],
+    "missing_pending": [],
+    "extra_parent_ids": [],
+    "failed_missing": [],
+    "sub_batch_count_distribution": {
+      "3": 3,
+      "2": 72,
+      "1": 64
+    },
+    "live_calls_performed": 0
+  },
+  "failures": []
+}

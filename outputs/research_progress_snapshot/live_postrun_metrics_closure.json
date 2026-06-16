@@ -1,0 +1,115 @@
+{
+  "runtime_contract": "live_postrun_metrics_closure_no_live_calls",
+  "source_plan_contract": "live_agent_execution_plan_no_live_calls",
+  "status": "pending_live_outputs",
+  "summary": {
+    "split20_expected_calls": 147,
+    "split20_expected_parent_windows": 104,
+    "deepseek_success_calls": 8,
+    "deepseek_observed_calls_including_failed": 12,
+    "deepseek_completion_rate": 0.0544,
+    "deepseek_resume_expected_calls": 139,
+    "deepseek_resume_successful_calls": 0,
+    "deepseek_quota_failed_calls": 4,
+    "qwen_backup_observed_calls": 4,
+    "omni48_expected_calls": 96,
+    "omni48_successful_calls": 0,
+    "omni48_completion_rate": 0.0,
+    "omni_realtime_first_text_seconds": 0.744,
+    "omni_realtime_total_seconds": 1.356,
+    "split20_latency_claim_status": "blocked_by_quota_or_missing_resume",
+    "omni48_latency_claim_status": "pending_omni48_live_outputs",
+    "missing_live_outputs": [
+      "outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_split20_resume_after_top3.jsonl",
+      "outputs/runtime_safe_llm_window_batch/qwen36_flash_high_risk_104w_split20_live.jsonl",
+      "outputs/omni_guard/omni_expansion_48_live.jsonl"
+    ],
+    "live_calls_performed_by_builder": 0
+  },
+  "surfaces": [
+    {
+      "surface_id": "deepseek_top3_parallel_smoke",
+      "kind": "llm_split20",
+      "expected_calls": 8,
+      "observed_calls": 8,
+      "successful_calls": 8,
+      "failed_calls": 0,
+      "parent_windows": 3,
+      "status": "completed_limited_smoke",
+      "latency_evidence": "wall 29.014s vs original max 48.465s",
+      "claim_status": "supporting_smoke_only"
+    },
+    {
+      "surface_id": "deepseek_top4_5_quota_attempt",
+      "kind": "llm_split20",
+      "expected_calls": 4,
+      "observed_calls": 4,
+      "successful_calls": 0,
+      "failed_calls": 4,
+      "parent_windows": 2,
+      "status": "failed_AllocationQuota.FreeTierOnly",
+      "latency_evidence": "no generation before quota failure",
+      "claim_status": "blocking_full_surface_claim"
+    },
+    {
+      "surface_id": "deepseek_resume_after_top3",
+      "kind": "llm_split20",
+      "expected_calls": 139,
+      "observed_calls": 0,
+      "successful_calls": 0,
+      "failed_calls": 0,
+      "parent_windows": 0,
+      "status": "pending_live_output",
+      "latency_evidence": "resume wall not measured yet",
+      "claim_status": "blocked_by_quota_or_missing_resume"
+    },
+    {
+      "surface_id": "qwen_top4_5_backup",
+      "kind": "llm_split20_backup",
+      "expected_calls": 4,
+      "observed_calls": 4,
+      "successful_calls": 4,
+      "failed_calls": 0,
+      "parent_windows": 2,
+      "status": "completed_backup_not_latency_supporting",
+      "latency_evidence": "wall 44.024s; verdict slower_than_original_max",
+      "claim_status": "execution_fallback_only"
+    },
+    {
+      "surface_id": "qwen_full_backup",
+      "kind": "llm_split20_backup",
+      "expected_calls": 147,
+      "observed_calls": 0,
+      "successful_calls": 0,
+      "failed_calls": 0,
+      "parent_windows": 0,
+      "status": "pending_live_output",
+      "latency_evidence": "full backup wall not measured yet",
+      "claim_status": "fallback_only_not_primary_latency_claim"
+    },
+    {
+      "surface_id": "omni48_label_only",
+      "kind": "omni_label_only",
+      "expected_calls": 96,
+      "observed_calls": 0,
+      "successful_calls": 0,
+      "failed_calls": 0,
+      "parent_windows": 0,
+      "status": "pending_live_output",
+      "latency_evidence": "first text/total latency not measured for Omni48 yet",
+      "claim_status": "pending_omni48_live_outputs"
+    },
+    {
+      "surface_id": "omni_realtime_single_smoke",
+      "kind": "omni_realtime_smoke",
+      "expected_calls": 1,
+      "observed_calls": 1,
+      "successful_calls": 1,
+      "failed_calls": 0,
+      "parent_windows": 1,
+      "status": "completed_single_latency_smoke",
+      "latency_evidence": "first_text 0.744s; total 1.356s",
+      "claim_status": "smoke_only_not_omni48_claim"
+    }
+  ]
+}

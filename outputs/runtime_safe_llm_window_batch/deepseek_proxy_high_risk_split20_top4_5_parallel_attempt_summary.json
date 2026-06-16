@@ -1,0 +1,16 @@
+{
+  "attempt": "split20_top4_5_parallel",
+  "model": "deepseek-v4-flash",
+  "parent_windows": [
+    "R8003_M8001:30:12",
+    "R8009_M8020:30:12"
+  ],
+  "calls": 4,
+  "successful_calls": 0,
+  "failed_calls": 4,
+  "patches": 60,
+  "failure_type": "AllocationQuota.FreeTierOnly",
+  "finding": "all top4/top5 split20 subcalls failed before model output because the provider free-tier-only quota was exhausted",
+  "next_action": "resume top4/top5 live split validation after paid quota is enabled or switch to a comparable configured guard model",
+  "csv": "outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_split20_top4_5_parallel.csv"
+}

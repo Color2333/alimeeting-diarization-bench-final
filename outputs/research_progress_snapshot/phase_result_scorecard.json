@@ -1,0 +1,134 @@
+{
+  "runtime_contract": "phase_result_scorecard_from_existing_artifacts_no_live_calls",
+  "status": "pass",
+  "summary": {
+    "result_rows": 8,
+    "reportable_rows": 7,
+    "deepseek_no_go_rows": 1,
+    "claim_now_slo_pass": 4,
+    "claim_now_slo_rows": 4,
+    "selector_positive_splits": 8,
+    "selector_splits": 8,
+    "selector_weighted_delta_pp": 2.05,
+    "rule_bootstrap_delta_pp": 2.17,
+    "guard_harmful_accepts": 0,
+    "guard_safe_accepts": 323,
+    "omni_smoke_windows": 12,
+    "qwen_fallback_calls": 4,
+    "traceability_rows": 54,
+    "traceability_fully_covered_rows": 54,
+    "live_calls_performed_by_builder": 0,
+    "no_live_calls_performed": true,
+    "no_scoring_commands_executed": true,
+    "no_deepseek_api_calls": true,
+    "no_new_metric_claim": true
+  },
+  "rows": [
+    {
+      "result_id": "recording_holdout_selector_gain",
+      "area": "DER improvement",
+      "headline": "Selector improves DER on all recording-holdout splits.",
+      "metric": "weighted DER delta vs fast",
+      "value": "28.56% -> 26.51% (+2.05 pp); positive splits 8/8",
+      "evidence_strength": "recording_holdout",
+      "claim_boundary": "not_true_heldout_until_new_recordings",
+      "source_artifacts": [
+        "outputs/recover_selector_split_120/recording_holdout_summary.json"
+      ],
+      "source_artifacts_exist": true
+    },
+    {
+      "result_id": "bootstrap_rule_recover_gain",
+      "area": "DER improvement",
+      "headline": "Rule-recover policy beats fast baseline in bootstrap sampling.",
+      "metric": "bootstrap DER and P(beats fast)",
+      "value": "fast 28.56% vs rule 26.40%; delta +2.17 pp; P(beats fast) 100.0%",
+      "evidence_strength": "development_bootstrap",
+      "claim_boundary": "dev_set_not_final_test",
+      "source_artifacts": [
+        "outputs/realtime_contract_bootstrap_120/realtime_contract_bootstrap.json"
+      ],
+      "source_artifacts_exist": true
+    },
+    {
+      "result_id": "slow_model_upper_bound",
+      "area": "DER reference",
+      "headline": "Slow model is the quality upper reference but not the realtime path.",
+      "metric": "slow-base DER delta vs fast",
+      "value": "slow 16.88% vs fast 28.56%; delta +11.68 pp",
+      "evidence_strength": "development_bootstrap",
+      "claim_boundary": "quality_reference_not_realtime_claim",
+      "source_artifacts": [
+        "outputs/realtime_contract_bootstrap_120/realtime_contract_bootstrap.json"
+      ],
+      "source_artifacts_exist": true
+    },
+    {
+      "result_id": "runtime_latency_slo_pass",
+      "area": "Latency",
+      "headline": "Current claim-now runtime stages pass latency SLO.",
+      "metric": "claim-now SLO pass",
+      "value": "4/4; fast avg/p95 0.383/0.445s; writeback avg/p95 24.647/28.334s",
+      "evidence_strength": "claim_now_runtime",
+      "claim_boundary": "post_live_latency_not_claimed",
+      "source_artifacts": [
+        "outputs/research_progress_snapshot/stage_latency_slo_audit.json",
+        "outputs/system_timeline/summary.json"
+      ],
+      "source_artifacts_exist": true
+    },
+    {
+      "result_id": "llm_guard_zero_harm",
+      "area": "Safety",
+      "headline": "Runtime-safe guard recovers useful patches while preserving zero harmful accepts.",
+      "metric": "safe accepts / harmful accepts",
+      "value": "safe accepts 323; harmful accepts 0; conservative recovered 260; patches 1917",
+      "evidence_strength": "runtime_guard_existing_outputs",
+      "claim_boundary": "block_or_quarantine_only_no_auto_timeline_override",
+      "source_artifacts": [
+        "outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_tuned_passthrough_safety_summary.json",
+        "outputs/runtime_safe_llm_window_batch/llm_guard_tuning_104w_summary.json"
+      ],
+      "source_artifacts_exist": true
+    },
+    {
+      "result_id": "omni_acoustic_smoke",
+      "area": "Acoustic / Omni",
+      "headline": "Omni acoustic signal is useful for review routing, not direct writeback.",
+      "metric": "review-priority recall and latency",
+      "value": "high recall 4/4 (100.0%); clean high-sentinel FP 0/4 (0.0%); flash avg/p95 2.11/6.41s",
+      "evidence_strength": "12_window_smoke",
+      "claim_boundary": "label_only_no_timeline_writeback",
+      "source_artifacts": [
+        "outputs/omni_guard/omni_acoustic_fusion_summary.json"
+      ],
+      "source_artifacts_exist": true
+    },
+    {
+      "result_id": "qwen_fallback_smoke",
+      "area": "Fallback live smoke",
+      "headline": "Qwen fallback completed safely but is slower than the primary latency target.",
+      "metric": "fallback wall / harmful accepts",
+      "value": "parents 2; calls 4; wall 44.024s; harmful accepts 0",
+      "evidence_strength": "fallback_smoke",
+      "claim_boundary": "fallback_only_not_primary_latency_claim",
+      "source_artifacts": [
+        "outputs/runtime_safe_llm_window_batch/qwen36_flash_split20_top4_5_parallel_comparison.json"
+      ],
+      "source_artifacts_exist": true
+    },
+    {
+      "result_id": "deepseek_no_go",
+      "area": "Execution decision",
+      "headline": "DeepSeek full-live path is no-go after API exhaustion.",
+      "metric": "live output availability",
+      "value": "observed live rows 0; missing surfaces 3; DeepSeek API exhausted, no further DeepSeek calls",
+      "evidence_strength": "execution_boundary",
+      "claim_boundary": "do_not_use_deepseek_api",
+      "source_artifacts": [
+        "outputs/research_progress_snapshot/live_output_audit.json"
+      ],
+      "source_artifacts_exist": true
+    }
+  ]
+}

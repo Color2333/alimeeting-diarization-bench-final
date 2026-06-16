@@ -1,0 +1,137 @@
+{
+  "runtime_contract": "post_live_promotion_preflight_audit_no_live_or_scoring_calls",
+  "status": "blocked_waiting_post_live_evidence",
+  "source_contracts": {
+    "live_execution_launcher": "live_execution_launcher_dry_run_no_live_calls",
+    "post_live_scoring_launcher": "post_live_scoring_launcher_dry_run_no_scoring_calls",
+    "post_live_scoring_output_audit": "post_live_scoring_output_audit_no_scoring_calls",
+    "post_live_time_metric_extractor": "post_live_time_metric_extractor_no_live_calls",
+    "post_live_time_metric_statistics_plan": "post_live_time_metric_statistics_plan_no_live_calls",
+    "post_live_claim_promotion_gate": "post_live_claim_promotion_gate_no_live_calls",
+    "report_ppt_traceability": "report_ppt_traceability_from_existing_artifacts_no_live_calls"
+  },
+  "summary": {
+    "preflight_rows": 6,
+    "pass_rows": 2,
+    "blocked_rows": 4,
+    "missing_source_rows": 0,
+    "ready_for_promotion_review": false,
+    "post_live_ready_to_promote_count": 0,
+    "promotion_blocked_count": 5,
+    "promotion_preserve_count": 2,
+    "promotion_fallback_only_count": 1,
+    "scoring_output_promotion_ready_rows": 0,
+    "ready_time_metric_rows": 0,
+    "computed_time_metric_rows": 0,
+    "traceability_rows": 54,
+    "traceability_fully_covered_rows": 54,
+    "live_calls_performed_by_builder": 0,
+    "no_live_calls_performed": true,
+    "no_scoring_commands_executed": true,
+    "no_secret_values_written": true,
+    "no_new_metric_claim": true
+  },
+  "rows": [
+    {
+      "preflight_id": "live_execution_preflight",
+      "stage": "live_execution",
+      "current_state": "dry_run_blocked_waiting_credentials_or_execute_flag",
+      "status": "blocked",
+      "blocking_reason": "credentials_or_execute_flag_missing",
+      "observed_state": "selected live calls 139; started 0; credential ready False",
+      "success_gate": "execute record exists and required P0 live calls complete",
+      "next_action": "run live launcher with explicit execute flag after credentials/quota are ready",
+      "source_artifacts": [
+        "outputs/research_progress_snapshot/live_execution_launcher.md"
+      ],
+      "claim_boundary": "no_claim_promotion_before_live_outputs",
+      "source_artifacts_exist": true,
+      "live_calls_performed_by_builder": 0
+    },
+    {
+      "preflight_id": "scoring_execution_preflight",
+      "stage": "scoring_outputs",
+      "current_state": "blocked_waiting_scoring_outputs",
+      "status": "blocked",
+      "blocking_reason": "scoring_outputs_missing_or_blocked",
+      "observed_state": "promotion-ready scoring rows 0; missing output artifacts 12; executed scoring rows 0",
+      "success_gate": "required scoring output rows are unblocked and promotion-ready",
+      "next_action": "run ready scoring launcher after live output audit is clean",
+      "source_artifacts": [
+        "outputs/research_progress_snapshot/post_live_scoring_launcher.md",
+        "outputs/research_progress_snapshot/post_live_scoring_output_audit.md"
+      ],
+      "claim_boundary": "no_claim_promotion_before_scoring_outputs",
+      "source_artifacts_exist": true,
+      "live_calls_performed_by_builder": 0
+    },
+    {
+      "preflight_id": "time_metric_preflight",
+      "stage": "time_metrics",
+      "current_state": "blocked_waiting_live_outputs",
+      "status": "blocked",
+      "blocking_reason": "time_metric_outputs_missing",
+      "observed_state": "ready time metric rows 0; computed rows 0; expected live rows 382",
+      "success_gate": "post-live time metric extractor has ready rows and clean parse status",
+      "next_action": "rerun time extractor after live output JSONL files exist",
+      "source_artifacts": [
+        "outputs/research_progress_snapshot/post_live_time_metric_statistics_plan.md",
+        "outputs/research_progress_snapshot/post_live_time_metric_extractor.md"
+      ],
+      "claim_boundary": "time_metrics_no_new_claim_until_promotion",
+      "source_artifacts_exist": true,
+      "live_calls_performed_by_builder": 0
+    },
+    {
+      "preflight_id": "claim_promotion_gate_preflight",
+      "stage": "promotion_gate",
+      "current_state": "pass",
+      "status": "blocked",
+      "blocking_reason": "no_post_live_gate_ready_to_promote",
+      "observed_state": "ready to promote 0; blocked 5; fallback-only 1",
+      "success_gate": "at least one post-live gate is ready and all source rows exist",
+      "next_action": "keep current claims preserved until live/scoring/time gates pass",
+      "source_artifacts": [
+        "outputs/research_progress_snapshot/post_live_claim_promotion_gate.md"
+      ],
+      "claim_boundary": "promote_only_after_output_audit_scoring_slo_traceability_and_time_metrics",
+      "source_artifacts_exist": true,
+      "live_calls_performed_by_builder": 0
+    },
+    {
+      "preflight_id": "report_ppt_traceability_preflight",
+      "stage": "report_ppt_traceability",
+      "current_state": "pass",
+      "status": "pass",
+      "blocking_reason": "",
+      "observed_state": "covered 54/54; missing report 0; missing PPT 0",
+      "success_gate": "traceability status pass and fully covered rows equal total rows",
+      "next_action": "rerun report/PPT refresh after any artifact changes",
+      "source_artifacts": [
+        "outputs/research_progress_snapshot/report_ppt_traceability.md"
+      ],
+      "claim_boundary": "report_ppt_sync_required_before_claim_promotion",
+      "source_artifacts_exist": true,
+      "live_calls_performed_by_builder": 0
+    },
+    {
+      "preflight_id": "claim_boundary_safety_preflight",
+      "stage": "claim_boundary_safety",
+      "current_state": "no_new_metric_claim",
+      "status": "pass",
+      "blocking_reason": "",
+      "observed_state": "no_new_metric_claim chain True; live calls by builders 0",
+      "success_gate": "all preflight source artifacts preserve no-new-metric-claim boundary",
+      "next_action": "keep post-live rows blocked until real evidence exists",
+      "source_artifacts": [
+        "outputs/research_progress_snapshot/live_execution_launcher.md",
+        "outputs/research_progress_snapshot/post_live_scoring_output_audit.md",
+        "outputs/research_progress_snapshot/post_live_time_metric_extractor.md",
+        "outputs/research_progress_snapshot/post_live_claim_promotion_gate.md"
+      ],
+      "claim_boundary": "no_new_metric_claim_until_evidence_promotion",
+      "source_artifacts_exist": true,
+      "live_calls_performed_by_builder": 0
+    }
+  ]
+}

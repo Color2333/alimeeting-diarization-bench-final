@@ -1,0 +1,19 @@
+{
+  "windows": 104,
+  "patches": 1917,
+  "window_decisions": "quarantine 96 / review 8",
+  "patch_decisions": "accept 65 / defer 732 / quarantine 1120",
+  "safe_accepts": 63,
+  "harmful_accepts": 2,
+  "conservative_blocks": 1811,
+  "safe_blocks": 41,
+  "missing_patch_eval": 0,
+  "window_quarantine_accept_overrides": 0,
+  "avg_call_seconds": 20.27077884615384,
+  "p95_call_seconds": 35.515,
+  "avg_correction_delay_seconds": 44.91766093711975,
+  "p95_correction_delay_seconds": 63.848572399616245,
+  "batch_jsonl": "outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w.jsonl",
+  "patches_eval": "outputs/segment_patches/sortformer_diarizen_120_patches.csv",
+  "runtime_contract": "prompt_passed_runtime_evidence_audit; window_quarantine_accept_override"
+}

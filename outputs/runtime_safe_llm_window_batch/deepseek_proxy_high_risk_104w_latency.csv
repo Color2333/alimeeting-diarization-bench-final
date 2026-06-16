@@ -1,0 +1,105 @@
+window_id,recording_id,segment_idx,window_decision,window_reason,patch_count,patch_bucket,call_seconds,correction_delay_avgslow_seconds,prompt_tokens,completion_tokens,total_tokens,tokens_per_patch,seconds_per_patch,patch_decision_counts
+R8007_M8010:30:0,R8007_M8010,0,quarantine,proxy_abnormal_speech_too_long,45,04_>15,48.465,73.112,10458,6759,17217,382.6,1.077,defer 45
+R8007_M8010:30:8,R8007_M8010,8,quarantine,cross_model_speaker_count_mismatch_and_speech_too_long_risk,44,04_>15,25.711,50.358,11454,4390,15844,360.1,0.584,quarantine 44
+R8007_M8010:30:3,R8007_M8010,3,quarantine,multiple_proxy_flags_and_speaker_count_mismatch,42,04_>15,39.721,64.368,11009,4995,16004,381.0,0.946,quarantine 42
+R8007_M8010:30:6,R8007_M8010,6,review,proxy_risk_window,40,04_>15,44.557,69.204,10529,6825,17354,433.9,1.114,accept 24 / defer 16
+R8007_M8010:30:14,R8007_M8010,14,quarantine,proxy_risk_speech_overlap,39,04_>15,28.867,53.514,9239,5457,14696,376.8,0.74,defer 38 / quarantine 1
+R8009_M8020:30:12,R8009_M8020,12,quarantine,slow_pred_speech_too_long_proxy_risk,37,04_>15,36.447,61.094,9267,6227,15494,418.8,0.985,defer 36 / quarantine 1
+R8001_M8004:30:10,R8001_M8004,10,quarantine,cross_model_mismatch_and_speech_length_anomaly,35,04_>15,29.932,54.579,9330,4719,14049,401.4,0.855,quarantine 35
+R8007_M8010:30:4,R8007_M8010,4,quarantine,proxy_flags_cross_model_speaker_count_mismatch_and_pred_speech_too_long,35,04_>15,28.18,52.827,9238,4726,13964,399.0,0.805,quarantine 35
+R8007_M8010:30:5,R8007_M8010,5,quarantine,proxy_speech_too_long_flags,35,04_>15,22.59,47.237,8320,3356,11676,333.6,0.645,quarantine 35
+R8009_M8018:30:12,R8009_M8018,12,review,slow_proxy_duration_abnormal,35,04_>15,27.001,51.648,7958,4488,12446,355.6,0.771,defer 35
+R8007_M8010:30:11,R8007_M8010,11,quarantine,proxy_risk_window,34,04_>15,25.271,49.918,8085,4058,12143,357.1,0.743,quarantine 34
+R8003_M8001:30:10,R8003_M8001,10,quarantine,proxy_risk_long_speech,33,04_>15,32.746,57.393,7914,5159,13073,396.2,0.992,defer 32 / quarantine 1
+R8007_M8010:30:12,R8007_M8010,12,quarantine,cross_model_speaker_count_mismatch_and_speech_too_long,33,04_>15,32.248,56.895,8722,4427,13149,398.5,0.977,quarantine 33
+R8007_M8010:30:2,R8007_M8010,2,quarantine,deployable_proxy_flags_and_speaker_count_mismatch,32,04_>15,34.399,59.046,8543,3996,12539,391.8,1.075,quarantine 32
+R8007_M8010:30:7,R8007_M8010,7,quarantine,cross_model_speaker_count_and_speech_length_mismatch_with_multiple_patches_risk,32,04_>15,24.073,48.72,8584,4295,12879,402.5,0.752,defer 32
+R8007_M8011:30:8,R8007_M8011,8,quarantine,cross_model_proxy_flags_and_speaker_count_mismatch,32,04_>15,27.604,52.251,8936,4091,13027,407.1,0.863,defer 31 / quarantine 1
+R8003_M8001:30:2,R8003_M8001,2,quarantine,pred_speech_too_long_proxy_flag,30,04_>15,35.515,60.162,7263,4772,12035,401.2,1.184,quarantine 30
+R8007_M8010:30:9,R8007_M8010,9,quarantine,proxy_abnormal_flags_and_speech_too_long,30,04_>15,24.493,49.14,7194,4165,11359,378.6,0.816,defer 30
+R8007_M8010:30:10,R8007_M8010,10,quarantine,deployable_proxy_flags_and_speaker_count_mismatch,29,04_>15,28.083,52.73,7807,3625,11432,394.2,0.968,quarantine 29
+R8007_M8011:30:10,R8007_M8011,10,quarantine,multiple_risk_flags_and_spk_count_mismatch,29,04_>15,26.508,51.155,7721,4214,11935,411.6,0.914,quarantine 29
+R8007_M8010:30:13,R8007_M8010,13,quarantine,cross_model_speaker_count_mismatch_and_speech_overcount,28,04_>15,27.406,52.053,7496,3581,11077,395.6,0.979,quarantine 28
+R8008_M8013:30:5,R8008_M8013,5,quarantine,high_model_disagreement_and_proxy_flags,28,04_>15,27.381,52.028,7507,4463,11970,427.5,0.978,defer 28
+R8001_M8004:30:14,R8001_M8004,14,quarantine,proxy_speech_too_long,27,04_>15,22.351,46.998,6547,3337,9884,366.1,0.828,quarantine 27
+R8003_M8001:30:0,R8003_M8001,0,quarantine,high_risk_proxy_flags,27,04_>15,22.289,46.936,7058,3916,10974,406.4,0.826,quarantine 27
+R8003_M8001:30:5,R8003_M8001,5,quarantine,slow_proxy_risk_window,27,04_>15,29.743,54.39,6296,4291,10587,392.1,1.102,defer 26 / quarantine 1
+R8007_M8011:30:11,R8007_M8011,11,quarantine,proxy_flags_and_speaker_count_mismatch,26,04_>15,22.124,46.771,6860,3134,9994,384.4,0.851,quarantine 26
+R8009_M8020:30:7,R8009_M8020,7,quarantine,slow_proxy_risk_window_flags,26,04_>15,26.492,51.139,6028,4074,10102,388.5,1.019,quarantine 26
+R8003_M8001:30:4,R8003_M8001,4,quarantine,proxy_speech_too_long_with_abnormal_flags,25,04_>15,20.824,45.471,6146,3287,9433,377.3,0.833,defer 25
+R8009_M8019:30:7,R8009_M8019,7,quarantine,proxy_risk_cross_model_gap,25,04_>15,23.066,47.713,6234,3865,10099,404.0,0.923,defer 24 / quarantine 1
+R8001_M8004:30:7,R8001_M8004,7,quarantine,cross_model_speaker_count_mismatch,24,04_>15,16.384,41.031,6077,2840,8917,371.5,0.683,quarantine 24
+R8003_M8001:30:7,R8003_M8001,7,quarantine,deployable_proxy_risk,24,04_>15,18.579,43.226,6619,3482,10101,420.9,0.774,defer 23 / quarantine 1
+R8008_M8013:30:9,R8008_M8013,9,quarantine,proxy_risk_window_multiple_flags,24,04_>15,25.831,50.478,6548,3699,10247,427.0,1.076,defer 24
+R8009_M8018:30:11,R8009_M8018,11,quarantine,deployable_proxy_flags_and_disagreement,24,04_>15,29.031,53.678,6175,4055,10230,426.2,1.21,defer 13 / quarantine 11
+R8009_M8018:30:6,R8009_M8018,6,quarantine,proxy_flagged_window_requires_quarantine,24,04_>15,21.85,46.497,6236,3959,10195,424.8,0.91,defer 22 / quarantine 2
+R8009_M8020:30:6,R8009_M8020,6,quarantine,proxy_flagged_window,24,04_>15,29.073,53.72,5590,4370,9960,415.0,1.211,defer 23 / quarantine 1
+R8001_M8004:30:2,R8001_M8004,2,quarantine,multiple_proxy_flags_speaker_count_mismatch_and_speech_length_disagreement,23,04_>15,21.604,46.251,6138,3694,9832,427.5,0.939,defer 22 / quarantine 1
+R8003_M8001:30:12,R8003_M8001,12,review,slow_proxy_risk_flagged,23,04_>15,35.731,60.378,5454,5053,10507,456.8,1.554,accept 10 / defer 12 / quarantine 1
+R8001_M8004:30:11,R8001_M8004,11,quarantine,multiple_proxy_risk_flags,22,04_>15,19.39,44.037,6636,3328,9964,452.9,0.881,quarantine 22
+R8007_M8011:30:7,R8007_M8011,7,quarantine,deployable_proxy_abnormal_flags_and_risk_window,22,04_>15,25.016,49.663,5433,3539,8972,407.8,1.137,quarantine 22
+R8009_M8018:30:0,R8009_M8018,0,review,proxy_flag_requires_review,22,04_>15,27.128,51.775,5233,4343,9576,435.3,1.233,accept 9 / defer 12 / quarantine 1
+R8003_M8001:30:14,R8003_M8001,14,quarantine,proxy_risk_window_with_spk_count_mismatch,20,04_>15,23.194,47.841,5376,3245,8621,431.1,1.16,defer 19 / quarantine 1
+R8008_M8013:30:2,R8008_M8013,2,quarantine,cross_model_speaker_count_mismatch,20,04_>15,14.312,38.959,5143,2093,7236,361.8,0.716,quarantine 20
+R8009_M8018:30:10,R8009_M8018,10,quarantine,proxy_flags_and_abnormal_window,20,04_>15,18.455,43.102,5001,3177,8178,408.9,0.923,defer 19 / quarantine 1
+R8009_M8018:30:13,R8009_M8018,13,quarantine,deployable_proxy_flags_quarantine,20,04_>15,25.911,50.558,4944,3346,8290,414.5,1.296,quarantine 20
+R8003_M8001:30:1,R8003_M8001,1,review,slow_pred_speech_too_long_proxy_flag,19,04_>15,27.992,52.639,4589,4217,8806,463.5,1.473,accept 5 / defer 13 / quarantine 1
+R8003_M8001:30:9,R8003_M8001,9,quarantine,proxy_flags_quarantine,19,04_>15,22.447,47.094,5061,3205,8266,435.1,1.181,defer 14 / quarantine 5
+R8007_M8011:30:5,R8007_M8011,5,quarantine,pred_speech_too_long_with_proxy_flags,19,04_>15,18.279,42.926,4742,2557,7299,384.2,0.962,quarantine 19
+R8008_M8013:30:0,R8008_M8013,0,quarantine,deployable_proxy_risk_window,19,04_>15,24.48,49.127,4557,3373,7930,417.4,1.288,quarantine 19
+R8009_M8019:30:2,R8009_M8019,2,quarantine,deployable_proxy_abnormal_flags,19,04_>15,18.33,42.977,4762,2772,7534,396.5,0.965,quarantine 19
+R8009_M8019:30:3,R8009_M8019,3,quarantine,slow_proxy_anomaly_window,19,04_>15,17.289,41.936,4530,2942,7472,393.3,0.91,quarantine 19
+R8007_M8011:30:12,R8007_M8011,12,quarantine,deployable_proxy_risk_window,18,04_>15,18.74,43.387,4353,3179,7532,418.4,1.041,defer 4 / quarantine 14
+R8007_M8011:30:1,R8007_M8011,1,quarantine,high_risk_proxy_window,17,04_>15,19.257,43.904,5242,2661,7903,464.9,1.133,quarantine 17
+R8007_M8011:30:13,R8007_M8011,13,quarantine,pred_speech_exceeds_window_anomaly,17,04_>15,23.061,47.708,4302,3179,7481,440.1,1.357,quarantine 17
+R8008_M8013:30:14,R8008_M8013,14,quarantine,window_quarantine_due_to_proxy_flags,17,04_>15,16.272,40.919,4858,2770,7628,448.7,0.957,defer 9 / quarantine 8
+R8009_M8019:30:12,R8009_M8019,12,quarantine,proxy_risk_quarantine,17,04_>15,17.859,42.506,4571,2744,7315,430.3,1.051,defer 13 / quarantine 4
+R8001_M8004:30:1,R8001_M8004,1,quarantine,cross_model_speaker_count_mismatch,16,04_>15,29.35,53.997,4476,3694,8170,510.6,1.834,defer 15 / quarantine 1
+R8008_M8013:30:1,R8008_M8013,1,review,proxy_flag_review_needed,16,04_>15,18.899,43.546,3942,3335,7277,454.8,1.181,accept 8 / defer 7 / quarantine 1
+R8009_M8019:30:9,R8009_M8019,9,quarantine,proxy_risk_flags_and_abnormal_speech_duration,16,04_>15,13.302,37.949,4089,2410,6499,406.2,0.831,quarantine 16
+R8001_M8004:30:0,R8001_M8004,0,quarantine,proxy_flags_and_speaker_count_mismatch,15,03_6-15,18.401,43.048,4181,2585,6766,451.1,1.227,defer 15
+R8009_M8018:30:14,R8009_M8018,14,quarantine,deployable_proxy_abnormal_flags,15,03_6-15,14.02,38.667,3900,2280,6180,412.0,0.935,quarantine 15
+R8009_M8019:30:8,R8009_M8019,8,quarantine,deployable_proxy_flags_and_speech_too_long,15,03_6-15,16.814,41.461,3844,2620,6464,430.9,1.121,quarantine 15
+R8009_M8020:30:11,R8009_M8020,11,quarantine,proxy_flag_high_risk_window,15,03_6-15,21.787,46.434,3895,2581,6476,431.7,1.452,quarantine 15
+R8009_M8020:30:2,R8009_M8020,2,quarantine,proxy_speech_too_long_abnormal,15,03_6-15,14.565,39.212,3883,2563,6446,429.7,0.971,quarantine 15
+R8009_M8020:30:8,R8009_M8020,8,quarantine,deployable_proxy_abnormal_flags_present,15,03_6-15,26.627,51.274,3923,3437,7360,490.7,1.775,defer 4 / quarantine 11
+R8001_M8004:30:4,R8001_M8004,4,quarantine,proxy_risk_window,14,03_6-15,13.793,38.44,5396,2259,7655,546.8,0.985,quarantine 14
+R8008_M8013:30:4,R8008_M8013,4,quarantine,slow_pred_speech_too_long_proxy,14,03_6-15,19.819,44.466,3526,2581,6107,436.2,1.416,quarantine 14
+R8009_M8019:30:10,R8009_M8019,10,quarantine,proxy_speech_too_long,14,03_6-15,20.064,44.711,3629,3142,6771,483.6,1.433,quarantine 14
+R8007_M8011:30:6,R8007_M8011,6,review,cross_model_speaker_count_mismatch_and_speech_too_long,13,03_6-15,19.075,43.722,3826,3033,6859,527.6,1.467,defer 13
+R8008_M8013:30:7,R8008_M8013,7,quarantine,multiple_proxy_flags,13,03_6-15,19.304,43.951,5005,2621,7626,586.6,1.485,quarantine 13
+R8009_M8018:30:5,R8009_M8018,5,quarantine,pred_speech_too_long_proxy_flag,13,03_6-15,13.877,38.524,3444,2238,5682,437.1,1.067,defer 13
+R8003_M8001:30:6,R8003_M8001,6,quarantine,deployable_proxy_flags_speech_too_long,12,03_6-15,13.701,38.348,3194,1800,4994,416.2,1.142,quarantine 12
+R8009_M8018:30:8,R8009_M8018,8,quarantine,slow_proxy_risk_quarantine,12,03_6-15,15.347,39.994,3104,2048,5152,429.3,1.279,defer 6 / quarantine 6
+R8001_M8004:30:12,R8001_M8004,12,quarantine,deployable_proxy_risk_window,11,03_6-15,14.336,38.983,4314,2118,6432,584.7,1.303,quarantine 11
+R8001_M8004:30:9,R8001_M8004,9,quarantine,proxy_risk_window_cross_model_disagreement_high,11,03_6-15,9.418,34.065,4400,1694,6094,554.0,0.856,quarantine 11
+R8009_M8018:30:1,R8009_M8018,1,quarantine,deployable_proxy_abnormal_flags,11,03_6-15,19.401,44.048,3028,2868,5896,536.0,1.764,quarantine 11
+R8009_M8020:30:5,R8009_M8020,5,quarantine,deployable_proxy_flag_pred_speech_too_long,11,03_6-15,16.48,41.127,3010,2523,5533,503.0,1.498,defer 11
+R8001_M8004:30:5,R8001_M8004,5,quarantine,deployable_proxy_flags_and_cross_model_disagreement,10,03_6-15,17.054,41.701,4048,1932,5980,598.0,1.705,quarantine 10
+R8008_M8013:30:12,R8008_M8013,12,quarantine,cross_model_speaker_count_mismatch,10,03_6-15,18.156,42.803,3109,2427,5536,553.6,1.816,quarantine 10
+R8009_M8020:30:1,R8009_M8020,1,quarantine,proxy_flag_contamination_risk,10,03_6-15,11.57,36.217,2821,1578,4399,439.9,1.157,defer 1 / quarantine 9
+R8008_M8013:30:3,R8008_M8013,3,quarantine,proxy_flags_speaker_count_mismatch_and_speech_too_long,9,03_6-15,7.772,32.419,2876,1353,4229,469.9,0.864,quarantine 9
+R8009_M8019:30:5,R8009_M8019,5,quarantine,pred_speech_too_long_proxy_flags,9,03_6-15,13.787,38.434,2565,2257,4822,535.8,1.532,quarantine 9
+R8009_M8020:30:9,R8009_M8020,9,review,proxy_flag_and_long_speech,9,03_6-15,25.726,50.373,2591,2837,5428,603.1,2.858,accept 7 / defer 2
+R8007_M8011:30:14,R8007_M8011,14,quarantine,multiple_proxy_risk_flags,8,03_6-15,16.868,41.515,2588,2425,5013,626.6,2.108,quarantine 8
+R8009_M8020:30:4,R8009_M8020,4,quarantine,fast_pred_speech_too_long_proxy,8,03_6-15,16.931,41.578,2207,2176,4383,547.9,2.116,quarantine 8
+R8003_M8001:30:11,R8003_M8001,11,quarantine,proxy_risk_window_with_mismatch_and_overflow,7,03_6-15,9.713,34.36,2367,1501,3868,552.6,1.388,quarantine 7
+R8001_M8004:30:13,R8001_M8004,13,quarantine,cross_model_speaker_count_mismatch_and_pred_speech_too_long,6,03_6-15,10.748,35.395,2138,1169,3307,551.2,1.791,quarantine 6
+R8001_M8004:30:6,R8001_M8004,6,quarantine,high_proxy_risk_window,6,03_6-15,8.607,33.254,2518,1362,3880,646.7,1.434,quarantine 6
+R8001_M8004:30:8,R8001_M8004,8,quarantine,multiple_deployable_proxy_flags_and_slow_fast_disagreement,5,02_3-5,7.701,32.348,2082,1207,3289,657.8,1.54,quarantine 5
+R8007_M8011:30:2,R8007_M8011,2,quarantine,deployable_proxy_flags_high_risk,5,02_3-5,9.846,34.493,2387,1245,3632,726.4,1.969,quarantine 5
+R8007_M8011:30:9,R8007_M8011,9,quarantine,window_has_deployable_proxy_flags,5,02_3-5,6.672,31.319,2390,1135,3525,705.0,1.334,quarantine 5
+R8008_M8013:30:6,R8008_M8013,6,quarantine,cross_model_disagreement_high_proxy_flags,5,02_3-5,9.77,34.417,2054,1260,3314,662.8,1.954,quarantine 5
+R8003_M8001:30:13,R8003_M8001,13,quarantine,slow_proxy_window_requires_quarantine,4,02_3-5,9.915,34.562,1486,970,2456,614.0,2.479,quarantine 4
+R8007_M8011:30:0,R8007_M8011,0,quarantine,window_has_proxy_flag,4,02_3-5,12.168,36.815,1399,1829,3228,807.0,3.042,defer 4
+R8008_M8013:30:8,R8008_M8013,8,quarantine,deployable_proxy_flags,4,02_3-5,5.956,30.603,1762,911,2673,668.2,1.489,quarantine 4
+R8001_M8004:30:3,R8001_M8004,3,quarantine,proxy_risk_window,3,02_3-5,16.407,41.054,1264,2027,3291,1097.0,5.469,quarantine 3
+R8003_M8001:30:3,R8003_M8001,3,quarantine,multiple_proxy_flags_and_speaker_count_mismatch,3,02_3-5,6.794,31.441,1425,670,2095,698.3,2.265,quarantine 3
+R8003_M8001:30:8,R8003_M8001,8,quarantine,slow_proxy_risk_window_requires_quarantine,3,02_3-5,8.107,32.754,1439,975,2414,804.7,2.702,quarantine 3
+R8007_M8010:30:1,R8007_M8010,1,quarantine,cross_model_speaker_count_mismatch_and_pred_speech_too_long,3,02_3-5,8.181,32.828,1419,1124,2543,847.7,2.727,quarantine 3
+R8007_M8011:30:3,R8007_M8011,3,quarantine,deployable_proxy_abnormal_flags,3,02_3-5,4.497,29.144,1261,710,1971,657.0,1.499,quarantine 3
+R8007_M8011:30:4,R8007_M8011,4,quarantine,slow_proxy_window_requires_review,3,02_3-5,12.045,36.692,1262,1375,2637,879.0,4.015,defer 1 / quarantine 2
+R8008_M8013:30:11,R8008_M8013,11,quarantine,speaker_count_mismatch_and_speech_too_long,3,02_3-5,7.631,32.278,1392,1065,2457,819.0,2.544,quarantine 3
+R8008_M8013:30:13,R8008_M8013,13,quarantine,deployable_proxy_risk_window,3,02_3-5,10.972,35.619,1371,1286,2657,885.7,3.657,quarantine 3
+R8009_M8018:30:3,R8009_M8018,3,quarantine,proxy_flags_triggered_quarantine,3,02_3-5,8.621,33.268,1372,1075,2447,815.7,2.874,quarantine 3
+R8009_M8020:30:3,R8009_M8020,3,quarantine,deployable_proxy_flag_present,3,02_3-5,17.984,42.631,1323,2260,3583,1194.3,5.995,accept 2 / quarantine 1

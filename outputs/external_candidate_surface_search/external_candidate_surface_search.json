@@ -1,0 +1,3843 @@
+{
+  "runtime_contract": "external_candidate_surface_search_no_live_calls_runtime_features_only",
+  "status": "external_candidate_surface_not_deployable",
+  "windows": 120,
+  "recordings": 8,
+  "candidate_sources": 3,
+  "eval_only_oracle_sources_excluded": 0,
+  "current_positive_recordings": 5,
+  "external_candidate_oracle": {
+    "oracle_der": 0.16481333333333334,
+    "current_final_der": 0.16492333333333334,
+    "oracle_gain_vs_current_pp": 0.010999999999999899,
+    "selected_windows": 14,
+    "positive_recordings_vs_clipped_slow": 8,
+    "negative_recordings_vs_clipped_slow": 0,
+    "selected_window_details": [
+      {
+        "window_id": "R8009_M8019:30:11",
+        "recording_id": "R8009_M8019",
+        "source_id": "nemo-sortformer-4spk-v1/nemo-sortformer-4spk-v1/spk_none",
+        "current_der": 0.0659,
+        "oracle_der": 0.054,
+        "delta_vs_current_pp": 1.1900000000000002
+      },
+      {
+        "window_id": "R8008_M8013:30:2",
+        "recording_id": "R8008_M8013",
+        "source_id": "diarizen-large-v2/diarizen-large-v2/spk_none",
+        "current_der": 0.2265,
+        "oracle_der": 0.2264,
+        "delta_vs_current_pp": 0.010000000000001674
+      },
+      {
+        "window_id": "R8001_M8004:30:2",
+        "recording_id": "R8001_M8004",
+        "source_id": "diarizen-large-v2/diarizen-large-v2/spk_none",
+        "current_der": 0.0936,
+        "oracle_der": 0.0935,
+        "delta_vs_current_pp": 0.010000000000000286
+      },
+      {
+        "window_id": "R8008_M8013:30:14",
+        "recording_id": "R8008_M8013",
+        "source_id": "diarizen-large-v2/diarizen-large-v2/spk_none",
+        "current_der": 0.0994,
+        "oracle_der": 0.0993,
+        "delta_vs_current_pp": 0.010000000000000286
+      },
+      {
+        "window_id": "R8009_M8018:30:4",
+        "recording_id": "R8009_M8018",
+        "source_id": "diarizen-large-v2/diarizen-large-v2/spk_none",
+        "current_der": 0.1005,
+        "oracle_der": 0.1004,
+        "delta_vs_current_pp": 0.010000000000000286
+      },
+      {
+        "window_id": "R8009_M8018:30:13",
+        "recording_id": "R8009_M8018",
+        "source_id": "diarizen-large-v2/diarizen-large-v2/spk_none",
+        "current_der": 0.0995,
+        "oracle_der": 0.0994,
+        "delta_vs_current_pp": 0.010000000000000286
+      },
+      {
+        "window_id": "R8009_M8018:30:14",
+        "recording_id": "R8009_M8018",
+        "source_id": "diarizen-large-v2/diarizen-large-v2/spk_none",
+        "current_der": 0.0771,
+        "oracle_der": 0.077,
+        "delta_vs_current_pp": 0.010000000000000286
+      },
+      {
+        "window_id": "R8001_M8004:30:4",
+        "recording_id": "R8001_M8004",
+        "source_id": "diarizen-large-v2/diarizen-large-v2/spk_none",
+        "current_der": 0.3245,
+        "oracle_der": 0.3244,
+        "delta_vs_current_pp": 0.009999999999998899
+      },
+      {
+        "window_id": "R8007_M8010:30:9",
+        "recording_id": "R8007_M8010",
+        "source_id": "diarizen-large-v2/diarizen-large-v2/spk_none",
+        "current_der": 0.2387,
+        "oracle_der": 0.2386,
+        "delta_vs_current_pp": 0.009999999999998899
+      },
+      {
+        "window_id": "R8007_M8010:30:10",
+        "recording_id": "R8007_M8010",
+        "source_id": "diarizen-large-v2/diarizen-large-v2/spk_none",
+        "current_der": 0.2711,
+        "oracle_der": 0.271,
+        "delta_vs_current_pp": 0.009999999999998899
+      },
+      {
+        "window_id": "R8007_M8010:30:11",
+        "recording_id": "R8007_M8010",
+        "source_id": "diarizen-large-v2/diarizen-large-v2/spk_none",
+        "current_der": 0.1469,
+        "oracle_der": 0.1468,
+        "delta_vs_current_pp": 0.009999999999998899
+      },
+      {
+        "window_id": "R8007_M8011:30:10",
+        "recording_id": "R8007_M8011",
+        "source_id": "diarizen-large-v2/diarizen-large-v2/spk_none",
+        "current_der": 0.2698,
+        "oracle_der": 0.2697,
+        "delta_vs_current_pp": 0.009999999999998899
+      },
+      {
+        "window_id": "R8009_M8019:30:9",
+        "recording_id": "R8009_M8019",
+        "source_id": "diarizen-large-v2/diarizen-large-v2/spk_none",
+        "current_der": 0.0953,
+        "oracle_der": 0.0952,
+        "delta_vs_current_pp": 0.009999999999998899
+      },
+      {
+        "window_id": "R8009_M8020:30:13",
+        "recording_id": "R8009_M8020",
+        "source_id": "diarizen-large-v2/diarizen-large-v2/spk_none",
+        "current_der": 0.0812,
+        "oracle_der": 0.0811,
+        "delta_vs_current_pp": 0.009999999999998899
+      }
+    ],
+    "per_recording": [
+      {
+        "recording_id": "R8001_M8004",
+        "windows": 15,
+        "final_der": 0.17918666666666663,
+        "slow_der": 0.17919999999999997,
+        "delta_vs_slow_pp": 0.0013333333333337416,
+        "beats_slow": true,
+        "negative_vs_slow": false
+      },
+      {
+        "recording_id": "R8003_M8001",
+        "windows": 15,
+        "final_der": 0.35889333333333334,
+        "slow_der": 0.38214666666666663,
+        "delta_vs_slow_pp": 2.3253333333333295,
+        "beats_slow": true,
+        "negative_vs_slow": false
+      },
+      {
+        "recording_id": "R8007_M8010",
+        "windows": 15,
+        "final_der": 0.24345999999999995,
+        "slow_der": 0.24383333333333337,
+        "delta_vs_slow_pp": 0.03733333333334199,
+        "beats_slow": true,
+        "negative_vs_slow": false
+      },
+      {
+        "recording_id": "R8007_M8011",
+        "windows": 15,
+        "final_der": 0.15879333333333331,
+        "slow_der": 0.16468666666666668,
+        "delta_vs_slow_pp": 0.5893333333333362,
+        "beats_slow": true,
+        "negative_vs_slow": false
+      },
+      {
+        "recording_id": "R8008_M8013",
+        "windows": 15,
+        "final_der": 0.1666733333333333,
+        "slow_der": 0.16668666666666668,
+        "delta_vs_slow_pp": 0.0013333333333365172,
+        "beats_slow": true,
+        "negative_vs_slow": false
+      },
+      {
+        "recording_id": "R8009_M8018",
+        "windows": 15,
+        "final_der": 0.10301333333333333,
+        "slow_der": 0.10335999999999998,
+        "delta_vs_slow_pp": 0.03466666666666479,
+        "beats_slow": true,
+        "negative_vs_slow": false
+      },
+      {
+        "recording_id": "R8009_M8019",
+        "windows": 15,
+        "final_der": 0.055713333333333344,
+        "slow_der": 0.057679999999999995,
+        "delta_vs_slow_pp": 0.19666666666666513,
+        "beats_slow": true,
+        "negative_vs_slow": false
+      },
+      {
+        "recording_id": "R8009_M8020",
+        "windows": 15,
+        "final_der": 0.05277333333333333,
+        "slow_der": 0.05278,
+        "delta_vs_slow_pp": 0.0006666666666668708,
+        "beats_slow": true,
+        "negative_vs_slow": false
+      }
+    ]
+  },
+  "best_policy": {
+    "policy_kind": "external_candidate_surface_overlay",
+    "policy_id": "if_boundary_fix_or_relabel_<=_1_AND_prev_audio_channel_activity_mean_>=_3.6101_then_diarizen-large-v2__diarizen-large-v2__spk_none::outputs__diarizen_uv_48__diarizen-large-v2__default__spk_none_else_current_final",
+    "description": "boundary_fix_or_relabel <= 1 AND prev_audio_channel_activity_mean >= 3.6101",
+    "source_id": "diarizen-large-v2/diarizen-large-v2/spk_none::outputs/diarizen_uv_48/diarizen-large-v2/default__spk_none",
+    "source_path": "outputs/diarizen_uv_48/diarizen-large-v2/default__spk_none/summary.json",
+    "source_coverage_windows": 120,
+    "windows": 120,
+    "selected_windows": 2,
+    "overlay_wins_vs_current": 2,
+    "overlay_losses_vs_current": 0,
+    "current_final_der": 0.16492333333333334,
+    "final_der": 0.1649216666666667,
+    "clipped_slow_der": 0.1687966666666667,
+    "delta_vs_current": 1.6666666666498298e-06,
+    "delta_vs_current_pp": 0.00016666666666498298,
+    "delta_vs_clipped_slow_pp": 0.38750000000000173,
+    "positive_recordings_vs_clipped_slow": 7,
+    "negative_recordings_vs_clipped_slow": 0,
+    "choice_counts": {
+      "current_final": 118,
+      "diarizen-large-v2/diarizen-large-v2/spk_none::outputs/diarizen_uv_48/diarizen-large-v2/default__spk_none": 2
+    },
+    "selected_window_details": [
+      {
+        "window_id": "R8001_M8004:30:4",
+        "recording_id": "R8001_M8004",
+        "current_der": 0.3245,
+        "candidate_der": 0.3244,
+        "delta_vs_current_pp": 0.009999999999998899,
+        "candidate_pred_segments": 24,
+        "candidate_latency": 17.511271953582764
+      },
+      {
+        "window_id": "R8009_M8020:30:13",
+        "recording_id": "R8009_M8020",
+        "current_der": 0.0812,
+        "candidate_der": 0.0811,
+        "delta_vs_current_pp": 0.009999999999998899,
+        "candidate_pred_segments": 7,
+        "candidate_latency": 21.410892963409424
+      }
+    ],
+    "per_recording": [
+      {
+        "recording_id": "R8001_M8004",
+        "windows": 15,
+        "final_der": 0.17919333333333326,
+        "slow_der": 0.17919999999999997,
+        "delta_vs_slow_pp": 0.0006666666666710341,
+        "beats_slow": true,
+        "negative_vs_slow": false
+      },
+      {
+        "recording_id": "R8003_M8001",
+        "windows": 15,
+        "final_der": 0.35889333333333334,
+        "slow_der": 0.38214666666666663,
+        "delta_vs_slow_pp": 2.3253333333333295,
+        "beats_slow": true,
+        "negative_vs_slow": false
+      },
+      {
+        "recording_id": "R8007_M8010",
+        "windows": 15,
+        "final_der": 0.24348000000000003,
+        "slow_der": 0.24383333333333337,
+        "delta_vs_slow_pp": 0.03533333333333444,
+        "beats_slow": true,
+        "negative_vs_slow": false
+      },
+      {
+        "recording_id": "R8007_M8011",
+        "windows": 15,
+        "final_der": 0.1588,
+        "slow_der": 0.16468666666666668,
+        "delta_vs_slow_pp": 0.5886666666666679,
+        "beats_slow": true,
+        "negative_vs_slow": false
+      },
+      {
+        "recording_id": "R8008_M8013",
+        "windows": 15,
+        "final_der": 0.16668666666666668,
+        "slow_der": 0.16668666666666668,
+        "delta_vs_slow_pp": 0.0,
+        "beats_slow": false,
+        "negative_vs_slow": false
+      },
+      {
+        "recording_id": "R8009_M8018",
+        "windows": 15,
+        "final_der": 0.10303333333333332,
+        "slow_der": 0.10335999999999998,
+        "delta_vs_slow_pp": 0.03266666666666557,
+        "beats_slow": true,
+        "negative_vs_slow": false
+      },
+      {
+        "recording_id": "R8009_M8019",
+        "windows": 15,
+        "final_der": 0.05651333333333333,
+        "slow_der": 0.057679999999999995,
+        "delta_vs_slow_pp": 0.11666666666666631,
+        "beats_slow": true,
+        "negative_vs_slow": false
+      },
+      {
+        "recording_id": "R8009_M8020",
+        "windows": 15,
+        "final_der": 0.05277333333333333,
+        "slow_der": 0.05278,
+        "delta_vs_slow_pp": 0.0006666666666668708,
+        "beats_slow": true,
+        "negative_vs_slow": false
+      }
+    ],
+    "source_stale_gt_mismatch_windows": 0,
+    "feature_a": "boundary_fix_or_relabel",
+    "op_a": "<=",
+    "threshold_a": 1.0,
+    "feature_b": "prev_audio_channel_activity_mean",
+    "op_b": ">=",
+    "threshold_b": 3.6101,
+    "selected": 2,
+    "source_full_coverage": true,
+    "meaningful_delta": false,
+    "improves_positive_recordings": true
+  },
+  "top_policies": [
+    {
+      "policy_kind": "external_candidate_surface_overlay",
+      "policy_id": "if_boundary_fix_or_relabel_<=_1_AND_prev_audio_channel_activity_mean_>=_3.6101_then_diarizen-large-v2__diarizen-large-v2__spk_none::outputs__diarizen_uv_48__diarizen-large-v2__default__spk_none_else_current_final",
+      "description": "boundary_fix_or_relabel <= 1 AND prev_audio_channel_activity_mean >= 3.6101",
+      "source_id": "diarizen-large-v2/diarizen-large-v2/spk_none::outputs/diarizen_uv_48/diarizen-large-v2/default__spk_none",
+      "source_path": "outputs/diarizen_uv_48/diarizen-large-v2/default__spk_none/summary.json",
+      "source_coverage_windows": 120,
+      "windows": 120,
+      "selected_windows": 2,
+      "overlay_wins_vs_current": 2,
+      "overlay_losses_vs_current": 0,
+      "current_final_der": 0.16492333333333334,
+      "final_der": 0.1649216666666667,
+      "clipped_slow_der": 0.1687966666666667,
+      "delta_vs_current": 1.6666666666498298e-06,
+      "delta_vs_current_pp": 0.00016666666666498298,
+      "delta_vs_clipped_slow_pp": 0.38750000000000173,
+      "positive_recordings_vs_clipped_slow": 7,
+      "negative_recordings_vs_clipped_slow": 0,
+      "choice_counts": {
+        "current_final": 118,
+        "diarizen-large-v2/diarizen-large-v2/spk_none::outputs/diarizen_uv_48/diarizen-large-v2/default__spk_none": 2
+      },
+      "selected_window_details": [
+        {
+          "window_id": "R8001_M8004:30:4",
+          "recording_id": "R8001_M8004",
+          "current_der": 0.3245,
+          "candidate_der": 0.3244,
+          "delta_vs_current_pp": 0.009999999999998899,
+          "candidate_pred_segments": 24,
+          "candidate_latency": 17.511271953582764
+        },
+        {
+          "window_id": "R8009_M8020:30:13",
+          "recording_id": "R8009_M8020",
+          "current_der": 0.0812,
+          "candidate_der": 0.0811,
+          "delta_vs_current_pp": 0.009999999999998899,
+          "candidate_pred_segments": 7,
+          "candidate_latency": 21.410892963409424
+        }
+      ],
+      "per_recording": [
+        {
+          "recording_id": "R8001_M8004",
+          "windows": 15,
+          "final_der": 0.17919333333333326,
+          "slow_der": 0.17919999999999997,
+          "delta_vs_slow_pp": 0.0006666666666710341,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8003_M8001",
+          "windows": 15,
+          "final_der": 0.35889333333333334,
+          "slow_der": 0.38214666666666663,
+          "delta_vs_slow_pp": 2.3253333333333295,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8007_M8010",
+          "windows": 15,
+          "final_der": 0.24348000000000003,
+          "slow_der": 0.24383333333333337,
+          "delta_vs_slow_pp": 0.03533333333333444,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8007_M8011",
+          "windows": 15,
+          "final_der": 0.1588,
+          "slow_der": 0.16468666666666668,
+          "delta_vs_slow_pp": 0.5886666666666679,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8008_M8013",
+          "windows": 15,
+          "final_der": 0.16668666666666668,
+          "slow_der": 0.16668666666666668,
+          "delta_vs_slow_pp": 0.0,
+          "beats_slow": false,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8009_M8018",
+          "windows": 15,
+          "final_der": 0.10303333333333332,
+          "slow_der": 0.10335999999999998,
+          "delta_vs_slow_pp": 0.03266666666666557,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8009_M8019",
+          "windows": 15,
+          "final_der": 0.05651333333333333,
+          "slow_der": 0.057679999999999995,
+          "delta_vs_slow_pp": 0.11666666666666631,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8009_M8020",
+          "windows": 15,
+          "final_der": 0.05277333333333333,
+          "slow_der": 0.05278,
+          "delta_vs_slow_pp": 0.0006666666666668708,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        }
+      ],
+      "source_stale_gt_mismatch_windows": 0,
+      "feature_a": "boundary_fix_or_relabel",
+      "op_a": "<=",
+      "threshold_a": 1.0,
+      "feature_b": "prev_audio_channel_activity_mean",
+      "op_b": ">=",
+      "threshold_b": 3.6101,
+      "selected": 2,
+      "source_full_coverage": true,
+      "meaningful_delta": false,
+      "improves_positive_recordings": true
+    },
+    {
+      "policy_kind": "external_candidate_surface_overlay",
+      "policy_id": "if_boundary_fix_or_relabel_<=_1_AND_prev_audio_channel_activity_mean_>=_3.6101_then_diarizen-large-v2__diarizen-large-v2__spk_none_else_current_final",
+      "description": "boundary_fix_or_relabel <= 1 AND prev_audio_channel_activity_mean >= 3.6101",
+      "source_id": "diarizen-large-v2/diarizen-large-v2/spk_none",
+      "source_path": "outputs/diarizen_uv_120/diarizen-large-v2/default__spk_none/summary.json",
+      "source_coverage_windows": 120,
+      "windows": 120,
+      "selected_windows": 2,
+      "overlay_wins_vs_current": 2,
+      "overlay_losses_vs_current": 0,
+      "current_final_der": 0.16492333333333334,
+      "final_der": 0.1649216666666667,
+      "clipped_slow_der": 0.1687966666666667,
+      "delta_vs_current": 1.6666666666498298e-06,
+      "delta_vs_current_pp": 0.00016666666666498298,
+      "delta_vs_clipped_slow_pp": 0.38750000000000173,
+      "positive_recordings_vs_clipped_slow": 7,
+      "negative_recordings_vs_clipped_slow": 0,
+      "choice_counts": {
+        "current_final": 118,
+        "diarizen-large-v2/diarizen-large-v2/spk_none": 2
+      },
+      "selected_window_details": [
+        {
+          "window_id": "R8001_M8004:30:4",
+          "recording_id": "R8001_M8004",
+          "current_der": 0.3245,
+          "candidate_der": 0.3244,
+          "delta_vs_current_pp": 0.009999999999998899,
+          "candidate_pred_segments": 24,
+          "candidate_latency": 22.382750988006592
+        },
+        {
+          "window_id": "R8009_M8020:30:13",
+          "recording_id": "R8009_M8020",
+          "current_der": 0.0812,
+          "candidate_der": 0.0811,
+          "delta_vs_current_pp": 0.009999999999998899,
+          "candidate_pred_segments": 7,
+          "candidate_latency": 21.84627413749695
+        }
+      ],
+      "per_recording": [
+        {
+          "recording_id": "R8001_M8004",
+          "windows": 15,
+          "final_der": 0.17919333333333326,
+          "slow_der": 0.17919999999999997,
+          "delta_vs_slow_pp": 0.0006666666666710341,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8003_M8001",
+          "windows": 15,
+          "final_der": 0.35889333333333334,
+          "slow_der": 0.38214666666666663,
+          "delta_vs_slow_pp": 2.3253333333333295,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8007_M8010",
+          "windows": 15,
+          "final_der": 0.24348000000000003,
+          "slow_der": 0.24383333333333337,
+          "delta_vs_slow_pp": 0.03533333333333444,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8007_M8011",
+          "windows": 15,
+          "final_der": 0.1588,
+          "slow_der": 0.16468666666666668,
+          "delta_vs_slow_pp": 0.5886666666666679,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8008_M8013",
+          "windows": 15,
+          "final_der": 0.16668666666666668,
+          "slow_der": 0.16668666666666668,
+          "delta_vs_slow_pp": 0.0,
+          "beats_slow": false,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8009_M8018",
+          "windows": 15,
+          "final_der": 0.10303333333333332,
+          "slow_der": 0.10335999999999998,
+          "delta_vs_slow_pp": 0.03266666666666557,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8009_M8019",
+          "windows": 15,
+          "final_der": 0.05651333333333333,
+          "slow_der": 0.057679999999999995,
+          "delta_vs_slow_pp": 0.11666666666666631,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8009_M8020",
+          "windows": 15,
+          "final_der": 0.05277333333333333,
+          "slow_der": 0.05278,
+          "delta_vs_slow_pp": 0.0006666666666668708,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        }
+      ],
+      "source_stale_gt_mismatch_windows": 0,
+      "feature_a": "boundary_fix_or_relabel",
+      "op_a": "<=",
+      "threshold_a": 1.0,
+      "feature_b": "prev_audio_channel_activity_mean",
+      "op_b": ">=",
+      "threshold_b": 3.6101,
+      "selected": 2,
+      "source_full_coverage": true,
+      "meaningful_delta": false,
+      "improves_positive_recordings": true
+    },
+    {
+      "policy_kind": "external_candidate_surface_overlay",
+      "policy_id": "if_audio_dynamic_range_db_>=_22.3574_then_diarizen-large-v2__diarizen-large-v2__spk_none::outputs__diarizen_uv_48__diarizen-large-v2__default__spk_none_else_current_final",
+      "description": "audio_dynamic_range_db >= 22.3574",
+      "source_id": "diarizen-large-v2/diarizen-large-v2/spk_none::outputs/diarizen_uv_48/diarizen-large-v2/default__spk_none",
+      "source_path": "outputs/diarizen_uv_48/diarizen-large-v2/default__spk_none/summary.json",
+      "source_coverage_windows": 120,
+      "windows": 120,
+      "selected_windows": 9,
+      "overlay_wins_vs_current": 2,
+      "overlay_losses_vs_current": 0,
+      "current_final_der": 0.16492333333333334,
+      "final_der": 0.16492166666666666,
+      "clipped_slow_der": 0.1687966666666667,
+      "delta_vs_current": 1.6666666666775853e-06,
+      "delta_vs_current_pp": 0.00016666666666775853,
+      "delta_vs_clipped_slow_pp": 0.3875000000000045,
+      "positive_recordings_vs_clipped_slow": 6,
+      "negative_recordings_vs_clipped_slow": 0,
+      "choice_counts": {
+        "current_final": 111,
+        "diarizen-large-v2/diarizen-large-v2/spk_none::outputs/diarizen_uv_48/diarizen-large-v2/default__spk_none": 9
+      },
+      "selected_window_details": [
+        {
+          "window_id": "R8009_M8019:30:1",
+          "recording_id": "R8009_M8019",
+          "current_der": 0.0535,
+          "candidate_der": 0.0535,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 13,
+          "candidate_latency": 19.283945083618164
+        },
+        {
+          "window_id": "R8009_M8019:30:2",
+          "recording_id": "R8009_M8019",
+          "current_der": 0.0623,
+          "candidate_der": 0.0623,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 8,
+          "candidate_latency": 19.402529001235962
+        },
+        {
+          "window_id": "R8009_M8019:30:7",
+          "recording_id": "R8009_M8019",
+          "current_der": 0.0875,
+          "candidate_der": 0.0875,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 8,
+          "candidate_latency": 21.868221044540405
+        },
+        {
+          "window_id": "R8009_M8019:30:9",
+          "recording_id": "R8009_M8019",
+          "current_der": 0.0953,
+          "candidate_der": 0.0952,
+          "delta_vs_current_pp": 0.009999999999998899,
+          "candidate_pred_segments": 9,
+          "candidate_latency": 22.03620982170105
+        },
+        {
+          "window_id": "R8009_M8019:30:13",
+          "recording_id": "R8009_M8019",
+          "current_der": 0.0222,
+          "candidate_der": 0.0222,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 9,
+          "candidate_latency": 21.034033060073853
+        },
+        {
+          "window_id": "R8009_M8020:30:0",
+          "recording_id": "R8009_M8020",
+          "current_der": 0.0778,
+          "candidate_der": 0.0778,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 10,
+          "candidate_latency": 19.44260883331299
+        },
+        {
+          "window_id": "R8009_M8020:30:3",
+          "recording_id": "R8009_M8020",
+          "current_der": 0.1681,
+          "candidate_der": 0.1681,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 9,
+          "candidate_latency": 20.174499988555908
+        },
+        {
+          "window_id": "R8009_M8020:30:13",
+          "recording_id": "R8009_M8020",
+          "current_der": 0.0812,
+          "candidate_der": 0.0811,
+          "delta_vs_current_pp": 0.009999999999998899,
+          "candidate_pred_segments": 7,
+          "candidate_latency": 21.410892963409424
+        },
+        {
+          "window_id": "R8009_M8020:30:14",
+          "recording_id": "R8009_M8020",
+          "current_der": 0.0216,
+          "candidate_der": 0.0216,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 6,
+          "candidate_latency": 22.095273971557617
+        }
+      ],
+      "per_recording": [
+        {
+          "recording_id": "R8001_M8004",
+          "windows": 15,
+          "final_der": 0.17919999999999997,
+          "slow_der": 0.17919999999999997,
+          "delta_vs_slow_pp": 0.0,
+          "beats_slow": false,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8003_M8001",
+          "windows": 15,
+          "final_der": 0.35889333333333334,
+          "slow_der": 0.38214666666666663,
+          "delta_vs_slow_pp": 2.3253333333333295,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8007_M8010",
+          "windows": 15,
+          "final_der": 0.24348000000000003,
+          "slow_der": 0.24383333333333337,
+          "delta_vs_slow_pp": 0.03533333333333444,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8007_M8011",
+          "windows": 15,
+          "final_der": 0.1588,
+          "slow_der": 0.16468666666666668,
+          "delta_vs_slow_pp": 0.5886666666666679,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8008_M8013",
+          "windows": 15,
+          "final_der": 0.16668666666666668,
+          "slow_der": 0.16668666666666668,
+          "delta_vs_slow_pp": 0.0,
+          "beats_slow": false,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8009_M8018",
+          "windows": 15,
+          "final_der": 0.10303333333333332,
+          "slow_der": 0.10335999999999998,
+          "delta_vs_slow_pp": 0.03266666666666557,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8009_M8019",
+          "windows": 15,
+          "final_der": 0.05650666666666667,
+          "slow_der": 0.057679999999999995,
+          "delta_vs_slow_pp": 0.11733333333333248,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8009_M8020",
+          "windows": 15,
+          "final_der": 0.05277333333333333,
+          "slow_der": 0.05278,
+          "delta_vs_slow_pp": 0.0006666666666668708,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        }
+      ],
+      "source_stale_gt_mismatch_windows": 0,
+      "feature_a": "audio_dynamic_range_db",
+      "op_a": ">=",
+      "threshold_a": 22.3574,
+      "selected": 9,
+      "source_full_coverage": true,
+      "meaningful_delta": false,
+      "improves_positive_recordings": true
+    },
+    {
+      "policy_kind": "external_candidate_surface_overlay",
+      "policy_id": "if_audio_dynamic_range_db_>=_22.3574_then_diarizen-large-v2__diarizen-large-v2__spk_none_else_current_final",
+      "description": "audio_dynamic_range_db >= 22.3574",
+      "source_id": "diarizen-large-v2/diarizen-large-v2/spk_none",
+      "source_path": "outputs/diarizen_uv_120/diarizen-large-v2/default__spk_none/summary.json",
+      "source_coverage_windows": 120,
+      "windows": 120,
+      "selected_windows": 9,
+      "overlay_wins_vs_current": 2,
+      "overlay_losses_vs_current": 0,
+      "current_final_der": 0.16492333333333334,
+      "final_der": 0.16492166666666666,
+      "clipped_slow_der": 0.1687966666666667,
+      "delta_vs_current": 1.6666666666775853e-06,
+      "delta_vs_current_pp": 0.00016666666666775853,
+      "delta_vs_clipped_slow_pp": 0.3875000000000045,
+      "positive_recordings_vs_clipped_slow": 6,
+      "negative_recordings_vs_clipped_slow": 0,
+      "choice_counts": {
+        "current_final": 111,
+        "diarizen-large-v2/diarizen-large-v2/spk_none": 9
+      },
+      "selected_window_details": [
+        {
+          "window_id": "R8009_M8019:30:1",
+          "recording_id": "R8009_M8019",
+          "current_der": 0.0535,
+          "candidate_der": 0.0535,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 13,
+          "candidate_latency": 22.524367809295654
+        },
+        {
+          "window_id": "R8009_M8019:30:2",
+          "recording_id": "R8009_M8019",
+          "current_der": 0.0623,
+          "candidate_der": 0.0623,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 8,
+          "candidate_latency": 23.86602807044983
+        },
+        {
+          "window_id": "R8009_M8019:30:7",
+          "recording_id": "R8009_M8019",
+          "current_der": 0.0875,
+          "candidate_der": 0.0875,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 8,
+          "candidate_latency": 26.39536476135254
+        },
+        {
+          "window_id": "R8009_M8019:30:9",
+          "recording_id": "R8009_M8019",
+          "current_der": 0.0953,
+          "candidate_der": 0.0952,
+          "delta_vs_current_pp": 0.009999999999998899,
+          "candidate_pred_segments": 9,
+          "candidate_latency": 25.703585863113403
+        },
+        {
+          "window_id": "R8009_M8019:30:13",
+          "recording_id": "R8009_M8019",
+          "current_der": 0.0222,
+          "candidate_der": 0.0222,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 9,
+          "candidate_latency": 23.983201026916504
+        },
+        {
+          "window_id": "R8009_M8020:30:0",
+          "recording_id": "R8009_M8020",
+          "current_der": 0.0778,
+          "candidate_der": 0.0778,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 10,
+          "candidate_latency": 24.977536916732788
+        },
+        {
+          "window_id": "R8009_M8020:30:3",
+          "recording_id": "R8009_M8020",
+          "current_der": 0.1681,
+          "candidate_der": 0.1681,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 9,
+          "candidate_latency": 23.588134765625
+        },
+        {
+          "window_id": "R8009_M8020:30:13",
+          "recording_id": "R8009_M8020",
+          "current_der": 0.0812,
+          "candidate_der": 0.0811,
+          "delta_vs_current_pp": 0.009999999999998899,
+          "candidate_pred_segments": 7,
+          "candidate_latency": 21.84627413749695
+        },
+        {
+          "window_id": "R8009_M8020:30:14",
+          "recording_id": "R8009_M8020",
+          "current_der": 0.0216,
+          "candidate_der": 0.0216,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 6,
+          "candidate_latency": 23.542829036712646
+        }
+      ],
+      "per_recording": [
+        {
+          "recording_id": "R8001_M8004",
+          "windows": 15,
+          "final_der": 0.17919999999999997,
+          "slow_der": 0.17919999999999997,
+          "delta_vs_slow_pp": 0.0,
+          "beats_slow": false,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8003_M8001",
+          "windows": 15,
+          "final_der": 0.35889333333333334,
+          "slow_der": 0.38214666666666663,
+          "delta_vs_slow_pp": 2.3253333333333295,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8007_M8010",
+          "windows": 15,
+          "final_der": 0.24348000000000003,
+          "slow_der": 0.24383333333333337,
+          "delta_vs_slow_pp": 0.03533333333333444,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8007_M8011",
+          "windows": 15,
+          "final_der": 0.1588,
+          "slow_der": 0.16468666666666668,
+          "delta_vs_slow_pp": 0.5886666666666679,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8008_M8013",
+          "windows": 15,
+          "final_der": 0.16668666666666668,
+          "slow_der": 0.16668666666666668,
+          "delta_vs_slow_pp": 0.0,
+          "beats_slow": false,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8009_M8018",
+          "windows": 15,
+          "final_der": 0.10303333333333332,
+          "slow_der": 0.10335999999999998,
+          "delta_vs_slow_pp": 0.03266666666666557,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8009_M8019",
+          "windows": 15,
+          "final_der": 0.05650666666666667,
+          "slow_der": 0.057679999999999995,
+          "delta_vs_slow_pp": 0.11733333333333248,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8009_M8020",
+          "windows": 15,
+          "final_der": 0.05277333333333333,
+          "slow_der": 0.05278,
+          "delta_vs_slow_pp": 0.0006666666666668708,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        }
+      ],
+      "source_stale_gt_mismatch_windows": 0,
+      "feature_a": "audio_dynamic_range_db",
+      "op_a": ">=",
+      "threshold_a": 22.3574,
+      "selected": 9,
+      "source_full_coverage": true,
+      "meaningful_delta": false,
+      "improves_positive_recordings": true
+    },
+    {
+      "policy_kind": "external_candidate_surface_overlay",
+      "policy_id": "if_audio_max_p90_db_<=_-41.4081_AND_prev_audio_max_p90_db_<=_-40.7464_then_diarizen-large-v2__diarizen-large-v2__spk_none::outputs__diarizen_uv_48__diarizen-large-v2__default__spk_none_else_current_final",
+      "description": "audio_max_p90_db <= -41.4081 AND prev_audio_max_p90_db <= -40.7464",
+      "source_id": "diarizen-large-v2/diarizen-large-v2/spk_none::outputs/diarizen_uv_48/diarizen-large-v2/default__spk_none",
+      "source_path": "outputs/diarizen_uv_48/diarizen-large-v2/default__spk_none/summary.json",
+      "source_coverage_windows": 120,
+      "windows": 120,
+      "selected_windows": 8,
+      "overlay_wins_vs_current": 2,
+      "overlay_losses_vs_current": 0,
+      "current_final_der": 0.16492333333333334,
+      "final_der": 0.1649216666666667,
+      "clipped_slow_der": 0.1687966666666667,
+      "delta_vs_current": 1.6666666666498298e-06,
+      "delta_vs_current_pp": 0.00016666666666498298,
+      "delta_vs_clipped_slow_pp": 0.38750000000000173,
+      "positive_recordings_vs_clipped_slow": 6,
+      "negative_recordings_vs_clipped_slow": 0,
+      "choice_counts": {
+        "current_final": 112,
+        "diarizen-large-v2/diarizen-large-v2/spk_none::outputs/diarizen_uv_48/diarizen-large-v2/default__spk_none": 8
+      },
+      "selected_window_details": [
+        {
+          "window_id": "R8008_M8013:30:2",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.2265,
+          "candidate_der": 0.2264,
+          "delta_vs_current_pp": 0.010000000000001674,
+          "candidate_pred_segments": 10,
+          "candidate_latency": 23.955423831939697
+        },
+        {
+          "window_id": "R8008_M8013:30:7",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.159,
+          "candidate_der": 0.159,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 16,
+          "candidate_latency": 20.71005082130432
+        },
+        {
+          "window_id": "R8008_M8013:30:8",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.3288,
+          "candidate_der": 0.3288,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 24,
+          "candidate_latency": 22.01899003982544
+        },
+        {
+          "window_id": "R8008_M8013:30:9",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.1044,
+          "candidate_der": 0.1044,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 12,
+          "candidate_latency": 22.571627855300903
+        },
+        {
+          "window_id": "R8008_M8013:30:10",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.2261,
+          "candidate_der": 0.2261,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 11,
+          "candidate_latency": 18.351056814193726
+        },
+        {
+          "window_id": "R8008_M8013:30:11",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.1771,
+          "candidate_der": 0.1771,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 10,
+          "candidate_latency": 22.688507795333862
+        },
+        {
+          "window_id": "R8008_M8013:30:12",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.1399,
+          "candidate_der": 0.1399,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 8,
+          "candidate_latency": 24.064862966537476
+        },
+        {
+          "window_id": "R8008_M8013:30:14",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.0994,
+          "candidate_der": 0.0993,
+          "delta_vs_current_pp": 0.010000000000000286,
+          "candidate_pred_segments": 7,
+          "candidate_latency": 22.578333854675293
+        }
+      ],
+      "per_recording": [
+        {
+          "recording_id": "R8001_M8004",
+          "windows": 15,
+          "final_der": 0.17919999999999997,
+          "slow_der": 0.17919999999999997,
+          "delta_vs_slow_pp": 0.0,
+          "beats_slow": false,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8003_M8001",
+          "windows": 15,
+          "final_der": 0.35889333333333334,
+          "slow_der": 0.38214666666666663,
+          "delta_vs_slow_pp": 2.3253333333333295,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8007_M8010",
+          "windows": 15,
+          "final_der": 0.24348000000000003,
+          "slow_der": 0.24383333333333337,
+          "delta_vs_slow_pp": 0.03533333333333444,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8007_M8011",
+          "windows": 15,
+          "final_der": 0.1588,
+          "slow_der": 0.16468666666666668,
+          "delta_vs_slow_pp": 0.5886666666666679,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8008_M8013",
+          "windows": 15,
+          "final_der": 0.1666733333333333,
+          "slow_der": 0.16668666666666668,
+          "delta_vs_slow_pp": 0.0013333333333365172,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8009_M8018",
+          "windows": 15,
+          "final_der": 0.10303333333333332,
+          "slow_der": 0.10335999999999998,
+          "delta_vs_slow_pp": 0.03266666666666557,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8009_M8019",
+          "windows": 15,
+          "final_der": 0.05651333333333333,
+          "slow_der": 0.057679999999999995,
+          "delta_vs_slow_pp": 0.11666666666666631,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8009_M8020",
+          "windows": 15,
+          "final_der": 0.05278,
+          "slow_der": 0.05278,
+          "delta_vs_slow_pp": 0.0,
+          "beats_slow": false,
+          "negative_vs_slow": false
+        }
+      ],
+      "source_stale_gt_mismatch_windows": 0,
+      "feature_a": "audio_max_p90_db",
+      "op_a": "<=",
+      "threshold_a": -41.4081,
+      "feature_b": "prev_audio_max_p90_db",
+      "op_b": "<=",
+      "threshold_b": -40.7464,
+      "selected": 8,
+      "source_full_coverage": true,
+      "meaningful_delta": false,
+      "improves_positive_recordings": true
+    },
+    {
+      "policy_kind": "external_candidate_surface_overlay",
+      "policy_id": "if_audio_max_p90_db_<=_-41.4081_AND_prev_audio_max_p90_db_<=_-40.7464_then_diarizen-large-v2__diarizen-large-v2__spk_none_else_current_final",
+      "description": "audio_max_p90_db <= -41.4081 AND prev_audio_max_p90_db <= -40.7464",
+      "source_id": "diarizen-large-v2/diarizen-large-v2/spk_none",
+      "source_path": "outputs/diarizen_uv_120/diarizen-large-v2/default__spk_none/summary.json",
+      "source_coverage_windows": 120,
+      "windows": 120,
+      "selected_windows": 8,
+      "overlay_wins_vs_current": 2,
+      "overlay_losses_vs_current": 0,
+      "current_final_der": 0.16492333333333334,
+      "final_der": 0.1649216666666667,
+      "clipped_slow_der": 0.1687966666666667,
+      "delta_vs_current": 1.6666666666498298e-06,
+      "delta_vs_current_pp": 0.00016666666666498298,
+      "delta_vs_clipped_slow_pp": 0.38750000000000173,
+      "positive_recordings_vs_clipped_slow": 6,
+      "negative_recordings_vs_clipped_slow": 0,
+      "choice_counts": {
+        "current_final": 112,
+        "diarizen-large-v2/diarizen-large-v2/spk_none": 8
+      },
+      "selected_window_details": [
+        {
+          "window_id": "R8008_M8013:30:2",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.2265,
+          "candidate_der": 0.2264,
+          "delta_vs_current_pp": 0.010000000000001674,
+          "candidate_pred_segments": 10,
+          "candidate_latency": 23.46504306793213
+        },
+        {
+          "window_id": "R8008_M8013:30:7",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.159,
+          "candidate_der": 0.159,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 16,
+          "candidate_latency": 23.06705403327942
+        },
+        {
+          "window_id": "R8008_M8013:30:8",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.3288,
+          "candidate_der": 0.3288,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 24,
+          "candidate_latency": 24.707134008407593
+        },
+        {
+          "window_id": "R8008_M8013:30:9",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.1044,
+          "candidate_der": 0.1044,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 12,
+          "candidate_latency": 24.305092096328735
+        },
+        {
+          "window_id": "R8008_M8013:30:10",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.2261,
+          "candidate_der": 0.2261,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 11,
+          "candidate_latency": 23.354254007339478
+        },
+        {
+          "window_id": "R8008_M8013:30:11",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.1771,
+          "candidate_der": 0.1771,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 10,
+          "candidate_latency": 24.520829916000366
+        },
+        {
+          "window_id": "R8008_M8013:30:12",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.1399,
+          "candidate_der": 0.1399,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 8,
+          "candidate_latency": 24.932341814041138
+        },
+        {
+          "window_id": "R8008_M8013:30:14",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.0994,
+          "candidate_der": 0.0993,
+          "delta_vs_current_pp": 0.010000000000000286,
+          "candidate_pred_segments": 7,
+          "candidate_latency": 25.52512216567993
+        }
+      ],
+      "per_recording": [
+        {
+          "recording_id": "R8001_M8004",
+          "windows": 15,
+          "final_der": 0.17919999999999997,
+          "slow_der": 0.17919999999999997,
+          "delta_vs_slow_pp": 0.0,
+          "beats_slow": false,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8003_M8001",
+          "windows": 15,
+          "final_der": 0.35889333333333334,
+          "slow_der": 0.38214666666666663,
+          "delta_vs_slow_pp": 2.3253333333333295,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8007_M8010",
+          "windows": 15,
+          "final_der": 0.24348000000000003,
+          "slow_der": 0.24383333333333337,
+          "delta_vs_slow_pp": 0.03533333333333444,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8007_M8011",
+          "windows": 15,
+          "final_der": 0.1588,
+          "slow_der": 0.16468666666666668,
+          "delta_vs_slow_pp": 0.5886666666666679,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8008_M8013",
+          "windows": 15,
+          "final_der": 0.1666733333333333,
+          "slow_der": 0.16668666666666668,
+          "delta_vs_slow_pp": 0.0013333333333365172,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8009_M8018",
+          "windows": 15,
+          "final_der": 0.10303333333333332,
+          "slow_der": 0.10335999999999998,
+          "delta_vs_slow_pp": 0.03266666666666557,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8009_M8019",
+          "windows": 15,
+          "final_der": 0.05651333333333333,
+          "slow_der": 0.057679999999999995,
+          "delta_vs_slow_pp": 0.11666666666666631,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8009_M8020",
+          "windows": 15,
+          "final_der": 0.05278,
+          "slow_der": 0.05278,
+          "delta_vs_slow_pp": 0.0,
+          "beats_slow": false,
+          "negative_vs_slow": false
+        }
+      ],
+      "source_stale_gt_mismatch_windows": 0,
+      "feature_a": "audio_max_p90_db",
+      "op_a": "<=",
+      "threshold_a": -41.4081,
+      "feature_b": "prev_audio_max_p90_db",
+      "op_b": "<=",
+      "threshold_b": -40.7464,
+      "selected": 8,
+      "source_full_coverage": true,
+      "meaningful_delta": false,
+      "improves_positive_recordings": true
+    },
+    {
+      "policy_kind": "external_candidate_surface_overlay",
+      "policy_id": "if_audio_p90_db_<=_-45.782_AND_prev_audio_max_p90_db_<=_-40.7464_then_diarizen-large-v2__diarizen-large-v2__spk_none::outputs__diarizen_uv_48__diarizen-large-v2__default__spk_none_else_current_final",
+      "description": "audio_p90_db <= -45.782 AND prev_audio_max_p90_db <= -40.7464",
+      "source_id": "diarizen-large-v2/diarizen-large-v2/spk_none::outputs/diarizen_uv_48/diarizen-large-v2/default__spk_none",
+      "source_path": "outputs/diarizen_uv_48/diarizen-large-v2/default__spk_none/summary.json",
+      "source_coverage_windows": 120,
+      "windows": 120,
+      "selected_windows": 9,
+      "overlay_wins_vs_current": 2,
+      "overlay_losses_vs_current": 0,
+      "current_final_der": 0.16492333333333334,
+      "final_der": 0.1649216666666667,
+      "clipped_slow_der": 0.1687966666666667,
+      "delta_vs_current": 1.6666666666498298e-06,
+      "delta_vs_current_pp": 0.00016666666666498298,
+      "delta_vs_clipped_slow_pp": 0.38750000000000173,
+      "positive_recordings_vs_clipped_slow": 6,
+      "negative_recordings_vs_clipped_slow": 0,
+      "choice_counts": {
+        "current_final": 111,
+        "diarizen-large-v2/diarizen-large-v2/spk_none::outputs/diarizen_uv_48/diarizen-large-v2/default__spk_none": 9
+      },
+      "selected_window_details": [
+        {
+          "window_id": "R8008_M8013:30:2",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.2265,
+          "candidate_der": 0.2264,
+          "delta_vs_current_pp": 0.010000000000001674,
+          "candidate_pred_segments": 10,
+          "candidate_latency": 23.955423831939697
+        },
+        {
+          "window_id": "R8008_M8013:30:7",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.159,
+          "candidate_der": 0.159,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 16,
+          "candidate_latency": 20.71005082130432
+        },
+        {
+          "window_id": "R8008_M8013:30:8",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.3288,
+          "candidate_der": 0.3288,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 24,
+          "candidate_latency": 22.01899003982544
+        },
+        {
+          "window_id": "R8008_M8013:30:9",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.1044,
+          "candidate_der": 0.1044,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 12,
+          "candidate_latency": 22.571627855300903
+        },
+        {
+          "window_id": "R8008_M8013:30:10",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.2261,
+          "candidate_der": 0.2261,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 11,
+          "candidate_latency": 18.351056814193726
+        },
+        {
+          "window_id": "R8008_M8013:30:11",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.1771,
+          "candidate_der": 0.1771,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 10,
+          "candidate_latency": 22.688507795333862
+        },
+        {
+          "window_id": "R8008_M8013:30:12",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.1399,
+          "candidate_der": 0.1399,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 8,
+          "candidate_latency": 24.064862966537476
+        },
+        {
+          "window_id": "R8008_M8013:30:13",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.2109,
+          "candidate_der": 0.2109,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 19,
+          "candidate_latency": 23.05256199836731
+        },
+        {
+          "window_id": "R8008_M8013:30:14",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.0994,
+          "candidate_der": 0.0993,
+          "delta_vs_current_pp": 0.010000000000000286,
+          "candidate_pred_segments": 7,
+          "candidate_latency": 22.578333854675293
+        }
+      ],
+      "per_recording": [
+        {
+          "recording_id": "R8001_M8004",
+          "windows": 15,
+          "final_der": 0.17919999999999997,
+          "slow_der": 0.17919999999999997,
+          "delta_vs_slow_pp": 0.0,
+          "beats_slow": false,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8003_M8001",
+          "windows": 15,
+          "final_der": 0.35889333333333334,
+          "slow_der": 0.38214666666666663,
+          "delta_vs_slow_pp": 2.3253333333333295,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8007_M8010",
+          "windows": 15,
+          "final_der": 0.24348000000000003,
+          "slow_der": 0.24383333333333337,
+          "delta_vs_slow_pp": 0.03533333333333444,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8007_M8011",
+          "windows": 15,
+          "final_der": 0.1588,
+          "slow_der": 0.16468666666666668,
+          "delta_vs_slow_pp": 0.5886666666666679,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8008_M8013",
+          "windows": 15,
+          "final_der": 0.1666733333333333,
+          "slow_der": 0.16668666666666668,
+          "delta_vs_slow_pp": 0.0013333333333365172,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8009_M8018",
+          "windows": 15,
+          "final_der": 0.10303333333333332,
+          "slow_der": 0.10335999999999998,
+          "delta_vs_slow_pp": 0.03266666666666557,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8009_M8019",
+          "windows": 15,
+          "final_der": 0.05651333333333333,
+          "slow_der": 0.057679999999999995,
+          "delta_vs_slow_pp": 0.11666666666666631,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8009_M8020",
+          "windows": 15,
+          "final_der": 0.05278,
+          "slow_der": 0.05278,
+          "delta_vs_slow_pp": 0.0,
+          "beats_slow": false,
+          "negative_vs_slow": false
+        }
+      ],
+      "source_stale_gt_mismatch_windows": 0,
+      "feature_a": "audio_p90_db",
+      "op_a": "<=",
+      "threshold_a": -45.782,
+      "feature_b": "prev_audio_max_p90_db",
+      "op_b": "<=",
+      "threshold_b": -40.7464,
+      "selected": 9,
+      "source_full_coverage": true,
+      "meaningful_delta": false,
+      "improves_positive_recordings": true
+    },
+    {
+      "policy_kind": "external_candidate_surface_overlay",
+      "policy_id": "if_audio_p90_db_<=_-45.782_AND_prev_audio_max_p90_db_<=_-40.7464_then_diarizen-large-v2__diarizen-large-v2__spk_none_else_current_final",
+      "description": "audio_p90_db <= -45.782 AND prev_audio_max_p90_db <= -40.7464",
+      "source_id": "diarizen-large-v2/diarizen-large-v2/spk_none",
+      "source_path": "outputs/diarizen_uv_120/diarizen-large-v2/default__spk_none/summary.json",
+      "source_coverage_windows": 120,
+      "windows": 120,
+      "selected_windows": 9,
+      "overlay_wins_vs_current": 2,
+      "overlay_losses_vs_current": 0,
+      "current_final_der": 0.16492333333333334,
+      "final_der": 0.1649216666666667,
+      "clipped_slow_der": 0.1687966666666667,
+      "delta_vs_current": 1.6666666666498298e-06,
+      "delta_vs_current_pp": 0.00016666666666498298,
+      "delta_vs_clipped_slow_pp": 0.38750000000000173,
+      "positive_recordings_vs_clipped_slow": 6,
+      "negative_recordings_vs_clipped_slow": 0,
+      "choice_counts": {
+        "current_final": 111,
+        "diarizen-large-v2/diarizen-large-v2/spk_none": 9
+      },
+      "selected_window_details": [
+        {
+          "window_id": "R8008_M8013:30:2",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.2265,
+          "candidate_der": 0.2264,
+          "delta_vs_current_pp": 0.010000000000001674,
+          "candidate_pred_segments": 10,
+          "candidate_latency": 23.46504306793213
+        },
+        {
+          "window_id": "R8008_M8013:30:7",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.159,
+          "candidate_der": 0.159,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 16,
+          "candidate_latency": 23.06705403327942
+        },
+        {
+          "window_id": "R8008_M8013:30:8",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.3288,
+          "candidate_der": 0.3288,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 24,
+          "candidate_latency": 24.707134008407593
+        },
+        {
+          "window_id": "R8008_M8013:30:9",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.1044,
+          "candidate_der": 0.1044,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 12,
+          "candidate_latency": 24.305092096328735
+        },
+        {
+          "window_id": "R8008_M8013:30:10",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.2261,
+          "candidate_der": 0.2261,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 11,
+          "candidate_latency": 23.354254007339478
+        },
+        {
+          "window_id": "R8008_M8013:30:11",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.1771,
+          "candidate_der": 0.1771,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 10,
+          "candidate_latency": 24.520829916000366
+        },
+        {
+          "window_id": "R8008_M8013:30:12",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.1399,
+          "candidate_der": 0.1399,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 8,
+          "candidate_latency": 24.932341814041138
+        },
+        {
+          "window_id": "R8008_M8013:30:13",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.2109,
+          "candidate_der": 0.2109,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 19,
+          "candidate_latency": 27.970037937164307
+        },
+        {
+          "window_id": "R8008_M8013:30:14",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.0994,
+          "candidate_der": 0.0993,
+          "delta_vs_current_pp": 0.010000000000000286,
+          "candidate_pred_segments": 7,
+          "candidate_latency": 25.52512216567993
+        }
+      ],
+      "per_recording": [
+        {
+          "recording_id": "R8001_M8004",
+          "windows": 15,
+          "final_der": 0.17919999999999997,
+          "slow_der": 0.17919999999999997,
+          "delta_vs_slow_pp": 0.0,
+          "beats_slow": false,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8003_M8001",
+          "windows": 15,
+          "final_der": 0.35889333333333334,
+          "slow_der": 0.38214666666666663,
+          "delta_vs_slow_pp": 2.3253333333333295,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8007_M8010",
+          "windows": 15,
+          "final_der": 0.24348000000000003,
+          "slow_der": 0.24383333333333337,
+          "delta_vs_slow_pp": 0.03533333333333444,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8007_M8011",
+          "windows": 15,
+          "final_der": 0.1588,
+          "slow_der": 0.16468666666666668,
+          "delta_vs_slow_pp": 0.5886666666666679,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8008_M8013",
+          "windows": 15,
+          "final_der": 0.1666733333333333,
+          "slow_der": 0.16668666666666668,
+          "delta_vs_slow_pp": 0.0013333333333365172,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8009_M8018",
+          "windows": 15,
+          "final_der": 0.10303333333333332,
+          "slow_der": 0.10335999999999998,
+          "delta_vs_slow_pp": 0.03266666666666557,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8009_M8019",
+          "windows": 15,
+          "final_der": 0.05651333333333333,
+          "slow_der": 0.057679999999999995,
+          "delta_vs_slow_pp": 0.11666666666666631,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8009_M8020",
+          "windows": 15,
+          "final_der": 0.05278,
+          "slow_der": 0.05278,
+          "delta_vs_slow_pp": 0.0,
+          "beats_slow": false,
+          "negative_vs_slow": false
+        }
+      ],
+      "source_stale_gt_mismatch_windows": 0,
+      "feature_a": "audio_p90_db",
+      "op_a": "<=",
+      "threshold_a": -45.782,
+      "feature_b": "prev_audio_max_p90_db",
+      "op_b": "<=",
+      "threshold_b": -40.7464,
+      "selected": 9,
+      "source_full_coverage": true,
+      "meaningful_delta": false,
+      "improves_positive_recordings": true
+    },
+    {
+      "policy_kind": "external_candidate_surface_overlay",
+      "policy_id": "if_audio_p90_db_<=_-45.9942_AND_prev_audio_max_p90_db_<=_-40.7464_then_diarizen-large-v2__diarizen-large-v2__spk_none::outputs__diarizen_uv_48__diarizen-large-v2__default__spk_none_else_current_final",
+      "description": "audio_p90_db <= -45.9942 AND prev_audio_max_p90_db <= -40.7464",
+      "source_id": "diarizen-large-v2/diarizen-large-v2/spk_none::outputs/diarizen_uv_48/diarizen-large-v2/default__spk_none",
+      "source_path": "outputs/diarizen_uv_48/diarizen-large-v2/default__spk_none/summary.json",
+      "source_coverage_windows": 120,
+      "windows": 120,
+      "selected_windows": 8,
+      "overlay_wins_vs_current": 2,
+      "overlay_losses_vs_current": 0,
+      "current_final_der": 0.16492333333333334,
+      "final_der": 0.1649216666666667,
+      "clipped_slow_der": 0.1687966666666667,
+      "delta_vs_current": 1.6666666666498298e-06,
+      "delta_vs_current_pp": 0.00016666666666498298,
+      "delta_vs_clipped_slow_pp": 0.38750000000000173,
+      "positive_recordings_vs_clipped_slow": 6,
+      "negative_recordings_vs_clipped_slow": 0,
+      "choice_counts": {
+        "current_final": 112,
+        "diarizen-large-v2/diarizen-large-v2/spk_none::outputs/diarizen_uv_48/diarizen-large-v2/default__spk_none": 8
+      },
+      "selected_window_details": [
+        {
+          "window_id": "R8008_M8013:30:2",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.2265,
+          "candidate_der": 0.2264,
+          "delta_vs_current_pp": 0.010000000000001674,
+          "candidate_pred_segments": 10,
+          "candidate_latency": 23.955423831939697
+        },
+        {
+          "window_id": "R8008_M8013:30:8",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.3288,
+          "candidate_der": 0.3288,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 24,
+          "candidate_latency": 22.01899003982544
+        },
+        {
+          "window_id": "R8008_M8013:30:9",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.1044,
+          "candidate_der": 0.1044,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 12,
+          "candidate_latency": 22.571627855300903
+        },
+        {
+          "window_id": "R8008_M8013:30:10",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.2261,
+          "candidate_der": 0.2261,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 11,
+          "candidate_latency": 18.351056814193726
+        },
+        {
+          "window_id": "R8008_M8013:30:11",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.1771,
+          "candidate_der": 0.1771,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 10,
+          "candidate_latency": 22.688507795333862
+        },
+        {
+          "window_id": "R8008_M8013:30:12",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.1399,
+          "candidate_der": 0.1399,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 8,
+          "candidate_latency": 24.064862966537476
+        },
+        {
+          "window_id": "R8008_M8013:30:13",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.2109,
+          "candidate_der": 0.2109,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 19,
+          "candidate_latency": 23.05256199836731
+        },
+        {
+          "window_id": "R8008_M8013:30:14",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.0994,
+          "candidate_der": 0.0993,
+          "delta_vs_current_pp": 0.010000000000000286,
+          "candidate_pred_segments": 7,
+          "candidate_latency": 22.578333854675293
+        }
+      ],
+      "per_recording": [
+        {
+          "recording_id": "R8001_M8004",
+          "windows": 15,
+          "final_der": 0.17919999999999997,
+          "slow_der": 0.17919999999999997,
+          "delta_vs_slow_pp": 0.0,
+          "beats_slow": false,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8003_M8001",
+          "windows": 15,
+          "final_der": 0.35889333333333334,
+          "slow_der": 0.38214666666666663,
+          "delta_vs_slow_pp": 2.3253333333333295,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8007_M8010",
+          "windows": 15,
+          "final_der": 0.24348000000000003,
+          "slow_der": 0.24383333333333337,
+          "delta_vs_slow_pp": 0.03533333333333444,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8007_M8011",
+          "windows": 15,
+          "final_der": 0.1588,
+          "slow_der": 0.16468666666666668,
+          "delta_vs_slow_pp": 0.5886666666666679,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8008_M8013",
+          "windows": 15,
+          "final_der": 0.1666733333333333,
+          "slow_der": 0.16668666666666668,
+          "delta_vs_slow_pp": 0.0013333333333365172,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8009_M8018",
+          "windows": 15,
+          "final_der": 0.10303333333333332,
+          "slow_der": 0.10335999999999998,
+          "delta_vs_slow_pp": 0.03266666666666557,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8009_M8019",
+          "windows": 15,
+          "final_der": 0.05651333333333333,
+          "slow_der": 0.057679999999999995,
+          "delta_vs_slow_pp": 0.11666666666666631,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8009_M8020",
+          "windows": 15,
+          "final_der": 0.05278,
+          "slow_der": 0.05278,
+          "delta_vs_slow_pp": 0.0,
+          "beats_slow": false,
+          "negative_vs_slow": false
+        }
+      ],
+      "source_stale_gt_mismatch_windows": 0,
+      "feature_a": "audio_p90_db",
+      "op_a": "<=",
+      "threshold_a": -45.9942,
+      "feature_b": "prev_audio_max_p90_db",
+      "op_b": "<=",
+      "threshold_b": -40.7464,
+      "selected": 8,
+      "source_full_coverage": true,
+      "meaningful_delta": false,
+      "improves_positive_recordings": true
+    },
+    {
+      "policy_kind": "external_candidate_surface_overlay",
+      "policy_id": "if_audio_p90_db_<=_-45.9942_AND_prev_audio_max_p90_db_<=_-40.7464_then_diarizen-large-v2__diarizen-large-v2__spk_none_else_current_final",
+      "description": "audio_p90_db <= -45.9942 AND prev_audio_max_p90_db <= -40.7464",
+      "source_id": "diarizen-large-v2/diarizen-large-v2/spk_none",
+      "source_path": "outputs/diarizen_uv_120/diarizen-large-v2/default__spk_none/summary.json",
+      "source_coverage_windows": 120,
+      "windows": 120,
+      "selected_windows": 8,
+      "overlay_wins_vs_current": 2,
+      "overlay_losses_vs_current": 0,
+      "current_final_der": 0.16492333333333334,
+      "final_der": 0.1649216666666667,
+      "clipped_slow_der": 0.1687966666666667,
+      "delta_vs_current": 1.6666666666498298e-06,
+      "delta_vs_current_pp": 0.00016666666666498298,
+      "delta_vs_clipped_slow_pp": 0.38750000000000173,
+      "positive_recordings_vs_clipped_slow": 6,
+      "negative_recordings_vs_clipped_slow": 0,
+      "choice_counts": {
+        "current_final": 112,
+        "diarizen-large-v2/diarizen-large-v2/spk_none": 8
+      },
+      "selected_window_details": [
+        {
+          "window_id": "R8008_M8013:30:2",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.2265,
+          "candidate_der": 0.2264,
+          "delta_vs_current_pp": 0.010000000000001674,
+          "candidate_pred_segments": 10,
+          "candidate_latency": 23.46504306793213
+        },
+        {
+          "window_id": "R8008_M8013:30:8",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.3288,
+          "candidate_der": 0.3288,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 24,
+          "candidate_latency": 24.707134008407593
+        },
+        {
+          "window_id": "R8008_M8013:30:9",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.1044,
+          "candidate_der": 0.1044,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 12,
+          "candidate_latency": 24.305092096328735
+        },
+        {
+          "window_id": "R8008_M8013:30:10",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.2261,
+          "candidate_der": 0.2261,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 11,
+          "candidate_latency": 23.354254007339478
+        },
+        {
+          "window_id": "R8008_M8013:30:11",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.1771,
+          "candidate_der": 0.1771,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 10,
+          "candidate_latency": 24.520829916000366
+        },
+        {
+          "window_id": "R8008_M8013:30:12",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.1399,
+          "candidate_der": 0.1399,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 8,
+          "candidate_latency": 24.932341814041138
+        },
+        {
+          "window_id": "R8008_M8013:30:13",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.2109,
+          "candidate_der": 0.2109,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 19,
+          "candidate_latency": 27.970037937164307
+        },
+        {
+          "window_id": "R8008_M8013:30:14",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.0994,
+          "candidate_der": 0.0993,
+          "delta_vs_current_pp": 0.010000000000000286,
+          "candidate_pred_segments": 7,
+          "candidate_latency": 25.52512216567993
+        }
+      ],
+      "per_recording": [
+        {
+          "recording_id": "R8001_M8004",
+          "windows": 15,
+          "final_der": 0.17919999999999997,
+          "slow_der": 0.17919999999999997,
+          "delta_vs_slow_pp": 0.0,
+          "beats_slow": false,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8003_M8001",
+          "windows": 15,
+          "final_der": 0.35889333333333334,
+          "slow_der": 0.38214666666666663,
+          "delta_vs_slow_pp": 2.3253333333333295,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8007_M8010",
+          "windows": 15,
+          "final_der": 0.24348000000000003,
+          "slow_der": 0.24383333333333337,
+          "delta_vs_slow_pp": 0.03533333333333444,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8007_M8011",
+          "windows": 15,
+          "final_der": 0.1588,
+          "slow_der": 0.16468666666666668,
+          "delta_vs_slow_pp": 0.5886666666666679,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8008_M8013",
+          "windows": 15,
+          "final_der": 0.1666733333333333,
+          "slow_der": 0.16668666666666668,
+          "delta_vs_slow_pp": 0.0013333333333365172,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8009_M8018",
+          "windows": 15,
+          "final_der": 0.10303333333333332,
+          "slow_der": 0.10335999999999998,
+          "delta_vs_slow_pp": 0.03266666666666557,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8009_M8019",
+          "windows": 15,
+          "final_der": 0.05651333333333333,
+          "slow_der": 0.057679999999999995,
+          "delta_vs_slow_pp": 0.11666666666666631,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8009_M8020",
+          "windows": 15,
+          "final_der": 0.05278,
+          "slow_der": 0.05278,
+          "delta_vs_slow_pp": 0.0,
+          "beats_slow": false,
+          "negative_vs_slow": false
+        }
+      ],
+      "source_stale_gt_mismatch_windows": 0,
+      "feature_a": "audio_p90_db",
+      "op_a": "<=",
+      "threshold_a": -45.9942,
+      "feature_b": "prev_audio_max_p90_db",
+      "op_b": "<=",
+      "threshold_b": -40.7464,
+      "selected": 8,
+      "source_full_coverage": true,
+      "meaningful_delta": false,
+      "improves_positive_recordings": true
+    },
+    {
+      "policy_kind": "external_candidate_surface_overlay",
+      "policy_id": "if_audio_p90_db_<=_-46.2244_AND_prev_audio_max_p90_db_<=_-40.7464_then_diarizen-large-v2__diarizen-large-v2__spk_none::outputs__diarizen_uv_48__diarizen-large-v2__default__spk_none_else_current_final",
+      "description": "audio_p90_db <= -46.2244 AND prev_audio_max_p90_db <= -40.7464",
+      "source_id": "diarizen-large-v2/diarizen-large-v2/spk_none::outputs/diarizen_uv_48/diarizen-large-v2/default__spk_none",
+      "source_path": "outputs/diarizen_uv_48/diarizen-large-v2/default__spk_none/summary.json",
+      "source_coverage_windows": 120,
+      "windows": 120,
+      "selected_windows": 6,
+      "overlay_wins_vs_current": 2,
+      "overlay_losses_vs_current": 0,
+      "current_final_der": 0.16492333333333334,
+      "final_der": 0.1649216666666667,
+      "clipped_slow_der": 0.1687966666666667,
+      "delta_vs_current": 1.6666666666498298e-06,
+      "delta_vs_current_pp": 0.00016666666666498298,
+      "delta_vs_clipped_slow_pp": 0.38750000000000173,
+      "positive_recordings_vs_clipped_slow": 6,
+      "negative_recordings_vs_clipped_slow": 0,
+      "choice_counts": {
+        "current_final": 114,
+        "diarizen-large-v2/diarizen-large-v2/spk_none::outputs/diarizen_uv_48/diarizen-large-v2/default__spk_none": 6
+      },
+      "selected_window_details": [
+        {
+          "window_id": "R8008_M8013:30:2",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.2265,
+          "candidate_der": 0.2264,
+          "delta_vs_current_pp": 0.010000000000001674,
+          "candidate_pred_segments": 10,
+          "candidate_latency": 23.955423831939697
+        },
+        {
+          "window_id": "R8008_M8013:30:8",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.3288,
+          "candidate_der": 0.3288,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 24,
+          "candidate_latency": 22.01899003982544
+        },
+        {
+          "window_id": "R8008_M8013:30:9",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.1044,
+          "candidate_der": 0.1044,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 12,
+          "candidate_latency": 22.571627855300903
+        },
+        {
+          "window_id": "R8008_M8013:30:10",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.2261,
+          "candidate_der": 0.2261,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 11,
+          "candidate_latency": 18.351056814193726
+        },
+        {
+          "window_id": "R8008_M8013:30:12",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.1399,
+          "candidate_der": 0.1399,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 8,
+          "candidate_latency": 24.064862966537476
+        },
+        {
+          "window_id": "R8008_M8013:30:14",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.0994,
+          "candidate_der": 0.0993,
+          "delta_vs_current_pp": 0.010000000000000286,
+          "candidate_pred_segments": 7,
+          "candidate_latency": 22.578333854675293
+        }
+      ],
+      "per_recording": [
+        {
+          "recording_id": "R8001_M8004",
+          "windows": 15,
+          "final_der": 0.17919999999999997,
+          "slow_der": 0.17919999999999997,
+          "delta_vs_slow_pp": 0.0,
+          "beats_slow": false,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8003_M8001",
+          "windows": 15,
+          "final_der": 0.35889333333333334,
+          "slow_der": 0.38214666666666663,
+          "delta_vs_slow_pp": 2.3253333333333295,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8007_M8010",
+          "windows": 15,
+          "final_der": 0.24348000000000003,
+          "slow_der": 0.24383333333333337,
+          "delta_vs_slow_pp": 0.03533333333333444,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8007_M8011",
+          "windows": 15,
+          "final_der": 0.1588,
+          "slow_der": 0.16468666666666668,
+          "delta_vs_slow_pp": 0.5886666666666679,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8008_M8013",
+          "windows": 15,
+          "final_der": 0.1666733333333333,
+          "slow_der": 0.16668666666666668,
+          "delta_vs_slow_pp": 0.0013333333333365172,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8009_M8018",
+          "windows": 15,
+          "final_der": 0.10303333333333332,
+          "slow_der": 0.10335999999999998,
+          "delta_vs_slow_pp": 0.03266666666666557,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8009_M8019",
+          "windows": 15,
+          "final_der": 0.05651333333333333,
+          "slow_der": 0.057679999999999995,
+          "delta_vs_slow_pp": 0.11666666666666631,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8009_M8020",
+          "windows": 15,
+          "final_der": 0.05278,
+          "slow_der": 0.05278,
+          "delta_vs_slow_pp": 0.0,
+          "beats_slow": false,
+          "negative_vs_slow": false
+        }
+      ],
+      "source_stale_gt_mismatch_windows": 0,
+      "feature_a": "audio_p90_db",
+      "op_a": "<=",
+      "threshold_a": -46.2244,
+      "feature_b": "prev_audio_max_p90_db",
+      "op_b": "<=",
+      "threshold_b": -40.7464,
+      "selected": 6,
+      "source_full_coverage": true,
+      "meaningful_delta": false,
+      "improves_positive_recordings": true
+    },
+    {
+      "policy_kind": "external_candidate_surface_overlay",
+      "policy_id": "if_audio_p90_db_<=_-46.2244_AND_prev_audio_max_p90_db_<=_-40.7464_then_diarizen-large-v2__diarizen-large-v2__spk_none_else_current_final",
+      "description": "audio_p90_db <= -46.2244 AND prev_audio_max_p90_db <= -40.7464",
+      "source_id": "diarizen-large-v2/diarizen-large-v2/spk_none",
+      "source_path": "outputs/diarizen_uv_120/diarizen-large-v2/default__spk_none/summary.json",
+      "source_coverage_windows": 120,
+      "windows": 120,
+      "selected_windows": 6,
+      "overlay_wins_vs_current": 2,
+      "overlay_losses_vs_current": 0,
+      "current_final_der": 0.16492333333333334,
+      "final_der": 0.1649216666666667,
+      "clipped_slow_der": 0.1687966666666667,
+      "delta_vs_current": 1.6666666666498298e-06,
+      "delta_vs_current_pp": 0.00016666666666498298,
+      "delta_vs_clipped_slow_pp": 0.38750000000000173,
+      "positive_recordings_vs_clipped_slow": 6,
+      "negative_recordings_vs_clipped_slow": 0,
+      "choice_counts": {
+        "current_final": 114,
+        "diarizen-large-v2/diarizen-large-v2/spk_none": 6
+      },
+      "selected_window_details": [
+        {
+          "window_id": "R8008_M8013:30:2",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.2265,
+          "candidate_der": 0.2264,
+          "delta_vs_current_pp": 0.010000000000001674,
+          "candidate_pred_segments": 10,
+          "candidate_latency": 23.46504306793213
+        },
+        {
+          "window_id": "R8008_M8013:30:8",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.3288,
+          "candidate_der": 0.3288,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 24,
+          "candidate_latency": 24.707134008407593
+        },
+        {
+          "window_id": "R8008_M8013:30:9",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.1044,
+          "candidate_der": 0.1044,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 12,
+          "candidate_latency": 24.305092096328735
+        },
+        {
+          "window_id": "R8008_M8013:30:10",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.2261,
+          "candidate_der": 0.2261,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 11,
+          "candidate_latency": 23.354254007339478
+        },
+        {
+          "window_id": "R8008_M8013:30:12",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.1399,
+          "candidate_der": 0.1399,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 8,
+          "candidate_latency": 24.932341814041138
+        },
+        {
+          "window_id": "R8008_M8013:30:14",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.0994,
+          "candidate_der": 0.0993,
+          "delta_vs_current_pp": 0.010000000000000286,
+          "candidate_pred_segments": 7,
+          "candidate_latency": 25.52512216567993
+        }
+      ],
+      "per_recording": [
+        {
+          "recording_id": "R8001_M8004",
+          "windows": 15,
+          "final_der": 0.17919999999999997,
+          "slow_der": 0.17919999999999997,
+          "delta_vs_slow_pp": 0.0,
+          "beats_slow": false,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8003_M8001",
+          "windows": 15,
+          "final_der": 0.35889333333333334,
+          "slow_der": 0.38214666666666663,
+          "delta_vs_slow_pp": 2.3253333333333295,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8007_M8010",
+          "windows": 15,
+          "final_der": 0.24348000000000003,
+          "slow_der": 0.24383333333333337,
+          "delta_vs_slow_pp": 0.03533333333333444,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8007_M8011",
+          "windows": 15,
+          "final_der": 0.1588,
+          "slow_der": 0.16468666666666668,
+          "delta_vs_slow_pp": 0.5886666666666679,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8008_M8013",
+          "windows": 15,
+          "final_der": 0.1666733333333333,
+          "slow_der": 0.16668666666666668,
+          "delta_vs_slow_pp": 0.0013333333333365172,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8009_M8018",
+          "windows": 15,
+          "final_der": 0.10303333333333332,
+          "slow_der": 0.10335999999999998,
+          "delta_vs_slow_pp": 0.03266666666666557,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8009_M8019",
+          "windows": 15,
+          "final_der": 0.05651333333333333,
+          "slow_der": 0.057679999999999995,
+          "delta_vs_slow_pp": 0.11666666666666631,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8009_M8020",
+          "windows": 15,
+          "final_der": 0.05278,
+          "slow_der": 0.05278,
+          "delta_vs_slow_pp": 0.0,
+          "beats_slow": false,
+          "negative_vs_slow": false
+        }
+      ],
+      "source_stale_gt_mismatch_windows": 0,
+      "feature_a": "audio_p90_db",
+      "op_a": "<=",
+      "threshold_a": -46.2244,
+      "feature_b": "prev_audio_max_p90_db",
+      "op_b": "<=",
+      "threshold_b": -40.7464,
+      "selected": 6,
+      "source_full_coverage": true,
+      "meaningful_delta": false,
+      "improves_positive_recordings": true
+    },
+    {
+      "policy_kind": "external_candidate_surface_overlay",
+      "policy_id": "if_audio_p95_db_<=_-44.6773_AND_prev_audio_max_p90_db_<=_-40.7464_then_diarizen-large-v2__diarizen-large-v2__spk_none::outputs__diarizen_uv_48__diarizen-large-v2__default__spk_none_else_current_final",
+      "description": "audio_p95_db <= -44.6773 AND prev_audio_max_p90_db <= -40.7464",
+      "source_id": "diarizen-large-v2/diarizen-large-v2/spk_none::outputs/diarizen_uv_48/diarizen-large-v2/default__spk_none",
+      "source_path": "outputs/diarizen_uv_48/diarizen-large-v2/default__spk_none/summary.json",
+      "source_coverage_windows": 120,
+      "windows": 120,
+      "selected_windows": 7,
+      "overlay_wins_vs_current": 2,
+      "overlay_losses_vs_current": 0,
+      "current_final_der": 0.16492333333333334,
+      "final_der": 0.1649216666666667,
+      "clipped_slow_der": 0.1687966666666667,
+      "delta_vs_current": 1.6666666666498298e-06,
+      "delta_vs_current_pp": 0.00016666666666498298,
+      "delta_vs_clipped_slow_pp": 0.38750000000000173,
+      "positive_recordings_vs_clipped_slow": 6,
+      "negative_recordings_vs_clipped_slow": 0,
+      "choice_counts": {
+        "current_final": 113,
+        "diarizen-large-v2/diarizen-large-v2/spk_none::outputs/diarizen_uv_48/diarizen-large-v2/default__spk_none": 7
+      },
+      "selected_window_details": [
+        {
+          "window_id": "R8008_M8013:30:2",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.2265,
+          "candidate_der": 0.2264,
+          "delta_vs_current_pp": 0.010000000000001674,
+          "candidate_pred_segments": 10,
+          "candidate_latency": 23.955423831939697
+        },
+        {
+          "window_id": "R8008_M8013:30:8",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.3288,
+          "candidate_der": 0.3288,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 24,
+          "candidate_latency": 22.01899003982544
+        },
+        {
+          "window_id": "R8008_M8013:30:9",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.1044,
+          "candidate_der": 0.1044,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 12,
+          "candidate_latency": 22.571627855300903
+        },
+        {
+          "window_id": "R8008_M8013:30:10",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.2261,
+          "candidate_der": 0.2261,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 11,
+          "candidate_latency": 18.351056814193726
+        },
+        {
+          "window_id": "R8008_M8013:30:12",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.1399,
+          "candidate_der": 0.1399,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 8,
+          "candidate_latency": 24.064862966537476
+        },
+        {
+          "window_id": "R8008_M8013:30:13",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.2109,
+          "candidate_der": 0.2109,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 19,
+          "candidate_latency": 23.05256199836731
+        },
+        {
+          "window_id": "R8008_M8013:30:14",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.0994,
+          "candidate_der": 0.0993,
+          "delta_vs_current_pp": 0.010000000000000286,
+          "candidate_pred_segments": 7,
+          "candidate_latency": 22.578333854675293
+        }
+      ],
+      "per_recording": [
+        {
+          "recording_id": "R8001_M8004",
+          "windows": 15,
+          "final_der": 0.17919999999999997,
+          "slow_der": 0.17919999999999997,
+          "delta_vs_slow_pp": 0.0,
+          "beats_slow": false,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8003_M8001",
+          "windows": 15,
+          "final_der": 0.35889333333333334,
+          "slow_der": 0.38214666666666663,
+          "delta_vs_slow_pp": 2.3253333333333295,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8007_M8010",
+          "windows": 15,
+          "final_der": 0.24348000000000003,
+          "slow_der": 0.24383333333333337,
+          "delta_vs_slow_pp": 0.03533333333333444,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8007_M8011",
+          "windows": 15,
+          "final_der": 0.1588,
+          "slow_der": 0.16468666666666668,
+          "delta_vs_slow_pp": 0.5886666666666679,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8008_M8013",
+          "windows": 15,
+          "final_der": 0.1666733333333333,
+          "slow_der": 0.16668666666666668,
+          "delta_vs_slow_pp": 0.0013333333333365172,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8009_M8018",
+          "windows": 15,
+          "final_der": 0.10303333333333332,
+          "slow_der": 0.10335999999999998,
+          "delta_vs_slow_pp": 0.03266666666666557,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8009_M8019",
+          "windows": 15,
+          "final_der": 0.05651333333333333,
+          "slow_der": 0.057679999999999995,
+          "delta_vs_slow_pp": 0.11666666666666631,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8009_M8020",
+          "windows": 15,
+          "final_der": 0.05278,
+          "slow_der": 0.05278,
+          "delta_vs_slow_pp": 0.0,
+          "beats_slow": false,
+          "negative_vs_slow": false
+        }
+      ],
+      "source_stale_gt_mismatch_windows": 0,
+      "feature_a": "audio_p95_db",
+      "op_a": "<=",
+      "threshold_a": -44.6773,
+      "feature_b": "prev_audio_max_p90_db",
+      "op_b": "<=",
+      "threshold_b": -40.7464,
+      "selected": 7,
+      "source_full_coverage": true,
+      "meaningful_delta": false,
+      "improves_positive_recordings": true
+    },
+    {
+      "policy_kind": "external_candidate_surface_overlay",
+      "policy_id": "if_audio_p95_db_<=_-44.6773_AND_prev_audio_max_p90_db_<=_-40.7464_then_diarizen-large-v2__diarizen-large-v2__spk_none_else_current_final",
+      "description": "audio_p95_db <= -44.6773 AND prev_audio_max_p90_db <= -40.7464",
+      "source_id": "diarizen-large-v2/diarizen-large-v2/spk_none",
+      "source_path": "outputs/diarizen_uv_120/diarizen-large-v2/default__spk_none/summary.json",
+      "source_coverage_windows": 120,
+      "windows": 120,
+      "selected_windows": 7,
+      "overlay_wins_vs_current": 2,
+      "overlay_losses_vs_current": 0,
+      "current_final_der": 0.16492333333333334,
+      "final_der": 0.1649216666666667,
+      "clipped_slow_der": 0.1687966666666667,
+      "delta_vs_current": 1.6666666666498298e-06,
+      "delta_vs_current_pp": 0.00016666666666498298,
+      "delta_vs_clipped_slow_pp": 0.38750000000000173,
+      "positive_recordings_vs_clipped_slow": 6,
+      "negative_recordings_vs_clipped_slow": 0,
+      "choice_counts": {
+        "current_final": 113,
+        "diarizen-large-v2/diarizen-large-v2/spk_none": 7
+      },
+      "selected_window_details": [
+        {
+          "window_id": "R8008_M8013:30:2",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.2265,
+          "candidate_der": 0.2264,
+          "delta_vs_current_pp": 0.010000000000001674,
+          "candidate_pred_segments": 10,
+          "candidate_latency": 23.46504306793213
+        },
+        {
+          "window_id": "R8008_M8013:30:8",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.3288,
+          "candidate_der": 0.3288,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 24,
+          "candidate_latency": 24.707134008407593
+        },
+        {
+          "window_id": "R8008_M8013:30:9",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.1044,
+          "candidate_der": 0.1044,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 12,
+          "candidate_latency": 24.305092096328735
+        },
+        {
+          "window_id": "R8008_M8013:30:10",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.2261,
+          "candidate_der": 0.2261,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 11,
+          "candidate_latency": 23.354254007339478
+        },
+        {
+          "window_id": "R8008_M8013:30:12",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.1399,
+          "candidate_der": 0.1399,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 8,
+          "candidate_latency": 24.932341814041138
+        },
+        {
+          "window_id": "R8008_M8013:30:13",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.2109,
+          "candidate_der": 0.2109,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 19,
+          "candidate_latency": 27.970037937164307
+        },
+        {
+          "window_id": "R8008_M8013:30:14",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.0994,
+          "candidate_der": 0.0993,
+          "delta_vs_current_pp": 0.010000000000000286,
+          "candidate_pred_segments": 7,
+          "candidate_latency": 25.52512216567993
+        }
+      ],
+      "per_recording": [
+        {
+          "recording_id": "R8001_M8004",
+          "windows": 15,
+          "final_der": 0.17919999999999997,
+          "slow_der": 0.17919999999999997,
+          "delta_vs_slow_pp": 0.0,
+          "beats_slow": false,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8003_M8001",
+          "windows": 15,
+          "final_der": 0.35889333333333334,
+          "slow_der": 0.38214666666666663,
+          "delta_vs_slow_pp": 2.3253333333333295,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8007_M8010",
+          "windows": 15,
+          "final_der": 0.24348000000000003,
+          "slow_der": 0.24383333333333337,
+          "delta_vs_slow_pp": 0.03533333333333444,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8007_M8011",
+          "windows": 15,
+          "final_der": 0.1588,
+          "slow_der": 0.16468666666666668,
+          "delta_vs_slow_pp": 0.5886666666666679,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8008_M8013",
+          "windows": 15,
+          "final_der": 0.1666733333333333,
+          "slow_der": 0.16668666666666668,
+          "delta_vs_slow_pp": 0.0013333333333365172,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8009_M8018",
+          "windows": 15,
+          "final_der": 0.10303333333333332,
+          "slow_der": 0.10335999999999998,
+          "delta_vs_slow_pp": 0.03266666666666557,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8009_M8019",
+          "windows": 15,
+          "final_der": 0.05651333333333333,
+          "slow_der": 0.057679999999999995,
+          "delta_vs_slow_pp": 0.11666666666666631,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8009_M8020",
+          "windows": 15,
+          "final_der": 0.05278,
+          "slow_der": 0.05278,
+          "delta_vs_slow_pp": 0.0,
+          "beats_slow": false,
+          "negative_vs_slow": false
+        }
+      ],
+      "source_stale_gt_mismatch_windows": 0,
+      "feature_a": "audio_p95_db",
+      "op_a": "<=",
+      "threshold_a": -44.6773,
+      "feature_b": "prev_audio_max_p90_db",
+      "op_b": "<=",
+      "threshold_b": -40.7464,
+      "selected": 7,
+      "source_full_coverage": true,
+      "meaningful_delta": false,
+      "improves_positive_recordings": true
+    },
+    {
+      "policy_kind": "external_candidate_surface_overlay",
+      "policy_id": "if_fast_audio_speech_ratio_>=_11.9198_AND_prev_audio_max_p90_db_<=_-40.7464_then_diarizen-large-v2__diarizen-large-v2__spk_none::outputs__diarizen_uv_48__diarizen-large-v2__default__spk_none_else_current_final",
+      "description": "fast_audio_speech_ratio >= 11.9198 AND prev_audio_max_p90_db <= -40.7464",
+      "source_id": "diarizen-large-v2/diarizen-large-v2/spk_none::outputs/diarizen_uv_48/diarizen-large-v2/default__spk_none",
+      "source_path": "outputs/diarizen_uv_48/diarizen-large-v2/default__spk_none/summary.json",
+      "source_coverage_windows": 120,
+      "windows": 120,
+      "selected_windows": 9,
+      "overlay_wins_vs_current": 2,
+      "overlay_losses_vs_current": 0,
+      "current_final_der": 0.16492333333333334,
+      "final_der": 0.1649216666666667,
+      "clipped_slow_der": 0.1687966666666667,
+      "delta_vs_current": 1.6666666666498298e-06,
+      "delta_vs_current_pp": 0.00016666666666498298,
+      "delta_vs_clipped_slow_pp": 0.38750000000000173,
+      "positive_recordings_vs_clipped_slow": 6,
+      "negative_recordings_vs_clipped_slow": 0,
+      "choice_counts": {
+        "current_final": 111,
+        "diarizen-large-v2/diarizen-large-v2/spk_none::outputs/diarizen_uv_48/diarizen-large-v2/default__spk_none": 9
+      },
+      "selected_window_details": [
+        {
+          "window_id": "R8008_M8013:30:2",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.2265,
+          "candidate_der": 0.2264,
+          "delta_vs_current_pp": 0.010000000000001674,
+          "candidate_pred_segments": 10,
+          "candidate_latency": 23.955423831939697
+        },
+        {
+          "window_id": "R8008_M8013:30:3",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.1117,
+          "candidate_der": 0.1117,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 8,
+          "candidate_latency": 20.789113998413086
+        },
+        {
+          "window_id": "R8008_M8013:30:8",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.3288,
+          "candidate_der": 0.3288,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 24,
+          "candidate_latency": 22.01899003982544
+        },
+        {
+          "window_id": "R8008_M8013:30:9",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.1044,
+          "candidate_der": 0.1044,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 12,
+          "candidate_latency": 22.571627855300903
+        },
+        {
+          "window_id": "R8008_M8013:30:10",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.2261,
+          "candidate_der": 0.2261,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 11,
+          "candidate_latency": 18.351056814193726
+        },
+        {
+          "window_id": "R8008_M8013:30:11",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.1771,
+          "candidate_der": 0.1771,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 10,
+          "candidate_latency": 22.688507795333862
+        },
+        {
+          "window_id": "R8008_M8013:30:12",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.1399,
+          "candidate_der": 0.1399,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 8,
+          "candidate_latency": 24.064862966537476
+        },
+        {
+          "window_id": "R8008_M8013:30:13",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.2109,
+          "candidate_der": 0.2109,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 19,
+          "candidate_latency": 23.05256199836731
+        },
+        {
+          "window_id": "R8008_M8013:30:14",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.0994,
+          "candidate_der": 0.0993,
+          "delta_vs_current_pp": 0.010000000000000286,
+          "candidate_pred_segments": 7,
+          "candidate_latency": 22.578333854675293
+        }
+      ],
+      "per_recording": [
+        {
+          "recording_id": "R8001_M8004",
+          "windows": 15,
+          "final_der": 0.17919999999999997,
+          "slow_der": 0.17919999999999997,
+          "delta_vs_slow_pp": 0.0,
+          "beats_slow": false,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8003_M8001",
+          "windows": 15,
+          "final_der": 0.35889333333333334,
+          "slow_der": 0.38214666666666663,
+          "delta_vs_slow_pp": 2.3253333333333295,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8007_M8010",
+          "windows": 15,
+          "final_der": 0.24348000000000003,
+          "slow_der": 0.24383333333333337,
+          "delta_vs_slow_pp": 0.03533333333333444,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8007_M8011",
+          "windows": 15,
+          "final_der": 0.1588,
+          "slow_der": 0.16468666666666668,
+          "delta_vs_slow_pp": 0.5886666666666679,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8008_M8013",
+          "windows": 15,
+          "final_der": 0.1666733333333333,
+          "slow_der": 0.16668666666666668,
+          "delta_vs_slow_pp": 0.0013333333333365172,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8009_M8018",
+          "windows": 15,
+          "final_der": 0.10303333333333332,
+          "slow_der": 0.10335999999999998,
+          "delta_vs_slow_pp": 0.03266666666666557,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8009_M8019",
+          "windows": 15,
+          "final_der": 0.05651333333333333,
+          "slow_der": 0.057679999999999995,
+          "delta_vs_slow_pp": 0.11666666666666631,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8009_M8020",
+          "windows": 15,
+          "final_der": 0.05278,
+          "slow_der": 0.05278,
+          "delta_vs_slow_pp": 0.0,
+          "beats_slow": false,
+          "negative_vs_slow": false
+        }
+      ],
+      "source_stale_gt_mismatch_windows": 0,
+      "feature_a": "fast_audio_speech_ratio",
+      "op_a": ">=",
+      "threshold_a": 11.919811320754718,
+      "feature_b": "prev_audio_max_p90_db",
+      "op_b": "<=",
+      "threshold_b": -40.7464,
+      "selected": 9,
+      "source_full_coverage": true,
+      "meaningful_delta": false,
+      "improves_positive_recordings": true
+    },
+    {
+      "policy_kind": "external_candidate_surface_overlay",
+      "policy_id": "if_fast_audio_speech_ratio_>=_11.9198_AND_prev_audio_max_p90_db_<=_-40.7464_then_diarizen-large-v2__diarizen-large-v2__spk_none_else_current_final",
+      "description": "fast_audio_speech_ratio >= 11.9198 AND prev_audio_max_p90_db <= -40.7464",
+      "source_id": "diarizen-large-v2/diarizen-large-v2/spk_none",
+      "source_path": "outputs/diarizen_uv_120/diarizen-large-v2/default__spk_none/summary.json",
+      "source_coverage_windows": 120,
+      "windows": 120,
+      "selected_windows": 9,
+      "overlay_wins_vs_current": 2,
+      "overlay_losses_vs_current": 0,
+      "current_final_der": 0.16492333333333334,
+      "final_der": 0.1649216666666667,
+      "clipped_slow_der": 0.1687966666666667,
+      "delta_vs_current": 1.6666666666498298e-06,
+      "delta_vs_current_pp": 0.00016666666666498298,
+      "delta_vs_clipped_slow_pp": 0.38750000000000173,
+      "positive_recordings_vs_clipped_slow": 6,
+      "negative_recordings_vs_clipped_slow": 0,
+      "choice_counts": {
+        "current_final": 111,
+        "diarizen-large-v2/diarizen-large-v2/spk_none": 9
+      },
+      "selected_window_details": [
+        {
+          "window_id": "R8008_M8013:30:2",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.2265,
+          "candidate_der": 0.2264,
+          "delta_vs_current_pp": 0.010000000000001674,
+          "candidate_pred_segments": 10,
+          "candidate_latency": 23.46504306793213
+        },
+        {
+          "window_id": "R8008_M8013:30:3",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.1117,
+          "candidate_der": 0.1117,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 8,
+          "candidate_latency": 24.73685097694397
+        },
+        {
+          "window_id": "R8008_M8013:30:8",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.3288,
+          "candidate_der": 0.3288,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 24,
+          "candidate_latency": 24.707134008407593
+        },
+        {
+          "window_id": "R8008_M8013:30:9",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.1044,
+          "candidate_der": 0.1044,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 12,
+          "candidate_latency": 24.305092096328735
+        },
+        {
+          "window_id": "R8008_M8013:30:10",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.2261,
+          "candidate_der": 0.2261,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 11,
+          "candidate_latency": 23.354254007339478
+        },
+        {
+          "window_id": "R8008_M8013:30:11",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.1771,
+          "candidate_der": 0.1771,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 10,
+          "candidate_latency": 24.520829916000366
+        },
+        {
+          "window_id": "R8008_M8013:30:12",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.1399,
+          "candidate_der": 0.1399,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 8,
+          "candidate_latency": 24.932341814041138
+        },
+        {
+          "window_id": "R8008_M8013:30:13",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.2109,
+          "candidate_der": 0.2109,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 19,
+          "candidate_latency": 27.970037937164307
+        },
+        {
+          "window_id": "R8008_M8013:30:14",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.0994,
+          "candidate_der": 0.0993,
+          "delta_vs_current_pp": 0.010000000000000286,
+          "candidate_pred_segments": 7,
+          "candidate_latency": 25.52512216567993
+        }
+      ],
+      "per_recording": [
+        {
+          "recording_id": "R8001_M8004",
+          "windows": 15,
+          "final_der": 0.17919999999999997,
+          "slow_der": 0.17919999999999997,
+          "delta_vs_slow_pp": 0.0,
+          "beats_slow": false,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8003_M8001",
+          "windows": 15,
+          "final_der": 0.35889333333333334,
+          "slow_der": 0.38214666666666663,
+          "delta_vs_slow_pp": 2.3253333333333295,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8007_M8010",
+          "windows": 15,
+          "final_der": 0.24348000000000003,
+          "slow_der": 0.24383333333333337,
+          "delta_vs_slow_pp": 0.03533333333333444,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8007_M8011",
+          "windows": 15,
+          "final_der": 0.1588,
+          "slow_der": 0.16468666666666668,
+          "delta_vs_slow_pp": 0.5886666666666679,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8008_M8013",
+          "windows": 15,
+          "final_der": 0.1666733333333333,
+          "slow_der": 0.16668666666666668,
+          "delta_vs_slow_pp": 0.0013333333333365172,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8009_M8018",
+          "windows": 15,
+          "final_der": 0.10303333333333332,
+          "slow_der": 0.10335999999999998,
+          "delta_vs_slow_pp": 0.03266666666666557,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8009_M8019",
+          "windows": 15,
+          "final_der": 0.05651333333333333,
+          "slow_der": 0.057679999999999995,
+          "delta_vs_slow_pp": 0.11666666666666631,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8009_M8020",
+          "windows": 15,
+          "final_der": 0.05278,
+          "slow_der": 0.05278,
+          "delta_vs_slow_pp": 0.0,
+          "beats_slow": false,
+          "negative_vs_slow": false
+        }
+      ],
+      "source_stale_gt_mismatch_windows": 0,
+      "feature_a": "fast_audio_speech_ratio",
+      "op_a": ">=",
+      "threshold_a": 11.919811320754718,
+      "feature_b": "prev_audio_max_p90_db",
+      "op_b": "<=",
+      "threshold_b": -40.7464,
+      "selected": 9,
+      "source_full_coverage": true,
+      "meaningful_delta": false,
+      "improves_positive_recordings": true
+    },
+    {
+      "policy_kind": "external_candidate_surface_overlay",
+      "policy_id": "if_fast_audio_speech_ratio_>=_19.6909_then_diarizen-large-v2__diarizen-large-v2__spk_none::outputs__diarizen_uv_48__diarizen-large-v2__default__spk_none_else_current_final",
+      "description": "fast_audio_speech_ratio >= 19.6909",
+      "source_id": "diarizen-large-v2/diarizen-large-v2/spk_none::outputs/diarizen_uv_48/diarizen-large-v2/default__spk_none",
+      "source_path": "outputs/diarizen_uv_48/diarizen-large-v2/default__spk_none/summary.json",
+      "source_coverage_windows": 120,
+      "windows": 120,
+      "selected_windows": 5,
+      "overlay_wins_vs_current": 2,
+      "overlay_losses_vs_current": 0,
+      "current_final_der": 0.16492333333333334,
+      "final_der": 0.1649216666666667,
+      "clipped_slow_der": 0.1687966666666667,
+      "delta_vs_current": 1.6666666666498298e-06,
+      "delta_vs_current_pp": 0.00016666666666498298,
+      "delta_vs_clipped_slow_pp": 0.38750000000000173,
+      "positive_recordings_vs_clipped_slow": 6,
+      "negative_recordings_vs_clipped_slow": 0,
+      "choice_counts": {
+        "current_final": 115,
+        "diarizen-large-v2/diarizen-large-v2/spk_none::outputs/diarizen_uv_48/diarizen-large-v2/default__spk_none": 5
+      },
+      "selected_window_details": [
+        {
+          "window_id": "R8008_M8013:30:2",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.2265,
+          "candidate_der": 0.2264,
+          "delta_vs_current_pp": 0.010000000000001674,
+          "candidate_pred_segments": 10,
+          "candidate_latency": 23.955423831939697
+        },
+        {
+          "window_id": "R8008_M8013:30:9",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.1044,
+          "candidate_der": 0.1044,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 12,
+          "candidate_latency": 22.571627855300903
+        },
+        {
+          "window_id": "R8008_M8013:30:10",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.2261,
+          "candidate_der": 0.2261,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 11,
+          "candidate_latency": 18.351056814193726
+        },
+        {
+          "window_id": "R8008_M8013:30:12",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.1399,
+          "candidate_der": 0.1399,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 8,
+          "candidate_latency": 24.064862966537476
+        },
+        {
+          "window_id": "R8008_M8013:30:14",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.0994,
+          "candidate_der": 0.0993,
+          "delta_vs_current_pp": 0.010000000000000286,
+          "candidate_pred_segments": 7,
+          "candidate_latency": 22.578333854675293
+        }
+      ],
+      "per_recording": [
+        {
+          "recording_id": "R8001_M8004",
+          "windows": 15,
+          "final_der": 0.17919999999999997,
+          "slow_der": 0.17919999999999997,
+          "delta_vs_slow_pp": 0.0,
+          "beats_slow": false,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8003_M8001",
+          "windows": 15,
+          "final_der": 0.35889333333333334,
+          "slow_der": 0.38214666666666663,
+          "delta_vs_slow_pp": 2.3253333333333295,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8007_M8010",
+          "windows": 15,
+          "final_der": 0.24348000000000003,
+          "slow_der": 0.24383333333333337,
+          "delta_vs_slow_pp": 0.03533333333333444,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8007_M8011",
+          "windows": 15,
+          "final_der": 0.1588,
+          "slow_der": 0.16468666666666668,
+          "delta_vs_slow_pp": 0.5886666666666679,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8008_M8013",
+          "windows": 15,
+          "final_der": 0.1666733333333333,
+          "slow_der": 0.16668666666666668,
+          "delta_vs_slow_pp": 0.0013333333333365172,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8009_M8018",
+          "windows": 15,
+          "final_der": 0.10303333333333332,
+          "slow_der": 0.10335999999999998,
+          "delta_vs_slow_pp": 0.03266666666666557,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8009_M8019",
+          "windows": 15,
+          "final_der": 0.05651333333333333,
+          "slow_der": 0.057679999999999995,
+          "delta_vs_slow_pp": 0.11666666666666631,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8009_M8020",
+          "windows": 15,
+          "final_der": 0.05278,
+          "slow_der": 0.05278,
+          "delta_vs_slow_pp": 0.0,
+          "beats_slow": false,
+          "negative_vs_slow": false
+        }
+      ],
+      "source_stale_gt_mismatch_windows": 0,
+      "feature_a": "fast_audio_speech_ratio",
+      "op_a": ">=",
+      "threshold_a": 19.690936763550667,
+      "selected": 5,
+      "source_full_coverage": true,
+      "meaningful_delta": false,
+      "improves_positive_recordings": true
+    },
+    {
+      "policy_kind": "external_candidate_surface_overlay",
+      "policy_id": "if_fast_audio_speech_ratio_>=_19.6909_then_diarizen-large-v2__diarizen-large-v2__spk_none_else_current_final",
+      "description": "fast_audio_speech_ratio >= 19.6909",
+      "source_id": "diarizen-large-v2/diarizen-large-v2/spk_none",
+      "source_path": "outputs/diarizen_uv_120/diarizen-large-v2/default__spk_none/summary.json",
+      "source_coverage_windows": 120,
+      "windows": 120,
+      "selected_windows": 5,
+      "overlay_wins_vs_current": 2,
+      "overlay_losses_vs_current": 0,
+      "current_final_der": 0.16492333333333334,
+      "final_der": 0.1649216666666667,
+      "clipped_slow_der": 0.1687966666666667,
+      "delta_vs_current": 1.6666666666498298e-06,
+      "delta_vs_current_pp": 0.00016666666666498298,
+      "delta_vs_clipped_slow_pp": 0.38750000000000173,
+      "positive_recordings_vs_clipped_slow": 6,
+      "negative_recordings_vs_clipped_slow": 0,
+      "choice_counts": {
+        "current_final": 115,
+        "diarizen-large-v2/diarizen-large-v2/spk_none": 5
+      },
+      "selected_window_details": [
+        {
+          "window_id": "R8008_M8013:30:2",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.2265,
+          "candidate_der": 0.2264,
+          "delta_vs_current_pp": 0.010000000000001674,
+          "candidate_pred_segments": 10,
+          "candidate_latency": 23.46504306793213
+        },
+        {
+          "window_id": "R8008_M8013:30:9",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.1044,
+          "candidate_der": 0.1044,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 12,
+          "candidate_latency": 24.305092096328735
+        },
+        {
+          "window_id": "R8008_M8013:30:10",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.2261,
+          "candidate_der": 0.2261,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 11,
+          "candidate_latency": 23.354254007339478
+        },
+        {
+          "window_id": "R8008_M8013:30:12",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.1399,
+          "candidate_der": 0.1399,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 8,
+          "candidate_latency": 24.932341814041138
+        },
+        {
+          "window_id": "R8008_M8013:30:14",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.0994,
+          "candidate_der": 0.0993,
+          "delta_vs_current_pp": 0.010000000000000286,
+          "candidate_pred_segments": 7,
+          "candidate_latency": 25.52512216567993
+        }
+      ],
+      "per_recording": [
+        {
+          "recording_id": "R8001_M8004",
+          "windows": 15,
+          "final_der": 0.17919999999999997,
+          "slow_der": 0.17919999999999997,
+          "delta_vs_slow_pp": 0.0,
+          "beats_slow": false,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8003_M8001",
+          "windows": 15,
+          "final_der": 0.35889333333333334,
+          "slow_der": 0.38214666666666663,
+          "delta_vs_slow_pp": 2.3253333333333295,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8007_M8010",
+          "windows": 15,
+          "final_der": 0.24348000000000003,
+          "slow_der": 0.24383333333333337,
+          "delta_vs_slow_pp": 0.03533333333333444,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8007_M8011",
+          "windows": 15,
+          "final_der": 0.1588,
+          "slow_der": 0.16468666666666668,
+          "delta_vs_slow_pp": 0.5886666666666679,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8008_M8013",
+          "windows": 15,
+          "final_der": 0.1666733333333333,
+          "slow_der": 0.16668666666666668,
+          "delta_vs_slow_pp": 0.0013333333333365172,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8009_M8018",
+          "windows": 15,
+          "final_der": 0.10303333333333332,
+          "slow_der": 0.10335999999999998,
+          "delta_vs_slow_pp": 0.03266666666666557,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8009_M8019",
+          "windows": 15,
+          "final_der": 0.05651333333333333,
+          "slow_der": 0.057679999999999995,
+          "delta_vs_slow_pp": 0.11666666666666631,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8009_M8020",
+          "windows": 15,
+          "final_der": 0.05278,
+          "slow_der": 0.05278,
+          "delta_vs_slow_pp": 0.0,
+          "beats_slow": false,
+          "negative_vs_slow": false
+        }
+      ],
+      "source_stale_gt_mismatch_windows": 0,
+      "feature_a": "fast_audio_speech_ratio",
+      "op_a": ">=",
+      "threshold_a": 19.690936763550667,
+      "selected": 5,
+      "source_full_coverage": true,
+      "meaningful_delta": false,
+      "improves_positive_recordings": true
+    },
+    {
+      "policy_kind": "external_candidate_surface_overlay",
+      "policy_id": "if_prev_audio_max_p90_db_<=_-40.7464_AND_slow_audio_speech_ratio_>=_17.3855_then_diarizen-large-v2__diarizen-large-v2__spk_none::outputs__diarizen_uv_48__diarizen-large-v2__default__spk_none_else_current_final",
+      "description": "prev_audio_max_p90_db <= -40.7464 AND slow_audio_speech_ratio >= 17.3855",
+      "source_id": "diarizen-large-v2/diarizen-large-v2/spk_none::outputs/diarizen_uv_48/diarizen-large-v2/default__spk_none",
+      "source_path": "outputs/diarizen_uv_48/diarizen-large-v2/default__spk_none/summary.json",
+      "source_coverage_windows": 120,
+      "windows": 120,
+      "selected_windows": 8,
+      "overlay_wins_vs_current": 2,
+      "overlay_losses_vs_current": 0,
+      "current_final_der": 0.16492333333333334,
+      "final_der": 0.1649216666666667,
+      "clipped_slow_der": 0.1687966666666667,
+      "delta_vs_current": 1.6666666666498298e-06,
+      "delta_vs_current_pp": 0.00016666666666498298,
+      "delta_vs_clipped_slow_pp": 0.38750000000000173,
+      "positive_recordings_vs_clipped_slow": 6,
+      "negative_recordings_vs_clipped_slow": 0,
+      "choice_counts": {
+        "current_final": 112,
+        "diarizen-large-v2/diarizen-large-v2/spk_none::outputs/diarizen_uv_48/diarizen-large-v2/default__spk_none": 8
+      },
+      "selected_window_details": [
+        {
+          "window_id": "R8008_M8013:30:2",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.2265,
+          "candidate_der": 0.2264,
+          "delta_vs_current_pp": 0.010000000000001674,
+          "candidate_pred_segments": 10,
+          "candidate_latency": 23.955423831939697
+        },
+        {
+          "window_id": "R8008_M8013:30:7",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.159,
+          "candidate_der": 0.159,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 16,
+          "candidate_latency": 20.71005082130432
+        },
+        {
+          "window_id": "R8008_M8013:30:8",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.3288,
+          "candidate_der": 0.3288,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 24,
+          "candidate_latency": 22.01899003982544
+        },
+        {
+          "window_id": "R8008_M8013:30:9",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.1044,
+          "candidate_der": 0.1044,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 12,
+          "candidate_latency": 22.571627855300903
+        },
+        {
+          "window_id": "R8008_M8013:30:10",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.2261,
+          "candidate_der": 0.2261,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 11,
+          "candidate_latency": 18.351056814193726
+        },
+        {
+          "window_id": "R8008_M8013:30:12",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.1399,
+          "candidate_der": 0.1399,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 8,
+          "candidate_latency": 24.064862966537476
+        },
+        {
+          "window_id": "R8008_M8013:30:13",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.2109,
+          "candidate_der": 0.2109,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 19,
+          "candidate_latency": 23.05256199836731
+        },
+        {
+          "window_id": "R8008_M8013:30:14",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.0994,
+          "candidate_der": 0.0993,
+          "delta_vs_current_pp": 0.010000000000000286,
+          "candidate_pred_segments": 7,
+          "candidate_latency": 22.578333854675293
+        }
+      ],
+      "per_recording": [
+        {
+          "recording_id": "R8001_M8004",
+          "windows": 15,
+          "final_der": 0.17919999999999997,
+          "slow_der": 0.17919999999999997,
+          "delta_vs_slow_pp": 0.0,
+          "beats_slow": false,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8003_M8001",
+          "windows": 15,
+          "final_der": 0.35889333333333334,
+          "slow_der": 0.38214666666666663,
+          "delta_vs_slow_pp": 2.3253333333333295,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8007_M8010",
+          "windows": 15,
+          "final_der": 0.24348000000000003,
+          "slow_der": 0.24383333333333337,
+          "delta_vs_slow_pp": 0.03533333333333444,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8007_M8011",
+          "windows": 15,
+          "final_der": 0.1588,
+          "slow_der": 0.16468666666666668,
+          "delta_vs_slow_pp": 0.5886666666666679,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8008_M8013",
+          "windows": 15,
+          "final_der": 0.1666733333333333,
+          "slow_der": 0.16668666666666668,
+          "delta_vs_slow_pp": 0.0013333333333365172,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8009_M8018",
+          "windows": 15,
+          "final_der": 0.10303333333333332,
+          "slow_der": 0.10335999999999998,
+          "delta_vs_slow_pp": 0.03266666666666557,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8009_M8019",
+          "windows": 15,
+          "final_der": 0.05651333333333333,
+          "slow_der": 0.057679999999999995,
+          "delta_vs_slow_pp": 0.11666666666666631,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8009_M8020",
+          "windows": 15,
+          "final_der": 0.05278,
+          "slow_der": 0.05278,
+          "delta_vs_slow_pp": 0.0,
+          "beats_slow": false,
+          "negative_vs_slow": false
+        }
+      ],
+      "source_stale_gt_mismatch_windows": 0,
+      "feature_a": "prev_audio_max_p90_db",
+      "op_a": "<=",
+      "threshold_a": -40.7464,
+      "feature_b": "slow_audio_speech_ratio",
+      "op_b": ">=",
+      "threshold_b": 17.385474860335194,
+      "selected": 8,
+      "source_full_coverage": true,
+      "meaningful_delta": false,
+      "improves_positive_recordings": true
+    },
+    {
+      "policy_kind": "external_candidate_surface_overlay",
+      "policy_id": "if_prev_audio_max_p90_db_<=_-40.7464_AND_slow_audio_speech_ratio_>=_17.3855_then_diarizen-large-v2__diarizen-large-v2__spk_none_else_current_final",
+      "description": "prev_audio_max_p90_db <= -40.7464 AND slow_audio_speech_ratio >= 17.3855",
+      "source_id": "diarizen-large-v2/diarizen-large-v2/spk_none",
+      "source_path": "outputs/diarizen_uv_120/diarizen-large-v2/default__spk_none/summary.json",
+      "source_coverage_windows": 120,
+      "windows": 120,
+      "selected_windows": 8,
+      "overlay_wins_vs_current": 2,
+      "overlay_losses_vs_current": 0,
+      "current_final_der": 0.16492333333333334,
+      "final_der": 0.1649216666666667,
+      "clipped_slow_der": 0.1687966666666667,
+      "delta_vs_current": 1.6666666666498298e-06,
+      "delta_vs_current_pp": 0.00016666666666498298,
+      "delta_vs_clipped_slow_pp": 0.38750000000000173,
+      "positive_recordings_vs_clipped_slow": 6,
+      "negative_recordings_vs_clipped_slow": 0,
+      "choice_counts": {
+        "current_final": 112,
+        "diarizen-large-v2/diarizen-large-v2/spk_none": 8
+      },
+      "selected_window_details": [
+        {
+          "window_id": "R8008_M8013:30:2",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.2265,
+          "candidate_der": 0.2264,
+          "delta_vs_current_pp": 0.010000000000001674,
+          "candidate_pred_segments": 10,
+          "candidate_latency": 23.46504306793213
+        },
+        {
+          "window_id": "R8008_M8013:30:7",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.159,
+          "candidate_der": 0.159,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 16,
+          "candidate_latency": 23.06705403327942
+        },
+        {
+          "window_id": "R8008_M8013:30:8",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.3288,
+          "candidate_der": 0.3288,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 24,
+          "candidate_latency": 24.707134008407593
+        },
+        {
+          "window_id": "R8008_M8013:30:9",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.1044,
+          "candidate_der": 0.1044,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 12,
+          "candidate_latency": 24.305092096328735
+        },
+        {
+          "window_id": "R8008_M8013:30:10",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.2261,
+          "candidate_der": 0.2261,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 11,
+          "candidate_latency": 23.354254007339478
+        },
+        {
+          "window_id": "R8008_M8013:30:12",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.1399,
+          "candidate_der": 0.1399,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 8,
+          "candidate_latency": 24.932341814041138
+        },
+        {
+          "window_id": "R8008_M8013:30:13",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.2109,
+          "candidate_der": 0.2109,
+          "delta_vs_current_pp": 0.0,
+          "candidate_pred_segments": 19,
+          "candidate_latency": 27.970037937164307
+        },
+        {
+          "window_id": "R8008_M8013:30:14",
+          "recording_id": "R8008_M8013",
+          "current_der": 0.0994,
+          "candidate_der": 0.0993,
+          "delta_vs_current_pp": 0.010000000000000286,
+          "candidate_pred_segments": 7,
+          "candidate_latency": 25.52512216567993
+        }
+      ],
+      "per_recording": [
+        {
+          "recording_id": "R8001_M8004",
+          "windows": 15,
+          "final_der": 0.17919999999999997,
+          "slow_der": 0.17919999999999997,
+          "delta_vs_slow_pp": 0.0,
+          "beats_slow": false,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8003_M8001",
+          "windows": 15,
+          "final_der": 0.35889333333333334,
+          "slow_der": 0.38214666666666663,
+          "delta_vs_slow_pp": 2.3253333333333295,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8007_M8010",
+          "windows": 15,
+          "final_der": 0.24348000000000003,
+          "slow_der": 0.24383333333333337,
+          "delta_vs_slow_pp": 0.03533333333333444,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8007_M8011",
+          "windows": 15,
+          "final_der": 0.1588,
+          "slow_der": 0.16468666666666668,
+          "delta_vs_slow_pp": 0.5886666666666679,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8008_M8013",
+          "windows": 15,
+          "final_der": 0.1666733333333333,
+          "slow_der": 0.16668666666666668,
+          "delta_vs_slow_pp": 0.0013333333333365172,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8009_M8018",
+          "windows": 15,
+          "final_der": 0.10303333333333332,
+          "slow_der": 0.10335999999999998,
+          "delta_vs_slow_pp": 0.03266666666666557,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8009_M8019",
+          "windows": 15,
+          "final_der": 0.05651333333333333,
+          "slow_der": 0.057679999999999995,
+          "delta_vs_slow_pp": 0.11666666666666631,
+          "beats_slow": true,
+          "negative_vs_slow": false
+        },
+        {
+          "recording_id": "R8009_M8020",
+          "windows": 15,
+          "final_der": 0.05278,
+          "slow_der": 0.05278,
+          "delta_vs_slow_pp": 0.0,
+          "beats_slow": false,
+          "negative_vs_slow": false
+        }
+      ],
+      "source_stale_gt_mismatch_windows": 0,
+      "feature_a": "prev_audio_max_p90_db",
+      "op_a": "<=",
+      "threshold_a": -40.7464,
+      "feature_b": "slow_audio_speech_ratio",
+      "op_b": ">=",
+      "threshold_b": 17.385474860335194,
+      "selected": 8,
+      "source_full_coverage": true,
+      "meaningful_delta": false,
+      "improves_positive_recordings": true
+    }
+  ],
+  "candidate_policies": 826,
+  "deployability_gates": {
+    "min_deployable_delta_pp": 0.05,
+    "requires_source_full_coverage": true,
+    "requires_positive_recording_gain": true,
+    "requires_zero_overlay_losses": true,
+    "requires_zero_negative_recordings": true,
+    "deployable": false,
+    "promising_not_default_runtime": false
+  },
+  "metric_claim_boundary": "development_pool_candidate_surface_search_not_default_runtime",
+  "inputs": {
+    "window_metrics": "outputs/system_demo/all_cached_recordings/window_metrics.csv",
+    "clipped_baseline_scores": "outputs/clipped_baseline_audit/clipped_baseline_scores.csv",
+    "window_features": "outputs/segment_patches/sortformer_diarizen_120_patches_windows.csv",
+    "gate_decisions": "outputs/writeback_gate_120/gate_decisions.csv",
+    "audio_features": "outputs/audio_window_features/audio_window_features_120.csv",
+    "reference_summary": "outputs/sortformer_uv_120/nemo-sortformer-4spk-v1/default__spk_none/summary.json",
+    "scan_root": "outputs",
+    "include_oracle_sources": false
+  }
+}

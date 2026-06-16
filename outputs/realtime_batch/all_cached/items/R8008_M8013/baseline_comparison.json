@@ -1,0 +1,42 @@
+[
+  {
+    "baseline_id": "fast_base",
+    "windows": 15,
+    "der": 0.28669999999999995,
+    "miss_rate": 0.19554,
+    "fa_rate": 0.03890666666666666,
+    "conf_rate": 0.052239999999999995
+  },
+  {
+    "baseline_id": "slow_base",
+    "windows": 15,
+    "der": 0.16668666666666665,
+    "miss_rate": 0.039020000000000006,
+    "fa_rate": 0.06762666666666667,
+    "conf_rate": 0.060039999999999996
+  },
+  {
+    "baseline_id": "rule_recover_policy_sweep_best",
+    "windows": 15,
+    "der": 0.25609333333333334,
+    "miss_rate": 0.14670666666666668,
+    "fa_rate": 0.045786666666666656,
+    "conf_rate": 0.06355333333333334
+  },
+  {
+    "baseline_id": "rule_recover_matched_label",
+    "windows": 15,
+    "der": 0.2617533333333333,
+    "miss_rate": 0.14473333333333335,
+    "fa_rate": 0.05342666666666667,
+    "conf_rate": 0.06355333333333334
+  },
+  {
+    "baseline_id": "rule_recover_uncovered_only",
+    "windows": 15,
+    "der": 0.25876666666666664,
+    "miss_rate": 0.15252000000000002,
+    "fa_rate": 0.041366666666666656,
+    "conf_rate": 0.06484666666666668
+  }
+]

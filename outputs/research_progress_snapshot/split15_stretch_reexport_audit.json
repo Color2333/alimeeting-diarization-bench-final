@@ -1,0 +1,665 @@
+{
+  "runtime_contract": "split15_stretch_reexport_audit_no_live_calls",
+  "status": "pass",
+  "export_prompt_jsonl": "outputs/research_progress_snapshot/split15_stretch_reexport_prompts.jsonl",
+  "export_command": "/opt/homebrew/opt/python@3.11/bin/python3.11 scripts/llm_window_batch_policy_eval.py --mode export --decisions outputs/runtime_safe_policy_agent/sortformer_diarizen_120_decisions.jsonl --trigger-policy proxy_flagged_window --window-evidence outputs/deployable_abnormal_windows/sortformer_diarizen_120_proxy.csv --patch-id-file outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_patch_ids.txt --max-patches-per-call 15 --model deepseek-v4-flash --output-jsonl outputs/research_progress_snapshot/split15_stretch_reexport_prompts.jsonl",
+  "source_contracts": {
+    "split_policy_optimization": "split_policy_optimization_from_existing_artifacts_no_live_calls",
+    "split20_full_live_manifest": "split20_full_live_manifest_no_live_calls"
+  },
+  "summary": {
+    "export_prompts": 178,
+    "expected_prompts": 178,
+    "export_parent_windows": 104,
+    "expected_parent_windows": 104,
+    "split_parent_windows": 58,
+    "expected_split_parent_windows": 58,
+    "max_subcalls_per_parent": 3,
+    "prompt_patch_references": 1917,
+    "estimated_prompt_tokens_chars_div4": 450407,
+    "simulated_p95_call_seconds": 18.047,
+    "simulated_max_call_seconds": 19.646,
+    "token_multiplier": 1.182,
+    "requires_new_prompt_export": true,
+    "top3_live_evidence_reusable": false,
+    "missing_parent_count": 0,
+    "extra_parent_count": 0,
+    "sub_batch_count_distribution": {
+      "3": 48,
+      "2": 84,
+      "1": 46
+    },
+    "live_calls_performed": 0,
+    "no_secret_values_written": true,
+    "no_new_metric_claim": true
+  },
+  "missing_parent_ids": [],
+  "extra_parent_ids": [],
+  "failures": [],
+  "parents": [
+    {
+      "parent_window_id": "R8001_M8004:30:0",
+      "prompt_calls": 1,
+      "recording_id": "R8001_M8004",
+      "segment_idx": "0"
+    },
+    {
+      "parent_window_id": "R8001_M8004:30:1",
+      "prompt_calls": 2,
+      "recording_id": "R8001_M8004",
+      "segment_idx": "1"
+    },
+    {
+      "parent_window_id": "R8001_M8004:30:10",
+      "prompt_calls": 3,
+      "recording_id": "R8001_M8004",
+      "segment_idx": "10"
+    },
+    {
+      "parent_window_id": "R8001_M8004:30:11",
+      "prompt_calls": 2,
+      "recording_id": "R8001_M8004",
+      "segment_idx": "11"
+    },
+    {
+      "parent_window_id": "R8001_M8004:30:12",
+      "prompt_calls": 1,
+      "recording_id": "R8001_M8004",
+      "segment_idx": "12"
+    },
+    {
+      "parent_window_id": "R8001_M8004:30:13",
+      "prompt_calls": 1,
+      "recording_id": "R8001_M8004",
+      "segment_idx": "13"
+    },
+    {
+      "parent_window_id": "R8001_M8004:30:14",
+      "prompt_calls": 2,
+      "recording_id": "R8001_M8004",
+      "segment_idx": "14"
+    },
+    {
+      "parent_window_id": "R8001_M8004:30:2",
+      "prompt_calls": 2,
+      "recording_id": "R8001_M8004",
+      "segment_idx": "2"
+    },
+    {
+      "parent_window_id": "R8001_M8004:30:3",
+      "prompt_calls": 1,
+      "recording_id": "R8001_M8004",
+      "segment_idx": "3"
+    },
+    {
+      "parent_window_id": "R8001_M8004:30:4",
+      "prompt_calls": 1,
+      "recording_id": "R8001_M8004",
+      "segment_idx": "4"
+    },
+    {
+      "parent_window_id": "R8001_M8004:30:5",
+      "prompt_calls": 1,
+      "recording_id": "R8001_M8004",
+      "segment_idx": "5"
+    },
+    {
+      "parent_window_id": "R8001_M8004:30:6",
+      "prompt_calls": 1,
+      "recording_id": "R8001_M8004",
+      "segment_idx": "6"
+    },
+    {
+      "parent_window_id": "R8001_M8004:30:7",
+      "prompt_calls": 2,
+      "recording_id": "R8001_M8004",
+      "segment_idx": "7"
+    },
+    {
+      "parent_window_id": "R8001_M8004:30:8",
+      "prompt_calls": 1,
+      "recording_id": "R8001_M8004",
+      "segment_idx": "8"
+    },
+    {
+      "parent_window_id": "R8001_M8004:30:9",
+      "prompt_calls": 1,
+      "recording_id": "R8001_M8004",
+      "segment_idx": "9"
+    },
+    {
+      "parent_window_id": "R8003_M8001:30:0",
+      "prompt_calls": 2,
+      "recording_id": "R8003_M8001",
+      "segment_idx": "0"
+    },
+    {
+      "parent_window_id": "R8003_M8001:30:1",
+      "prompt_calls": 2,
+      "recording_id": "R8003_M8001",
+      "segment_idx": "1"
+    },
+    {
+      "parent_window_id": "R8003_M8001:30:10",
+      "prompt_calls": 3,
+      "recording_id": "R8003_M8001",
+      "segment_idx": "10"
+    },
+    {
+      "parent_window_id": "R8003_M8001:30:11",
+      "prompt_calls": 1,
+      "recording_id": "R8003_M8001",
+      "segment_idx": "11"
+    },
+    {
+      "parent_window_id": "R8003_M8001:30:12",
+      "prompt_calls": 2,
+      "recording_id": "R8003_M8001",
+      "segment_idx": "12"
+    },
+    {
+      "parent_window_id": "R8003_M8001:30:13",
+      "prompt_calls": 1,
+      "recording_id": "R8003_M8001",
+      "segment_idx": "13"
+    },
+    {
+      "parent_window_id": "R8003_M8001:30:14",
+      "prompt_calls": 2,
+      "recording_id": "R8003_M8001",
+      "segment_idx": "14"
+    },
+    {
+      "parent_window_id": "R8003_M8001:30:2",
+      "prompt_calls": 2,
+      "recording_id": "R8003_M8001",
+      "segment_idx": "2"
+    },
+    {
+      "parent_window_id": "R8003_M8001:30:3",
+      "prompt_calls": 1,
+      "recording_id": "R8003_M8001",
+      "segment_idx": "3"
+    },
+    {
+      "parent_window_id": "R8003_M8001:30:4",
+      "prompt_calls": 2,
+      "recording_id": "R8003_M8001",
+      "segment_idx": "4"
+    },
+    {
+      "parent_window_id": "R8003_M8001:30:5",
+      "prompt_calls": 2,
+      "recording_id": "R8003_M8001",
+      "segment_idx": "5"
+    },
+    {
+      "parent_window_id": "R8003_M8001:30:6",
+      "prompt_calls": 1,
+      "recording_id": "R8003_M8001",
+      "segment_idx": "6"
+    },
+    {
+      "parent_window_id": "R8003_M8001:30:7",
+      "prompt_calls": 2,
+      "recording_id": "R8003_M8001",
+      "segment_idx": "7"
+    },
+    {
+      "parent_window_id": "R8003_M8001:30:8",
+      "prompt_calls": 1,
+      "recording_id": "R8003_M8001",
+      "segment_idx": "8"
+    },
+    {
+      "parent_window_id": "R8003_M8001:30:9",
+      "prompt_calls": 2,
+      "recording_id": "R8003_M8001",
+      "segment_idx": "9"
+    },
+    {
+      "parent_window_id": "R8007_M8010:30:0",
+      "prompt_calls": 3,
+      "recording_id": "R8007_M8010",
+      "segment_idx": "0"
+    },
+    {
+      "parent_window_id": "R8007_M8010:30:1",
+      "prompt_calls": 1,
+      "recording_id": "R8007_M8010",
+      "segment_idx": "1"
+    },
+    {
+      "parent_window_id": "R8007_M8010:30:10",
+      "prompt_calls": 2,
+      "recording_id": "R8007_M8010",
+      "segment_idx": "10"
+    },
+    {
+      "parent_window_id": "R8007_M8010:30:11",
+      "prompt_calls": 3,
+      "recording_id": "R8007_M8010",
+      "segment_idx": "11"
+    },
+    {
+      "parent_window_id": "R8007_M8010:30:12",
+      "prompt_calls": 3,
+      "recording_id": "R8007_M8010",
+      "segment_idx": "12"
+    },
+    {
+      "parent_window_id": "R8007_M8010:30:13",
+      "prompt_calls": 2,
+      "recording_id": "R8007_M8010",
+      "segment_idx": "13"
+    },
+    {
+      "parent_window_id": "R8007_M8010:30:14",
+      "prompt_calls": 3,
+      "recording_id": "R8007_M8010",
+      "segment_idx": "14"
+    },
+    {
+      "parent_window_id": "R8007_M8010:30:2",
+      "prompt_calls": 3,
+      "recording_id": "R8007_M8010",
+      "segment_idx": "2"
+    },
+    {
+      "parent_window_id": "R8007_M8010:30:3",
+      "prompt_calls": 3,
+      "recording_id": "R8007_M8010",
+      "segment_idx": "3"
+    },
+    {
+      "parent_window_id": "R8007_M8010:30:4",
+      "prompt_calls": 3,
+      "recording_id": "R8007_M8010",
+      "segment_idx": "4"
+    },
+    {
+      "parent_window_id": "R8007_M8010:30:5",
+      "prompt_calls": 3,
+      "recording_id": "R8007_M8010",
+      "segment_idx": "5"
+    },
+    {
+      "parent_window_id": "R8007_M8010:30:6",
+      "prompt_calls": 3,
+      "recording_id": "R8007_M8010",
+      "segment_idx": "6"
+    },
+    {
+      "parent_window_id": "R8007_M8010:30:7",
+      "prompt_calls": 3,
+      "recording_id": "R8007_M8010",
+      "segment_idx": "7"
+    },
+    {
+      "parent_window_id": "R8007_M8010:30:8",
+      "prompt_calls": 3,
+      "recording_id": "R8007_M8010",
+      "segment_idx": "8"
+    },
+    {
+      "parent_window_id": "R8007_M8010:30:9",
+      "prompt_calls": 2,
+      "recording_id": "R8007_M8010",
+      "segment_idx": "9"
+    },
+    {
+      "parent_window_id": "R8007_M8011:30:0",
+      "prompt_calls": 1,
+      "recording_id": "R8007_M8011",
+      "segment_idx": "0"
+    },
+    {
+      "parent_window_id": "R8007_M8011:30:1",
+      "prompt_calls": 2,
+      "recording_id": "R8007_M8011",
+      "segment_idx": "1"
+    },
+    {
+      "parent_window_id": "R8007_M8011:30:10",
+      "prompt_calls": 2,
+      "recording_id": "R8007_M8011",
+      "segment_idx": "10"
+    },
+    {
+      "parent_window_id": "R8007_M8011:30:11",
+      "prompt_calls": 2,
+      "recording_id": "R8007_M8011",
+      "segment_idx": "11"
+    },
+    {
+      "parent_window_id": "R8007_M8011:30:12",
+      "prompt_calls": 2,
+      "recording_id": "R8007_M8011",
+      "segment_idx": "12"
+    },
+    {
+      "parent_window_id": "R8007_M8011:30:13",
+      "prompt_calls": 2,
+      "recording_id": "R8007_M8011",
+      "segment_idx": "13"
+    },
+    {
+      "parent_window_id": "R8007_M8011:30:14",
+      "prompt_calls": 1,
+      "recording_id": "R8007_M8011",
+      "segment_idx": "14"
+    },
+    {
+      "parent_window_id": "R8007_M8011:30:2",
+      "prompt_calls": 1,
+      "recording_id": "R8007_M8011",
+      "segment_idx": "2"
+    },
+    {
+      "parent_window_id": "R8007_M8011:30:3",
+      "prompt_calls": 1,
+      "recording_id": "R8007_M8011",
+      "segment_idx": "3"
+    },
+    {
+      "parent_window_id": "R8007_M8011:30:4",
+      "prompt_calls": 1,
+      "recording_id": "R8007_M8011",
+      "segment_idx": "4"
+    },
+    {
+      "parent_window_id": "R8007_M8011:30:5",
+      "prompt_calls": 2,
+      "recording_id": "R8007_M8011",
+      "segment_idx": "5"
+    },
+    {
+      "parent_window_id": "R8007_M8011:30:6",
+      "prompt_calls": 1,
+      "recording_id": "R8007_M8011",
+      "segment_idx": "6"
+    },
+    {
+      "parent_window_id": "R8007_M8011:30:7",
+      "prompt_calls": 2,
+      "recording_id": "R8007_M8011",
+      "segment_idx": "7"
+    },
+    {
+      "parent_window_id": "R8007_M8011:30:8",
+      "prompt_calls": 3,
+      "recording_id": "R8007_M8011",
+      "segment_idx": "8"
+    },
+    {
+      "parent_window_id": "R8007_M8011:30:9",
+      "prompt_calls": 1,
+      "recording_id": "R8007_M8011",
+      "segment_idx": "9"
+    },
+    {
+      "parent_window_id": "R8008_M8013:30:0",
+      "prompt_calls": 2,
+      "recording_id": "R8008_M8013",
+      "segment_idx": "0"
+    },
+    {
+      "parent_window_id": "R8008_M8013:30:1",
+      "prompt_calls": 2,
+      "recording_id": "R8008_M8013",
+      "segment_idx": "1"
+    },
+    {
+      "parent_window_id": "R8008_M8013:30:11",
+      "prompt_calls": 1,
+      "recording_id": "R8008_M8013",
+      "segment_idx": "11"
+    },
+    {
+      "parent_window_id": "R8008_M8013:30:12",
+      "prompt_calls": 1,
+      "recording_id": "R8008_M8013",
+      "segment_idx": "12"
+    },
+    {
+      "parent_window_id": "R8008_M8013:30:13",
+      "prompt_calls": 1,
+      "recording_id": "R8008_M8013",
+      "segment_idx": "13"
+    },
+    {
+      "parent_window_id": "R8008_M8013:30:14",
+      "prompt_calls": 2,
+      "recording_id": "R8008_M8013",
+      "segment_idx": "14"
+    },
+    {
+      "parent_window_id": "R8008_M8013:30:2",
+      "prompt_calls": 2,
+      "recording_id": "R8008_M8013",
+      "segment_idx": "2"
+    },
+    {
+      "parent_window_id": "R8008_M8013:30:3",
+      "prompt_calls": 1,
+      "recording_id": "R8008_M8013",
+      "segment_idx": "3"
+    },
+    {
+      "parent_window_id": "R8008_M8013:30:4",
+      "prompt_calls": 1,
+      "recording_id": "R8008_M8013",
+      "segment_idx": "4"
+    },
+    {
+      "parent_window_id": "R8008_M8013:30:5",
+      "prompt_calls": 2,
+      "recording_id": "R8008_M8013",
+      "segment_idx": "5"
+    },
+    {
+      "parent_window_id": "R8008_M8013:30:6",
+      "prompt_calls": 1,
+      "recording_id": "R8008_M8013",
+      "segment_idx": "6"
+    },
+    {
+      "parent_window_id": "R8008_M8013:30:7",
+      "prompt_calls": 1,
+      "recording_id": "R8008_M8013",
+      "segment_idx": "7"
+    },
+    {
+      "parent_window_id": "R8008_M8013:30:8",
+      "prompt_calls": 1,
+      "recording_id": "R8008_M8013",
+      "segment_idx": "8"
+    },
+    {
+      "parent_window_id": "R8008_M8013:30:9",
+      "prompt_calls": 2,
+      "recording_id": "R8008_M8013",
+      "segment_idx": "9"
+    },
+    {
+      "parent_window_id": "R8009_M8018:30:0",
+      "prompt_calls": 2,
+      "recording_id": "R8009_M8018",
+      "segment_idx": "0"
+    },
+    {
+      "parent_window_id": "R8009_M8018:30:1",
+      "prompt_calls": 1,
+      "recording_id": "R8009_M8018",
+      "segment_idx": "1"
+    },
+    {
+      "parent_window_id": "R8009_M8018:30:10",
+      "prompt_calls": 2,
+      "recording_id": "R8009_M8018",
+      "segment_idx": "10"
+    },
+    {
+      "parent_window_id": "R8009_M8018:30:11",
+      "prompt_calls": 2,
+      "recording_id": "R8009_M8018",
+      "segment_idx": "11"
+    },
+    {
+      "parent_window_id": "R8009_M8018:30:12",
+      "prompt_calls": 3,
+      "recording_id": "R8009_M8018",
+      "segment_idx": "12"
+    },
+    {
+      "parent_window_id": "R8009_M8018:30:13",
+      "prompt_calls": 2,
+      "recording_id": "R8009_M8018",
+      "segment_idx": "13"
+    },
+    {
+      "parent_window_id": "R8009_M8018:30:14",
+      "prompt_calls": 1,
+      "recording_id": "R8009_M8018",
+      "segment_idx": "14"
+    },
+    {
+      "parent_window_id": "R8009_M8018:30:3",
+      "prompt_calls": 1,
+      "recording_id": "R8009_M8018",
+      "segment_idx": "3"
+    },
+    {
+      "parent_window_id": "R8009_M8018:30:5",
+      "prompt_calls": 1,
+      "recording_id": "R8009_M8018",
+      "segment_idx": "5"
+    },
+    {
+      "parent_window_id": "R8009_M8018:30:6",
+      "prompt_calls": 2,
+      "recording_id": "R8009_M8018",
+      "segment_idx": "6"
+    },
+    {
+      "parent_window_id": "R8009_M8018:30:8",
+      "prompt_calls": 1,
+      "recording_id": "R8009_M8018",
+      "segment_idx": "8"
+    },
+    {
+      "parent_window_id": "R8009_M8019:30:10",
+      "prompt_calls": 1,
+      "recording_id": "R8009_M8019",
+      "segment_idx": "10"
+    },
+    {
+      "parent_window_id": "R8009_M8019:30:12",
+      "prompt_calls": 2,
+      "recording_id": "R8009_M8019",
+      "segment_idx": "12"
+    },
+    {
+      "parent_window_id": "R8009_M8019:30:2",
+      "prompt_calls": 2,
+      "recording_id": "R8009_M8019",
+      "segment_idx": "2"
+    },
+    {
+      "parent_window_id": "R8009_M8019:30:3",
+      "prompt_calls": 2,
+      "recording_id": "R8009_M8019",
+      "segment_idx": "3"
+    },
+    {
+      "parent_window_id": "R8009_M8019:30:5",
+      "prompt_calls": 1,
+      "recording_id": "R8009_M8019",
+      "segment_idx": "5"
+    },
+    {
+      "parent_window_id": "R8009_M8019:30:7",
+      "prompt_calls": 2,
+      "recording_id": "R8009_M8019",
+      "segment_idx": "7"
+    },
+    {
+      "parent_window_id": "R8009_M8019:30:8",
+      "prompt_calls": 1,
+      "recording_id": "R8009_M8019",
+      "segment_idx": "8"
+    },
+    {
+      "parent_window_id": "R8009_M8019:30:9",
+      "prompt_calls": 2,
+      "recording_id": "R8009_M8019",
+      "segment_idx": "9"
+    },
+    {
+      "parent_window_id": "R8009_M8020:30:1",
+      "prompt_calls": 1,
+      "recording_id": "R8009_M8020",
+      "segment_idx": "1"
+    },
+    {
+      "parent_window_id": "R8009_M8020:30:11",
+      "prompt_calls": 1,
+      "recording_id": "R8009_M8020",
+      "segment_idx": "11"
+    },
+    {
+      "parent_window_id": "R8009_M8020:30:12",
+      "prompt_calls": 3,
+      "recording_id": "R8009_M8020",
+      "segment_idx": "12"
+    },
+    {
+      "parent_window_id": "R8009_M8020:30:2",
+      "prompt_calls": 1,
+      "recording_id": "R8009_M8020",
+      "segment_idx": "2"
+    },
+    {
+      "parent_window_id": "R8009_M8020:30:3",
+      "prompt_calls": 1,
+      "recording_id": "R8009_M8020",
+      "segment_idx": "3"
+    },
+    {
+      "parent_window_id": "R8009_M8020:30:4",
+      "prompt_calls": 1,
+      "recording_id": "R8009_M8020",
+      "segment_idx": "4"
+    },
+    {
+      "parent_window_id": "R8009_M8020:30:5",
+      "prompt_calls": 1,
+      "recording_id": "R8009_M8020",
+      "segment_idx": "5"
+    },
+    {
+      "parent_window_id": "R8009_M8020:30:6",
+      "prompt_calls": 2,
+      "recording_id": "R8009_M8020",
+      "segment_idx": "6"
+    },
+    {
+      "parent_window_id": "R8009_M8020:30:7",
+      "prompt_calls": 2,
+      "recording_id": "R8009_M8020",
+      "segment_idx": "7"
+    },
+    {
+      "parent_window_id": "R8009_M8020:30:8",
+      "prompt_calls": 1,
+      "recording_id": "R8009_M8020",
+      "segment_idx": "8"
+    },
+    {
+      "parent_window_id": "R8009_M8020:30:9",
+      "prompt_calls": 1,
+      "recording_id": "R8009_M8020",
+      "segment_idx": "9"
+    }
+  ]
+}

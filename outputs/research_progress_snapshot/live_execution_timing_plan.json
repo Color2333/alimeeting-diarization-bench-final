@@ -1,0 +1,133 @@
+{
+  "runtime_contract": "live_execution_timing_plan_no_live_calls",
+  "status": "blocked_waiting_for_credentials_or_live_outputs",
+  "source_contracts": {
+    "live_agent_execution_plan": "live_agent_execution_plan_no_live_calls",
+    "live_execution_runbook": "live_execution_runbook_no_live_calls_no_secret_values",
+    "split_policy_optimization": "split_policy_optimization_from_existing_artifacts_no_live_calls",
+    "latency_risk_mitigation_plan": "latency_risk_mitigation_plan_no_live_calls",
+    "live_run_readiness": "live_run_readiness_non_secret_no_live_calls",
+    "live_output_audit": "live_output_audit_no_live_calls",
+    "live_scoring_readiness": "live_scoring_readiness_no_live_calls",
+    "omni48_live_call_manifest": "omni48_live_call_manifest_no_live_calls_label_only"
+  },
+  "summary": {
+    "timing_rows": 6,
+    "p0_rows": 4,
+    "p1_rows": 2,
+    "known_wall_rows": 3,
+    "unknown_wall_rows": 3,
+    "blocked_rows": 5,
+    "deepseek_resume_calls": 139,
+    "deepseek_parallel_workers": 8,
+    "deepseek_parallel_waves": 18,
+    "deepseek_p95_call_seconds": 21.358,
+    "deepseek_estimated_wall_seconds": 384.444,
+    "qwen_backup_calls": 147,
+    "qwen_parallel_workers": 8,
+    "qwen_parallel_waves": 19,
+    "qwen_wave_seconds_proxy": 44.024,
+    "qwen_estimated_wall_seconds": 836.456,
+    "omni48_label_only_calls": 96,
+    "omni48_clip_model_seconds_proxy": 768.0,
+    "p0_known_wall_seconds": 384.444,
+    "p1_known_wall_seconds": 836.456,
+    "primary_policy": "max20",
+    "stretch_policy": "max15",
+    "live_calls_performed_by_builder": 0,
+    "no_secret_values_written": true,
+    "no_new_metric_claim": true
+  },
+  "unknown_wall_timing_ids": [
+    "deepseek_postrun_audit_and_scoring",
+    "omni48_label_only_live",
+    "refresh_report_ppt_validation"
+  ],
+  "blocked_timing_ids": [
+    "credential_preflight",
+    "deepseek_max20_resume_live_call",
+    "deepseek_postrun_audit_and_scoring",
+    "omni48_label_only_live",
+    "qwen_full_backup_optional"
+  ],
+  "rows": [
+    {
+      "timing_id": "credential_preflight",
+      "priority": "P0",
+      "phase": "preflight",
+      "planned_calls": 0,
+      "parallel_workers": 0,
+      "estimated_waves": 0,
+      "estimated_wall_seconds": 0.0,
+      "estimate_source": "env_presence_gate_only",
+      "claim_status": "gate_only_no_latency_claim",
+      "blocking_state": "blocked_missing_credentials",
+      "next_action": "set API key env in shell and rerun live readiness; do not write secret values to artifacts"
+    },
+    {
+      "timing_id": "deepseek_max20_resume_live_call",
+      "priority": "P0",
+      "phase": "primary_live_call",
+      "planned_calls": 139,
+      "parallel_workers": 8,
+      "estimated_waves": 18,
+      "estimated_wall_seconds": 384.444,
+      "estimate_source": "split20_simulated_p95_call_seconds_x_parallel_waves",
+      "claim_status": "not_claimable_until_resume_output_and_scoring",
+      "blocking_state": "blocked_by_provider_quota_or_capacity",
+      "next_action": "run max20 resume first when credentials/quota are ready"
+    },
+    {
+      "timing_id": "deepseek_postrun_audit_and_scoring",
+      "priority": "P0",
+      "phase": "postrun_scoring",
+      "planned_calls": 0,
+      "parallel_workers": 0,
+      "estimated_waves": 0,
+      "estimated_wall_seconds": "",
+      "estimate_source": "not_estimated_waits_for_live_jsonl",
+      "claim_status": "not_claimable_until_output_audit_and_safety_comparison_pass",
+      "blocking_state": "blocked_waiting_live_outputs",
+      "next_action": "run output audit, safety summary, split comparison, then refresh validation"
+    },
+    {
+      "timing_id": "omni48_label_only_live",
+      "priority": "P1",
+      "phase": "label_only_live_call",
+      "planned_calls": 96,
+      "parallel_workers": 0,
+      "estimated_waves": 0,
+      "estimated_wall_seconds": "",
+      "estimate_source": "clip_model_seconds_proxy_768.0_needs_live_latency",
+      "claim_status": "label_only_not_timeline_writeback_not_guard_latency_claim",
+      "blocking_state": "blocked_missing_credentials",
+      "next_action": "run only after P0 or when explicitly spending Omni quota"
+    },
+    {
+      "timing_id": "qwen_full_backup_optional",
+      "priority": "P1",
+      "phase": "fallback_live_call",
+      "planned_calls": 147,
+      "parallel_workers": 8,
+      "estimated_waves": 19,
+      "estimated_wall_seconds": 836.456,
+      "estimate_source": "top4_5_backup_wall_seconds_x_parallel_waves",
+      "claim_status": "fallback_only_not_primary_latency_claim",
+      "blocking_state": "blocked_missing_credentials",
+      "next_action": "keep as backup; current evidence is slower than original max"
+    },
+    {
+      "timing_id": "refresh_report_ppt_validation",
+      "priority": "P0",
+      "phase": "refresh_and_validate",
+      "planned_calls": 0,
+      "parallel_workers": 0,
+      "estimated_waves": 0,
+      "estimated_wall_seconds": "",
+      "estimate_source": "local_refresh_runtime_not_live_latency",
+      "claim_status": "validation_only",
+      "blocking_state": "waiting_for_live_outputs",
+      "next_action": "rerun refresh after live outputs and scoring artifacts exist"
+    }
+  ]
+}

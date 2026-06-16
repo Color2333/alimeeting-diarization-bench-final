@@ -1,0 +1,15 @@
+{
+  "prompts": 147,
+  "parent_windows": 104,
+  "patches": 1917,
+  "split_parent_windows": 40,
+  "max_subcalls_per_window": 3,
+  "sub_batch_count_distribution": {
+    "1": 64,
+    "2": 74,
+    "3": 9
+  },
+  "prompt_jsonl": "outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_split20_replay_prompts.jsonl",
+  "patch_id_replay_file": "outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_patch_ids.txt",
+  "runtime_contract": "runtime_safe_proxy_flags; exact_patch_id_replay; split_max_patches_per_call_20"
+}

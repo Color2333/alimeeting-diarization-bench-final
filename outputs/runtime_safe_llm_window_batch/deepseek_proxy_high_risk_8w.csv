@@ -1,0 +1,9 @@
+window_id,model,patch_count,window_decision,window_reason,call_seconds,prompt_tokens,completion_tokens,total_tokens,patch_decision_counts,error
+R8001_M8004:30:4,deepseek-v4-flash,14,quarantine,high_proxy_risk_cross_model_disagreement,13.932,5396,2409,7805,quarantine 14,
+R8008_M8013:30:7,deepseek-v4-flash,13,quarantine,cross_model_disagreement_high,16.737,5005,2372,7377,quarantine 13,
+R8001_M8004:30:9,deepseek-v4-flash,11,quarantine,deployable_proxy_flags_and_low_cross_model_support,11.905,4400,1527,5927,quarantine 11,
+R8001_M8004:30:12,deepseek-v4-flash,11,quarantine,high_proxy_risk_with_cross_model_disagreement,12.843,4314,1967,6281,quarantine 11,
+R8001_M8004:30:5,deepseek-v4-flash,10,quarantine,deployable_proxy_risk_window,11.278,4048,1511,5559,quarantine 10,
+R8003_M8001:30:11,deepseek-v4-flash,7,quarantine,multiple_proxy_risk_flags,8.692,2367,1255,3622,quarantine 7,
+R8001_M8004:30:6,deepseek-v4-flash,6,quarantine,deployable_proxy_flags_and_low_cross_model_support,10.892,2518,1525,4043,quarantine 6,
+R8001_M8004:30:13,deepseek-v4-flash,6,quarantine,proxy_flags_and_speaker_count_mismatch,9.534,2138,1362,3500,quarantine 6,

@@ -1,0 +1,5 @@
+window_id,parent_window_id,sub_batch_index,sub_batch_count,model,patch_count,parent_patch_count,window_decision,window_reason,call_seconds,prompt_tokens,completion_tokens,total_tokens,patch_decision_counts,error
+R8009_M8020:30:12:part1of2,R8009_M8020:30:12,0,2,qwen3.6-flash-2026-04-16,20,37,quarantine,proxy_abnormal_flags_present,29.043,5139,4018,9157,quarantine 20,
+R8009_M8020:30:12:part2of2,R8009_M8020:30:12,1,2,qwen3.6-flash-2026-04-16,17,37,quarantine,proxy_flag_risk_and_disagreement,41.333,4579,6299,10878,defer 16 / quarantine 1,
+R8003_M8001:30:12:part1of2,R8003_M8001:30:12,0,2,qwen3.6-flash-2026-04-16,20,23,quarantine,proxy_abnormal_flags_present,44.0,4780,7073,11853,defer 12 / quarantine 8,
+R8003_M8001:30:12:part2of2,R8003_M8001:30:12,1,2,qwen3.6-flash-2026-04-16,3,23,quarantine,proxy_abnormal_flags_present,18.29,1341,2771,4112,quarantine 3,

@@ -1,0 +1,132 @@
+{
+  "runtime_contract": "live_scoring_readiness_no_live_calls",
+  "status": "blocked_waiting_live_outputs",
+  "source_contracts": {
+    "live_output_audit": "live_output_audit_no_live_calls",
+    "live_postrun_metrics_closure": "live_postrun_metrics_closure_no_live_calls",
+    "live_agent_execution_plan": "live_agent_execution_plan_no_live_calls",
+    "split20_full_live_manifest": "split20_full_live_manifest_no_live_calls"
+  },
+  "summary": {
+    "scoring_step_count": 5,
+    "ready_to_score_steps": 0,
+    "blocked_steps": 5,
+    "p0_scoring_steps": 2,
+    "unique_live_output_calls": 382,
+    "expected_input_calls": 676,
+    "deepseek_resume_expected_calls": 139,
+    "qwen_full_expected_calls": 147,
+    "omni48_expected_calls": 96,
+    "deepseek_top3_completed_calls": 8,
+    "qwen_top45_backup_calls": 4,
+    "live_calls_performed_by_builder": 0,
+    "no_scoring_commands_executed": true
+  },
+  "scoring_steps": [
+    {
+      "scoring_id": "deepseek_resume_safety",
+      "surface_id": "deepseek_resume_after_top3",
+      "kind": "llm_safety",
+      "priority": "P0",
+      "expected_input_calls": 139,
+      "coverage_gate": "blocked_missing_output",
+      "status": "blocked_waiting_live_output",
+      "input_artifacts": [
+        "outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_split20_resume_after_top3.jsonl"
+      ],
+      "output_artifacts": [
+        "outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_split20_resume_after_top3_safety.csv",
+        "outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_split20_resume_after_top3_safety.md",
+        "outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_split20_resume_after_top3_safety_summary.json"
+      ],
+      "scoring_command": "python scripts/analyze_runtime_safe_llm_guard.py --batch-jsonl outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_split20_resume_after_top3.jsonl --output-csv outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_split20_resume_after_top3_safety.csv --output-md outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_split20_resume_after_top3_safety.md --summary-json outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_split20_resume_after_top3_safety_summary.json",
+      "success_gate": "harmful_accepts == 0; missing_patch_eval == 0; parent_window_decision_override true",
+      "claim_effect": "enables full DeepSeek split20 safety half after resume output exists"
+    },
+    {
+      "scoring_id": "deepseek_full_split20_comparison",
+      "surface_id": "deepseek_resume_after_top3",
+      "kind": "llm_latency_comparison",
+      "priority": "P0",
+      "expected_input_calls": 147,
+      "coverage_gate": "blocked_missing_output",
+      "status": "blocked_waiting_live_output",
+      "input_artifacts": [
+        "outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_split20_top3_parallel.csv",
+        "outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_split20_resume_after_top3.csv",
+        "outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_split20_top3_parallel_summary.json",
+        "outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_split20_resume_after_top3_summary.json",
+        "outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_split20_top3_parallel_safety_summary.json",
+        "outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_split20_resume_after_top3_safety_summary.json"
+      ],
+      "output_artifacts": [
+        "outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_split20_full_live_comparison.json",
+        "outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_split20_full_live_comparison.md"
+      ],
+      "scoring_command": "python scripts/summarize_split_llm_runs.py --split-csv outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_split20_top3_parallel.csv --split-csv outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_split20_resume_after_top3.csv --run-summary outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_split20_top3_parallel_summary.json --run-summary outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_split20_resume_after_top3_summary.json --safety-summary outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_split20_top3_parallel_safety_summary.json --safety-summary outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_split20_resume_after_top3_safety_summary.json --output-json outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_split20_full_live_comparison.json --output-md outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_split20_full_live_comparison.md",
+      "success_gate": "parent_windows == 104; split_calls == 147; harmful_accepts == 0; report measured wall and token multiplier",
+      "claim_effect": "turns split20 from top3 smoke into full-surface latency evidence if successful"
+    },
+    {
+      "scoring_id": "qwen_full_backup_safety",
+      "surface_id": "qwen_full_backup",
+      "kind": "llm_backup_safety",
+      "priority": "P1",
+      "expected_input_calls": 147,
+      "coverage_gate": "blocked_missing_output",
+      "status": "blocked_waiting_live_output",
+      "input_artifacts": [
+        "outputs/runtime_safe_llm_window_batch/qwen36_flash_high_risk_104w_split20_live.jsonl"
+      ],
+      "output_artifacts": [
+        "outputs/runtime_safe_llm_window_batch/qwen36_flash_high_risk_104w_split20_live_safety.csv",
+        "outputs/runtime_safe_llm_window_batch/qwen36_flash_high_risk_104w_split20_live_safety.md",
+        "outputs/runtime_safe_llm_window_batch/qwen36_flash_high_risk_104w_split20_live_safety_summary.json"
+      ],
+      "scoring_command": "python scripts/analyze_runtime_safe_llm_guard.py --batch-jsonl outputs/runtime_safe_llm_window_batch/qwen36_flash_high_risk_104w_split20_live.jsonl --output-csv outputs/runtime_safe_llm_window_batch/qwen36_flash_high_risk_104w_split20_live_safety.csv --output-md outputs/runtime_safe_llm_window_batch/qwen36_flash_high_risk_104w_split20_live_safety.md --summary-json outputs/runtime_safe_llm_window_batch/qwen36_flash_high_risk_104w_split20_live_safety_summary.json",
+      "success_gate": "harmful_accepts == 0; fallback only unless latency beats primary or provider changes",
+      "claim_effect": "keeps Qwen as execution fallback, not primary latency claim by default"
+    },
+    {
+      "scoring_id": "qwen_full_backup_comparison",
+      "surface_id": "qwen_full_backup",
+      "kind": "llm_backup_latency_comparison",
+      "priority": "P1",
+      "expected_input_calls": 147,
+      "coverage_gate": "blocked_missing_output",
+      "status": "blocked_waiting_live_output",
+      "input_artifacts": [
+        "outputs/runtime_safe_llm_window_batch/qwen36_flash_high_risk_104w_split20_live.csv",
+        "outputs/runtime_safe_llm_window_batch/qwen36_flash_high_risk_104w_split20_live_summary.json",
+        "outputs/runtime_safe_llm_window_batch/qwen36_flash_high_risk_104w_split20_live_safety_summary.json"
+      ],
+      "output_artifacts": [
+        "outputs/runtime_safe_llm_window_batch/qwen36_flash_high_risk_104w_split20_live_comparison.json",
+        "outputs/runtime_safe_llm_window_batch/qwen36_flash_high_risk_104w_split20_live_comparison.md"
+      ],
+      "scoring_command": "python scripts/summarize_split_llm_runs.py --split-csv outputs/runtime_safe_llm_window_batch/qwen36_flash_high_risk_104w_split20_live.csv --run-summary outputs/runtime_safe_llm_window_batch/qwen36_flash_high_risk_104w_split20_live_summary.json --safety-summary outputs/runtime_safe_llm_window_batch/qwen36_flash_high_risk_104w_split20_live_safety_summary.json --output-json outputs/runtime_safe_llm_window_batch/qwen36_flash_high_risk_104w_split20_live_comparison.json --output-md outputs/runtime_safe_llm_window_batch/qwen36_flash_high_risk_104w_split20_live_comparison.md",
+      "success_gate": "parent_windows == 104; split_calls == 147; harmful_accepts == 0; compare against DeepSeek primary evidence",
+      "claim_effect": "documents full-surface backup behavior and latency if fallback run is executed"
+    },
+    {
+      "scoring_id": "omni48_label_summary",
+      "surface_id": "omni48_label_only",
+      "kind": "omni_label_scoring",
+      "priority": "P1",
+      "expected_input_calls": 96,
+      "coverage_gate": "blocked_missing_output",
+      "status": "blocked_waiting_live_output",
+      "input_artifacts": [
+        "outputs/omni_guard/omni_expansion_48_live.jsonl",
+        "outputs/omni_guard/omni_expansion_48_live.csv"
+      ],
+      "output_artifacts": [
+        "outputs/omni_guard/omni_expansion_48_live_summary.csv",
+        "outputs/omni_guard/omni_expansion_48_live_summary.md"
+      ],
+      "scoring_command": "python scripts/summarize_omni_window_batch.py outputs/omni_guard/omni_expansion_48_live.csv --output-csv outputs/omni_guard/omni_expansion_48_live_summary.csv --output-md outputs/omni_guard/omni_expansion_48_live_summary.md",
+      "success_gate": "96 calls complete; report high positive, clean false positive, avg/P95/max call latency; label-only no timeline writeback",
+      "claim_effect": "enables Omni48 label-only recall/precision/latency scoring after live output exists"
+    }
+  ]
+}

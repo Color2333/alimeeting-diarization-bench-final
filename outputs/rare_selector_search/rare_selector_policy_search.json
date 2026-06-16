@@ -1,0 +1,1136 @@
+{
+  "runtime_contract": "rare_selector_overlay_no_live_calls_runtime_features_only",
+  "status": "weak_dev_gain_not_robust",
+  "windows": 120,
+  "base_policy": "slow_guarded_fast_fallback_speaker_count_safe",
+  "guard_threshold": 1.0,
+  "no_live_calls_performed": true,
+  "no_deepseek_api_calls": true,
+  "metric_claim_boundary": "development_pool_search_not_true_heldout",
+  "candidate_policies": 51,
+  "best_policy": {
+    "policy_kind": "rare_overlay",
+    "policy_id": "if_audio_speech_sec_>=_18.605_then_rule_recover_uncovered_only_else_default_guarded_selector",
+    "description": "audio_speech_sec >= 18.605",
+    "true_variant": "rule_recover_uncovered_only",
+    "windows": 120,
+    "selected_windows": 1,
+    "overlay_wins_vs_base": 1,
+    "overlay_losses_vs_base": 0,
+    "final_der": 0.16519250000000002,
+    "base_der": 0.16590083333333333,
+    "slow_der": 0.16880916666666668,
+    "delta_vs_base": 0.0007083333333333108,
+    "delta_vs_base_pp": 0.07083333333333108,
+    "delta_vs_slow": 0.003616666666666657,
+    "delta_vs_slow_pp": 0.3616666666666657,
+    "beats_base": true,
+    "beats_slow": true,
+    "choice_counts": {
+      "slow_base": 118,
+      "fast_base": 1,
+      "rule_recover_uncovered_only": 1
+    },
+    "selected_window_details": [
+      {
+        "window_id": "R8007_M8011:30:8",
+        "base_variant": "slow_base",
+        "base_der": 0.4266,
+        "overlay_der": 0.3416,
+        "delta_vs_base_pp": 8.499999999999996
+      }
+    ],
+    "feature_a": "audio_speech_sec",
+    "op_a": ">=",
+    "threshold_a": 18.604999999999997,
+    "selected": 1
+  },
+  "runtime_policy": {
+    "policy_kind": "rare_overlay",
+    "policy_id": "runtime_stack_audio_speech_ge_18p605_or_slow_segments_le_3_then_rule_recover_uncovered_only_else_default_guarded_selector",
+    "description": "audio_speech_sec >= 18.605 OR slow_segments <= 3",
+    "true_variant": "rule_recover_uncovered_only",
+    "windows": 120,
+    "selected_windows": 3,
+    "overlay_wins_vs_base": 3,
+    "overlay_losses_vs_base": 0,
+    "final_der": 0.16502000000000003,
+    "base_der": 0.16590083333333333,
+    "slow_der": 0.16880916666666668,
+    "delta_vs_base": 0.0008808333333333029,
+    "delta_vs_base_pp": 0.0880833333333303,
+    "delta_vs_slow": 0.003789166666666649,
+    "delta_vs_slow_pp": 0.3789166666666649,
+    "beats_base": true,
+    "beats_slow": true,
+    "choice_counts": {
+      "slow_base": 116,
+      "fast_base": 1,
+      "rule_recover_uncovered_only": 3
+    },
+    "selected_window_details": [
+      {
+        "window_id": "R8007_M8011:30:0",
+        "base_variant": "slow_base",
+        "base_der": 0.0324,
+        "overlay_der": 0.0292,
+        "delta_vs_base_pp": 0.3199999999999998
+      },
+      {
+        "window_id": "R8007_M8011:30:8",
+        "base_variant": "slow_base",
+        "base_der": 0.4266,
+        "overlay_der": 0.3416,
+        "delta_vs_base_pp": 8.499999999999996
+      },
+      {
+        "window_id": "R8009_M8019:30:12",
+        "base_variant": "slow_base",
+        "base_der": 0.0333,
+        "overlay_der": 0.0158,
+        "delta_vs_base_pp": 1.7500000000000002
+      }
+    ],
+    "stacked_conditions": [
+      "audio_speech_sec >= 18.605",
+      "slow_segments <= 3"
+    ]
+  },
+  "top_policies": [
+    {
+      "policy_kind": "rare_overlay",
+      "policy_id": "if_audio_speech_sec_>=_18.605_then_rule_recover_uncovered_only_else_default_guarded_selector",
+      "description": "audio_speech_sec >= 18.605",
+      "true_variant": "rule_recover_uncovered_only",
+      "windows": 120,
+      "selected_windows": 1,
+      "overlay_wins_vs_base": 1,
+      "overlay_losses_vs_base": 0,
+      "final_der": 0.16519250000000002,
+      "base_der": 0.16590083333333333,
+      "slow_der": 0.16880916666666668,
+      "delta_vs_base": 0.0007083333333333108,
+      "delta_vs_base_pp": 0.07083333333333108,
+      "delta_vs_slow": 0.003616666666666657,
+      "delta_vs_slow_pp": 0.3616666666666657,
+      "beats_base": true,
+      "beats_slow": true,
+      "choice_counts": {
+        "slow_base": 118,
+        "fast_base": 1,
+        "rule_recover_uncovered_only": 1
+      },
+      "selected_window_details": [
+        {
+          "window_id": "R8007_M8011:30:8",
+          "base_variant": "slow_base",
+          "base_der": 0.4266,
+          "overlay_der": 0.3416,
+          "delta_vs_base_pp": 8.499999999999996
+        }
+      ],
+      "feature_a": "audio_speech_sec",
+      "op_a": ">=",
+      "threshold_a": 18.604999999999997,
+      "selected": 1
+    },
+    {
+      "policy_kind": "rare_overlay",
+      "policy_id": "if_audio_speech_sec_>=_18.605_then_rule_recover_matched_label_else_default_guarded_selector",
+      "description": "audio_speech_sec >= 18.605",
+      "true_variant": "rule_recover_matched_label",
+      "windows": 120,
+      "selected_windows": 1,
+      "overlay_wins_vs_base": 1,
+      "overlay_losses_vs_base": 0,
+      "final_der": 0.16519250000000002,
+      "base_der": 0.16590083333333333,
+      "slow_der": 0.16880916666666668,
+      "delta_vs_base": 0.0007083333333333108,
+      "delta_vs_base_pp": 0.07083333333333108,
+      "delta_vs_slow": 0.003616666666666657,
+      "delta_vs_slow_pp": 0.3616666666666657,
+      "beats_base": true,
+      "beats_slow": true,
+      "choice_counts": {
+        "slow_base": 118,
+        "fast_base": 1,
+        "rule_recover_matched_label": 1
+      },
+      "selected_window_details": [
+        {
+          "window_id": "R8007_M8011:30:8",
+          "base_variant": "slow_base",
+          "base_der": 0.4266,
+          "overlay_der": 0.3416,
+          "delta_vs_base_pp": 8.499999999999996
+        }
+      ],
+      "feature_a": "audio_speech_sec",
+      "op_a": ">=",
+      "threshold_a": 18.604999999999997,
+      "selected": 1
+    },
+    {
+      "policy_kind": "rare_overlay",
+      "policy_id": "if_audio_speech_sec_>=_18.605_then_rule_recover_policy_sweep_best_else_default_guarded_selector",
+      "description": "audio_speech_sec >= 18.605",
+      "true_variant": "rule_recover_policy_sweep_best",
+      "windows": 120,
+      "selected_windows": 1,
+      "overlay_wins_vs_base": 1,
+      "overlay_losses_vs_base": 0,
+      "final_der": 0.16519250000000002,
+      "base_der": 0.16590083333333333,
+      "slow_der": 0.16880916666666668,
+      "delta_vs_base": 0.0007083333333333108,
+      "delta_vs_base_pp": 0.07083333333333108,
+      "delta_vs_slow": 0.003616666666666657,
+      "delta_vs_slow_pp": 0.3616666666666657,
+      "beats_base": true,
+      "beats_slow": true,
+      "choice_counts": {
+        "slow_base": 118,
+        "fast_base": 1,
+        "rule_recover_policy_sweep_best": 1
+      },
+      "selected_window_details": [
+        {
+          "window_id": "R8007_M8011:30:8",
+          "base_variant": "slow_base",
+          "base_der": 0.4266,
+          "overlay_der": 0.3416,
+          "delta_vs_base_pp": 8.499999999999996
+        }
+      ],
+      "feature_a": "audio_speech_sec",
+      "op_a": ">=",
+      "threshold_a": 18.604999999999997,
+      "selected": 1
+    },
+    {
+      "policy_kind": "rare_overlay",
+      "policy_id": "if_audio_speech_sec_>=_15.92_AND_seg_diff_<=_-7_then_rule_recover_matched_label_else_default_guarded_selector",
+      "description": "audio_speech_sec >= 15.92 AND seg_diff <= -7",
+      "true_variant": "rule_recover_matched_label",
+      "windows": 120,
+      "selected_windows": 2,
+      "overlay_wins_vs_base": 1,
+      "overlay_losses_vs_base": 1,
+      "final_der": 0.16535916666666667,
+      "base_der": 0.16590083333333333,
+      "slow_der": 0.16880916666666668,
+      "delta_vs_base": 0.0005416666666666625,
+      "delta_vs_base_pp": 0.05416666666666625,
+      "delta_vs_slow": 0.0034500000000000086,
+      "delta_vs_slow_pp": 0.34500000000000086,
+      "beats_base": true,
+      "beats_slow": true,
+      "choice_counts": {
+        "slow_base": 117,
+        "rule_recover_matched_label": 2,
+        "fast_base": 1
+      },
+      "selected_window_details": [
+        {
+          "window_id": "R8003_M8001:30:1",
+          "base_variant": "slow_base",
+          "base_der": 0.0272,
+          "overlay_der": 0.0472,
+          "delta_vs_base_pp": -2.0
+        },
+        {
+          "window_id": "R8007_M8011:30:8",
+          "base_variant": "slow_base",
+          "base_der": 0.4266,
+          "overlay_der": 0.3416,
+          "delta_vs_base_pp": 8.499999999999996
+        }
+      ],
+      "feature_a": "audio_speech_sec",
+      "op_a": ">=",
+      "threshold_a": 15.92,
+      "feature_b": "seg_diff",
+      "op_b": "<=",
+      "threshold_b": -7.0,
+      "selected": 2
+    },
+    {
+      "policy_kind": "rare_overlay",
+      "policy_id": "if_audio_speech_sec_>=_15.92_AND_seg_diff_<=_-7_then_rule_recover_uncovered_only_else_default_guarded_selector",
+      "description": "audio_speech_sec >= 15.92 AND seg_diff <= -7",
+      "true_variant": "rule_recover_uncovered_only",
+      "windows": 120,
+      "selected_windows": 2,
+      "overlay_wins_vs_base": 1,
+      "overlay_losses_vs_base": 1,
+      "final_der": 0.16536,
+      "base_der": 0.16590083333333333,
+      "slow_der": 0.16880916666666668,
+      "delta_vs_base": 0.0005408333333333237,
+      "delta_vs_base_pp": 0.05408333333333237,
+      "delta_vs_slow": 0.00344916666666667,
+      "delta_vs_slow_pp": 0.344916666666667,
+      "beats_base": true,
+      "beats_slow": true,
+      "choice_counts": {
+        "slow_base": 117,
+        "rule_recover_uncovered_only": 2,
+        "fast_base": 1
+      },
+      "selected_window_details": [
+        {
+          "window_id": "R8003_M8001:30:1",
+          "base_variant": "slow_base",
+          "base_der": 0.0272,
+          "overlay_der": 0.0473,
+          "delta_vs_base_pp": -2.0100000000000002
+        },
+        {
+          "window_id": "R8007_M8011:30:8",
+          "base_variant": "slow_base",
+          "base_der": 0.4266,
+          "overlay_der": 0.3416,
+          "delta_vs_base_pp": 8.499999999999996
+        }
+      ],
+      "feature_a": "audio_speech_sec",
+      "op_a": ">=",
+      "threshold_a": 15.92,
+      "feature_b": "seg_diff",
+      "op_b": "<=",
+      "threshold_b": -7.0,
+      "selected": 2
+    },
+    {
+      "policy_kind": "rare_overlay",
+      "policy_id": "if_audio_speech_sec_>=_15.92_AND_seg_diff_<=_-7_then_rule_recover_policy_sweep_best_else_default_guarded_selector",
+      "description": "audio_speech_sec >= 15.92 AND seg_diff <= -7",
+      "true_variant": "rule_recover_policy_sweep_best",
+      "windows": 120,
+      "selected_windows": 2,
+      "overlay_wins_vs_base": 1,
+      "overlay_losses_vs_base": 1,
+      "final_der": 0.16536,
+      "base_der": 0.16590083333333333,
+      "slow_der": 0.16880916666666668,
+      "delta_vs_base": 0.0005408333333333237,
+      "delta_vs_base_pp": 0.05408333333333237,
+      "delta_vs_slow": 0.00344916666666667,
+      "delta_vs_slow_pp": 0.344916666666667,
+      "beats_base": true,
+      "beats_slow": true,
+      "choice_counts": {
+        "slow_base": 117,
+        "rule_recover_policy_sweep_best": 2,
+        "fast_base": 1
+      },
+      "selected_window_details": [
+        {
+          "window_id": "R8003_M8001:30:1",
+          "base_variant": "slow_base",
+          "base_der": 0.0272,
+          "overlay_der": 0.0473,
+          "delta_vs_base_pp": -2.0100000000000002
+        },
+        {
+          "window_id": "R8007_M8011:30:8",
+          "base_variant": "slow_base",
+          "base_der": 0.4266,
+          "overlay_der": 0.3416,
+          "delta_vs_base_pp": 8.499999999999996
+        }
+      ],
+      "feature_a": "audio_speech_sec",
+      "op_a": ">=",
+      "threshold_a": 15.92,
+      "feature_b": "seg_diff",
+      "op_b": "<=",
+      "threshold_b": -7.0,
+      "selected": 2
+    },
+    {
+      "policy_kind": "rare_overlay",
+      "policy_id": "if_audio_speech_sec_>=_18.605_then_fast_base_else_default_guarded_selector",
+      "description": "audio_speech_sec >= 18.605",
+      "true_variant": "fast_base",
+      "windows": 120,
+      "selected_windows": 1,
+      "overlay_wins_vs_base": 1,
+      "overlay_losses_vs_base": 0,
+      "final_der": 0.16540833333333332,
+      "base_der": 0.16590083333333333,
+      "slow_der": 0.16880916666666668,
+      "delta_vs_base": 0.0004925000000000068,
+      "delta_vs_base_pp": 0.04925000000000068,
+      "delta_vs_slow": 0.003400833333333353,
+      "delta_vs_slow_pp": 0.3400833333333353,
+      "beats_base": true,
+      "beats_slow": true,
+      "choice_counts": {
+        "slow_base": 118,
+        "fast_base": 2
+      },
+      "selected_window_details": [
+        {
+          "window_id": "R8007_M8011:30:8",
+          "base_variant": "slow_base",
+          "base_der": 0.4266,
+          "overlay_der": 0.3675,
+          "delta_vs_base_pp": 5.909999999999998
+        }
+      ],
+      "feature_a": "audio_speech_sec",
+      "op_a": ">=",
+      "threshold_a": 18.604999999999997,
+      "selected": 1
+    },
+    {
+      "policy_kind": "rare_overlay",
+      "policy_id": "if_audio_speech_sec_>=_17.4_then_rule_recover_uncovered_only_else_default_guarded_selector",
+      "description": "audio_speech_sec >= 17.4",
+      "true_variant": "rule_recover_uncovered_only",
+      "windows": 120,
+      "selected_windows": 2,
+      "overlay_wins_vs_base": 1,
+      "overlay_losses_vs_base": 1,
+      "final_der": 0.16545,
+      "base_der": 0.16590083333333333,
+      "slow_der": 0.16880916666666668,
+      "delta_vs_base": 0.000450833333333317,
+      "delta_vs_base_pp": 0.0450833333333317,
+      "delta_vs_slow": 0.003359166666666663,
+      "delta_vs_slow_pp": 0.3359166666666663,
+      "beats_base": true,
+      "beats_slow": true,
+      "choice_counts": {
+        "slow_base": 117,
+        "rule_recover_uncovered_only": 2,
+        "fast_base": 1
+      },
+      "selected_window_details": [
+        {
+          "window_id": "R8003_M8001:30:6",
+          "base_variant": "slow_base",
+          "base_der": 0.0578,
+          "overlay_der": 0.0887,
+          "delta_vs_base_pp": -3.0900000000000003
+        },
+        {
+          "window_id": "R8007_M8011:30:8",
+          "base_variant": "slow_base",
+          "base_der": 0.4266,
+          "overlay_der": 0.3416,
+          "delta_vs_base_pp": 8.499999999999996
+        }
+      ],
+      "feature_a": "audio_speech_sec",
+      "op_a": ">=",
+      "threshold_a": 17.4,
+      "selected": 2
+    },
+    {
+      "policy_kind": "rare_overlay",
+      "policy_id": "if_audio_speech_sec_>=_17.4_then_rule_recover_matched_label_else_default_guarded_selector",
+      "description": "audio_speech_sec >= 17.4",
+      "true_variant": "rule_recover_matched_label",
+      "windows": 120,
+      "selected_windows": 2,
+      "overlay_wins_vs_base": 1,
+      "overlay_losses_vs_base": 1,
+      "final_der": 0.16545,
+      "base_der": 0.16590083333333333,
+      "slow_der": 0.16880916666666668,
+      "delta_vs_base": 0.000450833333333317,
+      "delta_vs_base_pp": 0.0450833333333317,
+      "delta_vs_slow": 0.003359166666666663,
+      "delta_vs_slow_pp": 0.3359166666666663,
+      "beats_base": true,
+      "beats_slow": true,
+      "choice_counts": {
+        "slow_base": 117,
+        "rule_recover_matched_label": 2,
+        "fast_base": 1
+      },
+      "selected_window_details": [
+        {
+          "window_id": "R8003_M8001:30:6",
+          "base_variant": "slow_base",
+          "base_der": 0.0578,
+          "overlay_der": 0.0887,
+          "delta_vs_base_pp": -3.0900000000000003
+        },
+        {
+          "window_id": "R8007_M8011:30:8",
+          "base_variant": "slow_base",
+          "base_der": 0.4266,
+          "overlay_der": 0.3416,
+          "delta_vs_base_pp": 8.499999999999996
+        }
+      ],
+      "feature_a": "audio_speech_sec",
+      "op_a": ">=",
+      "threshold_a": 17.4,
+      "selected": 2
+    },
+    {
+      "policy_kind": "rare_overlay",
+      "policy_id": "if_audio_speech_sec_>=_17.4_then_rule_recover_policy_sweep_best_else_default_guarded_selector",
+      "description": "audio_speech_sec >= 17.4",
+      "true_variant": "rule_recover_policy_sweep_best",
+      "windows": 120,
+      "selected_windows": 2,
+      "overlay_wins_vs_base": 1,
+      "overlay_losses_vs_base": 1,
+      "final_der": 0.16545,
+      "base_der": 0.16590083333333333,
+      "slow_der": 0.16880916666666668,
+      "delta_vs_base": 0.000450833333333317,
+      "delta_vs_base_pp": 0.0450833333333317,
+      "delta_vs_slow": 0.003359166666666663,
+      "delta_vs_slow_pp": 0.3359166666666663,
+      "beats_base": true,
+      "beats_slow": true,
+      "choice_counts": {
+        "slow_base": 117,
+        "rule_recover_policy_sweep_best": 2,
+        "fast_base": 1
+      },
+      "selected_window_details": [
+        {
+          "window_id": "R8003_M8001:30:6",
+          "base_variant": "slow_base",
+          "base_der": 0.0578,
+          "overlay_der": 0.0887,
+          "delta_vs_base_pp": -3.0900000000000003
+        },
+        {
+          "window_id": "R8007_M8011:30:8",
+          "base_variant": "slow_base",
+          "base_der": 0.4266,
+          "overlay_der": 0.3416,
+          "delta_vs_base_pp": 8.499999999999996
+        }
+      ],
+      "feature_a": "audio_speech_sec",
+      "op_a": ">=",
+      "threshold_a": 17.4,
+      "selected": 2
+    },
+    {
+      "policy_kind": "rare_overlay",
+      "policy_id": "if_fast_audio_speech_overrun_sec_<=_9.6_AND_seg_diff_<=_-8_then_rule_recover_uncovered_only_else_default_guarded_selector",
+      "description": "fast_audio_speech_overrun_sec <= 9.6 AND seg_diff <= -8",
+      "true_variant": "rule_recover_uncovered_only",
+      "windows": 120,
+      "selected_windows": 3,
+      "overlay_wins_vs_base": 2,
+      "overlay_losses_vs_base": 1,
+      "final_der": 0.16555000000000006,
+      "base_der": 0.16590083333333333,
+      "slow_der": 0.16880916666666668,
+      "delta_vs_base": 0.0003508333333332725,
+      "delta_vs_base_pp": 0.03508333333332725,
+      "delta_vs_slow": 0.0032591666666666186,
+      "delta_vs_slow_pp": 0.32591666666666186,
+      "beats_base": true,
+      "beats_slow": true,
+      "choice_counts": {
+        "slow_base": 116,
+        "fast_base": 1,
+        "rule_recover_uncovered_only": 3
+      },
+      "selected_window_details": [
+        {
+          "window_id": "R8007_M8011:30:8",
+          "base_variant": "slow_base",
+          "base_der": 0.4266,
+          "overlay_der": 0.3416,
+          "delta_vs_base_pp": 8.499999999999996
+        },
+        {
+          "window_id": "R8009_M8018:30:3",
+          "base_variant": "slow_base",
+          "base_der": 0.2049,
+          "overlay_der": 0.2013,
+          "delta_vs_base_pp": 0.3599999999999992
+        },
+        {
+          "window_id": "R8009_M8020:30:3",
+          "base_variant": "slow_base",
+          "base_der": 0.1681,
+          "overlay_der": 0.2146,
+          "delta_vs_base_pp": -4.650000000000001
+        }
+      ],
+      "feature_a": "fast_audio_speech_overrun_sec",
+      "op_a": "<=",
+      "threshold_a": 9.599999999999996,
+      "feature_b": "seg_diff",
+      "op_b": "<=",
+      "threshold_b": -8.0,
+      "selected": 3
+    },
+    {
+      "policy_kind": "rare_overlay",
+      "policy_id": "if_fast_audio_speech_overrun_sec_<=_9.6_AND_seg_diff_<=_-8_then_rule_recover_policy_sweep_best_else_default_guarded_selector",
+      "description": "fast_audio_speech_overrun_sec <= 9.6 AND seg_diff <= -8",
+      "true_variant": "rule_recover_policy_sweep_best",
+      "windows": 120,
+      "selected_windows": 3,
+      "overlay_wins_vs_base": 2,
+      "overlay_losses_vs_base": 1,
+      "final_der": 0.16555000000000006,
+      "base_der": 0.16590083333333333,
+      "slow_der": 0.16880916666666668,
+      "delta_vs_base": 0.0003508333333332725,
+      "delta_vs_base_pp": 0.03508333333332725,
+      "delta_vs_slow": 0.0032591666666666186,
+      "delta_vs_slow_pp": 0.32591666666666186,
+      "beats_base": true,
+      "beats_slow": true,
+      "choice_counts": {
+        "slow_base": 116,
+        "fast_base": 1,
+        "rule_recover_policy_sweep_best": 3
+      },
+      "selected_window_details": [
+        {
+          "window_id": "R8007_M8011:30:8",
+          "base_variant": "slow_base",
+          "base_der": 0.4266,
+          "overlay_der": 0.3416,
+          "delta_vs_base_pp": 8.499999999999996
+        },
+        {
+          "window_id": "R8009_M8018:30:3",
+          "base_variant": "slow_base",
+          "base_der": 0.2049,
+          "overlay_der": 0.2013,
+          "delta_vs_base_pp": 0.3599999999999992
+        },
+        {
+          "window_id": "R8009_M8020:30:3",
+          "base_variant": "slow_base",
+          "base_der": 0.1681,
+          "overlay_der": 0.2146,
+          "delta_vs_base_pp": -4.650000000000001
+        }
+      ],
+      "feature_a": "fast_audio_speech_overrun_sec",
+      "op_a": "<=",
+      "threshold_a": 9.599999999999996,
+      "feature_b": "seg_diff",
+      "op_b": "<=",
+      "threshold_b": -8.0,
+      "selected": 3
+    },
+    {
+      "policy_kind": "rare_overlay",
+      "policy_id": "if_fast_audio_speech_overrun_sec_<=_7.4_AND_seg_diff_<=_-8_then_rule_recover_uncovered_only_else_default_guarded_selector",
+      "description": "fast_audio_speech_overrun_sec <= 7.4 AND seg_diff <= -8",
+      "true_variant": "rule_recover_uncovered_only",
+      "windows": 120,
+      "selected_windows": 2,
+      "overlay_wins_vs_base": 1,
+      "overlay_losses_vs_base": 1,
+      "final_der": 0.16558000000000003,
+      "base_der": 0.16590083333333333,
+      "slow_der": 0.16880916666666668,
+      "delta_vs_base": 0.000320833333333298,
+      "delta_vs_base_pp": 0.0320833333333298,
+      "delta_vs_slow": 0.003229166666666644,
+      "delta_vs_slow_pp": 0.3229166666666644,
+      "beats_base": true,
+      "beats_slow": true,
+      "choice_counts": {
+        "slow_base": 117,
+        "fast_base": 1,
+        "rule_recover_uncovered_only": 2
+      },
+      "selected_window_details": [
+        {
+          "window_id": "R8007_M8011:30:8",
+          "base_variant": "slow_base",
+          "base_der": 0.4266,
+          "overlay_der": 0.3416,
+          "delta_vs_base_pp": 8.499999999999996
+        },
+        {
+          "window_id": "R8009_M8020:30:3",
+          "base_variant": "slow_base",
+          "base_der": 0.1681,
+          "overlay_der": 0.2146,
+          "delta_vs_base_pp": -4.650000000000001
+        }
+      ],
+      "feature_a": "fast_audio_speech_overrun_sec",
+      "op_a": "<=",
+      "threshold_a": 7.400000000000011,
+      "feature_b": "seg_diff",
+      "op_b": "<=",
+      "threshold_b": -8.0,
+      "selected": 2
+    },
+    {
+      "policy_kind": "rare_overlay",
+      "policy_id": "if_fast_audio_speech_overrun_sec_<=_7.4_AND_seg_diff_<=_-8_then_rule_recover_policy_sweep_best_else_default_guarded_selector",
+      "description": "fast_audio_speech_overrun_sec <= 7.4 AND seg_diff <= -8",
+      "true_variant": "rule_recover_policy_sweep_best",
+      "windows": 120,
+      "selected_windows": 2,
+      "overlay_wins_vs_base": 1,
+      "overlay_losses_vs_base": 1,
+      "final_der": 0.16558000000000003,
+      "base_der": 0.16590083333333333,
+      "slow_der": 0.16880916666666668,
+      "delta_vs_base": 0.000320833333333298,
+      "delta_vs_base_pp": 0.0320833333333298,
+      "delta_vs_slow": 0.003229166666666644,
+      "delta_vs_slow_pp": 0.3229166666666644,
+      "beats_base": true,
+      "beats_slow": true,
+      "choice_counts": {
+        "slow_base": 117,
+        "fast_base": 1,
+        "rule_recover_policy_sweep_best": 2
+      },
+      "selected_window_details": [
+        {
+          "window_id": "R8007_M8011:30:8",
+          "base_variant": "slow_base",
+          "base_der": 0.4266,
+          "overlay_der": 0.3416,
+          "delta_vs_base_pp": 8.499999999999996
+        },
+        {
+          "window_id": "R8009_M8020:30:3",
+          "base_variant": "slow_base",
+          "base_der": 0.1681,
+          "overlay_der": 0.2146,
+          "delta_vs_base_pp": -4.650000000000001
+        }
+      ],
+      "feature_a": "fast_audio_speech_overrun_sec",
+      "op_a": "<=",
+      "threshold_a": 7.400000000000011,
+      "feature_b": "seg_diff",
+      "op_b": "<=",
+      "threshold_b": -8.0,
+      "selected": 2
+    },
+    {
+      "policy_kind": "rare_overlay",
+      "policy_id": "if_fast_audio_speech_overrun_sec_<=_7.4_AND_seg_diff_<=_-8_then_rule_recover_matched_label_else_default_guarded_selector",
+      "description": "fast_audio_speech_overrun_sec <= 7.4 AND seg_diff <= -8",
+      "true_variant": "rule_recover_matched_label",
+      "windows": 120,
+      "selected_windows": 2,
+      "overlay_wins_vs_base": 1,
+      "overlay_losses_vs_base": 1,
+      "final_der": 0.16559500000000005,
+      "base_der": 0.16590083333333333,
+      "slow_der": 0.16880916666666668,
+      "delta_vs_base": 0.000305833333333283,
+      "delta_vs_base_pp": 0.0305833333333283,
+      "delta_vs_slow": 0.003214166666666629,
+      "delta_vs_slow_pp": 0.3214166666666629,
+      "beats_base": true,
+      "beats_slow": true,
+      "choice_counts": {
+        "slow_base": 117,
+        "fast_base": 1,
+        "rule_recover_matched_label": 2
+      },
+      "selected_window_details": [
+        {
+          "window_id": "R8007_M8011:30:8",
+          "base_variant": "slow_base",
+          "base_der": 0.4266,
+          "overlay_der": 0.3416,
+          "delta_vs_base_pp": 8.499999999999996
+        },
+        {
+          "window_id": "R8009_M8020:30:3",
+          "base_variant": "slow_base",
+          "base_der": 0.1681,
+          "overlay_der": 0.2164,
+          "delta_vs_base_pp": -4.830000000000001
+        }
+      ],
+      "feature_a": "fast_audio_speech_overrun_sec",
+      "op_a": "<=",
+      "threshold_a": 7.400000000000011,
+      "feature_b": "seg_diff",
+      "op_b": "<=",
+      "threshold_b": -8.0,
+      "selected": 2
+    },
+    {
+      "policy_kind": "rare_overlay",
+      "policy_id": "if_audio_channel_activity_mean_>=_3.7145_AND_slow_audio_speech_ratio_<=_1.98478_then_rule_recover_uncovered_only_else_default_guarded_selector",
+      "description": "audio_channel_activity_mean >= 3.7145 AND slow_audio_speech_ratio <= 1.98478",
+      "true_variant": "rule_recover_uncovered_only",
+      "windows": 120,
+      "selected_windows": 2,
+      "overlay_wins_vs_base": 1,
+      "overlay_losses_vs_base": 1,
+      "final_der": 0.16565500000000005,
+      "base_der": 0.16590083333333333,
+      "slow_der": 0.16880916666666668,
+      "delta_vs_base": 0.0002458333333332785,
+      "delta_vs_base_pp": 0.02458333333332785,
+      "delta_vs_slow": 0.0031541666666666246,
+      "delta_vs_slow_pp": 0.31541666666666246,
+      "beats_base": true,
+      "beats_slow": true,
+      "choice_counts": {
+        "slow_base": 117,
+        "fast_base": 1,
+        "rule_recover_uncovered_only": 2
+      },
+      "selected_window_details": [
+        {
+          "window_id": "R8007_M8011:30:8",
+          "base_variant": "slow_base",
+          "base_der": 0.4266,
+          "overlay_der": 0.3416,
+          "delta_vs_base_pp": 8.499999999999996
+        },
+        {
+          "window_id": "R8009_M8020:30:9",
+          "base_variant": "slow_base",
+          "base_der": 0.0189,
+          "overlay_der": 0.0744,
+          "delta_vs_base_pp": -5.549999999999999
+        }
+      ],
+      "feature_a": "audio_channel_activity_mean",
+      "op_a": ">=",
+      "threshold_a": 3.7145,
+      "feature_b": "slow_audio_speech_ratio",
+      "op_b": "<=",
+      "threshold_b": 1.9847750865051903,
+      "selected": 2
+    },
+    {
+      "policy_kind": "rare_overlay",
+      "policy_id": "if_audio_channel_activity_mean_>=_3.7145_AND_slow_audio_speech_ratio_<=_1.98478_then_rule_recover_matched_label_else_default_guarded_selector",
+      "description": "audio_channel_activity_mean >= 3.7145 AND slow_audio_speech_ratio <= 1.98478",
+      "true_variant": "rule_recover_matched_label",
+      "windows": 120,
+      "selected_windows": 2,
+      "overlay_wins_vs_base": 1,
+      "overlay_losses_vs_base": 1,
+      "final_der": 0.16565500000000005,
+      "base_der": 0.16590083333333333,
+      "slow_der": 0.16880916666666668,
+      "delta_vs_base": 0.0002458333333332785,
+      "delta_vs_base_pp": 0.02458333333332785,
+      "delta_vs_slow": 0.0031541666666666246,
+      "delta_vs_slow_pp": 0.31541666666666246,
+      "beats_base": true,
+      "beats_slow": true,
+      "choice_counts": {
+        "slow_base": 117,
+        "fast_base": 1,
+        "rule_recover_matched_label": 2
+      },
+      "selected_window_details": [
+        {
+          "window_id": "R8007_M8011:30:8",
+          "base_variant": "slow_base",
+          "base_der": 0.4266,
+          "overlay_der": 0.3416,
+          "delta_vs_base_pp": 8.499999999999996
+        },
+        {
+          "window_id": "R8009_M8020:30:9",
+          "base_variant": "slow_base",
+          "base_der": 0.0189,
+          "overlay_der": 0.0744,
+          "delta_vs_base_pp": -5.549999999999999
+        }
+      ],
+      "feature_a": "audio_channel_activity_mean",
+      "op_a": ">=",
+      "threshold_a": 3.7145,
+      "feature_b": "slow_audio_speech_ratio",
+      "op_b": "<=",
+      "threshold_b": 1.9847750865051903,
+      "selected": 2
+    },
+    {
+      "policy_kind": "rare_overlay",
+      "policy_id": "if_audio_channel_activity_mean_>=_3.7145_AND_slow_audio_speech_ratio_<=_1.98478_then_rule_recover_policy_sweep_best_else_default_guarded_selector",
+      "description": "audio_channel_activity_mean >= 3.7145 AND slow_audio_speech_ratio <= 1.98478",
+      "true_variant": "rule_recover_policy_sweep_best",
+      "windows": 120,
+      "selected_windows": 2,
+      "overlay_wins_vs_base": 1,
+      "overlay_losses_vs_base": 1,
+      "final_der": 0.16565500000000005,
+      "base_der": 0.16590083333333333,
+      "slow_der": 0.16880916666666668,
+      "delta_vs_base": 0.0002458333333332785,
+      "delta_vs_base_pp": 0.02458333333332785,
+      "delta_vs_slow": 0.0031541666666666246,
+      "delta_vs_slow_pp": 0.31541666666666246,
+      "beats_base": true,
+      "beats_slow": true,
+      "choice_counts": {
+        "slow_base": 117,
+        "fast_base": 1,
+        "rule_recover_policy_sweep_best": 2
+      },
+      "selected_window_details": [
+        {
+          "window_id": "R8007_M8011:30:8",
+          "base_variant": "slow_base",
+          "base_der": 0.4266,
+          "overlay_der": 0.3416,
+          "delta_vs_base_pp": 8.499999999999996
+        },
+        {
+          "window_id": "R8009_M8020:30:9",
+          "base_variant": "slow_base",
+          "base_der": 0.0189,
+          "overlay_der": 0.0744,
+          "delta_vs_base_pp": -5.549999999999999
+        }
+      ],
+      "feature_a": "audio_channel_activity_mean",
+      "op_a": ">=",
+      "threshold_a": 3.7145,
+      "feature_b": "slow_audio_speech_ratio",
+      "op_b": "<=",
+      "threshold_b": 1.9847750865051903,
+      "selected": 2
+    },
+    {
+      "policy_kind": "rare_overlay",
+      "policy_id": "if_audio_speech_sec_>=_17.4_then_fast_base_else_default_guarded_selector",
+      "description": "audio_speech_sec >= 17.4",
+      "true_variant": "fast_base",
+      "windows": 120,
+      "selected_windows": 2,
+      "overlay_wins_vs_base": 1,
+      "overlay_losses_vs_base": 1,
+      "final_der": 0.16566583333333335,
+      "base_der": 0.16590083333333333,
+      "slow_der": 0.16880916666666668,
+      "delta_vs_base": 0.00023499999999998522,
+      "delta_vs_base_pp": 0.023499999999998522,
+      "delta_vs_slow": 0.0031433333333333313,
+      "delta_vs_slow_pp": 0.31433333333333313,
+      "beats_base": true,
+      "beats_slow": true,
+      "choice_counts": {
+        "slow_base": 117,
+        "fast_base": 3
+      },
+      "selected_window_details": [
+        {
+          "window_id": "R8003_M8001:30:6",
+          "base_variant": "slow_base",
+          "base_der": 0.0578,
+          "overlay_der": 0.0887,
+          "delta_vs_base_pp": -3.0900000000000003
+        },
+        {
+          "window_id": "R8007_M8011:30:8",
+          "base_variant": "slow_base",
+          "base_der": 0.4266,
+          "overlay_der": 0.3675,
+          "delta_vs_base_pp": 5.909999999999998
+        }
+      ],
+      "feature_a": "audio_speech_sec",
+      "op_a": ">=",
+      "threshold_a": 17.4,
+      "selected": 2
+    },
+    {
+      "policy_kind": "rare_overlay",
+      "policy_id": "if_slow_segments_<=_3_then_rule_recover_uncovered_only_else_default_guarded_selector",
+      "description": "slow_segments <= 3",
+      "true_variant": "rule_recover_uncovered_only",
+      "windows": 120,
+      "selected_windows": 2,
+      "overlay_wins_vs_base": 2,
+      "overlay_losses_vs_base": 0,
+      "final_der": 0.16572833333333334,
+      "base_der": 0.16590083333333333,
+      "slow_der": 0.16880916666666668,
+      "delta_vs_base": 0.0001724999999999921,
+      "delta_vs_base_pp": 0.01724999999999921,
+      "delta_vs_slow": 0.003080833333333338,
+      "delta_vs_slow_pp": 0.3080833333333338,
+      "beats_base": true,
+      "beats_slow": true,
+      "choice_counts": {
+        "slow_base": 117,
+        "fast_base": 1,
+        "rule_recover_uncovered_only": 2
+      },
+      "selected_window_details": [
+        {
+          "window_id": "R8007_M8011:30:0",
+          "base_variant": "slow_base",
+          "base_der": 0.0324,
+          "overlay_der": 0.0292,
+          "delta_vs_base_pp": 0.3199999999999998
+        },
+        {
+          "window_id": "R8009_M8019:30:12",
+          "base_variant": "slow_base",
+          "base_der": 0.0333,
+          "overlay_der": 0.0158,
+          "delta_vs_base_pp": 1.7500000000000002
+        }
+      ],
+      "feature_a": "slow_segments",
+      "op_a": "<=",
+      "threshold_a": 3.0,
+      "selected": 2
+    }
+  ],
+  "holdout": [
+    {
+      "heldout_recording_id": "R8001_M8004",
+      "selected_policy_id": "if_audio_speech_sec_>=_18.605_then_rule_recover_uncovered_only_else_default_guarded_selector",
+      "train_final_der": 0.16319142857142857,
+      "train_base_der": 0.16400095238095241,
+      "heldout_windows": 15,
+      "heldout_selected_windows": 0,
+      "heldout_final_der": 0.17919999999999994,
+      "heldout_base_der": 0.17919999999999994,
+      "heldout_slow_der": 0.17919999999999994,
+      "heldout_delta_vs_base": 0.0,
+      "heldout_delta_vs_base_pp": 0.0,
+      "heldout_beats_base": false
+    },
+    {
+      "heldout_recording_id": "R8003_M8001",
+      "selected_policy_id": "if_audio_speech_sec_>=_18.245_then_rule_recover_uncovered_only_else_default_guarded_selector",
+      "train_final_der": 0.13751428571428567,
+      "train_base_der": 0.13832380952380946,
+      "heldout_windows": 15,
+      "heldout_selected_windows": 0,
+      "heldout_final_der": 0.3589399999999999,
+      "heldout_base_der": 0.3589399999999999,
+      "heldout_slow_der": 0.38220666666666664,
+      "heldout_delta_vs_base": 0.0,
+      "heldout_delta_vs_base_pp": 0.0,
+      "heldout_beats_base": false
+    },
+    {
+      "heldout_recording_id": "R8007_M8010",
+      "selected_policy_id": "if_boundary_fix_or_relabel_>=_14_AND_fast_audio_speech_overrun_sec_<=_9.6_then_rule_recover_uncovered_only_else_default_guarded_selector",
+      "train_final_der": 0.15392571428571428,
+      "train_base_der": 0.1547695238095238,
+      "heldout_windows": 15,
+      "heldout_selected_windows": 0,
+      "heldout_final_der": 0.24382,
+      "heldout_base_der": 0.24382,
+      "heldout_slow_der": 0.24382,
+      "heldout_delta_vs_base": 0.0,
+      "heldout_delta_vs_base_pp": 0.0,
+      "heldout_beats_base": false
+    },
+    {
+      "heldout_recording_id": "R8007_M8011",
+      "selected_policy_id": "if_slow_segments_<=_2_then_rule_recover_uncovered_only_else_default_guarded_selector",
+      "train_final_der": 0.16590666666666665,
+      "train_base_der": 0.16607333333333332,
+      "heldout_windows": 15,
+      "heldout_selected_windows": 0,
+      "heldout_final_der": 0.1646933333333333,
+      "heldout_base_der": 0.1646933333333333,
+      "heldout_slow_der": 0.1646933333333333,
+      "heldout_delta_vs_base": 0.0,
+      "heldout_delta_vs_base_pp": 0.0,
+      "heldout_beats_base": false
+    },
+    {
+      "heldout_recording_id": "R8008_M8013",
+      "selected_policy_id": "if_audio_speech_sec_>=_19.81_then_rule_recover_uncovered_only_else_default_guarded_selector",
+      "train_final_der": 0.16497904761904764,
+      "train_base_der": 0.16578857142857142,
+      "heldout_windows": 15,
+      "heldout_selected_windows": 0,
+      "heldout_final_der": 0.16668666666666665,
+      "heldout_base_der": 0.16668666666666665,
+      "heldout_slow_der": 0.16668666666666665,
+      "heldout_delta_vs_base": 0.0,
+      "heldout_delta_vs_base_pp": 0.0,
+      "heldout_beats_base": false
+    },
+    {
+      "heldout_recording_id": "R8009_M8018",
+      "selected_policy_id": "if_audio_speech_sec_>=_18.605_then_rule_recover_uncovered_only_else_default_guarded_selector",
+      "train_final_der": 0.17402476190476193,
+      "train_base_der": 0.17483428571428572,
+      "heldout_windows": 15,
+      "heldout_selected_windows": 0,
+      "heldout_final_der": 0.10336666666666665,
+      "heldout_base_der": 0.10336666666666665,
+      "heldout_slow_der": 0.10336666666666665,
+      "heldout_delta_vs_base": 0.0,
+      "heldout_delta_vs_base_pp": 0.0,
+      "heldout_beats_base": false
+    },
+    {
+      "heldout_recording_id": "R8009_M8019",
+      "selected_policy_id": "if_audio_speech_sec_>=_19.81_then_rule_recover_uncovered_only_else_default_guarded_selector",
+      "train_final_der": 0.1805504761904762,
+      "train_base_der": 0.18136,
+      "heldout_windows": 15,
+      "heldout_selected_windows": 0,
+      "heldout_final_der": 0.057686666666666664,
+      "heldout_base_der": 0.057686666666666664,
+      "heldout_slow_der": 0.057686666666666664,
+      "heldout_delta_vs_base": 0.0,
+      "heldout_delta_vs_base_pp": 0.0,
+      "heldout_beats_base": false
+    },
+    {
+      "heldout_recording_id": "R8009_M8020",
+      "selected_policy_id": "if_audio_max_speech_sec_>=_17.12_AND_keep_fast_supported_>=_5_then_rule_recover_uncovered_only_else_default_guarded_selector",
+      "train_final_der": 0.1812,
+      "train_base_der": 0.18205619047619048,
+      "heldout_windows": 15,
+      "heldout_selected_windows": 4,
+      "heldout_final_der": 0.09262,
+      "heldout_base_der": 0.05281333333333333,
+      "heldout_slow_der": 0.05281333333333333,
+      "heldout_delta_vs_base": -0.039806666666666664,
+      "heldout_delta_vs_base_pp": -3.9806666666666666,
+      "heldout_beats_base": false
+    }
+  ],
+  "holdout_summary": {
+    "splits": 8,
+    "positive_splits_vs_base": 0,
+    "weighted_holdout_final_der": 0.17087666666666662,
+    "weighted_holdout_base_der": 0.1659008333333333,
+    "weighted_delta_vs_base": -0.004975833333333318,
+    "weighted_delta_vs_base_pp": -0.4975833333333318
+  },
+  "bootstrap": {
+    "samples": 500,
+    "seed": 42,
+    "mean_delta_vs_base": 0.0006927500000000022,
+    "delta_ci_low": 0.0,
+    "delta_ci_high": 0.0021250000000000158,
+    "prob_beats_base": 0.622
+  },
+  "runtime_bootstrap": {
+    "samples": 500,
+    "seed": 42,
+    "mean_delta_vs_base": 0.0008685833333333434,
+    "delta_ci_low": 0.0,
+    "delta_ci_high": 0.002416666666666678,
+    "prob_beats_base": 0.942
+  }
+}

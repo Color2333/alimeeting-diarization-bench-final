@@ -1,0 +1,117 @@
+{
+  "runtime_contract": "research_progress_snapshot_from_existing_artifacts",
+  "system_timeline": {
+    "fast_first_output": "0.38s",
+    "rule_writeback": "24.65s",
+    "llm_guard": "44.92s",
+    "llm_review_signal": "46.10s",
+    "rule_writeback_patches": 599,
+    "llm_guard_patches": 1917,
+    "llm_review_cases": 4
+  },
+  "runtime_evidence_audit": {
+    "status": "pass",
+    "artifact_count": 16,
+    "runtime_blocking_count": 0,
+    "status_counts": {
+      "pass": 8,
+      "dev_only": 8
+    }
+  },
+  "rule_writeback": {
+    "patches": 599,
+    "fast_miss_recovered": "60.2%",
+    "unique_fast_miss_recovered_sec": "197.36s"
+  },
+  "selector_generalization": {
+    "splits": 8,
+    "positive_splits": 8,
+    "heldout_der": "26.5%",
+    "fast_der": "28.6%",
+    "delta_vs_fast": "2.1%",
+    "top_policy": "ratio_le_0.65_else_uncovered",
+    "top_policy_count": 4,
+    "fixed_policy": "ratio_le_0.65_else_uncovered",
+    "fixed_policy_der": "26.3%",
+    "bootstrap_delta": "2.2%",
+    "bootstrap_delta_ci_low": "1.1%",
+    "bootstrap_delta_ci_high": "3.5%",
+    "bootstrap_prob_beats_fast": "100.0%",
+    "per_recording_positive": 8,
+    "per_recording_total": 8,
+    "loo_positive": 8,
+    "loo_total": 8
+  },
+  "runtime_safe_llm_guard": {
+    "windows": 104,
+    "patches": 1917,
+    "harmful_accepts": 0,
+    "conservative_blocks": 1811,
+    "avg_delay": "44.92s",
+    "p95_delay": "63.85s"
+  },
+  "runtime_safe_split20": {
+    "prompts": 147,
+    "parent_windows": 104,
+    "split_parent_windows": 40,
+    "max_subcalls_per_window": 3,
+    "recommended_max_patches": 20,
+    "estimated_p95_call": "21.36s",
+    "estimated_token_multiplier": "1.12x",
+    "live_top3_parents": 3,
+    "live_top3_patches": 127,
+    "live_top3_measured_wall": "29.01s",
+    "live_top3_original_max": "48.47s",
+    "live_top3_split_max": "28.99s",
+    "live_top3_token_multiplier": "1.10x",
+    "live_top3_harmful_accepts": 0,
+    "deepseek_top45_failure": "AllocationQuota.FreeTierOnly",
+    "qwen_top45_wall": "44.02s",
+    "qwen_top45_split_max": "44.00s",
+    "qwen_top45_harmful_accepts": 0
+  },
+  "runtime_safe_guard_tuning": {
+    "best_policy": "combined_review0.5_keepfast0.5",
+    "conservative_recovered": 260,
+    "safe_accepts_after": 323,
+    "conservative_after": 1551,
+    "harmful_after": 0,
+    "materialized_safe_accepts": 323,
+    "materialized_conservative_blocks": 1551,
+    "materialized_harmful_accepts": 0,
+    "runtime_contract": "prompt_passed_runtime_evidence_audit; window_quarantine_accept_override; keep_fast_supported_passthrough_exception",
+    "boundary_negative_der": "33.8%",
+    "boundary_negative_fa": "16.1%",
+    "boundary_replaced": 403,
+    "recover_best_der": "26.4%"
+  },
+  "clean_high_llm_audit": {
+    "windows": 25,
+    "patches": 138,
+    "accepts": 136,
+    "non_accepts": 2,
+    "agreement": "98.6%",
+    "avg_call": "20.24s"
+  },
+  "timeline_review_audit": {
+    "review_cases": 4,
+    "blocks_timeline_writeback": 0,
+    "blocks_memory_update": 4,
+    "avg_arrival": "46.10s"
+  },
+  "omni_fusion": {
+    "windows": 12,
+    "high_sentinel_recall": "1/4 (25.0%)",
+    "clean_high_sentinel_fp": "0/4 (0.0%)",
+    "clean_review_fp": "4/4 (100.0%)",
+    "flash_avg_call": "2.11s",
+    "flash_p95_call": "6.41s"
+  },
+  "voiceprint_gate": {
+    "clean_patches": 620,
+    "with_voiceprint": 620,
+    "high_bucket": 226,
+    "llm_candidates": 0,
+    "high_rule_auto": 138
+  }
+}

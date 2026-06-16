@@ -1,0 +1,17 @@
+{
+  "policy": "combined_review0.5_keepfast0.5",
+  "windows": 104,
+  "tuned_windows": 70,
+  "tuned_patches": 260,
+  "window_decisions": {
+    "quarantine": 96,
+    "review": 8
+  },
+  "tuned_patch_types": {
+    "keep_fast_supported": 165,
+    "boundary_fix_or_relabel": 69,
+    "align_slow_segment": 26
+  },
+  "input_jsonl": "outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w.jsonl",
+  "output_jsonl": "outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_tuned.jsonl"
+}

@@ -1,0 +1,83 @@
+policy,windows,recover_windows,avg_der,avg_miss_rate,avg_fa_rate,avg_conf_rate,matched_windows,uncovered_windows,fast_windows,choice_counts
+ratio_le_0.65_else_uncovered,120,47,0.2630,0.1558,0.0564,0.0508,13,34,73,fast_base 73 / rule_recover_matched_label 13 / rule_recover_uncovered_only 34
+ratio_le_0.70_else_uncovered,120,47,0.2630,0.1558,0.0564,0.0508,15,32,73,fast_base 73 / rule_recover_matched_label 15 / rule_recover_uncovered_only 32
+ratio_le_0.25_else_uncovered,120,47,0.2633,0.1568,0.0558,0.0507,5,42,73,fast_base 73 / rule_recover_matched_label 5 / rule_recover_uncovered_only 42
+spk_gt_and_ratio_le_0.25,120,47,0.2633,0.1568,0.0558,0.0507,5,42,73,fast_base 73 / rule_recover_matched_label 5 / rule_recover_uncovered_only 42
+ratio_le_0.30_else_uncovered,120,47,0.2633,0.1568,0.0558,0.0507,5,42,73,fast_base 73 / rule_recover_matched_label 5 / rule_recover_uncovered_only 42
+spk_gt_and_ratio_le_0.30,120,47,0.2633,0.1568,0.0558,0.0507,5,42,73,fast_base 73 / rule_recover_matched_label 5 / rule_recover_uncovered_only 42
+ratio_le_0.35_else_uncovered,120,47,0.2633,0.1568,0.0558,0.0507,5,42,73,fast_base 73 / rule_recover_matched_label 5 / rule_recover_uncovered_only 42
+spk_gt_and_ratio_le_0.35,120,47,0.2633,0.1568,0.0558,0.0507,5,42,73,fast_base 73 / rule_recover_matched_label 5 / rule_recover_uncovered_only 42
+ratio_le_0.40_else_uncovered,120,47,0.2633,0.1568,0.0558,0.0507,5,42,73,fast_base 73 / rule_recover_matched_label 5 / rule_recover_uncovered_only 42
+spk_gt_and_ratio_le_0.40,120,47,0.2633,0.1568,0.0558,0.0507,5,42,73,fast_base 73 / rule_recover_matched_label 5 / rule_recover_uncovered_only 42
+ratio_le_0.45_else_uncovered,120,47,0.2633,0.1568,0.0558,0.0507,5,42,73,fast_base 73 / rule_recover_matched_label 5 / rule_recover_uncovered_only 42
+spk_gt_and_ratio_le_0.45,120,47,0.2633,0.1568,0.0558,0.0507,5,42,73,fast_base 73 / rule_recover_matched_label 5 / rule_recover_uncovered_only 42
+spk_gt_or_ratio_le_0.65,120,47,0.2634,0.1550,0.0578,0.0506,24,23,73,fast_base 73 / rule_recover_matched_label 24 / rule_recover_uncovered_only 23
+spk_gt_or_ratio_le_0.70,120,47,0.2634,0.1550,0.0578,0.0506,24,23,73,fast_base 73 / rule_recover_matched_label 24 / rule_recover_uncovered_only 23
+ratio_le_0.75_else_uncovered,120,47,0.2635,0.1553,0.0573,0.0509,21,26,73,fast_base 73 / rule_recover_matched_label 21 / rule_recover_uncovered_only 26
+ratio_le_0.55_else_uncovered,120,47,0.2637,0.1565,0.0564,0.0507,9,38,73,fast_base 73 / rule_recover_matched_label 9 / rule_recover_uncovered_only 38
+spk_gt_and_ratio_le_0.55,120,47,0.2637,0.1565,0.0564,0.0507,9,38,73,fast_base 73 / rule_recover_matched_label 9 / rule_recover_uncovered_only 38
+ratio_le_0.60_else_uncovered,120,47,0.2637,0.1565,0.0564,0.0507,9,38,73,fast_base 73 / rule_recover_matched_label 9 / rule_recover_uncovered_only 38
+spk_gt_and_ratio_le_0.60,120,47,0.2637,0.1565,0.0564,0.0507,9,38,73,fast_base 73 / rule_recover_matched_label 9 / rule_recover_uncovered_only 38
+spk_gt_and_ratio_le_0.65,120,47,0.2637,0.1565,0.0564,0.0507,10,37,73,fast_base 73 / rule_recover_matched_label 10 / rule_recover_uncovered_only 37
+spk_gt_and_ratio_le_0.70,120,47,0.2637,0.1565,0.0564,0.0507,12,35,73,fast_base 73 / rule_recover_matched_label 12 / rule_recover_uncovered_only 35
+spk_gt_and_ratio_le_0.75,120,47,0.2637,0.1565,0.0564,0.0507,13,34,73,fast_base 73 / rule_recover_matched_label 13 / rule_recover_uncovered_only 34
+spk_gt_or_ratio_le_0.75,120,47,0.2638,0.1545,0.0586,0.0507,29,18,73,fast_base 73 / rule_recover_matched_label 29 / rule_recover_uncovered_only 18
+ratio_le_0.50_else_uncovered,120,47,0.2639,0.1568,0.0564,0.0507,8,39,73,fast_base 73 / rule_recover_matched_label 8 / rule_recover_uncovered_only 39
+spk_gt_and_ratio_le_0.50,120,47,0.2639,0.1568,0.0564,0.0507,8,39,73,fast_base 73 / rule_recover_matched_label 8 / rule_recover_uncovered_only 39
+spk_gt_min_recover_1.0,120,47,0.2639,0.1559,0.0576,0.0504,20,25,75,fast_base 75 / rule_recover_matched_label 20 / rule_recover_uncovered_only 25
+spk_gt_and_ratio_le_0.95,120,47,0.2640,0.1559,0.0574,0.0507,20,27,73,fast_base 73 / rule_recover_matched_label 20 / rule_recover_uncovered_only 27
+spk_gt,120,47,0.2640,0.1557,0.0577,0.0505,21,26,73,fast_base 73 / rule_recover_matched_label 21 / rule_recover_uncovered_only 26
+spk_gt_or_ratio_le_0.25,120,47,0.2640,0.1557,0.0577,0.0505,21,26,73,fast_base 73 / rule_recover_matched_label 21 / rule_recover_uncovered_only 26
+spk_gt_or_ratio_le_0.30,120,47,0.2640,0.1557,0.0577,0.0505,21,26,73,fast_base 73 / rule_recover_matched_label 21 / rule_recover_uncovered_only 26
+spk_gt_or_ratio_le_0.35,120,47,0.2640,0.1557,0.0577,0.0505,21,26,73,fast_base 73 / rule_recover_matched_label 21 / rule_recover_uncovered_only 26
+spk_gt_or_ratio_le_0.40,120,47,0.2640,0.1557,0.0577,0.0505,21,26,73,fast_base 73 / rule_recover_matched_label 21 / rule_recover_uncovered_only 26
+spk_gt_or_ratio_le_0.45,120,47,0.2640,0.1557,0.0577,0.0505,21,26,73,fast_base 73 / rule_recover_matched_label 21 / rule_recover_uncovered_only 26
+spk_gt_or_ratio_le_0.50,120,47,0.2640,0.1557,0.0577,0.0505,21,26,73,fast_base 73 / rule_recover_matched_label 21 / rule_recover_uncovered_only 26
+spk_gt_or_ratio_le_0.55,120,47,0.2640,0.1557,0.0577,0.0505,21,26,73,fast_base 73 / rule_recover_matched_label 21 / rule_recover_uncovered_only 26
+spk_gt_or_ratio_le_0.60,120,47,0.2640,0.1557,0.0577,0.0505,21,26,73,fast_base 73 / rule_recover_matched_label 21 / rule_recover_uncovered_only 26
+spk_gt_and_ratio_le_1.00,120,47,0.2640,0.1557,0.0577,0.0505,21,26,73,fast_base 73 / rule_recover_matched_label 21 / rule_recover_uncovered_only 26
+spk_gt_and_ratio_le_1.05,120,47,0.2640,0.1557,0.0577,0.0505,21,26,73,fast_base 73 / rule_recover_matched_label 21 / rule_recover_uncovered_only 26
+spk_gt_and_ratio_le_1.10,120,47,0.2640,0.1557,0.0577,0.0505,21,26,73,fast_base 73 / rule_recover_matched_label 21 / rule_recover_uncovered_only 26
+spk_gt_min_recover_0.2,120,47,0.2640,0.1557,0.0577,0.0505,21,26,73,fast_base 73 / rule_recover_matched_label 21 / rule_recover_uncovered_only 26
+spk_gt_min_recover_0.6,120,47,0.2640,0.1557,0.0577,0.0505,21,26,73,fast_base 73 / rule_recover_matched_label 21 / rule_recover_uncovered_only 26
+spk_gt_and_ratio_le_0.90,120,47,0.2641,0.1559,0.0574,0.0507,19,28,73,fast_base 73 / rule_recover_matched_label 19 / rule_recover_uncovered_only 28
+spk_gt_min_recover_2.0,120,47,0.2641,0.1566,0.0576,0.0500,19,23,78,fast_base 78 / rule_recover_matched_label 19 / rule_recover_uncovered_only 23
+spk_gt_and_ratio_le_0.80,120,47,0.2642,0.1562,0.0573,0.0507,16,31,73,fast_base 73 / rule_recover_matched_label 16 / rule_recover_uncovered_only 31
+spk_gt_and_ratio_le_0.85,120,47,0.2642,0.1561,0.0574,0.0507,17,30,73,fast_base 73 / rule_recover_matched_label 17 / rule_recover_uncovered_only 30
+ratio_le_0.95_else_uncovered,120,47,0.2643,0.1541,0.0598,0.0504,46,1,73,fast_base 73 / rule_recover_matched_label 46 / rule_recover_uncovered_only 1
+spk_gt_or_ratio_le_0.90,120,47,0.2643,0.1540,0.0601,0.0502,41,6,73,fast_base 73 / rule_recover_matched_label 41 / rule_recover_uncovered_only 6
+all_matched,120,47,0.2643,0.1539,0.0602,0.0502,47,0,73,fast_base 73 / rule_recover_matched_label 47
+spk_ge_or_ratio_le_0.65,120,47,0.2643,0.1539,0.0602,0.0502,46,1,73,fast_base 73 / rule_recover_matched_label 46 / rule_recover_uncovered_only 1
+spk_ge_or_ratio_le_0.70,120,47,0.2643,0.1539,0.0602,0.0502,46,1,73,fast_base 73 / rule_recover_matched_label 46 / rule_recover_uncovered_only 1
+spk_ge_or_ratio_le_0.75,120,47,0.2643,0.1539,0.0602,0.0502,46,1,73,fast_base 73 / rule_recover_matched_label 46 / rule_recover_uncovered_only 1
+spk_ge_or_ratio_le_0.80,120,47,0.2643,0.1539,0.0602,0.0502,46,1,73,fast_base 73 / rule_recover_matched_label 46 / rule_recover_uncovered_only 1
+spk_ge_or_ratio_le_0.85,120,47,0.2643,0.1539,0.0602,0.0502,47,0,73,fast_base 73 / rule_recover_matched_label 47
+spk_ge_or_ratio_le_0.90,120,47,0.2643,0.1539,0.0602,0.0502,47,0,73,fast_base 73 / rule_recover_matched_label 47
+spk_gt_or_ratio_le_0.95,120,47,0.2643,0.1539,0.0602,0.0502,47,0,73,fast_base 73 / rule_recover_matched_label 47
+spk_ge_or_ratio_le_0.95,120,47,0.2643,0.1539,0.0602,0.0502,47,0,73,fast_base 73 / rule_recover_matched_label 47
+ratio_le_1.00_else_uncovered,120,47,0.2643,0.1539,0.0602,0.0502,47,0,73,fast_base 73 / rule_recover_matched_label 47
+spk_gt_or_ratio_le_1.00,120,47,0.2643,0.1539,0.0602,0.0502,47,0,73,fast_base 73 / rule_recover_matched_label 47
+spk_ge_or_ratio_le_1.00,120,47,0.2643,0.1539,0.0602,0.0502,47,0,73,fast_base 73 / rule_recover_matched_label 47
+ratio_le_1.05_else_uncovered,120,47,0.2643,0.1539,0.0602,0.0502,47,0,73,fast_base 73 / rule_recover_matched_label 47
+spk_gt_or_ratio_le_1.05,120,47,0.2643,0.1539,0.0602,0.0502,47,0,73,fast_base 73 / rule_recover_matched_label 47
+spk_ge_or_ratio_le_1.05,120,47,0.2643,0.1539,0.0602,0.0502,47,0,73,fast_base 73 / rule_recover_matched_label 47
+ratio_le_1.10_else_uncovered,120,47,0.2643,0.1539,0.0602,0.0502,47,0,73,fast_base 73 / rule_recover_matched_label 47
+spk_gt_or_ratio_le_1.10,120,47,0.2643,0.1539,0.0602,0.0502,47,0,73,fast_base 73 / rule_recover_matched_label 47
+spk_ge_or_ratio_le_1.10,120,47,0.2643,0.1539,0.0602,0.0502,47,0,73,fast_base 73 / rule_recover_matched_label 47
+ratio_le_0.90_else_uncovered,120,47,0.2644,0.1542,0.0598,0.0504,39,8,73,fast_base 73 / rule_recover_matched_label 39 / rule_recover_uncovered_only 8
+spk_gt_min_recover_4.0,120,47,0.2646,0.1573,0.0575,0.0498,18,22,80,fast_base 80 / rule_recover_matched_label 18 / rule_recover_uncovered_only 22
+spk_gt_or_ratio_le_0.85,120,47,0.2646,0.1543,0.0599,0.0505,35,12,73,fast_base 73 / rule_recover_matched_label 35 / rule_recover_uncovered_only 12
+spk_gt_or_ratio_le_0.80,120,47,0.2647,0.1545,0.0596,0.0507,31,16,73,fast_base 73 / rule_recover_matched_label 31 / rule_recover_uncovered_only 16
+ratio_le_0.80_else_uncovered,120,47,0.2649,0.1550,0.0592,0.0508,26,21,73,fast_base 73 / rule_recover_matched_label 26 / rule_recover_uncovered_only 21
+ratio_le_0.85_else_uncovered,120,47,0.2649,0.1547,0.0595,0.0507,31,16,73,fast_base 73 / rule_recover_matched_label 31 / rule_recover_uncovered_only 16
+spk_ge,120,47,0.2649,0.1546,0.0601,0.0502,44,3,73,fast_base 73 / rule_recover_matched_label 44 / rule_recover_uncovered_only 3
+spk_ge_or_ratio_le_0.25,120,47,0.2649,0.1546,0.0601,0.0502,44,3,73,fast_base 73 / rule_recover_matched_label 44 / rule_recover_uncovered_only 3
+spk_ge_or_ratio_le_0.30,120,47,0.2649,0.1546,0.0601,0.0502,44,3,73,fast_base 73 / rule_recover_matched_label 44 / rule_recover_uncovered_only 3
+spk_ge_or_ratio_le_0.35,120,47,0.2649,0.1546,0.0601,0.0502,44,3,73,fast_base 73 / rule_recover_matched_label 44 / rule_recover_uncovered_only 3
+spk_ge_or_ratio_le_0.40,120,47,0.2649,0.1546,0.0601,0.0502,44,3,73,fast_base 73 / rule_recover_matched_label 44 / rule_recover_uncovered_only 3
+spk_ge_or_ratio_le_0.45,120,47,0.2649,0.1546,0.0601,0.0502,44,3,73,fast_base 73 / rule_recover_matched_label 44 / rule_recover_uncovered_only 3
+spk_ge_or_ratio_le_0.50,120,47,0.2649,0.1546,0.0601,0.0502,44,3,73,fast_base 73 / rule_recover_matched_label 44 / rule_recover_uncovered_only 3
+spk_ge_or_ratio_le_0.55,120,47,0.2649,0.1546,0.0601,0.0502,44,3,73,fast_base 73 / rule_recover_matched_label 44 / rule_recover_uncovered_only 3
+spk_ge_or_ratio_le_0.60,120,47,0.2649,0.1546,0.0601,0.0502,44,3,73,fast_base 73 / rule_recover_matched_label 44 / rule_recover_uncovered_only 3
+all_uncovered,120,47,0.2653,0.1595,0.0554,0.0503,0,47,73,fast_base 73 / rule_recover_uncovered_only 47
+spk_gt_else_fast,120,47,0.2707,0.1662,0.0568,0.0477,21,0,99,fast_base 99 / rule_recover_matched_label 21

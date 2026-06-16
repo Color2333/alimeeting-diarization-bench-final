@@ -1,0 +1,277 @@
+{
+  "runtime_contract": "system_promotion_gate_no_live_calls_no_new_scoring",
+  "status": "dev_metric_pass_promotion_blocked",
+  "development_metric_status": "pass",
+  "promotion_status": "blocked",
+  "summary": {
+    "variant": "slow_guarded_fast_fallback_rare_audio_rule_recover",
+    "final_der": 0.16492333333333334,
+    "final_der_pct": "16.4923%",
+    "delta_vs_best_baseline_pp": 0.38858333333333384,
+    "delta_vs_best_clipped_baseline_pp": 0.38733333333333675,
+    "timeline_integrity_status": "pass",
+    "recording_level_stability_status": "weak_recording_level_gain_not_robust",
+    "recording_level_positive_recordings": 5,
+    "recording_level_recordings": 8,
+    "base_selector_status": "weak_dev_gain_not_robust",
+    "rare_selector_status": "weak_dev_gain_not_robust",
+    "true_heldout_status": "blocked_waiting_for_valid_sealed_split",
+    "headroom_gap_pp": 0.011750000000002037
+  },
+  "gates": [
+    {
+      "gate_id": "beats_all_tracked_baselines",
+      "status": "pass",
+      "required_for": "development_metric",
+      "evidence": {
+        "beats_all_baselines": true,
+        "delta_vs_best_baseline_pp": 0.38858333333333384
+      }
+    },
+    {
+      "gate_id": "offline_no_live_calls",
+      "status": "pass",
+      "required_for": "development_metric",
+      "evidence": {
+        "deepseek": 0,
+        "qwen": 0,
+        "omni": 0
+      }
+    },
+    {
+      "gate_id": "final_timeline_integrity",
+      "status": "pass",
+      "required_for": "development_metric",
+      "evidence": {
+        "status": "pass",
+        "summary": {
+          "timeline_rows": 1402,
+          "csv_rows": 1402,
+          "rttm_rows": 1402,
+          "window_rows": 120,
+          "window_segments_total": 1402,
+          "same_speaker_overlap_count": 0,
+          "fail_count": 0,
+          "warn_count": 0
+        },
+        "issues": []
+      }
+    },
+    {
+      "gate_id": "beats_all_clipped_baselines",
+      "status": "pass",
+      "required_for": "development_metric",
+      "evidence": {
+        "status": "pass",
+        "beats_all_clipped_baselines": true,
+        "best_clipped_baseline": {
+          "baseline_id": "slow_base",
+          "windows": 120,
+          "der": 0.1687966666666667,
+          "miss_rate": 0.049855000000000003,
+          "fa_rate": 0.06916166666666665,
+          "conf_rate": 0.049790000000000015,
+          "delta_vs_final_pp": 0.38733333333333675,
+          "beats_final": false,
+          "clip_counters": {
+            "window_clip_adjusted_segments": 103,
+            "window_clip_trimmed_ms": 22664,
+            "window_clip_dropped_segments": 4
+          }
+        },
+        "delta_vs_best_clipped_baseline_pp": 0.38733333333333675
+      }
+    },
+    {
+      "gate_id": "base_selector_robust_dev_validation",
+      "status": "blocked",
+      "required_for": "promotion",
+      "evidence": {
+        "status": "weak_dev_gain_not_robust",
+        "bootstrap": {
+          "samples": 2000,
+          "seed": 42,
+          "threshold": 1,
+          "mean_delta_vs_slow": 0.002933054166666673,
+          "delta_ci_low": 0.0,
+          "delta_ci_high": 0.008725000000000038,
+          "prob_beats_slow": 0.6335,
+          "mean_final_der": 0.16604654166666682,
+          "mean_slow_der": 0.1689795958333332
+        },
+        "recording_holdout_summary": {
+          "splits": 8,
+          "positive_splits_vs_slow": 1,
+          "weighted_heldout_final_der": 0.1659008333333333,
+          "weighted_heldout_slow_der": 0.16880916666666665,
+          "weighted_heldout_delta_vs_slow": 0.002908333333333346,
+          "weighted_heldout_delta_vs_slow_pp": 0.2908333333333346
+        }
+      }
+    },
+    {
+      "gate_id": "rare_selector_robust_dev_validation",
+      "status": "blocked",
+      "required_for": "promotion",
+      "evidence": {
+        "runtime_uses_rare_overlay": true,
+        "status": "weak_dev_gain_not_robust",
+        "bootstrap": {
+          "samples": 500,
+          "seed": 42,
+          "mean_delta_vs_base": 0.0006927500000000022,
+          "delta_ci_low": 0.0,
+          "delta_ci_high": 0.0021250000000000158,
+          "prob_beats_base": 0.622
+        },
+        "runtime_bootstrap": {
+          "samples": 500,
+          "seed": 42,
+          "mean_delta_vs_base": 0.0008685833333333434,
+          "delta_ci_low": 0.0,
+          "delta_ci_high": 0.002416666666666678,
+          "prob_beats_base": 0.942
+        },
+        "holdout_summary": {
+          "splits": 8,
+          "positive_splits_vs_base": 0,
+          "weighted_holdout_final_der": 0.17087666666666662,
+          "weighted_holdout_base_der": 0.1659008333333333,
+          "weighted_delta_vs_base": -0.004975833333333318,
+          "weighted_delta_vs_base_pp": -0.4975833333333318
+        },
+        "runtime_policy": {
+          "policy_kind": "rare_overlay",
+          "policy_id": "runtime_stack_audio_speech_ge_18p605_or_slow_segments_le_3_then_rule_recover_uncovered_only_else_default_guarded_selector",
+          "description": "audio_speech_sec >= 18.605 OR slow_segments <= 3",
+          "true_variant": "rule_recover_uncovered_only",
+          "windows": 120,
+          "selected_windows": 3,
+          "overlay_wins_vs_base": 3,
+          "overlay_losses_vs_base": 0,
+          "final_der": 0.16502000000000003,
+          "base_der": 0.16590083333333333,
+          "slow_der": 0.16880916666666668,
+          "delta_vs_base": 0.0008808333333333029,
+          "delta_vs_base_pp": 0.0880833333333303,
+          "delta_vs_slow": 0.003789166666666649,
+          "delta_vs_slow_pp": 0.3789166666666649,
+          "beats_base": true,
+          "beats_slow": true,
+          "choice_counts": {
+            "slow_base": 116,
+            "fast_base": 1,
+            "rule_recover_uncovered_only": 3
+          },
+          "selected_window_details": [
+            {
+              "window_id": "R8007_M8011:30:0",
+              "base_variant": "slow_base",
+              "base_der": 0.0324,
+              "overlay_der": 0.0292,
+              "delta_vs_base_pp": 0.3199999999999998
+            },
+            {
+              "window_id": "R8007_M8011:30:8",
+              "base_variant": "slow_base",
+              "base_der": 0.4266,
+              "overlay_der": 0.3416,
+              "delta_vs_base_pp": 8.499999999999996
+            },
+            {
+              "window_id": "R8009_M8019:30:12",
+              "base_variant": "slow_base",
+              "base_der": 0.0333,
+              "overlay_der": 0.0158,
+              "delta_vs_base_pp": 1.7500000000000002
+            }
+          ],
+          "stacked_conditions": [
+            "audio_speech_sec >= 18.605",
+            "slow_segments <= 3"
+          ]
+        }
+      }
+    },
+    {
+      "gate_id": "recording_level_stability",
+      "status": "blocked",
+      "required_for": "promotion",
+      "evidence": {
+        "status": "weak_recording_level_gain_not_robust",
+        "summary": {
+          "recordings": 8,
+          "windows": 120,
+          "positive_recordings": 5,
+          "mean_final_der": 0.16492333333333334,
+          "mean_baseline_der": 0.16879666666666665,
+          "mean_delta_vs_baseline": 0.003873333333333312,
+          "mean_delta_vs_baseline_pp": 0.3873333333333312,
+          "all_recordings_positive": false
+        },
+        "recording_bootstrap": {
+          "samples": 5000,
+          "seed": 42,
+          "mean_delta_vs_baseline": 0.0038519408333333063,
+          "mean_delta_vs_baseline_pp": 0.3851940833333306,
+          "delta_ci_low": 0.00019000000000002348,
+          "delta_ci_high": 0.009686666666666621,
+          "delta_ci_low_pp": 0.01900000000000235,
+          "delta_ci_high_pp": 0.9686666666666621,
+          "prob_beats_baseline": 0.9994,
+          "mean_final_der": 0.16434053883333377,
+          "mean_baseline_der": 0.16819247966666742
+        }
+      }
+    },
+    {
+      "gate_id": "true_heldout_split_ready",
+      "status": "blocked",
+      "required_for": "promotion",
+      "evidence": {
+        "split_status": "blocked_waiting_for_valid_sealed_split",
+        "split_summary": {
+          "split_exists": false,
+          "rows": 0,
+          "true_heldout_rows": 0,
+          "true_heldout_recordings": 0,
+          "development_recordings": 8,
+          "overlap_with_development": 0,
+          "missing_required_columns": 4,
+          "invalid_role_count": 0,
+          "duplicate_recordings": 0,
+          "missing_audio_count": 0,
+          "missing_textgrid_count": 0,
+          "eligible_local_candidates": 0,
+          "missing_new_recordings_to_minimum": 8,
+          "no_metric_claim": true,
+          "sealed_split_written_by_validator": false
+        },
+        "candidate_scan_status": "not_enough_new_local_recordings",
+        "candidate_scan_summary": {
+          "local_recordings": 8,
+          "development_recordings": 8,
+          "local_dev_overlap": 8,
+          "eligible_true_heldout_recordings": 0,
+          "missing_new_recordings_to_minimum": 8,
+          "far_audio_count": 8,
+          "far_textgrid_count": 8,
+          "near_recording_count": 8,
+          "no_metric_claim": true,
+          "sealed_split_written": false
+        }
+      }
+    },
+    {
+      "gate_id": "current_candidate_oracle_gap_tracked",
+      "status": "pass",
+      "required_for": "diagnostic",
+      "evidence": {
+        "final_der": 0.16492333333333334,
+        "oracle_der": 0.16480583333333332,
+        "final_gap_to_oracle_pp": 0.011750000000002037
+      }
+    }
+  ],
+  "metric_claim_boundary": "development_pool_metric_improved_but_promotion_requires_robust_and_true_heldout_evidence"
+}

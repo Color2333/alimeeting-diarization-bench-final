@@ -1,0 +1,151 @@
+{
+  "runtime_contract": "live_run_readiness_non_secret_no_live_calls",
+  "secret_policy": "env_presence_only_no_secret_values_written",
+  "environment": {
+    "dashscope_like_api_key_present": false,
+    "dashscope_env_present": {
+      "DASHSCOPE_API_KEY": false,
+      "BAILIAN_API_KEY": false,
+      "ALIYUN_BAILIAN_API_KEY": false
+    },
+    "base_url_env_present": {
+      "DASHSCOPE_BASE_URL": false
+    },
+    "config_defaults_not_counted_as_credentials": true
+  },
+  "omni48_manifest": {
+    "manifest_json": "outputs/research_progress_snapshot/omni_expansion_manifest.json",
+    "manifest_csv": "outputs/research_progress_snapshot/omni_expansion_manifest.csv",
+    "call_manifest_json": "outputs/research_progress_snapshot/omni48_live_call_manifest.json",
+    "call_manifest_contract": "omni48_live_call_manifest_no_live_calls_label_only",
+    "runtime_contract": "omni_expansion_manifest_ready_no_live_calls_no_timeline_writeback",
+    "selected_windows": 48,
+    "target_models": [
+      "qwen3.5-omni-flash",
+      "qwen3.5-omni-plus-2026-03-15"
+    ],
+    "planned_model_calls": 96,
+    "audio_missing_count": 0,
+    "audio_missing_windows": [],
+    "clip_audio_seconds": 384.0,
+    "billable_clip_model_seconds_proxy": 768.0,
+    "role_counts": {
+      "anchor_smoke_window": 12,
+      "new_runtime_proxy_window": 36
+    },
+    "run_command": "python scripts/omni_guard_window_batch.py --input-windows-csv outputs/research_progress_snapshot/omni_expansion_manifest.csv --model qwen3.5-omni-flash --model qwen3.5-omni-plus-2026-03-15 --skip-existing-output --max-call-attempts 2 --retry-backoff-seconds 2.0 --output-jsonl outputs/omni_guard/omni_expansion_48_live.jsonl"
+  },
+  "split20_prompt_manifest": {
+    "path": "outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_split20_replay_prompts.jsonl",
+    "exists": true,
+    "prompt_calls": 147,
+    "parent_windows": 104,
+    "patch_references": 1917,
+    "unique_parent_patches": 1917,
+    "max_parallel_subcalls_per_parent": 3,
+    "estimated_input_tokens_chars_div4": 428566
+  },
+  "split20_resume_prompt_manifest": {
+    "path": "outputs/research_progress_snapshot/split20_resume_after_top3_export_prompts.jsonl",
+    "exists": true,
+    "prompt_calls": 139,
+    "parent_windows": 101,
+    "patch_references": 1790,
+    "unique_parent_patches": 1790,
+    "max_parallel_subcalls_per_parent": 3,
+    "estimated_input_tokens_chars_div4": 400862
+  },
+  "historical_live_evidence": {
+    "deepseek_top3_wall_seconds": 29.014,
+    "deepseek_top3_harmful_accepts": 0,
+    "deepseek_top4_5_failure_type": "AllocationQuota.FreeTierOnly",
+    "qwen_top4_5_wall_seconds": 44.024,
+    "qwen_top4_5_harmful_accepts": 0
+  },
+  "runs": [
+    {
+      "run_id": "omni48_live",
+      "priority": "P1",
+      "status": "blocked_missing_credentials",
+      "blocked": true,
+      "blockers": [
+        "missing_dashscope_or_bailian_api_key_env"
+      ],
+      "planned_calls": 96,
+      "planned_windows": 48,
+      "target_models": [
+        "qwen3.5-omni-flash",
+        "qwen3.5-omni-plus-2026-03-15"
+      ],
+      "estimated_input_scale": "768.0 clip-model seconds proxy",
+      "source_artifacts": [
+        "outputs/research_progress_snapshot/omni_expansion_manifest.json",
+        "outputs/research_progress_snapshot/omni_expansion_manifest.csv",
+        "outputs/research_progress_snapshot/omni48_live_call_manifest.json"
+      ],
+      "run_command": "python scripts/omni_guard_window_batch.py --input-windows-csv outputs/research_progress_snapshot/omni_expansion_manifest.csv --model qwen3.5-omni-flash --model qwen3.5-omni-plus-2026-03-15 --skip-existing-output --max-call-attempts 2 --retry-backoff-seconds 2.0 --output-jsonl outputs/omni_guard/omni_expansion_48_live.jsonl",
+      "notes": "Manifest is no-writeback and label-only; live run still spends provider quota."
+    },
+    {
+      "run_id": "split20_deepseek_full",
+      "priority": "P0",
+      "status": "blocked_by_provider_quota_or_capacity",
+      "blocked": true,
+      "blockers": [
+        "missing_dashscope_or_bailian_api_key_env",
+        "known_deepseek_top4_5_failure_AllocationQuota.FreeTierOnly"
+      ],
+      "planned_calls": 139,
+      "planned_windows": 101,
+      "target_models": [
+        "deepseek-v4-flash"
+      ],
+      "estimated_input_scale": "400862 prompt tokens proxy",
+      "source_artifacts": [
+        "outputs/research_progress_snapshot/split20_resume_after_top3_export_prompts.jsonl",
+        "outputs/research_progress_snapshot/split20_deepseek_resume_after_top3_window_ids.txt",
+        "outputs/research_progress_snapshot/split20_resume_export_audit.json",
+        "outputs/research_progress_snapshot/split20_full_live_manifest.json",
+        "outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_split20_top4_5_parallel_attempt_summary.json"
+      ],
+      "run_command": "python scripts/llm_window_batch_policy_eval.py --mode call --decisions outputs/runtime_safe_policy_agent/sortformer_diarizen_120_decisions.jsonl --trigger-policy proxy_flagged_window --window-evidence outputs/deployable_abnormal_windows/sortformer_diarizen_120_proxy.csv --patch-id-file outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_patch_ids.txt --max-patches-per-call 20 --window-id-file outputs/research_progress_snapshot/split20_deepseek_resume_after_top3_window_ids.txt --model deepseek-v4-flash --parallel-workers 8 --skip-existing-output --max-call-attempts 2 --retry-backoff-seconds 2.0 --output-jsonl outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_split20_resume_after_top3.jsonl",
+      "notes": "Resume surface excludes completed top3 parents; top4/5 failed before generation with provider quota exhaustion and remain in the pending resume set."
+    },
+    {
+      "run_id": "split20_qwen_backup",
+      "priority": "P1",
+      "status": "blocked_missing_credentials",
+      "blocked": true,
+      "blockers": [
+        "missing_dashscope_or_bailian_api_key_env"
+      ],
+      "planned_calls": 147,
+      "planned_windows": 104,
+      "target_models": [
+        "qwen3.6-flash-2026-04-16"
+      ],
+      "estimated_input_scale": "428566 prompt tokens proxy",
+      "source_artifacts": [
+        "outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_split20_replay_prompts.jsonl",
+        "outputs/research_progress_snapshot/split20_full_live_manifest.json",
+        "outputs/runtime_safe_llm_window_batch/qwen36_flash_split20_top4_5_parallel_comparison.json"
+      ],
+      "run_command": "python scripts/llm_window_batch_policy_eval.py --mode call --decisions outputs/runtime_safe_policy_agent/sortformer_diarizen_120_decisions.jsonl --trigger-policy proxy_flagged_window --window-evidence outputs/deployable_abnormal_windows/sortformer_diarizen_120_proxy.csv --patch-id-file outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_patch_ids.txt --max-patches-per-call 20 --model qwen3.6-flash-2026-04-16 --parallel-workers 8 --skip-existing-output --max-call-attempts 2 --retry-backoff-seconds 2.0 --output-jsonl outputs/runtime_safe_llm_window_batch/qwen36_flash_high_risk_104w_split20_live.jsonl",
+      "notes": "Backup top4/5 evidence had harmful 0 but slower wall time than the original max-call baseline."
+    }
+  ],
+  "summary": {
+    "run_count": 3,
+    "ready_count": 0,
+    "blocked_count": 3,
+    "ready_runs": [],
+    "blocked_runs": [
+      "omni48_live",
+      "split20_deepseek_full",
+      "split20_qwen_backup"
+    ],
+    "p0_blocked_count": 1,
+    "non_secret": true,
+    "live_calls_performed": 0
+  }
+}
