@@ -59,7 +59,7 @@
       "planned_live_calls": 147,
       "evidence": "fallback smoke calls 4; wall 44.024s; harmful accepts 0; readiness blocked_missing_credentials",
       "recommended_action": "use only as explicit fallback/safety route; do not promote as primary latency path",
-      "execute_command": "python scripts/run_live_execution_sequence.py --execute-live --live-scope qwen",
+      "execute_command": "python scripts/live/run_live_execution_sequence.py --execute-live --live-scope qwen",
       "claim_boundary": "fallback_only_not_primary_latency_claim",
       "source_artifacts": [
         "outputs/runtime_safe_llm_window_batch/qwen36_flash_split20_top4_5_parallel_comparison.json",
@@ -78,7 +78,7 @@
       "planned_live_calls": 96,
       "evidence": "readiness blocked_missing_credentials; label-only route; no timeline writeback",
       "recommended_action": "use only for label/review evidence after credentials are ready",
-      "execute_command": "python scripts/run_live_execution_sequence.py --execute-live --live-scope omni",
+      "execute_command": "python scripts/live/run_live_execution_sequence.py --execute-live --live-scope omni",
       "claim_boundary": "label_only_no_timeline_writeback",
       "source_artifacts": [
         "outputs/research_progress_snapshot/omni48_live_call_manifest.md",

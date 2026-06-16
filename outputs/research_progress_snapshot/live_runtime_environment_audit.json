@@ -77,23 +77,23 @@
       "detail": "import_spec_found"
     },
     {
-      "check_id": "script:scripts/llm_window_batch_policy_eval.py",
+      "check_id": "script:scripts/llm/llm_window_batch_policy_eval.py",
       "check_type": "script",
-      "target": "scripts/llm_window_batch_policy_eval.py",
+      "target": "scripts/llm/llm_window_batch_policy_eval.py",
       "status": "pass",
       "detail": "script_exists"
     },
     {
-      "check_id": "script:scripts/omni_guard_window_batch.py",
+      "check_id": "script:scripts/llm/omni_guard_window_batch.py",
       "check_type": "script",
-      "target": "scripts/omni_guard_window_batch.py",
+      "target": "scripts/llm/omni_guard_window_batch.py",
       "status": "pass",
       "detail": "script_exists"
     },
     {
-      "check_id": "script:scripts/refresh_latest_research_artifacts.py",
+      "check_id": "script:scripts/misc/refresh_latest_research_artifacts.py",
       "check_type": "script",
-      "target": "scripts/refresh_latest_research_artifacts.py",
+      "target": "scripts/misc/refresh_latest_research_artifacts.py",
       "status": "pass",
       "detail": "script_exists"
     },

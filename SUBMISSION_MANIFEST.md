@@ -8,11 +8,13 @@ AliMeeting diarization development-pool result.
 - `README.md`: end-to-end reproducibility guide, metrics, artifacts, and
   promotion boundaries.
 - `pyproject.toml`, `requirements.txt`, `.env.example`: install and environment
-  setup.
-- `alimeeting_diarization_bench/`: benchmark package and model/evaluation code.
-- `scripts/`: reproducibility, batch, regression, self-check, audit, and search
-  scripts. `scripts/quick_start.py` is the shortest offline reproduction
-  entrypoint, and `scripts/README.md` is the script navigation guide.
+  setup. `pyproject.toml` registers the package and the stable console commands.
+- `alimeeting_diarization_bench/`: benchmark package, model/evaluation code, and
+  installed command dispatcher in `alimeeting_diarization_bench/cli.py`.
+- `scripts/`: categorized reproducibility, batch, regression, self-check, audit,
+  builder, search, live, and analysis scripts. `scripts/entrypoints/quick_start.py`
+  is the shortest offline reproduction entrypoint, and `scripts/README.md` is the
+  script navigation guide.
   Presentation-generation scripts are intentionally excluded from the final code
   package; only the finished deck is retained.
 - `docs/`: report-generation support files retained from the source workspace.
@@ -78,15 +80,25 @@ From this folder:
 ```bash
 python -m py_compile \
   alimeeting_diarization_bench/run.py \
+  alimeeting_diarization_bench/cli.py \
   alimeeting_diarization_bench/evaluation/runner.py \
-  scripts/run_realtime_diarization_system.py \
-  scripts/run_realtime_batch.py \
-  scripts/quick_start.py \
-  scripts/run_realtime_system_regression.py \
-  scripts/check_realtime_system_outputs.py \
-  scripts/search_external_candidate_surfaces.py
+  scripts/entrypoints/run_realtime_diarization_system.py \
+  scripts/entrypoints/run_realtime_batch.py \
+  scripts/entrypoints/quick_start.py \
+  scripts/entrypoints/run_realtime_system_regression.py \
+  scripts/entrypoints/check_realtime_system_outputs.py \
+  scripts/search/search_external_candidate_surfaces.py
 
 python -m alimeeting_diarization_bench.run --help
+python -m alimeeting_diarization_bench.cli --help
+```
+
+After `python -m pip install -e .`, the equivalent package commands are:
+
+```bash
+alimeeting-bench --help
+alimeeting-quick-start --no-assert
+alimeeting-final quick-start --no-assert
 ```
 
 The included latest regression artifacts should report:

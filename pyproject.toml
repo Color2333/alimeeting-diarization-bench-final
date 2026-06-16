@@ -22,6 +22,16 @@ dependencies = [
     "python-dotenv>=1.0.0",
 ]
 
+[project.scripts]
+alimeeting-bench = "alimeeting_diarization_bench.run:main"
+alimeeting-final = "alimeeting_diarization_bench.cli:main"
+alimeeting-quick-start = "alimeeting_diarization_bench.cli:quick_start"
+alimeeting-realtime = "alimeeting_diarization_bench.cli:realtime"
+alimeeting-batch = "alimeeting_diarization_bench.cli:batch"
+alimeeting-regression = "alimeeting_diarization_bench.cli:regression"
+alimeeting-self-check = "alimeeting_diarization_bench.cli:self_check"
+alimeeting-timeline-check = "alimeeting_diarization_bench.cli:timeline_check"
+
 [project.optional-dependencies]
 dev = [
     "pytest>=7.0.0",

@@ -6,10 +6,10 @@
 ## Implemented
 
 - Added uv environment scripts:
-  - `scripts/setup_diarizen_uv.sh`
-  - `scripts/run_diarizen_uv_smoke.sh`
-  - `scripts/setup_sortformer_uv.sh`
-  - `scripts/run_sortformer_uv_smoke.sh`
+  - `scripts/model_runs/setup_diarizen_uv.sh`
+  - `scripts/model_runs/run_diarizen_uv_smoke.sh`
+  - `scripts/model_runs/setup_sortformer_uv.sh`
+  - `scripts/model_runs/run_sortformer_uv_smoke.sh`
 - Added `sortformer` model entry for NVIDIA NeMo Sortformer:
   - model registry key: `sortformer`
   - wrapper: `alimeeting_diarization_bench/models/sortformer.py`
@@ -23,7 +23,7 @@
   - `pred_text`
   - `gt_text`
 - Added LLM post-processing utility:
-  - `scripts/llm_diarization_postprocess.py`
+  - `scripts/llm/llm_diarization_postprocess.py`
   - supports prompt export and OpenAI-compatible relabeling mode
 
 ## DiariZen Trial
@@ -68,8 +68,8 @@ Environment:
 Commands:
 
 ```bash
-bash scripts/setup_diarizen_uv.sh
-SAMPLES=8 OUTPUT_DIR=outputs/diarizen_uv_8 bash scripts/run_diarizen_uv_smoke.sh
+bash scripts/model_runs/setup_diarizen_uv.sh
+SAMPLES=8 OUTPUT_DIR=outputs/diarizen_uv_8 bash scripts/model_runs/run_diarizen_uv_smoke.sh
 ```
 
 Result on 8 stratified 30s segments:
@@ -182,9 +182,9 @@ What worked:
 Commands:
 
 ```bash
-bash scripts/setup_sortformer_uv.sh
+bash scripts/model_runs/setup_sortformer_uv.sh
 SAMPLES=8 WINDOW_SIZE=90 OUTPUT_DIR=outputs/sortformer_uv_8_90s \
-  bash scripts/run_sortformer_uv_smoke.sh
+  bash scripts/model_runs/run_sortformer_uv_smoke.sh
 ```
 
 Results:
@@ -236,7 +236,7 @@ Result:
 Prompt export:
 
 ```bash
-python scripts/llm_diarization_postprocess.py \
+python scripts/llm/llm_diarization_postprocess.py \
   outputs/llm_postprocess_smoke/pyannote-community-1/default__spk_none/summary.json \
   --mode export
 ```

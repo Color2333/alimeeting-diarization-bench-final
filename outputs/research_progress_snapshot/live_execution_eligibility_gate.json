@@ -42,8 +42,8 @@
   },
   "recommended_first_execute_command": "none_default_blocked_by_provider_route",
   "explicit_fallback_commands": [
-    "python scripts/run_live_execution_sequence.py --execute-live --live-scope qwen",
-    "python scripts/run_live_execution_sequence.py --execute-live --live-scope omni"
+    "python scripts/live/run_live_execution_sequence.py --execute-live --live-scope qwen",
+    "python scripts/live/run_live_execution_sequence.py --execute-live --live-scope omni"
   ],
   "rows": [
     {

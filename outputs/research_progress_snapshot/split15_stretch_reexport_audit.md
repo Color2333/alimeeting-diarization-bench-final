@@ -17,7 +17,7 @@
 ## Command
 
 ```bash
-/opt/homebrew/opt/python@3.11/bin/python3.11 scripts/llm_window_batch_policy_eval.py --mode export --decisions outputs/runtime_safe_policy_agent/sortformer_diarizen_120_decisions.jsonl --trigger-policy proxy_flagged_window --window-evidence outputs/deployable_abnormal_windows/sortformer_diarizen_120_proxy.csv --patch-id-file outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_patch_ids.txt --max-patches-per-call 15 --model deepseek-v4-flash --output-jsonl outputs/research_progress_snapshot/split15_stretch_reexport_prompts.jsonl
+/opt/homebrew/opt/python@3.11/bin/python3.11 scripts/llm/llm_window_batch_policy_eval.py --mode export --decisions outputs/runtime_safe_policy_agent/sortformer_diarizen_120_decisions.jsonl --trigger-policy proxy_flagged_window --window-evidence outputs/deployable_abnormal_windows/sortformer_diarizen_120_proxy.csv --patch-id-file outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_patch_ids.txt --max-patches-per-call 15 --model deepseek-v4-flash --output-jsonl outputs/research_progress_snapshot/split15_stretch_reexport_prompts.jsonl
 ```
 
 ## Reading

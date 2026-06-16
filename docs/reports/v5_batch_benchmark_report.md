@@ -271,8 +271,8 @@ python -m alimeeting_diarization_bench.run \
   --window-size 30
 
 # 查看排名
-python scripts/analyze_results.py ~/data/AliMeeting/batch_results_v2     # Phase A
-python scripts/analyze_results.py ~/data/AliMeeting/batch_results_full   # Phase B
+python scripts/analysis/analyze_results.py ~/data/AliMeeting/batch_results_v2     # Phase A
+python scripts/analysis/analyze_results.py ~/data/AliMeeting/batch_results_full   # Phase B
 ```
 
 数据文件位置：

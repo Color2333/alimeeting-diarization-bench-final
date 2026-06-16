@@ -48,7 +48,7 @@ Set DashScope/Bailian credentials only in the runner shell, then rerun readiness
 - Evidence: `outputs/research_progress_snapshot/live_command_surface_audit.json`; `outputs/research_progress_snapshot/live_input_integrity_audit.json`; `outputs/research_progress_snapshot/split20_resume_export_audit.json`
 
 ```bash
-python scripts/llm_window_batch_policy_eval.py --mode call --decisions outputs/runtime_safe_policy_agent/sortformer_diarizen_120_decisions.jsonl --trigger-policy proxy_flagged_window --window-evidence outputs/deployable_abnormal_windows/sortformer_diarizen_120_proxy.csv --patch-id-file outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_patch_ids.txt --window-id-file outputs/research_progress_snapshot/split20_deepseek_resume_after_top3_window_ids.txt --max-patches-per-call 20 --model deepseek-v4-flash --parallel-workers 8 --skip-existing-output --max-call-attempts 2 --retry-backoff-seconds 2.0 --output-jsonl outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_split20_resume_after_top3.jsonl
+python scripts/llm/llm_window_batch_policy_eval.py --mode call --decisions outputs/runtime_safe_policy_agent/sortformer_diarizen_120_decisions.jsonl --trigger-policy proxy_flagged_window --window-evidence outputs/deployable_abnormal_windows/sortformer_diarizen_120_proxy.csv --patch-id-file outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_patch_ids.txt --window-id-file outputs/research_progress_snapshot/split20_deepseek_resume_after_top3_window_ids.txt --max-patches-per-call 20 --model deepseek-v4-flash --parallel-workers 8 --skip-existing-output --max-call-attempts 2 --retry-backoff-seconds 2.0 --output-jsonl outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_split20_resume_after_top3.jsonl
 ```
 
 ### deepseek_postrun_scoring_gate
@@ -75,7 +75,7 @@ Keep current 4/4 SLO claims; do not promote split20/Omni/Qwen until scorecard an
 - Evidence: `outputs/research_progress_snapshot/omni48_live_call_manifest.json`; `outputs/research_progress_snapshot/live_command_surface_audit.json`
 
 ```bash
-python scripts/omni_guard_window_batch.py --input-windows-csv outputs/research_progress_snapshot/omni_expansion_manifest.csv --model qwen3.5-omni-flash --model qwen3.5-omni-plus-2026-03-15 --skip-existing-output --max-call-attempts 2 --retry-backoff-seconds 2.0 --output-jsonl outputs/omni_guard/omni_expansion_48_live.jsonl
+python scripts/llm/omni_guard_window_batch.py --input-windows-csv outputs/research_progress_snapshot/omni_expansion_manifest.csv --model qwen3.5-omni-flash --model qwen3.5-omni-plus-2026-03-15 --skip-existing-output --max-call-attempts 2 --retry-backoff-seconds 2.0 --output-jsonl outputs/omni_guard/omni_expansion_48_live.jsonl
 ```
 
 ### qwen_full_backup_boundary
@@ -84,7 +84,7 @@ python scripts/omni_guard_window_batch.py --input-windows-csv outputs/research_p
 - Evidence: `outputs/research_progress_snapshot/live_command_surface_audit.json`; `outputs/research_progress_snapshot/live_metric_extraction_contract.json`
 
 ```bash
-python scripts/llm_window_batch_policy_eval.py --mode call --decisions outputs/runtime_safe_policy_agent/sortformer_diarizen_120_decisions.jsonl --trigger-policy proxy_flagged_window --window-evidence outputs/deployable_abnormal_windows/sortformer_diarizen_120_proxy.csv --patch-id-file outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_patch_ids.txt --max-patches-per-call 20 --model qwen3.6-flash-2026-04-16 --parallel-workers 8 --skip-existing-output --max-call-attempts 2 --retry-backoff-seconds 2.0 --output-jsonl outputs/runtime_safe_llm_window_batch/qwen36_flash_high_risk_104w_split20_live.jsonl
+python scripts/llm/llm_window_batch_policy_eval.py --mode call --decisions outputs/runtime_safe_policy_agent/sortformer_diarizen_120_decisions.jsonl --trigger-policy proxy_flagged_window --window-evidence outputs/deployable_abnormal_windows/sortformer_diarizen_120_proxy.csv --patch-id-file outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_patch_ids.txt --max-patches-per-call 20 --model qwen3.6-flash-2026-04-16 --parallel-workers 8 --skip-existing-output --max-call-attempts 2 --retry-backoff-seconds 2.0 --output-jsonl outputs/runtime_safe_llm_window_batch/qwen36_flash_high_risk_104w_split20_live.jsonl
 ```
 
 ### final_refresh_validation_sync
@@ -93,7 +93,7 @@ python scripts/llm_window_batch_policy_eval.py --mode call --decisions outputs/r
 - Evidence: `outputs/research_progress_snapshot/refresh_latest_artifacts.json`; `outputs/research_progress_snapshot/latest_artifact_validation.json`; `outputs/research_progress_snapshot/report_ppt_traceability.json`
 
 ```text
-Run python scripts/refresh_latest_research_artifacts.py after live output and scoring artifacts are present.
+Run python scripts/misc/refresh_latest_research_artifacts.py after live output and scoring artifacts are present.
 ```
 
 ## Reading

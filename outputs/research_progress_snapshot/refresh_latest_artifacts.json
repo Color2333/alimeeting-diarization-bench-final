@@ -7,7 +7,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_timeline_review_audit.py"
+        "scripts/builders/build_timeline_review_audit.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.048,
@@ -17,7 +17,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_memory_update_replay.py"
+        "scripts/builders/build_memory_update_replay.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.057,
@@ -27,7 +27,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_system_timeline_summary.py",
+        "scripts/builders/build_system_timeline_summary.py",
         "--latencies",
         "outputs/latency_tradeoff/main_models.csv",
         "--segments",
@@ -55,7 +55,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/evaluate_rule_writeback_timeline.py",
+        "scripts/analysis/evaluate_rule_writeback_timeline.py",
         "--fast-summary",
         "outputs/sortformer_uv_120/nemo-sortformer-4spk-v1/default__spk_none/summary.json",
         "--slow-summary",
@@ -75,7 +75,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/validate_recover_selector_split.py"
+        "scripts/search/validate_recover_selector_split.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.106,
@@ -85,7 +85,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_selector_true_heldout_candidate_scan.py"
+        "scripts/builders/build_selector_true_heldout_candidate_scan.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.038,
@@ -95,7 +95,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/validate_selector_true_heldout_split_file.py"
+        "scripts/search/validate_selector_true_heldout_split_file.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.041,
@@ -105,7 +105,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/bootstrap_realtime_contract_metrics.py",
+        "scripts/analysis/bootstrap_realtime_contract_metrics.py",
         "--results",
         "outputs/rule_writeback_timeline_120/rule_writeback_timeline_results.csv",
         "--output-dir",
@@ -119,7 +119,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/analyze_realtime_contract_by_recording.py",
+        "scripts/analysis/analyze_realtime_contract_by_recording.py",
         "--results",
         "outputs/rule_writeback_timeline_120/rule_writeback_timeline_results.csv",
         "--output-dir",
@@ -133,7 +133,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_selector_true_heldout_protocol.py"
+        "scripts/builders/build_selector_true_heldout_protocol.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.035,
@@ -143,7 +143,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_omni_guard_summary.py"
+        "scripts/builders/build_omni_guard_summary.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.465,
@@ -153,7 +153,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/summarize_omni_window_batch.py",
+        "scripts/analysis/summarize_omni_window_batch.py",
         "outputs/omni_guard/omni_flash_plus_window_batch_12.csv"
       ],
       "returncode": 0,
@@ -164,7 +164,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/analyze_omni_acoustic_fusion.py"
+        "scripts/analysis/analyze_omni_acoustic_fusion.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.04,
@@ -174,7 +174,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_omni_expansion_manifest.py"
+        "scripts/builders/build_omni_expansion_manifest.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.039,
@@ -184,7 +184,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_omni48_live_call_manifest.py"
+        "scripts/builders/build_omni48_live_call_manifest.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.037,
@@ -194,7 +194,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/analyze_runtime_safe_llm_latency.py"
+        "scripts/analysis/analyze_runtime_safe_llm_latency.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.041,
@@ -204,7 +204,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/simulate_runtime_safe_llm_splitting.py"
+        "scripts/analysis/simulate_runtime_safe_llm_splitting.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.037,
@@ -214,7 +214,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/analyze_llm_guard_tuning.py"
+        "scripts/analysis/analyze_llm_guard_tuning.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.051,
@@ -224,7 +224,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/materialize_llm_guard_tuning.py"
+        "scripts/llm/materialize_llm_guard_tuning.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.052,
@@ -234,7 +234,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/analyze_runtime_safe_llm_guard.py",
+        "scripts/analysis/analyze_runtime_safe_llm_guard.py",
         "--batch-jsonl",
         "outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_tuned.jsonl",
         "--output-csv",
@@ -253,7 +253,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/materialize_tuned_writeback_gate.py"
+        "scripts/llm/materialize_tuned_writeback_gate.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.057,
@@ -263,7 +263,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/evaluate_rule_writeback_timeline.py",
+        "scripts/analysis/evaluate_rule_writeback_timeline.py",
         "--fast-summary",
         "outputs/sortformer_uv_120/nemo-sortformer-4spk-v1/default__spk_none/summary.json",
         "--slow-summary",
@@ -283,7 +283,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/audit_runtime_evidence_contract.py"
+        "scripts/audits/audit_runtime_evidence_contract.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.275,
@@ -293,7 +293,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_der_latency_pareto.py"
+        "scripts/builders/build_der_latency_pareto.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.042,
@@ -303,7 +303,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_system_experiment_matrix.py"
+        "scripts/builders/build_system_experiment_matrix.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.057,
@@ -313,7 +313,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_runtime_latency_budget_ledger.py"
+        "scripts/builders/build_runtime_latency_budget_ledger.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.037,
@@ -323,7 +323,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_stage_latency_slo_audit.py"
+        "scripts/builders/build_stage_latency_slo_audit.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.035,
@@ -333,7 +333,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_research_progress_snapshot.py"
+        "scripts/builders/build_research_progress_snapshot.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.036,
@@ -343,7 +343,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_research_claims_manifest.py"
+        "scripts/builders/build_research_claims_manifest.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.035,
@@ -353,7 +353,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_runtime_replay_manifest.py"
+        "scripts/builders/build_runtime_replay_manifest.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.035,
@@ -363,7 +363,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_split20_full_live_manifest.py"
+        "scripts/live/build_split20_full_live_manifest.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.044,
@@ -373,7 +373,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_split20_resume_export_audit.py"
+        "scripts/live/build_split20_resume_export_audit.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.55,
@@ -383,7 +383,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_split_policy_optimization.py"
+        "scripts/live/build_split_policy_optimization.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.043,
@@ -393,7 +393,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_split15_stretch_reexport_audit.py"
+        "scripts/live/build_split15_stretch_reexport_audit.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.395,
@@ -403,7 +403,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_live_run_readiness.py"
+        "scripts/live/build_live_run_readiness.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.05,
@@ -413,7 +413,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_live_agent_execution_plan.py"
+        "scripts/live/build_live_agent_execution_plan.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.036,
@@ -423,7 +423,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_live_postrun_metrics_closure.py"
+        "scripts/live/build_live_postrun_metrics_closure.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.037,
@@ -433,7 +433,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_live_output_audit.py"
+        "scripts/live/build_live_output_audit.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.044,
@@ -443,7 +443,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_live_scoring_readiness.py"
+        "scripts/live/build_live_scoring_readiness.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.037,
@@ -453,7 +453,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_live_input_integrity_audit.py"
+        "scripts/live/build_live_input_integrity_audit.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.044,
@@ -463,7 +463,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_live_execution_runbook.py"
+        "scripts/live/build_live_execution_runbook.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.036,
@@ -473,7 +473,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_live_command_surface_audit.py"
+        "scripts/live/build_live_command_surface_audit.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.038,
@@ -483,7 +483,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_live_output_repair_plan.py"
+        "scripts/live/build_live_output_repair_plan.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.037,
@@ -493,7 +493,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/run_live_execution_sequence.py"
+        "scripts/live/run_live_execution_sequence.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.038,
@@ -503,7 +503,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_live_execution_receipt_audit.py"
+        "scripts/live/build_live_execution_receipt_audit.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.037,
@@ -513,7 +513,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_live_resume_state_audit.py"
+        "scripts/live/build_live_resume_state_audit.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.037,
@@ -523,7 +523,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_live_runtime_environment_audit.py"
+        "scripts/live/build_live_runtime_environment_audit.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.037,
@@ -533,7 +533,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_live_execution_timing_plan.py"
+        "scripts/live/build_live_execution_timing_plan.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.037,
@@ -543,7 +543,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_live_retry_budget_audit.py"
+        "scripts/live/build_live_retry_budget_audit.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.035,
@@ -553,7 +553,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_live_token_quota_budget_audit.py"
+        "scripts/live/build_live_token_quota_budget_audit.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.044,
@@ -563,7 +563,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_live_parallelism_sensitivity.py"
+        "scripts/live/build_live_parallelism_sensitivity.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.036,
@@ -573,7 +573,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_live_failure_recovery_playbook.py"
+        "scripts/live/build_live_failure_recovery_playbook.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.036,
@@ -583,7 +583,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_research_next_experiment_queue.py"
+        "scripts/builders/build_research_next_experiment_queue.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.037,
@@ -593,7 +593,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_post_live_claim_promotion_gate.py"
+        "scripts/live/build_post_live_claim_promotion_gate.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.037,
@@ -603,7 +603,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_live_metric_extraction_contract.py"
+        "scripts/live/build_live_metric_extraction_contract.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.037,
@@ -613,7 +613,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_live_output_schema_contract.py"
+        "scripts/live/build_live_output_schema_contract.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.036,
@@ -623,7 +623,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_latency_risk_margin_audit.py"
+        "scripts/live/build_latency_risk_margin_audit.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.037,
@@ -633,7 +633,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_post_live_acceptance_scorecard.py"
+        "scripts/live/build_post_live_acceptance_scorecard.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.036,
@@ -643,7 +643,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_live_execution_handoff_packet.py"
+        "scripts/live/build_live_execution_handoff_packet.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.037,
@@ -653,7 +653,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_post_live_latency_claim_matrix.py"
+        "scripts/live/build_post_live_latency_claim_matrix.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.037,
@@ -663,7 +663,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_post_live_scoring_execution_plan.py"
+        "scripts/live/build_post_live_scoring_execution_plan.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.037,
@@ -673,7 +673,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/run_post_live_scoring_sequence.py"
+        "scripts/live/run_post_live_scoring_sequence.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.036,
@@ -683,7 +683,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_post_live_scoring_output_audit.py"
+        "scripts/live/build_post_live_scoring_output_audit.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.038,
@@ -693,7 +693,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_post_live_evidence_dependency_dag.py"
+        "scripts/live/build_post_live_evidence_dependency_dag.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.039,
@@ -703,7 +703,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_live_execution_bundle.py"
+        "scripts/live/build_live_execution_bundle.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.038,
@@ -713,7 +713,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_post_live_time_metric_statistics_plan.py"
+        "scripts/live/build_post_live_time_metric_statistics_plan.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.037,
@@ -723,7 +723,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_post_live_time_metric_extractor.py"
+        "scripts/live/build_post_live_time_metric_extractor.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.04,
@@ -733,7 +733,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_post_live_promotion_preflight_audit.py"
+        "scripts/live/build_post_live_promotion_preflight_audit.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.035,
@@ -743,7 +743,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_post_live_scoring_receipt_audit.py"
+        "scripts/live/build_post_live_scoring_receipt_audit.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.036,
@@ -753,7 +753,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_post_live_time_metric_receipt_audit.py"
+        "scripts/live/build_post_live_time_metric_receipt_audit.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.036,
@@ -763,7 +763,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_post_live_claim_promotion_receipt_audit.py"
+        "scripts/live/build_post_live_claim_promotion_receipt_audit.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.037,
@@ -773,7 +773,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_live_execution_eligibility_gate.py"
+        "scripts/live/build_live_execution_eligibility_gate.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.036,
@@ -783,7 +783,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_latency_risk_mitigation_plan.py"
+        "scripts/live/build_latency_risk_mitigation_plan.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.035,
@@ -793,7 +793,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_phase_result_scorecard.py"
+        "scripts/live/build_phase_result_scorecard.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.037,
@@ -803,7 +803,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_live_provider_routing_decision.py"
+        "scripts/live/build_live_provider_routing_decision.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.036,
@@ -813,7 +813,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/update_progress_pptx_latest_results.py"
+        "final_package_excluded/update_progress_pptx_latest_results.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 9.753,
@@ -823,7 +823,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_report_ppt_traceability.py"
+        "final_package_excluded/build_report_ppt_traceability.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.14,
@@ -833,7 +833,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/run_live_execution_sequence.py"
+        "scripts/live/run_live_execution_sequence.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.036,
@@ -843,7 +843,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_live_execution_receipt_audit.py"
+        "scripts/live/build_live_execution_receipt_audit.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.036,
@@ -853,7 +853,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_post_live_claim_promotion_gate.py"
+        "scripts/live/build_post_live_claim_promotion_gate.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.036,
@@ -863,7 +863,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_latency_risk_margin_audit.py"
+        "scripts/live/build_latency_risk_margin_audit.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.036,
@@ -873,7 +873,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_post_live_acceptance_scorecard.py"
+        "scripts/live/build_post_live_acceptance_scorecard.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.036,
@@ -883,7 +883,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_live_execution_handoff_packet.py"
+        "scripts/live/build_live_execution_handoff_packet.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.036,
@@ -893,7 +893,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_post_live_latency_claim_matrix.py"
+        "scripts/live/build_post_live_latency_claim_matrix.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.036,
@@ -903,7 +903,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_post_live_scoring_execution_plan.py"
+        "scripts/live/build_post_live_scoring_execution_plan.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.036,
@@ -913,7 +913,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/run_post_live_scoring_sequence.py"
+        "scripts/live/run_post_live_scoring_sequence.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.036,
@@ -923,7 +923,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_post_live_scoring_output_audit.py"
+        "scripts/live/build_post_live_scoring_output_audit.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.036,
@@ -933,7 +933,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_post_live_evidence_dependency_dag.py"
+        "scripts/live/build_post_live_evidence_dependency_dag.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.035,
@@ -943,7 +943,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_live_execution_bundle.py"
+        "scripts/live/build_live_execution_bundle.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.036,
@@ -953,7 +953,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_post_live_time_metric_statistics_plan.py"
+        "scripts/live/build_post_live_time_metric_statistics_plan.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.036,
@@ -963,7 +963,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_post_live_time_metric_extractor.py"
+        "scripts/live/build_post_live_time_metric_extractor.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.039,
@@ -973,7 +973,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_post_live_promotion_preflight_audit.py"
+        "scripts/live/build_post_live_promotion_preflight_audit.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.036,
@@ -983,7 +983,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_post_live_scoring_receipt_audit.py"
+        "scripts/live/build_post_live_scoring_receipt_audit.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.036,
@@ -993,7 +993,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_post_live_time_metric_receipt_audit.py"
+        "scripts/live/build_post_live_time_metric_receipt_audit.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.036,
@@ -1003,7 +1003,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_post_live_claim_promotion_receipt_audit.py"
+        "scripts/live/build_post_live_claim_promotion_receipt_audit.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.038,
@@ -1013,7 +1013,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_live_execution_eligibility_gate.py"
+        "scripts/live/build_live_execution_eligibility_gate.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.038,
@@ -1023,7 +1023,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_latency_risk_mitigation_plan.py"
+        "scripts/live/build_latency_risk_mitigation_plan.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.038,
@@ -1033,7 +1033,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_phase_result_scorecard.py"
+        "scripts/live/build_phase_result_scorecard.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.042,
@@ -1043,7 +1043,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/build_live_provider_routing_decision.py"
+        "scripts/live/build_live_provider_routing_decision.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.036,
@@ -1053,7 +1053,7 @@
     {
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/validate_latest_research_artifacts.py"
+        "scripts/search/validate_latest_research_artifacts.py"
       ],
       "returncode": 0,
       "elapsed_seconds": 0.15,

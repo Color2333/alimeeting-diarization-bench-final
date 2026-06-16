@@ -14,11 +14,11 @@
 - Added `diarizen` model entry for `BUT-FIT/diarizen-wavlm-large-s80-md-v2`.
 - Split result output directories by model and speaker-count mode to avoid overwriting comparisons.
 - Added helper scripts:
-  - `scripts/run_speaker_count_ablation.sh`
-  - `scripts/run_local_sota_models.sh`
-  - `scripts/run_pyannote_param_grid.sh`
-  - `scripts/run_pyannote_fafb_grid.sh`
-  - `scripts/summarize_param_tuning.py`
+  - `scripts/model_runs/run_speaker_count_ablation.sh`
+  - `scripts/model_runs/run_local_sota_models.sh`
+  - `scripts/model_runs/run_pyannote_param_grid.sh`
+  - `scripts/model_runs/run_pyannote_fafb_grid.sh`
+  - `scripts/analysis/summarize_param_tuning.py`
 
 ## Initial Results
 

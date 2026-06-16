@@ -214,16 +214,16 @@ LLM 不直接做 diarization。只在有 ASR 文本和候选 speaker timeline �
   - `high_latency`
   - `very_high_latency`
 - 新增脚本：
-  - `scripts/run_streaming_sortformer_latency_sweep.sh`
-  - `scripts/analyze_one_shot_identity_memory.py`
-  - `scripts/analyze_voiceprint_memory.py`
+  - `scripts/model_runs/run_streaming_sortformer_latency_sweep.sh`
+  - `scripts/analysis/analyze_one_shot_identity_memory.py`
+  - `scripts/analysis/analyze_voiceprint_memory.py`
 
 Streaming Sortformer low-latency smoke：
 
 ```bash
 SAMPLES=2 PRESETS=low_latency WINDOW_SIZE=90 \
 OUTPUT_DIR=outputs/streaming_sortformer_latency_smoke \
-bash scripts/run_streaming_sortformer_latency_sweep.sh
+bash scripts/model_runs/run_streaming_sortformer_latency_sweep.sh
 ```
 
 结果：
@@ -241,7 +241,7 @@ bash scripts/run_streaming_sortformer_latency_sweep.sh
 One-shot identity memory simulation：
 
 ```bash
-python scripts/analyze_one_shot_identity_memory.py \
+python scripts/analysis/analyze_one_shot_identity_memory.py \
   outputs/sortformer_uv_24/nemo-sortformer-4spk-v1/default__spk_none/summary.json \
   outputs/diarizen_uv_24/diarizen-large-v2/default__spk_none/summary.json \
   --enrollment-windows 1 \
@@ -264,7 +264,7 @@ python scripts/analyze_one_shot_identity_memory.py \
 Real voiceprint memory prototype：
 
 ```bash
-.venv_diarizen/bin/python scripts/analyze_voiceprint_memory.py \
+.venv_diarizen/bin/python scripts/analysis/analyze_voiceprint_memory.py \
   outputs/sortformer_uv_24/nemo-sortformer-4spk-v1/default__spk_none/summary.json \
   outputs/diarizen_uv_24/diarizen-large-v2/default__spk_none/summary.json \
   --enrollment-windows 1 \
@@ -304,7 +304,7 @@ Real voiceprint memory prototype：
 Latency / RTF 对照：
 
 ```bash
-python scripts/analyze_latency_tradeoff.py \
+python scripts/analysis/analyze_latency_tradeoff.py \
   outputs/sortformer_uv_48/nemo-sortformer-4spk-v1/default__spk_none/summary.json \
   outputs/diarizen_uv_48/diarizen-large-v2/default__spk_none/summary.json \
   --output outputs/latency_tradeoff/main_models.csv
@@ -330,7 +330,7 @@ python scripts/analyze_latency_tradeoff.py \
 DER-latency Pareto 汇总：
 
 ```bash
-python scripts/build_der_latency_pareto.py
+python scripts/builders/build_der_latency_pareto.py
 ```
 
 | Candidate | Role | Scope | DER | Avg delay | P95 delay | RTF | Evidence | Verdict |
@@ -360,7 +360,7 @@ Pareto 结论：
 Abnormal-window detector：
 
 ```bash
-python scripts/analyze_abnormal_windows.py \
+python scripts/analysis/analyze_abnormal_windows.py \
   outputs/sortformer_uv_48/nemo-sortformer-4spk-v1/default__spk_none/summary.json \
   outputs/diarizen_uv_48/diarizen-large-v2/default__spk_none/summary.json \
   --output outputs/abnormal_windows/sortformer_diarizen_48.csv
@@ -390,7 +390,7 @@ python scripts/analyze_abnormal_windows.py \
 Fast-to-Slow correction prototype：
 
 ```bash
-python scripts/analyze_fast_slow_correction.py \
+python scripts/analysis/analyze_fast_slow_correction.py \
   --fast-summary outputs/sortformer_uv_48/nemo-sortformer-4spk-v1/default__spk_none/summary.json \
   --slow-summary outputs/diarizen_uv_48/diarizen-large-v2/default__spk_none/summary.json \
   --output outputs/fast_slow_correction/sortformer_diarizen_48_patches.csv
@@ -426,7 +426,7 @@ Routing 统计：
 Segment-level correction patch：
 
 ```bash
-python scripts/analyze_segment_level_patches.py \
+python scripts/analysis/analyze_segment_level_patches.py \
   --fast-summary outputs/sortformer_uv_48/nemo-sortformer-4spk-v1/default__spk_none/summary.json \
   --slow-summary outputs/diarizen_uv_48/diarizen-large-v2/default__spk_none/summary.json \
   --patch-output outputs/segment_patches/sortformer_diarizen_48_patches.csv
@@ -464,7 +464,7 @@ patch 计数：
 Policy Agent / LLM 规范指导层：
 
 ```bash
-python scripts/policy_agent_decisions.py \
+python scripts/llm/policy_agent_decisions.py \
   --patches outputs/segment_patches/sortformer_diarizen_48_patches.csv \
   --windows outputs/segment_patches/sortformer_diarizen_48_patches_windows.csv \
   --abnormal-windows outputs/abnormal_windows/sortformer_diarizen_48.csv \
@@ -517,7 +517,7 @@ Agent 输出：
 真实 LLM Policy Agent mixed patch 对照：
 
 ```bash
-python scripts/llm_policy_agent_eval.py \
+python scripts/llm/llm_policy_agent_eval.py \
   --mode call \
   --decisions outputs/policy_agent/sortformer_diarizen_48_decisions.jsonl \
   --selection mixed \
@@ -548,7 +548,7 @@ python scripts/llm_policy_agent_eval.py \
 LLM 触发预算：
 
 ```bash
-python scripts/analyze_llm_trigger_budget.py
+python scripts/analysis/analyze_llm_trigger_budget.py
 ```
 
 48 段当前共有 953 个结构化 patch，覆盖 48 个 30s 窗口。关键不是“能不能调用 LLM”，而是**用规则 gating 控制调用量**：
@@ -580,7 +580,7 @@ python scripts/analyze_llm_trigger_budget.py
 LLM 安全画像：
 
 ```bash
-python scripts/analyze_llm_policy_safety.py
+python scripts/analysis/analyze_llm_policy_safety.py
 ```
 
 该评估在 LLM 调用后离线 join `gt_support_ratio_eval_only`，没有把真值暴露给 LLM。安全口径：
@@ -608,7 +608,7 @@ python scripts/analyze_llm_policy_safety.py
 推荐 LLM 路由：
 
 ```bash
-python scripts/build_llm_policy_routing.py
+python scripts/builders/build_llm_policy_routing.py
 ```
 
 | Route | Trigger | Model | Calls | Async RTF | Safety | Action |
@@ -635,8 +635,8 @@ python scripts/build_llm_policy_routing.py
 端到端时间线模拟与当前系统时间指标：
 
 ```bash
-python scripts/simulate_dual_agent_timeline.py
-python scripts/build_system_timeline_summary.py
+python scripts/analysis/simulate_dual_agent_timeline.py
+python scripts/builders/build_system_timeline_summary.py
 ```
 
 口径：旧模拟用于证明 “逐 patch 调 LLM 会排队失控”；当前系统口径以实测 Fast/Slow/LLM batch 时间为准。Fast 在窗口结束后输出 provisional timeline，DiariZen 后台输出 mature patch，Rule Agent 先做 low-risk writeback，LLM 只处理高风险 guard 或离线审计。
@@ -660,14 +660,14 @@ python scripts/build_system_timeline_summary.py
 真实 window-batch LLM 验证（legacy 4-window development probe，当前主口径见后文 runtime-safe 104-window guard）：
 
 ```bash
-python scripts/llm_window_batch_policy_eval.py \
+python scripts/llm/llm_window_batch_policy_eval.py \
   --mode call \
   --decisions outputs/policy_agent/sortformer_diarizen_48_decisions.jsonl \
   --trigger-policy high_risk_quarantine \
   --model deepseek-v4-flash \
   --output-jsonl outputs/llm_window_batch/deepseek_high_risk_48.jsonl
 
-python scripts/summarize_llm_window_batch_results.py
+python scripts/analysis/summarize_llm_window_batch_results.py
 ```
 
 | Run | Model | Windows | Patches | Window decisions | Patch decisions | Avg call | Avg correction delay | Max correction delay |
@@ -677,7 +677,7 @@ python scripts/summarize_llm_window_batch_results.py
 batch safety：
 
 ```bash
-python scripts/analyze_llm_window_batch_safety.py
+python scripts/analysis/analyze_llm_window_batch_safety.py
 ```
 
 | Windows | Patches | Window decisions | Patch decisions | Safe accepts | Harmful accepts | Conservative blocks | Safe blocks | High-error quarantined |
@@ -696,7 +696,7 @@ python scripts/analyze_llm_window_batch_safety.py
 high-risk guard 模型对比：
 
 ```bash
-python scripts/build_guard_model_comparison.py
+python scripts/builders/build_guard_model_comparison.py
 ```
 
 | Role | Model | Scope | Windows | Patches | Window decisions | Patch decisions | Avg call | Avg correction delay | Max correction delay | Safety |
@@ -717,25 +717,25 @@ Omni audio guard smoke：
 这一步测试全模态模型不是为了替代 diarization，而是验证它能否作为实时系统的“早期兜底感知 Agent”：听短音频，给结构化风险、粗 speaker count、是否 defer/quarantine。
 
 ```bash
-python scripts/omni_audio_guard_smoke.py \
+python scripts/llm/omni_audio_guard_smoke.py \
   --model qwen3.5-omni-flash \
   --model qwen3.5-omni-plus \
   --duration-sec 8 \
   --output-jsonl outputs/omni_guard/omni_flash_plus_audio_guard_8s.jsonl
 
-python scripts/omni_audio_guard_smoke.py \
+python scripts/llm/omni_audio_guard_smoke.py \
   --model qwen3.5-omni-flash-2026-03-15 \
   --model qwen3.5-omni-plus-2026-03-15 \
   --duration-sec 8 \
   --output-jsonl outputs/omni_guard/omni_dated_audio_guard_8s.jsonl
 
-python scripts/omni_realtime_guard_smoke.py \
+python scripts/llm/omni_realtime_guard_smoke.py \
   --model qwen3.5-omni-flash-realtime \
   --duration-sec 8 \
   --timeout-sec 30 \
   --output-jsonl outputs/omni_guard/qwen35_omni_flash_realtime_guard_8s.jsonl
 
-python scripts/build_omni_guard_summary.py
+python scripts/builders/build_omni_guard_summary.py
 ```
 
 | Model | Interface | Clip | Call | First text | Schema | Risk | Quarantine | Defer | Direct diarizer | Reason |
@@ -759,14 +759,14 @@ Omni window-batch 小样本：
 为验证 Omni 是否能区分真实异常窗口，自动从 48 窗口中选取 high / medium / clean 各 2 个窗口，每个窗口取开头 8s 音频：
 
 ```bash
-python scripts/omni_guard_window_batch.py \
+python scripts/llm/omni_guard_window_batch.py \
   --model qwen3.5-omni-flash \
   --model qwen3.5-omni-plus-2026-03-15 \
   --per-bucket 4 \
   --clip-sec 8 \
   --output-jsonl outputs/omni_guard/omni_flash_plus_window_batch_12.jsonl
 
-python scripts/summarize_omni_window_batch.py \
+python scripts/analysis/summarize_omni_window_batch.py \
   outputs/omni_guard/omni_flash_plus_window_batch_12.csv
 ```
 
@@ -786,7 +786,7 @@ python scripts/summarize_omni_window_batch.py \
 Omni + acoustic proxy fusion smoke：
 
 ```bash
-python scripts/analyze_omni_acoustic_fusion.py
+python scripts/analysis/analyze_omni_acoustic_fusion.py
 ```
 
 产物：
@@ -808,7 +808,7 @@ python scripts/analyze_omni_acoustic_fusion.py
 qwen3.7-plus high-risk 二审补测：
 
 ```bash
-python scripts/llm_window_batch_policy_eval.py \
+python scripts/llm/llm_window_batch_policy_eval.py \
   --mode call \
   --decisions outputs/policy_agent/sortformer_diarizen_48_decisions.jsonl \
   --trigger-policy high_risk_quarantine \
@@ -816,7 +816,7 @@ python scripts/llm_window_batch_policy_eval.py \
   --max-windows 2 \
   --output-jsonl outputs/llm_window_batch/qwen37_plus_high_risk_2w_48.jsonl
 
-python scripts/summarize_llm_window_batch_results.py \
+python scripts/analysis/summarize_llm_window_batch_results.py \
   --batch-jsonl outputs/llm_window_batch/qwen37_plus_high_risk_2w_48.jsonl \
   --output-csv outputs/llm_window_batch/qwen37_plus_high_risk_2w_summary.csv \
   --output-md outputs/llm_window_batch/qwen37_plus_high_risk_2w_summary.md
@@ -841,7 +841,7 @@ batch safety：
 qwen candidate-audit batch smoke：
 
 ```bash
-python scripts/llm_window_batch_policy_eval.py \
+python scripts/llm/llm_window_batch_policy_eval.py \
   --mode call \
   --decisions outputs/policy_agent/sortformer_diarizen_48_decisions.jsonl \
   --trigger-policy semantic_label_smoothing \
@@ -876,7 +876,7 @@ evidence-enhanced qwen batch：
 - 不加入 DER、GT speech、label correctness、global identity accuracy 等 eval-only 字段。
 
 ```bash
-python scripts/llm_window_batch_policy_eval.py \
+python scripts/llm/llm_window_batch_policy_eval.py \
   --mode call \
   --decisions outputs/policy_agent/sortformer_diarizen_48_decisions.jsonl \
   --trigger-policy semantic_label_smoothing \
@@ -909,11 +909,11 @@ batch safety：
 ASR semantic evidence 接口：
 
 ```bash
-python scripts/build_asr_semantic_evidence.py \
+python scripts/builders/build_asr_semantic_evidence.py \
   --input docs/examples/asr_semantic_evidence_input_example.csv \
   --output outputs/asr_semantic_evidence/example_window_evidence.csv
 
-python scripts/llm_window_batch_policy_eval.py \
+python scripts/llm/llm_window_batch_policy_eval.py \
   --mode export \
   --decisions outputs/policy_agent/sortformer_diarizen_48_decisions.jsonl \
   --trigger-policy semantic_label_smoothing \
@@ -957,11 +957,11 @@ ASR input schema：
 现有 `outputs/voiceprint_memory/*.csv` 只有 recording-level 指标，不能直接支持 patch 写回。因此新增 patch-level voiceprint evidence schema：
 
 ```bash
-python scripts/build_voiceprint_patch_evidence.py \
+python scripts/builders/build_voiceprint_patch_evidence.py \
   --input docs/examples/voiceprint_patch_evidence_input_example.csv \
   --output outputs/voiceprint_patch_evidence/example_patch_evidence.csv
 
-python scripts/llm_window_batch_policy_eval.py \
+python scripts/llm/llm_window_batch_policy_eval.py \
   --mode export \
   --decisions outputs/policy_agent/sortformer_diarizen_48_decisions.jsonl \
   --trigger-policy semantic_label_smoothing \
@@ -1001,13 +1001,13 @@ Voiceprint input schema：
 真实 patch-level voiceprint smoke：
 
 ```bash
-.venv_diarizen/bin/python scripts/generate_patch_voiceprint_evidence.py \
+.venv_diarizen/bin/python scripts/llm/generate_patch_voiceprint_evidence.py \
   --trigger-policy semantic_label_smoothing \
   --patch-ids-from-prompt outputs/llm_window_batch/qwen36_flash_semantic2_asr_example_prompts.jsonl \
   --max-patches 80 \
   --output outputs/voiceprint_patch_evidence/real_semantic2_prompt_patch_evidence.csv
 
-python scripts/llm_window_batch_policy_eval.py \
+python scripts/llm/llm_window_batch_policy_eval.py \
   --mode call \
   --decisions outputs/policy_agent/sortformer_diarizen_48_decisions.jsonl \
   --trigger-policy semantic_label_smoothing \
@@ -1047,7 +1047,7 @@ Safety：
 high-confidence voiceprint targeted test：
 
 ```bash
-python scripts/llm_window_batch_policy_eval.py \
+python scripts/llm/llm_window_batch_policy_eval.py \
   --mode call \
   --decisions outputs/policy_agent/sortformer_diarizen_48_decisions.jsonl \
   --trigger-policy semantic_label_smoothing \
@@ -1081,15 +1081,15 @@ oracle transcript upper-bound control：
 为了隔离“ASR 语义是否足够强”这个变量，新增了一个非部署型控制实验：从 benchmark summary 里的 `gt_text` 导出窗口对齐文本，再压缩成 ASR semantic evidence。该证据明确标记为 `oracle_transcript_upper_bound_not_deployable`，不把 ground-truth speaker label、DER、support correctness 暴露给 LLM。
 
 ```bash
-python scripts/build_oracle_asr_transcript_input.py \
+python scripts/builders/build_oracle_asr_transcript_input.py \
   --window-id R8007_M8010:30:0 \
   --output outputs/asr_semantic_evidence/oracle_highconf_r8007_m8010_0_input.csv
 
-python scripts/build_asr_semantic_evidence.py \
+python scripts/builders/build_asr_semantic_evidence.py \
   --input outputs/asr_semantic_evidence/oracle_highconf_r8007_m8010_0_input.csv \
   --output outputs/asr_semantic_evidence/oracle_highconf_r8007_m8010_0_evidence.csv
 
-python scripts/llm_window_batch_policy_eval.py \
+python scripts/llm/llm_window_batch_policy_eval.py \
   --mode call \
   --decisions outputs/policy_agent/sortformer_diarizen_48_decisions.jsonl \
   --trigger-policy semantic_label_smoothing \
@@ -1126,7 +1126,7 @@ python scripts/llm_window_batch_policy_eval.py \
 low-risk writeback gate 审计：
 
 ```bash
-python scripts/analyze_writeback_gate.py \
+python scripts/analysis/analyze_writeback_gate.py \
   --decisions outputs/policy_agent/sortformer_diarizen_48_decisions.jsonl \
   --voiceprint-evidence outputs/voiceprint_patch_evidence/real_semantic_all_patch_evidence.csv \
   --output-csv outputs/writeback_gate/gate_decisions.csv \
@@ -1171,7 +1171,7 @@ semantic defer 被挡住的主因：
 patch-level voiceprint evidence 汇总：
 
 ```bash
-python scripts/summarize_voiceprint_patch_evidence.py
+python scripts/analysis/summarize_voiceprint_patch_evidence.py
 ```
 
 产物：
@@ -1188,7 +1188,7 @@ python scripts/summarize_voiceprint_patch_evidence.py
 120-window patch-level voiceprint 扩展：
 
 ```bash
-.venv_diarizen/bin/python scripts/generate_patch_voiceprint_evidence.py \
+.venv_diarizen/bin/python scripts/llm/generate_patch_voiceprint_evidence.py \
   --patches outputs/policy_agent/sortformer_diarizen_120_decisions.csv \
   --fast-summary outputs/sortformer_uv_120/nemo-sortformer-4spk-v1/default__spk_none/summary.json \
   --slow-summary outputs/diarizen_uv_120/diarizen-large-v2/default__spk_none/summary.json \
@@ -1196,14 +1196,14 @@ python scripts/summarize_voiceprint_patch_evidence.py
   --max-patches 0 \
   --output outputs/voiceprint_patch_evidence/real_semantic_120_patch_evidence.csv
 
-python scripts/analyze_writeback_gate.py \
+python scripts/analysis/analyze_writeback_gate.py \
   --decisions outputs/policy_agent/sortformer_diarizen_120_decisions.jsonl \
   --voiceprint-evidence outputs/voiceprint_patch_evidence/real_semantic_120_patch_evidence.csv \
   --output-csv outputs/writeback_gate_120/gate_decisions.csv \
   --summary-json outputs/writeback_gate_120/gate_summary.json \
   --summary-md outputs/writeback_gate_120/gate_summary.md
 
-python scripts/summarize_voiceprint_patch_evidence.py \
+python scripts/analysis/summarize_voiceprint_patch_evidence.py \
   --voiceprint-evidence outputs/voiceprint_patch_evidence/real_semantic_120_patch_evidence.csv \
   --gate-summary outputs/writeback_gate_120/gate_summary.json \
   --output-json outputs/voiceprint_patch_evidence/patch_evidence_120_summary.json \
@@ -1219,9 +1219,9 @@ python scripts/summarize_voiceprint_patch_evidence.py \
 clean no-abnormal + high-support candidate audit：
 
 ```bash
-python scripts/audit_clean_voiceprint_candidates.py
+python scripts/audits/audit_clean_voiceprint_candidates.py
 
-.venv_diarizen/bin/python scripts/generate_patch_voiceprint_evidence.py \
+.venv_diarizen/bin/python scripts/llm/generate_patch_voiceprint_evidence.py \
   --patches outputs/policy_agent/sortformer_diarizen_120_decisions.csv \
   --fast-summary outputs/sortformer_uv_120/nemo-sortformer-4spk-v1/default__spk_none/summary.json \
   --slow-summary outputs/diarizen_uv_120/diarizen-large-v2/default__spk_none/summary.json \
@@ -1230,7 +1230,7 @@ python scripts/audit_clean_voiceprint_candidates.py
   --max-patches 0 \
   --output outputs/voiceprint_patch_evidence/clean_candidate_120_voiceprint.csv
 
-python scripts/audit_clean_voiceprint_candidates.py \
+python scripts/audits/audit_clean_voiceprint_candidates.py \
   --voiceprint-evidence outputs/voiceprint_patch_evidence/clean_candidate_120_voiceprint.csv
 ```
 
@@ -1243,7 +1243,7 @@ python scripts/audit_clean_voiceprint_candidates.py \
 clean high rule-auto LLM audit：
 
 ```bash
-python scripts/llm_window_batch_policy_eval.py --mode export \
+python scripts/llm/llm_window_batch_policy_eval.py --mode export \
   --decisions outputs/policy_agent/sortformer_diarizen_120_decisions.jsonl \
   --trigger-policy all \
   --patch-id-file outputs/voiceprint_patch_evidence/clean_high_rule_auto_audit_patch_ids.txt \
@@ -1252,7 +1252,7 @@ python scripts/llm_window_batch_policy_eval.py --mode export \
   --model qwen3.6-flash-2026-04-16 \
   --output-jsonl outputs/llm_window_batch/qwen36_flash_clean_high_rule_auto_audit_prompts.jsonl
 
-python scripts/llm_window_batch_policy_eval.py --mode call \
+python scripts/llm/llm_window_batch_policy_eval.py --mode call \
   --decisions outputs/policy_agent/sortformer_diarizen_120_decisions.jsonl \
   --trigger-policy all \
   --patch-id-file outputs/voiceprint_patch_evidence/clean_high_rule_auto_audit_patch_ids.txt \
@@ -1261,7 +1261,7 @@ python scripts/llm_window_batch_policy_eval.py --mode call \
   --model qwen3.6-flash-2026-04-16 \
   --output-jsonl outputs/llm_window_batch/qwen36_flash_clean_high_rule_auto_audit.jsonl
 
-python scripts/summarize_clean_llm_audit.py
+python scripts/analysis/summarize_clean_llm_audit.py
 ```
 
 | Windows | Patches | Window clean | LLM accepts | Non-accepts | Rule-auto agreement | Avg call | Max call | Total tokens |
@@ -1273,9 +1273,9 @@ python scripts/summarize_clean_llm_audit.py
 expanded clean high rule-auto LLM audit：
 
 ```bash
-python scripts/select_clean_llm_audit_sample.py
+python scripts/misc/select_clean_llm_audit_sample.py
 
-python scripts/llm_window_batch_policy_eval.py --mode export \
+python scripts/llm/llm_window_batch_policy_eval.py --mode export \
   --decisions outputs/policy_agent/sortformer_diarizen_120_decisions.jsonl \
   --trigger-policy all \
   --patch-id-file outputs/voiceprint_patch_evidence/clean_high_rule_auto_audit_expanded_patch_ids.txt \
@@ -1284,7 +1284,7 @@ python scripts/llm_window_batch_policy_eval.py --mode export \
   --model qwen3.6-flash-2026-04-16 \
   --output-jsonl outputs/llm_window_batch/qwen36_flash_clean_high_rule_auto_audit_expanded_prompts.jsonl
 
-python scripts/llm_window_batch_policy_eval.py --mode call \
+python scripts/llm/llm_window_batch_policy_eval.py --mode call \
   --decisions outputs/policy_agent/sortformer_diarizen_120_decisions.jsonl \
   --trigger-policy all \
   --patch-id-file outputs/voiceprint_patch_evidence/clean_high_rule_auto_audit_expanded_patch_ids.txt \
@@ -1294,7 +1294,7 @@ python scripts/llm_window_batch_policy_eval.py --mode call \
   --parallel-workers 2 \
   --output-jsonl outputs/llm_window_batch/qwen36_flash_clean_high_rule_auto_audit_expanded.jsonl
 
-python scripts/summarize_clean_llm_audit.py \
+python scripts/analysis/summarize_clean_llm_audit.py \
   --llm-jsonl outputs/llm_window_batch/qwen36_flash_clean_high_rule_auto_audit_expanded.jsonl \
   --llm-summary outputs/llm_window_batch/qwen36_flash_clean_high_rule_auto_audit_expanded_summary.json \
   --patch-id-file outputs/voiceprint_patch_evidence/clean_high_rule_auto_audit_expanded_patch_ids.txt \
@@ -1313,14 +1313,14 @@ python scripts/summarize_clean_llm_audit.py \
 full clean high rule-auto surface audit：
 
 ```bash
-python scripts/select_clean_llm_audit_sample.py \
+python scripts/misc/select_clean_llm_audit_sample.py \
   --max-windows 25 \
   --output-patch-ids outputs/voiceprint_patch_evidence/clean_high_rule_auto_audit_full_patch_ids.txt \
   --output-window-ids outputs/voiceprint_patch_evidence/clean_high_rule_auto_audit_full_window_ids.txt \
   --output-csv outputs/voiceprint_patch_evidence/clean_high_rule_auto_audit_full_windows.csv \
   --summary-json outputs/voiceprint_patch_evidence/clean_high_rule_auto_audit_full_summary.json
 
-python scripts/llm_window_batch_policy_eval.py --mode call \
+python scripts/llm/llm_window_batch_policy_eval.py --mode call \
   --decisions outputs/policy_agent/sortformer_diarizen_120_decisions.jsonl \
   --trigger-policy all \
   --patch-id-file outputs/voiceprint_patch_evidence/clean_high_rule_auto_audit_full_patch_ids.txt \
@@ -1330,14 +1330,14 @@ python scripts/llm_window_batch_policy_eval.py --mode call \
   --parallel-workers 3 \
   --output-jsonl outputs/llm_window_batch/qwen36_flash_clean_high_rule_auto_audit_full.jsonl
 
-python scripts/summarize_clean_llm_audit.py \
+python scripts/analysis/summarize_clean_llm_audit.py \
   --llm-jsonl outputs/llm_window_batch/qwen36_flash_clean_high_rule_auto_audit_full.jsonl \
   --llm-summary outputs/llm_window_batch/qwen36_flash_clean_high_rule_auto_audit_full_summary.json \
   --patch-id-file outputs/voiceprint_patch_evidence/clean_high_rule_auto_audit_full_patch_ids.txt \
   --output-json outputs/llm_window_batch/qwen36_flash_clean_high_rule_auto_audit_full_agreement.json \
   --output-md outputs/llm_window_batch/qwen36_flash_clean_high_rule_auto_audit_full_agreement.md
 
-python scripts/compare_clean_llm_audit_runs.py
+python scripts/analysis/compare_clean_llm_audit_runs.py
 ```
 
 | Windows | Patches | Recordings | Window clean | LLM accepts | Non-accepts | Rule-auto agreement | Avg call | Max call | Wall | Total tokens |
@@ -1357,7 +1357,7 @@ full-surface 的两个 non-accept 都是 `defer`：`R8009_M8018:30:3:fast:fast_8
 LLM disagreement / drift triage：
 
 ```bash
-python scripts/analyze_clean_llm_disagreements.py
+python scripts/analysis/analyze_clean_llm_disagreements.py
 ```
 
 | Surface patches | Full accepts | Full defers | Repeat drift | Review-signal cases | Avg review duration |
@@ -1383,7 +1383,7 @@ python scripts/analyze_clean_llm_disagreements.py
 offline timeline review audit：
 
 ```bash
-python scripts/build_timeline_review_audit.py
+python scripts/builders/build_timeline_review_audit.py
 ```
 
 | Review cases | Blocks timeline writeback | Blocks memory update | Avg rule arrival | Avg LLM review arrival |
@@ -1408,7 +1408,7 @@ python scripts/build_timeline_review_audit.py
 writeback impact 评估：
 
 ```bash
-python scripts/analyze_writeback_impact.py \
+python scripts/analysis/analyze_writeback_impact.py \
   --gate-decisions outputs/writeback_gate/gate_decisions.csv \
   --patches outputs/segment_patches/sortformer_diarizen_48_patches.csv \
   --windows outputs/segment_patches/sortformer_diarizen_48_patches_windows.csv \
@@ -1439,7 +1439,7 @@ Rule writeback timeline materialization v0：
 为了避免只停留在 patch 覆盖率，本轮把 gate 后的 recover patch 真正合成到 Fast timeline，再用同一 DER evaluator 重算 48 窗口结果：
 
 ```bash
-python scripts/evaluate_rule_writeback_timeline.py
+python scripts/analysis/evaluate_rule_writeback_timeline.py
 ```
 
 | Variant | DER | Median DER | Miss | FA | Conf | 说明 |
@@ -1468,7 +1468,7 @@ python scripts/evaluate_rule_writeback_timeline.py
 Recover selector policy search：
 
 ```bash
-python scripts/search_recover_selector_policies.py
+python scripts/search/search_recover_selector_policies.py
 ```
 
 | Rank | Policy | DER | Miss | FA | Conf | Matched | Uncovered | Fast |
@@ -1487,7 +1487,7 @@ python scripts/search_recover_selector_policies.py
 Selector stability bootstrap：
 
 ```bash
-python scripts/bootstrap_realtime_contract_metrics.py
+python scripts/analysis/bootstrap_realtime_contract_metrics.py
 ```
 
 产物：
@@ -1515,7 +1515,7 @@ python scripts/bootstrap_realtime_contract_metrics.py
 Recording-level stability：
 
 ```bash
-python scripts/analyze_realtime_contract_by_recording.py
+python scripts/analysis/analyze_realtime_contract_by_recording.py
 ```
 
 产物：
@@ -1604,7 +1604,7 @@ Fast Agent 120-window expansion：
 system timeline 汇总：
 
 ```bash
-python scripts/build_system_timeline_summary.py \
+python scripts/builders/build_system_timeline_summary.py \
   --latencies outputs/latency_tradeoff/main_models.csv \
   --segments 120 \
   --writeback-impact outputs/writeback_gate_120/writeback_impact_summary.json \
@@ -1630,8 +1630,8 @@ python scripts/build_system_timeline_summary.py \
 为了减少汇报前人工翻多个 artifact 的误差，新增 progress snapshot：
 
 ```bash
-python scripts/refresh_latest_research_artifacts.py
-python scripts/build_research_progress_snapshot.py
+python scripts/misc/refresh_latest_research_artifacts.py
+python scripts/builders/build_research_progress_snapshot.py
 ```
 
 生成产物：
@@ -1906,7 +1906,7 @@ Live execution handoff packet 把 runbook、command surface、runtime env、timi
 
 Live command surface audit 把 runbook 中真正会消耗 quota 的 3 条 live command 单独做命令面审计：runtime contract 是 `live_command_surface_audit_no_live_calls`，Command-ready: `3` / 3，P0 command-ready 为 1，Planned live calls 为 `382`。它用本地解析检查 DeepSeek resume、Omni48 label-only、Qwen full backup 的必需参数、输入文件、输出目录、输出 JSONL 唯一性、`--skip-existing-output`、`--max-call-attempts 2`、`--retry-backoff-seconds 2.0` 和 secret 字面量；当前 skip-existing commands 为 3，bounded-retry commands 为 3，missing inputs 为 0、duplicate output paths 为 0、secret literal commands 为 0。该 artifact 不执行 API/model call，也不把 command-ready 当作 metric claim，只把 credential/quota 就绪后的开跑入口提前变成可审计状态。
 
-Live execution eligibility gate 把真实开跑前的 go/no-go 条件压成 7 行：runtime contract 是 `live_execution_eligibility_gate_no_live_calls_no_secret_values`，Eligibility rows: `7`，Pass rows 为 2，Blocked rows 为 5，Ready to execute live: `False`。当前 input surface 与 command surface 已通过（Input-ready 3/3、Command-ready 3/3），但 runtime credential/quota、live readiness、launcher execute flag、operator handoff 和 post-live promotion preflight 仍 blocked；P0 selected live calls 为 `139`，推荐的第一条 execute command 是 `python scripts/run_live_execution_sequence.py --execute-live --live-scope p0`。该 gate 只记录操作入口与阻断原因，不执行 live call、不写 secret、不新增 metric claim。
+Live execution eligibility gate 把真实开跑前的 go/no-go 条件压成 7 行：runtime contract 是 `live_execution_eligibility_gate_no_live_calls_no_secret_values`，Eligibility rows: `7`，Pass rows 为 2，Blocked rows 为 5，Ready to execute live: `False`。当前 input surface 与 command surface 已通过（Input-ready 3/3、Command-ready 3/3），但 runtime credential/quota、live readiness、launcher execute flag、operator handoff 和 post-live promotion preflight 仍 blocked；P0 selected live calls 为 `139`，推荐的第一条 execute command 是 `python scripts/live/run_live_execution_sequence.py --execute-live --live-scope p0`。该 gate 只记录操作入口与阻断原因，不执行 live call、不写 secret、不新增 metric claim。
 
 Live execution receipt audit 是显式 `--execute-live` 之后的第一层回执验收：runtime contract 是 `live_execution_receipt_audit_no_live_calls_no_secret_values`，Receipt rows: `6`，Execute record exists: `False`，Started live command calls 为 0，Observed live output rows 为 0，Claim-ready surfaces 为 0，Ready for postrun scoring review 为 false。它只读取 `live_execution_launcher_execute_latest.json`、launcher、output audit、promotion preflight 与 traceability，不执行 live/API/model call；未来真实 run 留下 execute record 后，它会核对 scope、started/passed/failed calls、postrun refresh、output audit 是否观察到 live rows，再决定是否进入 postrun scoring review。
 
@@ -1987,7 +1987,7 @@ Next experiment queue 将后续路线拆成 5 个实验项，其中 `full_split2
 如果最终目标是类似实时系统的效果，实验不能只比较单模型 DER。更规范的口径应该是：**每一层都同时报告 DER/误差分解、用户可见到达时间、写回权限和兜底安全性**。因此后续实验统一用 system experiment matrix 管理：
 
 ```bash
-python scripts/build_system_experiment_matrix.py
+python scripts/builders/build_system_experiment_matrix.py
 ```
 
 生成产物：
@@ -2022,8 +2022,8 @@ python scripts/build_system_experiment_matrix.py
 为了避免“看起来像 Agent，实际偷看了评估真值”的问题，新增 runtime evidence audit：
 
 ```bash
-python scripts/build_deployable_abnormal_windows.py
-python scripts/audit_runtime_evidence_contract.py
+python scripts/builders/build_deployable_abnormal_windows.py
+python scripts/audits/audit_runtime_evidence_contract.py
 ```
 
 生成产物：
@@ -2066,7 +2066,7 @@ python scripts/audit_runtime_evidence_contract.py
 为了定位 104-window guard 的慢点，新增 window-level latency breakdown：
 
 ```bash
-python scripts/analyze_runtime_safe_llm_latency.py
+python scripts/analysis/analyze_runtime_safe_llm_latency.py
 ```
 
 生成产物：
@@ -2097,9 +2097,9 @@ python scripts/analyze_runtime_safe_llm_latency.py
 为了决定下一步是否值得真实调用拆分 prompt，新增了一个只基于实测 104-window latency 表的离线仿真：
 
 ```bash
-python scripts/simulate_runtime_safe_llm_splitting.py
+python scripts/analysis/simulate_runtime_safe_llm_splitting.py
 
-python scripts/llm_window_batch_policy_eval.py \
+python scripts/llm/llm_window_batch_policy_eval.py \
   --mode export \
   --decisions outputs/runtime_safe_policy_agent/sortformer_diarizen_120_decisions.jsonl \
   --trigger-policy proxy_flagged_window \

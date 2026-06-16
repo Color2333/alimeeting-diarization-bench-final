@@ -43,7 +43,7 @@
           "deepseek_api_calls": 0,
           "qwen_api_calls": 0,
           "omni_api_calls": 0,
-          "duration_sec": 4.600389719009399
+          "duration_sec": 4.75837516784668
         },
         "expected_recordings": 8
       }
@@ -79,7 +79,7 @@
           "deepseek_api_calls": 0,
           "qwen_api_calls": 0,
           "omni_api_calls": 0,
-          "duration_sec": 4.600389719009399
+          "duration_sec": 4.75837516784668
         }
       }
     },
@@ -141,7 +141,7 @@
       "output_dir": "outputs/realtime_batch/all_cached/items/R8001_M8004",
       "run_returncode": 0,
       "integrity_returncode": 0,
-      "duration_sec": 0.5557661056518555,
+      "duration_sec": 0.5805842876434326,
       "windows_processed": 15,
       "recordings_processed": 1,
       "evaluation_status": "scored_with_cached_reference",
@@ -167,7 +167,7 @@
       "output_dir": "outputs/realtime_batch/all_cached/items/R8003_M8001",
       "run_returncode": 0,
       "integrity_returncode": 0,
-      "duration_sec": 0.6222231388092041,
+      "duration_sec": 0.5773491859436035,
       "windows_processed": 15,
       "recordings_processed": 1,
       "evaluation_status": "scored_with_cached_reference",
@@ -193,7 +193,7 @@
       "output_dir": "outputs/realtime_batch/all_cached/items/R8007_M8010",
       "run_returncode": 0,
       "integrity_returncode": 0,
-      "duration_sec": 0.6033258438110352,
+      "duration_sec": 0.6191692352294922,
       "windows_processed": 15,
       "recordings_processed": 1,
       "evaluation_status": "scored_with_cached_reference",
@@ -219,7 +219,7 @@
       "output_dir": "outputs/realtime_batch/all_cached/items/R8007_M8011",
       "run_returncode": 0,
       "integrity_returncode": 0,
-      "duration_sec": 0.5587961673736572,
+      "duration_sec": 0.6568400859832764,
       "windows_processed": 15,
       "recordings_processed": 1,
       "evaluation_status": "scored_with_cached_reference",
@@ -245,7 +245,7 @@
       "output_dir": "outputs/realtime_batch/all_cached/items/R8008_M8013",
       "run_returncode": 0,
       "integrity_returncode": 0,
-      "duration_sec": 0.5566494464874268,
+      "duration_sec": 0.5980010032653809,
       "windows_processed": 15,
       "recordings_processed": 1,
       "evaluation_status": "scored_with_cached_reference",
@@ -271,7 +271,7 @@
       "output_dir": "outputs/realtime_batch/all_cached/items/R8009_M8018",
       "run_returncode": 0,
       "integrity_returncode": 0,
-      "duration_sec": 0.5474209785461426,
+      "duration_sec": 0.5680079460144043,
       "windows_processed": 15,
       "recordings_processed": 1,
       "evaluation_status": "scored_with_cached_reference",
@@ -297,7 +297,7 @@
       "output_dir": "outputs/realtime_batch/all_cached/items/R8009_M8019",
       "run_returncode": 0,
       "integrity_returncode": 0,
-      "duration_sec": 0.5544509887695312,
+      "duration_sec": 0.571038007736206,
       "windows_processed": 15,
       "recordings_processed": 1,
       "evaluation_status": "scored_with_cached_reference",
@@ -323,7 +323,7 @@
       "output_dir": "outputs/realtime_batch/all_cached/items/R8009_M8020",
       "run_returncode": 0,
       "integrity_returncode": 0,
-      "duration_sec": 0.5982010364532471,
+      "duration_sec": 0.5836129188537598,
       "windows_processed": 15,
       "recordings_processed": 1,
       "evaluation_status": "scored_with_cached_reference",

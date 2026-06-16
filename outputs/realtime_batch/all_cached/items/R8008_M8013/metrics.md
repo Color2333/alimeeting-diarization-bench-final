@@ -30,8 +30,8 @@
 | First output latency proxy avg / P95 | 0.402s / 0.455s |
 | Rule writeback latency proxy avg / P95 | 24.405s / 25.525s |
 | Processed audio seconds | 450.0s |
-| Total CLI wall time | 0.413s |
-| Offline replay RTF | 0.000918 |
+| Total CLI wall time | 0.449s |
+| Offline replay RTF | 0.000997 |
 
 ## Reading
 

@@ -1096,7 +1096,7 @@
           "deepseek_api_calls": 0,
           "qwen_api_calls": 0,
           "omni_api_calls": 0,
-          "duration_sec": 1.0990750789642334
+          "duration_sec": 1.2380540370941162
         },
         "items": [
           {
@@ -1137,7 +1137,7 @@
           "deepseek_api_calls": 0,
           "qwen_api_calls": 0,
           "omni_api_calls": 0,
-          "duration_sec": 4.600389719009399
+          "duration_sec": 4.75837516784668
         }
       }
     },
@@ -1197,7 +1197,7 @@
                 "deepseek_api_calls": 0,
                 "qwen_api_calls": 0,
                 "omni_api_calls": 0,
-                "duration_sec": 4.600389719009399
+                "duration_sec": 4.75837516784668
               },
               "expected_recordings": 8
             }
@@ -1233,7 +1233,7 @@
                 "deepseek_api_calls": 0,
                 "qwen_api_calls": 0,
                 "omni_api_calls": 0,
-                "duration_sec": 4.600389719009399
+                "duration_sec": 4.75837516784668
               }
             }
           },

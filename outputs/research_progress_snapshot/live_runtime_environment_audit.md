@@ -25,9 +25,9 @@
 | `module:alimeeting_diarization_bench.config` | `module` | `alimeeting_diarization_bench.config` | `pass` | import_spec_found |
 | `module:scripts.llm_policy_agent_eval` | `module` | `scripts.llm_policy_agent_eval` | `pass` | import_spec_found |
 | `module:scripts.omni_audio_guard_smoke` | `module` | `scripts.omni_audio_guard_smoke` | `pass` | import_spec_found |
-| `script:scripts/llm_window_batch_policy_eval.py` | `script` | `scripts/llm_window_batch_policy_eval.py` | `pass` | script_exists |
-| `script:scripts/omni_guard_window_batch.py` | `script` | `scripts/omni_guard_window_batch.py` | `pass` | script_exists |
-| `script:scripts/refresh_latest_research_artifacts.py` | `script` | `scripts/refresh_latest_research_artifacts.py` | `pass` | script_exists |
+| `script:scripts/llm/llm_window_batch_policy_eval.py` | `script` | `scripts/llm/llm_window_batch_policy_eval.py` | `pass` | script_exists |
+| `script:scripts/llm/omni_guard_window_batch.py` | `script` | `scripts/llm/omni_guard_window_batch.py` | `pass` | script_exists |
+| `script:scripts/misc/refresh_latest_research_artifacts.py` | `script` | `scripts/misc/refresh_latest_research_artifacts.py` | `pass` | script_exists |
 | `output_dir:outputs/omni_guard` | `output_dir` | `outputs/omni_guard` | `pass` | exists_and_writable |
 | `output_dir:outputs/research_progress_snapshot` | `output_dir` | `outputs/research_progress_snapshot` | `pass` | exists_and_writable |
 | `output_dir:outputs/runtime_safe_llm_window_batch` | `output_dir` | `outputs/runtime_safe_llm_window_batch` | `pass` | exists_and_writable |

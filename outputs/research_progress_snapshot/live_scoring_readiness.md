@@ -24,7 +24,7 @@
 ### deepseek_resume_safety
 
 ```bash
-python scripts/analyze_runtime_safe_llm_guard.py --batch-jsonl outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_split20_resume_after_top3.jsonl --output-csv outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_split20_resume_after_top3_safety.csv --output-md outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_split20_resume_after_top3_safety.md --summary-json outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_split20_resume_after_top3_safety_summary.json
+python scripts/analysis/analyze_runtime_safe_llm_guard.py --batch-jsonl outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_split20_resume_after_top3.jsonl --output-csv outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_split20_resume_after_top3_safety.csv --output-md outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_split20_resume_after_top3_safety.md --summary-json outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_split20_resume_after_top3_safety_summary.json
 ```
 
 - Success gate: harmful_accepts == 0; missing_patch_eval == 0; parent_window_decision_override true
@@ -32,7 +32,7 @@ python scripts/analyze_runtime_safe_llm_guard.py --batch-jsonl outputs/runtime_s
 ### deepseek_full_split20_comparison
 
 ```bash
-python scripts/summarize_split_llm_runs.py --split-csv outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_split20_top3_parallel.csv --split-csv outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_split20_resume_after_top3.csv --run-summary outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_split20_top3_parallel_summary.json --run-summary outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_split20_resume_after_top3_summary.json --safety-summary outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_split20_top3_parallel_safety_summary.json --safety-summary outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_split20_resume_after_top3_safety_summary.json --output-json outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_split20_full_live_comparison.json --output-md outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_split20_full_live_comparison.md
+python scripts/analysis/summarize_split_llm_runs.py --split-csv outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_split20_top3_parallel.csv --split-csv outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_split20_resume_after_top3.csv --run-summary outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_split20_top3_parallel_summary.json --run-summary outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_split20_resume_after_top3_summary.json --safety-summary outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_split20_top3_parallel_safety_summary.json --safety-summary outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_split20_resume_after_top3_safety_summary.json --output-json outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_split20_full_live_comparison.json --output-md outputs/runtime_safe_llm_window_batch/deepseek_proxy_high_risk_104w_split20_full_live_comparison.md
 ```
 
 - Success gate: parent_windows == 104; split_calls == 147; harmful_accepts == 0; report measured wall and token multiplier
@@ -40,7 +40,7 @@ python scripts/summarize_split_llm_runs.py --split-csv outputs/runtime_safe_llm_
 ### qwen_full_backup_safety
 
 ```bash
-python scripts/analyze_runtime_safe_llm_guard.py --batch-jsonl outputs/runtime_safe_llm_window_batch/qwen36_flash_high_risk_104w_split20_live.jsonl --output-csv outputs/runtime_safe_llm_window_batch/qwen36_flash_high_risk_104w_split20_live_safety.csv --output-md outputs/runtime_safe_llm_window_batch/qwen36_flash_high_risk_104w_split20_live_safety.md --summary-json outputs/runtime_safe_llm_window_batch/qwen36_flash_high_risk_104w_split20_live_safety_summary.json
+python scripts/analysis/analyze_runtime_safe_llm_guard.py --batch-jsonl outputs/runtime_safe_llm_window_batch/qwen36_flash_high_risk_104w_split20_live.jsonl --output-csv outputs/runtime_safe_llm_window_batch/qwen36_flash_high_risk_104w_split20_live_safety.csv --output-md outputs/runtime_safe_llm_window_batch/qwen36_flash_high_risk_104w_split20_live_safety.md --summary-json outputs/runtime_safe_llm_window_batch/qwen36_flash_high_risk_104w_split20_live_safety_summary.json
 ```
 
 - Success gate: harmful_accepts == 0; fallback only unless latency beats primary or provider changes
@@ -48,7 +48,7 @@ python scripts/analyze_runtime_safe_llm_guard.py --batch-jsonl outputs/runtime_s
 ### qwen_full_backup_comparison
 
 ```bash
-python scripts/summarize_split_llm_runs.py --split-csv outputs/runtime_safe_llm_window_batch/qwen36_flash_high_risk_104w_split20_live.csv --run-summary outputs/runtime_safe_llm_window_batch/qwen36_flash_high_risk_104w_split20_live_summary.json --safety-summary outputs/runtime_safe_llm_window_batch/qwen36_flash_high_risk_104w_split20_live_safety_summary.json --output-json outputs/runtime_safe_llm_window_batch/qwen36_flash_high_risk_104w_split20_live_comparison.json --output-md outputs/runtime_safe_llm_window_batch/qwen36_flash_high_risk_104w_split20_live_comparison.md
+python scripts/analysis/summarize_split_llm_runs.py --split-csv outputs/runtime_safe_llm_window_batch/qwen36_flash_high_risk_104w_split20_live.csv --run-summary outputs/runtime_safe_llm_window_batch/qwen36_flash_high_risk_104w_split20_live_summary.json --safety-summary outputs/runtime_safe_llm_window_batch/qwen36_flash_high_risk_104w_split20_live_safety_summary.json --output-json outputs/runtime_safe_llm_window_batch/qwen36_flash_high_risk_104w_split20_live_comparison.json --output-md outputs/runtime_safe_llm_window_batch/qwen36_flash_high_risk_104w_split20_live_comparison.md
 ```
 
 - Success gate: parent_windows == 104; split_calls == 147; harmful_accepts == 0; compare against DeepSeek primary evidence
@@ -56,7 +56,7 @@ python scripts/summarize_split_llm_runs.py --split-csv outputs/runtime_safe_llm_
 ### omni48_label_summary
 
 ```bash
-python scripts/summarize_omni_window_batch.py outputs/omni_guard/omni_expansion_48_live.csv --output-csv outputs/omni_guard/omni_expansion_48_live_summary.csv --output-md outputs/omni_guard/omni_expansion_48_live_summary.md
+python scripts/analysis/summarize_omni_window_batch.py outputs/omni_guard/omni_expansion_48_live.csv --output-csv outputs/omni_guard/omni_expansion_48_live_summary.csv --output-md outputs/omni_guard/omni_expansion_48_live_summary.md
 ```
 
 - Success gate: 96 calls complete; report high positive, clean false positive, avg/P95/max call latency; label-only no timeline writeback
