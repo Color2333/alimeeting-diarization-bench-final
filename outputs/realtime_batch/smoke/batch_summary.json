@@ -19,7 +19,7 @@
     "deepseek_api_calls": 0,
     "qwen_api_calls": 0,
     "omni_api_calls": 0,
-    "duration_sec": 1.2380540370941162
+    "duration_sec": 1.6312079429626465
   },
   "items": [
     {
@@ -29,7 +29,7 @@
       "output_dir": "outputs/realtime_batch/smoke/items/R8003_M8001",
       "run_returncode": 0,
       "integrity_returncode": 0,
-      "duration_sec": 0.6715989112854004,
+      "duration_sec": 0.8590571880340576,
       "windows_processed": 15,
       "recordings_processed": 1,
       "evaluation_status": "scored_with_cached_reference",
@@ -55,7 +55,7 @@
       "output_dir": "outputs/realtime_batch/smoke/items/R8009_M8019",
       "run_returncode": 0,
       "integrity_returncode": 0,
-      "duration_sec": 0.5656089782714844,
+      "duration_sec": 0.770979642868042,
       "windows_processed": 15,
       "recordings_processed": 1,
       "evaluation_status": "scored_with_cached_reference",

@@ -1,7 +1,7 @@
 {
   "runtime_contract": "offline_realtime_system_regression_no_live_calls",
   "status": "pass",
-  "duration_sec": 554.5609171390533,
+  "duration_sec": 608.0769681930542,
   "total_steps": 29,
   "passed_steps": 29,
   "steps": [
@@ -9,10 +9,11 @@
       "name": "audio_window_features",
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/builders/build_audio_window_features.py"
+        "-m",
+        "alimeeting_diarization_bench.final.build_audio_window_features"
       ],
       "returncode": 0,
-      "duration_sec": 4.953835964202881,
+      "duration_sec": 4.977687835693359,
       "stdout_tail": "  \"runtime_contract\": \"audio_window_energy_features_no_live_calls_no_gt_metrics\",\n  \"status\": \"pass\",\n  \"windows\": 120,\n  \"ok_rows\": 120,\n  \"missing_audio_rows\": 0,\n  \"mean_audio_speech_ratio\": 0.32855333333333336,\n  \"mean_audio_max_speech_ratio\": 0.4482483333333333,\n  \"mean_audio_channel_activity_ratio\": 0.2867575,\n  \"output_csv\": \"outputs/audio_window_features/audio_window_features_120.csv\",\n  \"summary_md\": \"outputs/audio_window_features/audio_window_features.md\",\n  \"feature_params\": {\n    \"frame_ms\": 30.0,\n    \"hop_ms\": 10.0,\n    \"noise_percentile\": 20.0,\n    \"threshold_margin_db\": 8.0,\n    \"min_threshold_db\": -45.0,\n    \"mixdown\": \"mean\",\n    \"channel\": 0\n  }\n}",
       "stderr_tail": "",
       "status": "pass"
@@ -21,10 +22,11 @@
       "name": "selector_validation",
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/search/validate_guarded_slow_selector.py"
+        "-m",
+        "alimeeting_diarization_bench.final.validate_guarded_slow_selector"
       ],
       "returncode": 0,
-      "duration_sec": 0.3566091060638428,
+      "duration_sec": 0.35169100761413574,
       "stdout_tail": "Wrote outputs/system_selector_validation/guarded_slow_selector_validation.json\nWrote outputs/system_selector_validation/guarded_slow_selector_validation.md\nfixed threshold=1 final=16.59% slow=16.88% delta=0.29pp bootstrap_prob=63.3%",
       "stderr_tail": "",
       "status": "pass"
@@ -33,10 +35,11 @@
       "name": "selector_policy_search",
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/search/search_system_selector_policies.py"
+        "-m",
+        "alimeeting_diarization_bench.final.search_system_selector_policies"
       ],
       "returncode": 0,
-      "duration_sec": 16.747971057891846,
+      "duration_sec": 16.419301986694336,
       "stdout_tail": "Wrote outputs/system_selector_search/system_selector_policy_search.json\nWrote outputs/system_selector_search/system_selector_policy_search.md\nstatus=no_robust_candidate_found best=16.59% holdout_delta=-0.27pp",
       "stderr_tail": "",
       "status": "pass"
@@ -45,10 +48,11 @@
       "name": "rare_selector_overlay_search",
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/search/search_rare_selector_overlay_policies.py"
+        "-m",
+        "alimeeting_diarization_bench.final.search_rare_selector_overlay_policies"
       ],
       "returncode": 0,
-      "duration_sec": 2.692815065383911,
+      "duration_sec": 2.563365936279297,
       "stdout_tail": "Wrote outputs/rare_selector_search/rare_selector_policy_search.json\nWrote outputs/rare_selector_search/rare_selector_policy_search.md\nstatus=weak_dev_gain_not_robust best=16.52% base=16.59% delta=0.071pp holdout_delta=-0.498pp",
       "stderr_tail": "",
       "status": "pass"
@@ -57,10 +61,11 @@
       "name": "slow_sanitization_search",
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/search/search_slow_sanitization_policies.py"
+        "-m",
+        "alimeeting_diarization_bench.final.search_slow_sanitization_policies"
       ],
       "returncode": 0,
-      "duration_sec": 42.65466809272766,
+      "duration_sec": 44.941956996917725,
       "stdout_tail": "[1/14] slow: DER=16.88%\n[2/14] fast: DER=28.56%\n[3/14] slow__min_duration0p2: DER=16.88%\n[4/14] slow__min_duration0p4: DER=17.19%\n[5/14] slow__min_fast_overlap_sec0p05: DER=17.75%\n[6/14] slow__min_fast_overlap_sec0p1: DER=17.75%\n[7/14] slow__min_fast_overlap_ratio0p05: DER=17.75%\n[8/14] slow__min_fast_overlap_ratio0p1: DER=18.65%\n[9/14] slow__merge_gap0p1: DER=16.89%\n[10/14] slow__merge_gap0p2: DER=16.94%\n[11/14] slow__max_speech_ratio1p2__cap_actionfast: DER=24.06%\n[12/14] slow__max_speech_ratio1p4__cap_actionfast: DER=20.93%\n[13/14] slow__max_speech_ratio1p2__cap_actiondrop_unsupported: DER=24.01%\n[14/14] slow__max_speech_ratio1p4__cap_actiondrop_unsupported: DER=19.47%\nWrote outputs/slow_sanitization_search/slow_sanitization_policy_search.json\nWrote outputs/slow_sanitization_search/slow_sanitization_policy_search.md\nstatus=no_robust_sanitizer_found best=16.88% slow=16.88% delta=0.00pp bootstrap_prob=0.0%",
       "stderr_tail": "",
       "status": "pass"
@@ -69,10 +74,11 @@
       "name": "speaker_track_sanitization_search",
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/search/search_speaker_track_sanitization_policies.py"
+        "-m",
+        "alimeeting_diarization_bench.final.search_speaker_track_sanitization_policies"
       ],
       "returncode": 0,
-      "duration_sec": 0.5194036960601807,
+      "duration_sec": 0.5089430809020996,
       "stdout_tail": "Wrote outputs/speaker_track_sanitization_search/speaker_track_sanitization_policy_search.json\nWrote outputs/speaker_track_sanitization_search/speaker_track_sanitization_policy_search.md\nWrote outputs/speaker_track_sanitization_search/speaker_track_sanitization_policy_search.csv\nWrote outputs/speaker_track_sanitization_search/speaker_track_sanitization_policy_holdout.csv\nWrote outputs/speaker_track_sanitization_search/speaker_track_sanitization_score_cache.csv\nstatus=no_robust_speaker_track_sanitizer_found best=speaker_track_filter__min_track_total_sec0p5__require_remaining_speakers1 best_der=16.87% slow=16.88% delta=0.007pp holdout=0/8",
       "stderr_tail": "",
       "status": "pass"
@@ -81,10 +87,11 @@
       "name": "audio_guided_sanitization_search",
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/search/search_audio_guided_sanitization_policies.py"
+        "-m",
+        "alimeeting_diarization_bench.final.search_audio_guided_sanitization_policies"
       ],
       "returncode": 0,
-      "duration_sec": 170.42338395118713,
+      "duration_sec": 174.06027221679688,
       "stdout_tail": "[40/56] audio_support_filter__modemax__min_support_sec1p0: DER=25.10%\n[41/56] audio_support_filter__modemax__min_active_channels0p25: DER=17.93%\n[42/56] audio_support_filter__modemax__min_active_channels0p5: DER=19.48%\n[43/56] audio_support_filter__modemax__min_active_channels1p0: DER=25.87%\n[44/56] audio_support_filter__modemax__min_active_channels2p0: DER=44.76%\n[45/56] audio_support_filter__modemax__min_support_ratio0p1__min_support_sec0p1: DER=18.14%\n[46/56] audio_support_filter__modemax__min_support_ratio0p1__min_support_sec0p2: DER=18.44%\n[47/56] audio_support_filter__modemax__min_support_ratio0p1__min_support_sec0p5: DER=20.39%\n[48/56] audio_support_filter__modemax__min_support_ratio0p2__min_support_sec0p1: DER=21.08%\n[49/56] audio_support_filter__modemax__min_support_ratio0p2__min_support_sec0p2: DER=21.29%\n[50/56] audio_support_filter__modemax__min_support_ratio0p2__min_support_sec0p5: DER=22.93%\n[51/56] audio_support_filter__modemax__min_support_ratio0p35__min_support_sec0p1: DER=33.19%\n[52/56] audio_support_filter__modemax__min_support_ratio0p35__min_support_sec0p2: DER=33.27%\n[53/56] audio_support_filter__modemax__min_support_ratio0p35__min_support_sec0p5: DER=33.96%\n[54/56] audio_support_filter__modemax__min_support_ratio0p1__min_segment_duration0p2: DER=18.04%\n[55/56] audio_support_filter__modemax__min_support_ratio0p2__min_segment_duration0p2: DER=21.05%\n[56/56] audio_support_filter__modemax__min_support_ratio0p35__min_segment_duration0p2: DER=33.20%\nWrote outputs/audio_guided_sanitization_search/audio_guided_sanitization_policy_search.json\nWrote outputs/audio_guided_sanitization_search/audio_guided_sanitization_policy_search.md\nstatus=no_robust_audio_sanitizer_found best=16.88% slow=16.88% delta=0.00pp holdout_delta=0.00pp",
       "stderr_tail": "",
       "status": "pass"
@@ -93,10 +100,11 @@
       "name": "audio_boundary_adjustment_search",
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/search/search_audio_boundary_adjustment_policies.py"
+        "-m",
+        "alimeeting_diarization_bench.final.search_audio_boundary_adjustment_policies"
       ],
       "returncode": 0,
-      "duration_sec": 287.39342617988586,
+      "duration_sec": 334.2977638244629,
       "stdout_tail": "[75/91] boundary_expand__modemax__search_pad0p1__max_total_expand_sec0p25__min_active_sec0p05__prevent_same_speaker_overlapTrue: DER=17.47%\n[76/91] boundary_expand__modemax__search_pad0p1__max_total_expand_sec0p5__min_active_sec0p05__prevent_same_speaker_overlapTrue: DER=17.47%\n[77/91] boundary_expand__modemax__search_pad0p25__max_total_expand_sec0p1__min_active_sec0p05__prevent_same_speaker_overlapTrue: DER=16.89%\n[78/91] boundary_expand__modemax__search_pad0p25__max_total_expand_sec0p25__min_active_sec0p05__prevent_same_speaker_overlapTrue: DER=17.19%\n[79/91] boundary_expand__modemax__search_pad0p25__max_total_expand_sec0p5__min_active_sec0p05__prevent_same_speaker_overlapTrue: DER=18.39%\n[80/91] boundary_expand__modemax__search_pad0p5__max_total_expand_sec0p1__min_active_sec0p05__prevent_same_speaker_overlapTrue: DER=16.89%\n[81/91] boundary_expand__modemax__search_pad0p5__max_total_expand_sec0p25__min_active_sec0p05__prevent_same_speaker_overlapTrue: DER=16.93%\n[82/91] boundary_expand__modemax__search_pad0p5__max_total_expand_sec0p5__min_active_sec0p05__prevent_same_speaker_overlapTrue: DER=17.81%\n[83/91] boundary_expand__modemax__pad0p1__search_pad0p1__max_total_expand_sec0p1__min_active_sec0p05__prevent_same_speaker_overlapTrue: DER=16.91%\n[84/91] boundary_expand__modemax__pad0p1__search_pad0p1__max_total_expand_sec0p25__min_active_sec0p05__prevent_same_speaker_overlapTrue: DER=17.64%\n[85/91] boundary_expand__modemax__pad0p1__search_pad0p1__max_total_expand_sec0p5__min_active_sec0p05__prevent_same_speaker_overlapTrue: DER=18.33%\n[86/91] boundary_expand__modemax__pad0p1__search_pad0p25__max_total_expand_sec0p1__min_active_sec0p05__prevent_same_speaker_overlapTrue: DER=16.90%\n[87/91] boundary_expand__modemax__pad0p1__search_pad0p25__max_total_expand_sec0p25__min_active_sec0p05__prevent_same_speaker_overlapTrue: DER=17.02%\n[88/91] boundary_expand__modemax__pad0p1__search_pad0p25__max_total_expand_sec0p5__min_active_sec0p05__prevent_same_speaker_overlapTrue: DER=18.52%\n[89/91] boundary_expand__modemax__pad0p1__search_pad0p5__max_total_expand_sec0p1__min_active_sec0p05__prevent_same_speaker_overlapTrue: DER=16.89%\n[90/91] boundary_expand__modemax__pad0p1__search_pad0p5__max_total_expand_sec0p25__min_active_sec0p05__prevent_same_speaker_overlapTrue: DER=16.94%\n[91/91] boundary_expand__modemax__pad0p1__search_pad0p5__max_total_expand_sec0p5__min_active_sec0p05__prevent_same_speaker_overlapTrue: DER=17.41%\nWrote outputs/audio_boundary_adjustment_search/audio_boundary_adjustment_policy_search.json\nWrote outputs/audio_boundary_adjustment_search/audio_boundary_adjustment_policy_search.md\nstatus=no_robust_audio_boundary_policy_found best=16.88% slow=16.88% delta=0.00pp holdout_delta=-0.02pp",
       "stderr_tail": "WARNING:  speaker 1 speaking more than once at time 22.832\nWARNING:  speaker 2 speaking more than once at time 27.052\nWARNING:  speaker 1 speaking more than once at time 22.832\nWARNING:  speaker 2 speaking more than once at time 27.052\nWARNING:  speaker 1 speaking more than once at time 22.832\nWARNING:  speaker 2 speaking more than once at time 27.052\nWARNING:  speaker 1 speaking more than once at time 22.832\nWARNING:  speaker 2 speaking more than once at time 27.052\nWARNING:  speaker 1 speaking more than once at time 10.332\nWARNING:  speaker 1 speaking more than once at time 10.332\nWARNING:  speaker 1 speaking more than once at time 10.332\nWARNING:  speaker 1 speaking more than once at time 10.332\nWARNING:  speaker 1 speaking more than once at time 29.152\nWARNING:  speaker 1 speaking more than once at time 29.152\nWARNING:  speaker 1 speaking more than once at time 29.152\nWARNING:  speaker 1 speaking more than once at time 29.152\nWARNING:  speaker 1 speaking more than once at time 25.172\nWARNING:  speaker 1 speaking more than once at time 25.172\nWARNING:  speaker 1 speaking more than once at time 25.172\nWARNING:  speaker 1 speaking more than once at time 25.172",
       "status": "pass"
@@ -105,13 +113,14 @@
       "name": "all_cached_system_demo",
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/entrypoints/run_realtime_diarization_system.py",
+        "-m",
+        "alimeeting_diarization_bench.final.realtime_system",
         "--all-cached-recordings",
         "--output-dir",
         "outputs/system_demo/all_cached_recordings"
       ],
       "returncode": 0,
-      "duration_sec": 3.39414381980896,
+      "duration_sec": 3.845374822616577,
       "stdout_tail": "Wrote system demo outputs to outputs/system_demo/all_cached_recordings\nscope=all_cached_recordings recordings=8 windows=120 evaluation_status=scored_with_cached_reference\nDER fast=28.56% final=16.49% delta=12.07pp\nmetrics=outputs/system_demo/all_cached_recordings/metrics.json",
       "stderr_tail": "",
       "status": "pass"
@@ -120,14 +129,15 @@
       "name": "realtime_batch_smoke",
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/entrypoints/run_realtime_batch.py",
+        "-m",
+        "alimeeting_diarization_bench.final.realtime_batch",
         "--recording-ids",
         "R8003_M8001,R8009_M8019",
         "--output-dir",
         "outputs/realtime_batch/smoke"
       ],
       "returncode": 0,
-      "duration_sec": 1.2836079597473145,
+      "duration_sec": 1.7459690570831299,
       "stdout_tail": "Wrote outputs/realtime_batch/smoke/batch_manifest.json\nWrote outputs/realtime_batch/smoke/batch_summary.json\nstatus=pass items=2/2 windows=30 final=20.77%",
       "stderr_tail": "",
       "status": "pass"
@@ -136,13 +146,14 @@
       "name": "realtime_batch_all_cached",
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/entrypoints/run_realtime_batch.py",
+        "-m",
+        "alimeeting_diarization_bench.final.realtime_batch",
         "--all-cached-recordings",
         "--output-dir",
         "outputs/realtime_batch/all_cached"
       ],
       "returncode": 0,
-      "duration_sec": 4.873574256896973,
+      "duration_sec": 5.120382785797119,
       "stdout_tail": "Wrote outputs/realtime_batch/all_cached/batch_manifest.json\nWrote outputs/realtime_batch/all_cached/batch_summary.json\nstatus=pass items=8/8 windows=120 final=16.49%",
       "stderr_tail": "",
       "status": "pass"
@@ -151,10 +162,11 @@
       "name": "realtime_batch_consistency",
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/audits/audit_realtime_batch_consistency.py"
+        "-m",
+        "alimeeting_diarization_bench.final.audit_realtime_batch_consistency"
       ],
       "returncode": 0,
-      "duration_sec": 0.04104018211364746,
+      "duration_sec": 0.051850080490112305,
       "stdout_tail": "Wrote outputs/realtime_batch/audit/realtime_batch_consistency.json\nWrote outputs/realtime_batch/audit/realtime_batch_consistency.md\nstatus=pass pass=9 warn=0 fail=0 gap=0.000000pp",
       "stderr_tail": "",
       "status": "pass"
@@ -163,10 +175,11 @@
       "name": "timeline_integrity",
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/entrypoints/check_timeline_integrity.py"
+        "-m",
+        "alimeeting_diarization_bench.final.timeline_integrity"
       ],
       "returncode": 0,
-      "duration_sec": 0.1118929386138916,
+      "duration_sec": 0.05040693283081055,
       "stdout_tail": "Wrote outputs/timeline_integrity/final_timeline_integrity.json\nWrote outputs/timeline_integrity/final_timeline_integrity.md\nstatus=pass rows=1402 fail=0 warn=0",
       "stderr_tail": "",
       "status": "pass"
@@ -175,10 +188,11 @@
       "name": "clipped_baseline_audit",
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/audits/audit_clipped_baselines.py"
+        "-m",
+        "alimeeting_diarization_bench.final.audit_clipped_baselines"
       ],
       "returncode": 0,
-      "duration_sec": 16.23856520652771,
+      "duration_sec": 16.121750116348267,
       "stdout_tail": "Wrote outputs/clipped_baseline_audit/clipped_baseline_audit.json\nWrote outputs/clipped_baseline_audit/clipped_baseline_audit.md\nWrote outputs/clipped_baseline_audit/clipped_baseline_scores.csv\nstatus=pass final=16.49% best_clipped=16.88% delta=0.387pp beats_all=True",
       "stderr_tail": "",
       "status": "pass"
@@ -187,10 +201,11 @@
       "name": "baseline_leaderboard_audit",
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/audits/audit_baseline_leaderboard.py"
+        "-m",
+        "alimeeting_diarization_bench.final.audit_baseline_leaderboard"
       ],
       "returncode": 0,
-      "duration_sec": 0.08589792251586914,
+      "duration_sec": 0.16964411735534668,
       "stdout_tail": "Wrote outputs/baseline_leaderboard_audit/baseline_leaderboard_audit.json\nWrote outputs/baseline_leaderboard_audit/baseline_leaderboard_audit.csv\nWrote outputs/baseline_leaderboard_audit/baseline_leaderboard_audit.md\nstatus=pass full=8 partial=0 best=runtime_same_window/slow_base delta_pp=0.38858333333333384",
       "stderr_tail": "",
       "status": "pass"
@@ -199,10 +214,11 @@
       "name": "runtime_overlay_contributions",
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/audits/audit_runtime_overlay_contributions.py"
+        "-m",
+        "alimeeting_diarization_bench.final.audit_runtime_overlay_contributions"
       ],
       "returncode": 0,
-      "duration_sec": 0.04645895957946777,
+      "duration_sec": 0.042047977447509766,
       "stdout_tail": "Wrote outputs/runtime_overlay_contributions/runtime_overlay_contributions.json\nWrote outputs/runtime_overlay_contributions/runtime_overlay_contributions.md\nWrote outputs/runtime_overlay_contributions/runtime_overlay_contribution_windows.csv\nWrote outputs/runtime_overlay_contributions/runtime_overlay_contribution_sources.csv\nstatus=pass overlays=6 contribution=0.3873pp margin=0.3873pp negative=0",
       "stderr_tail": "",
       "status": "pass"
@@ -211,10 +227,11 @@
       "name": "recording_level_stability",
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/audits/audit_recording_level_stability.py"
+        "-m",
+        "alimeeting_diarization_bench.final.audit_recording_level_stability"
       ],
       "returncode": 0,
-      "duration_sec": 0.060440778732299805,
+      "duration_sec": 0.0631399154663086,
       "stdout_tail": "Wrote outputs/recording_level_stability/recording_level_stability.json\nWrote outputs/recording_level_stability/recording_level_stability.md\nWrote outputs/recording_level_stability/recording_level_stability.csv\nstatus=weak_recording_level_gain_not_robust positive=5/8 delta=0.387pp prob=99.9% ci=0.019..0.969pp",
       "stderr_tail": "",
       "status": "pass"
@@ -223,10 +240,11 @@
       "name": "recording_balanced_overlay_search",
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/search/search_recording_balanced_overlays.py"
+        "-m",
+        "alimeeting_diarization_bench.final.search_recording_balanced_overlays"
       ],
       "returncode": 0,
-      "duration_sec": 0.39888596534729004,
+      "duration_sec": 0.40930986404418945,
       "stdout_tail": "Wrote outputs/recording_balanced_overlay_search/recording_balanced_overlay_search.json\nWrote outputs/recording_balanced_overlay_search/recording_balanced_overlay_search.md\nWrote outputs/recording_balanced_overlay_search/recording_balanced_overlay_search.csv\nstatus=no_deployable_recording_balanced_candidate_found best_positive=5/8 current_positive=5/8 delta=0.003pp negatives=0",
       "stderr_tail": "",
       "status": "pass"
@@ -235,13 +253,14 @@
       "name": "recording_context_overlay_search",
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/search/search_recording_balanced_overlays.py",
+        "-m",
+        "alimeeting_diarization_bench.final.search_recording_balanced_overlays",
         "--previous-window-context",
         "--output-dir",
         "outputs/recording_context_overlay_search"
       ],
       "returncode": 0,
-      "duration_sec": 0.8006482124328613,
+      "duration_sec": 0.7887911796569824,
       "stdout_tail": "Wrote outputs/recording_context_overlay_search/recording_balanced_overlay_search.json\nWrote outputs/recording_context_overlay_search/recording_balanced_overlay_search.md\nWrote outputs/recording_context_overlay_search/recording_balanced_overlay_search.csv\nstatus=no_deployable_recording_balanced_candidate_found best_positive=5/8 current_positive=5/8 delta=0.003pp negatives=0",
       "stderr_tail": "",
       "status": "pass"
@@ -250,10 +269,11 @@
       "name": "external_candidate_surface_search",
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/search/search_external_candidate_surfaces.py"
+        "-m",
+        "alimeeting_diarization_bench.final.search_external_candidate_surfaces"
       ],
       "returncode": 0,
-      "duration_sec": 1.0027740001678467,
+      "duration_sec": 1.0328361988067627,
       "stdout_tail": "Wrote outputs/external_candidate_surface_search/external_candidate_surface_search.json\nWrote outputs/external_candidate_surface_search/external_candidate_surface_search.md\nWrote outputs/external_candidate_surface_search/external_candidate_surface_search.csv\nstatus=external_candidate_surface_not_deployable sources=3 policies=826 best_positive=7/8 current_positive=5/8 delta=0.000pp losses=0",
       "stderr_tail": "",
       "status": "pass"
@@ -262,10 +282,11 @@
       "name": "external_candidate_source_inventory",
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/audits/audit_external_candidate_source_inventory.py"
+        "-m",
+        "alimeeting_diarization_bench.final.audit_external_candidate_source_inventory"
       ],
       "returncode": 0,
-      "duration_sec": 0.05843687057495117,
+      "duration_sec": 0.08732223510742188,
       "stdout_tail": "Wrote outputs/external_candidate_source_inventory/external_candidate_source_inventory.json\nWrote outputs/external_candidate_source_inventory/external_candidate_source_inventory.md\nWrote outputs/external_candidate_source_inventory/external_candidate_source_inventory.csv\nWrote outputs/external_candidate_source_inventory/external_candidate_source_stale_windows.csv\nstatus=pass sources=3 full_clean=3 stale_sources=0 stale_windows=0",
       "stderr_tail": "",
       "status": "pass"
@@ -274,10 +295,11 @@
       "name": "external_candidate_reproduction_plan",
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/builders/build_external_candidate_reproduction_plan.py"
+        "-m",
+        "alimeeting_diarization_bench.final.build_external_candidate_reproduction_plan"
       ],
       "returncode": 0,
-      "duration_sec": 0.12973618507385254,
+      "duration_sec": 0.1293318271636963,
       "stdout_tail": "Wrote outputs/external_candidate_reproduction_plan/external_candidate_reproduction_plan.json\nWrote outputs/external_candidate_reproduction_plan/external_candidate_reproduction_plan.md\nWrote outputs/external_candidate_reproduction_plan/missing_external_candidate_windows.csv\nstatus=ready_for_default_runtime_promotion_check covered=120/120 missing=0 resume=True",
       "stderr_tail": "",
       "status": "pass"
@@ -286,10 +308,11 @@
       "name": "baseline_headroom_audit",
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/audits/audit_baseline_headroom.py"
+        "-m",
+        "alimeeting_diarization_bench.final.audit_baseline_headroom"
       ],
       "returncode": 0,
-      "duration_sec": 0.040848731994628906,
+      "duration_sec": 0.04285693168640137,
       "stdout_tail": "Wrote outputs/baseline_headroom_audit/baseline_headroom_audit.json\nWrote outputs/baseline_headroom_audit/baseline_headroom_audit.md\nwindows=120 final=16.49% oracle=16.48% gap=0.01pp beats_all_baselines=True",
       "stderr_tail": "",
       "status": "pass"
@@ -298,10 +321,11 @@
       "name": "system_promotion_gate",
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/builders/build_system_promotion_gate.py"
+        "-m",
+        "alimeeting_diarization_bench.final.build_system_promotion_gate"
       ],
       "returncode": 0,
-      "duration_sec": 0.038941383361816406,
+      "duration_sec": 0.04057121276855469,
       "stdout_tail": "Wrote outputs/system_promotion_gate/system_promotion_gate.json\nWrote outputs/system_promotion_gate/system_promotion_gate.md\nstatus=dev_metric_pass_promotion_blocked dev_metric=pass promotion=blocked final=16.4923%",
       "stderr_tail": "",
       "status": "pass"
@@ -310,10 +334,11 @@
       "name": "true_heldout_readiness",
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/search/diagnose_true_heldout_readiness.py"
+        "-m",
+        "alimeeting_diarization_bench.final.diagnose_true_heldout_readiness"
       ],
       "returncode": 0,
-      "duration_sec": 0.03635406494140625,
+      "duration_sec": 0.03817892074584961,
       "stdout_tail": "Wrote outputs/true_heldout_readiness/true_heldout_readiness.json\nWrote outputs/true_heldout_readiness/true_heldout_readiness.md\nstatus=blocked_missing_sealed_split_and_new_recordings split_exists=False true_heldout=0/8 missing_new=8",
       "stderr_tail": "",
       "status": "pass"
@@ -322,10 +347,11 @@
       "name": "selector_robustness_diagnosis",
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/search/diagnose_selector_robustness.py"
+        "-m",
+        "alimeeting_diarization_bench.final.diagnose_selector_robustness"
       ],
       "returncode": 0,
-      "duration_sec": 0.039063215255737305,
+      "duration_sec": 0.039618730545043945,
       "stdout_tail": "Wrote outputs/selector_robustness_diagnosis/selector_robustness_diagnosis.json\nWrote outputs/selector_robustness_diagnosis/selector_robustness_diagnosis.md\nstatus=diagnosed_not_robust base_holdout=1/8 rare_holdout=0/8 reasons=6",
       "stderr_tail": "",
       "status": "pass"
@@ -334,10 +360,11 @@
       "name": "recording_stability_blockers",
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/search/diagnose_recording_stability_blockers.py"
+        "-m",
+        "alimeeting_diarization_bench.final.diagnose_recording_stability_blockers"
       ],
       "returncode": 0,
-      "duration_sec": 0.043222904205322266,
+      "duration_sec": 0.04549598693847656,
       "stdout_tail": "Wrote outputs/recording_stability_blockers/recording_stability_blockers.json\nWrote outputs/recording_stability_blockers/recording_stability_blockers.md\nWrote outputs/recording_stability_blockers/recording_stability_blockers.csv\nstatus=candidate_pool_exhausted_for_non_positive_recordings non_positive=3/8 non_positive_oracle_gain=0.0000pp global_gap=0.0128pp",
       "stderr_tail": "",
       "status": "pass"
@@ -346,10 +373,11 @@
       "name": "next_experiment_queue",
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/builders/build_research_next_experiment_queue.py"
+        "-m",
+        "alimeeting_diarization_bench.final.build_research_next_experiment_queue"
       ],
       "returncode": 0,
-      "duration_sec": 0.042443037033081055,
+      "duration_sec": 0.03920936584472656,
       "stdout_tail": "Wrote outputs/research_progress_snapshot/next_experiment_queue.json\nWrote outputs/research_progress_snapshot/next_experiment_queue.md",
       "stderr_tail": "",
       "status": "pass"
@@ -358,10 +386,11 @@
       "name": "system_self_check",
       "command": [
         "/opt/homebrew/opt/python@3.11/bin/python3.11",
-        "scripts/entrypoints/check_realtime_system_outputs.py"
+        "-m",
+        "alimeeting_diarization_bench.final.self_check"
       ],
       "returncode": 0,
-      "duration_sec": 0.047714948654174805,
+      "duration_sec": 0.04722118377685547,
       "stdout_tail": "Wrote outputs/system_self_check/realtime_system_self_check.json\nWrote outputs/system_self_check/realtime_system_self_check.md\nstatus=warn pass=40 warn=4 fail=0",
       "stderr_tail": "",
       "status": "pass"

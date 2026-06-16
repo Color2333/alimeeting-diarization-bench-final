@@ -1,7 +1,0 @@
-patch_id,top1_global_speaker,top1_similarity,top2_global_speaker,top2_similarity,memory_confidence,enrollment_source
-R8007_M8010:30:2:fast:fast_0,G02,0.78,G01,0.61,0.82,visual_first_window
-R8007_M8010:30:2:fast:fast_1,G02,0.75,G04,0.68,0.63,visual_first_window
-R8007_M8010:30:2:fast:fast_2,G01,0.71,G02,0.70,0.42,visual_first_window
-R8007_M8010:30:3:fast:fast_0,G03,0.80,G01,0.59,0.86,visual_first_window
-R8007_M8010:30:3:fast:fast_1,G03,0.73,G02,0.66,0.60,visual_first_window
-R8007_M8010:30:3:fast:fast_2,G00,0.69,G04,0.67,0.40,visual_first_window

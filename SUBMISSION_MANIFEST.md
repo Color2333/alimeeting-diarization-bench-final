@@ -9,15 +9,12 @@ AliMeeting diarization development-pool result.
   promotion boundaries.
 - `pyproject.toml`, `requirements.txt`, `.env.example`: install and environment
   setup. `pyproject.toml` registers the package and the stable console commands.
-- `alimeeting_diarization_bench/`: benchmark package, model/evaluation code, and
-  installed command dispatcher in `alimeeting_diarization_bench/cli.py`.
-- `scripts/`: categorized reproducibility, batch, regression, self-check, audit,
-  builder, search, live, and analysis scripts. `scripts/entrypoints/quick_start.py`
-  is the shortest offline reproduction entrypoint, and `scripts/README.md` is the
-  script navigation guide.
-  Presentation-generation scripts are intentionally excluded from the final code
-  package; only the finished deck is retained.
-- `docs/`: report-generation support files retained from the source workspace.
+- `alimeeting_diarization_bench/`: benchmark package, model/evaluation code,
+  installed command dispatcher in `alimeeting_diarization_bench/cli.py`, and
+  final offline submission modules under `alimeeting_diarization_bench/final/`.
+- Development-only files and reports are intentionally excluded from the final
+  package. The final runtime is managed as package modules rather than loose
+  files.
 - `outputs/`: curated result and cache subset needed for the documented
   offline reproduction paths.
 - `outputs/final_effect_presentation.pptx`: final presentation deck for the
@@ -70,8 +67,9 @@ AliMeeting diarization development-pool result.
 ## Excluded From Package
 
 The final package intentionally excludes local virtual environments, local
-package caches, Python bytecode caches, and exploratory outputs that are not
-part of the documented reproduction chain.
+package caches, Python bytecode caches, loose development files, old report
+drafts, and exploratory outputs that are not part of the documented
+reproduction chain.
 
 ## Expected Verification
 
@@ -82,12 +80,7 @@ python -m py_compile \
   alimeeting_diarization_bench/run.py \
   alimeeting_diarization_bench/cli.py \
   alimeeting_diarization_bench/evaluation/runner.py \
-  scripts/entrypoints/run_realtime_diarization_system.py \
-  scripts/entrypoints/run_realtime_batch.py \
-  scripts/entrypoints/quick_start.py \
-  scripts/entrypoints/run_realtime_system_regression.py \
-  scripts/entrypoints/check_realtime_system_outputs.py \
-  scripts/search/search_external_candidate_surfaces.py
+  alimeeting_diarization_bench/final/*.py
 
 python -m alimeeting_diarization_bench.run --help
 python -m alimeeting_diarization_bench.cli --help

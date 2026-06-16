@@ -660,7 +660,7 @@
           "recording_level_recordings": 8,
           "base_selector_status": "weak_dev_gain_not_robust",
           "rare_selector_status": "weak_dev_gain_not_robust",
-          "true_heldout_status": "blocked_waiting_for_valid_sealed_split",
+          "true_heldout_status": null,
           "headroom_gap_pp": 0.011750000000002037
         }
       }
@@ -882,37 +882,10 @@
             "status": "blocked",
             "required_for": "promotion",
             "evidence": {
-              "split_status": "blocked_waiting_for_valid_sealed_split",
-              "split_summary": {
-                "split_exists": false,
-                "rows": 0,
-                "true_heldout_rows": 0,
-                "true_heldout_recordings": 0,
-                "development_recordings": 8,
-                "overlap_with_development": 0,
-                "missing_required_columns": 4,
-                "invalid_role_count": 0,
-                "duplicate_recordings": 0,
-                "missing_audio_count": 0,
-                "missing_textgrid_count": 0,
-                "eligible_local_candidates": 0,
-                "missing_new_recordings_to_minimum": 8,
-                "no_metric_claim": true,
-                "sealed_split_written_by_validator": false
-              },
-              "candidate_scan_status": "not_enough_new_local_recordings",
-              "candidate_scan_summary": {
-                "local_recordings": 8,
-                "development_recordings": 8,
-                "local_dev_overlap": 8,
-                "eligible_true_heldout_recordings": 0,
-                "missing_new_recordings_to_minimum": 8,
-                "far_audio_count": 8,
-                "far_textgrid_count": 8,
-                "near_recording_count": 8,
-                "no_metric_claim": true,
-                "sealed_split_written": false
-              }
+              "split_status": null,
+              "split_summary": null,
+              "candidate_scan_status": null,
+              "candidate_scan_summary": null
             }
           },
           {
@@ -935,19 +908,19 @@
       "detail": {
         "status": "blocked_missing_sealed_split_and_new_recordings",
         "summary": {
-          "split_file": "data/selector_true_heldout_split.csv",
+          "split_file": null,
           "minimum_true_heldout_recordings": 8,
           "split_exists": false,
           "true_heldout_recordings": 0,
           "eligible_local_candidates": 0,
           "missing_new_recordings_to_minimum": 8,
-          "development_recordings": 8,
-          "local_dev_overlap": 8,
+          "development_recordings": 0,
+          "local_dev_overlap": 0,
           "promotion_gate_status": "dev_metric_pass_promotion_blocked",
           "promotion_status": "blocked",
-          "candidate_scan_status": "not_enough_new_local_recordings",
-          "split_validation_status": "blocked_waiting_for_valid_sealed_split",
-          "protocol_status": "needs_new_recording_split",
+          "candidate_scan_status": null,
+          "split_validation_status": null,
+          "protocol_status": null,
           "no_metric_claim": true
         },
         "blockers": [
@@ -1096,7 +1069,7 @@
           "deepseek_api_calls": 0,
           "qwen_api_calls": 0,
           "omni_api_calls": 0,
-          "duration_sec": 1.2380540370941162
+          "duration_sec": 1.6312079429626465
         },
         "items": [
           {
@@ -1137,7 +1110,7 @@
           "deepseek_api_calls": 0,
           "qwen_api_calls": 0,
           "omni_api_calls": 0,
-          "duration_sec": 4.75837516784668
+          "duration_sec": 4.9703209400177
         }
       }
     },
@@ -1197,7 +1170,7 @@
                 "deepseek_api_calls": 0,
                 "qwen_api_calls": 0,
                 "omni_api_calls": 0,
-                "duration_sec": 4.75837516784668
+                "duration_sec": 4.9703209400177
               },
               "expected_recordings": 8
             }
@@ -1233,7 +1206,7 @@
                 "deepseek_api_calls": 0,
                 "qwen_api_calls": 0,
                 "omni_api_calls": 0,
-                "duration_sec": 4.75837516784668
+                "duration_sec": 4.9703209400177
               }
             }
           },

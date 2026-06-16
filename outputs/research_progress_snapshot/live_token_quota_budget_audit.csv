@@ -1,4 +1,0 @@
-surface_id,priority,surface_type,prompt_or_call_count,parent_windows,patch_references,prompt_chars,token_proxy_chars_div4,max_prompt_chars,max_call_attempts,max_attempted_requests,retry_token_proxy_ceiling,clip_model_seconds_proxy,retry_clip_model_seconds_ceiling,claim_status
-deepseek_resume_after_top3,P0,llm_prompt_jsonl,139,101,1790,1603450,400862,19178,2,278,801724,,,quota_proxy_planning_only_no_live_metric_claim
-qwen_full_backup,P1,llm_prompt_jsonl,147,104,1917,1714264,428566,19178,2,294,857132,,,quota_proxy_planning_only_no_live_metric_claim
-omni48_label_only,P1,omni_audio_call_manifest,96,48,,,,,2,192,,768.0,1536.0,clip_proxy_planning_only_no_live_metric_claim

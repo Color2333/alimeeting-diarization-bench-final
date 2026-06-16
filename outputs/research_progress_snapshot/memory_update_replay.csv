@@ -1,5 +1,0 @@
-patch_id,window_id,case_type,llm_review_action,memory_candidate_before,memory_update_allowed_after,memory_update_blocked,memory_block_reasons,timeline_writeback_preserved,rule_timeline_action_after,rule_arrival_avg_sec,llm_review_arrival_sec,runtime_surface,forbidden_runtime_token_scan
-R8009_M8018:30:2:fast:fast_8,R8009_M8018:30:2,repeatability_drift,review_repeatability_drift,1,0,1,repeatability_drift_review_signal;duration_under_1s,1,keep_rule_bounded_writeback,24.65,43.48,memory_gate_replay,pass
-R8009_M8018:30:2:fast:fast_9,R8009_M8018:30:2,repeatability_drift,review_repeatability_drift,1,0,1,repeatability_drift_review_signal;duration_under_1s,1,keep_rule_bounded_writeback,24.65,43.48,memory_gate_replay,pass
-R8009_M8018:30:3:fast:fast_8,R8009_M8018:30:3,full_defer,review_llm_defer,1,0,1,duration_under_1s;llm_memory_constraint,1,keep_rule_bounded_writeback,24.65,55.80,memory_gate_replay,pass
-R8009_M8020:30:14:fast:fast_1,R8009_M8020:30:14,full_defer,review_llm_defer,1,0,1,support_under_0.85;margin_under_0.50;llm_memory_constraint,1,keep_rule_bounded_writeback,24.65,41.63,memory_gate_replay,pass

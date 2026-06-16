@@ -287,8 +287,8 @@
     "rule_writeback_latency_proxy_avg_sec": 23.91274948120117,
     "rule_writeback_latency_proxy_p95_sec": 25.3293399810791,
     "processed_audio_sec": 450.0,
-    "total_processing_wall_time_sec": 0.4531869888305664,
-    "offline_replay_rtf": 0.0010070821974012586,
+    "total_processing_wall_time_sec": 0.44412684440612793,
+    "offline_replay_rtf": 0.0009869485431247286,
     "deepseek_api_calls": 0,
     "qwen_api_calls": 0,
     "omni_api_calls": 0

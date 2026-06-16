@@ -1,3 +1,3 @@
 status,recording_id,label,output_dir,windows_processed,recordings_processed,evaluation_status,final_der,fast_der,delta_vs_fast_pp,beats_best_baseline,timeline_integrity_status,timeline_rows,same_speaker_overlap_count,duration_sec,deepseek_api_calls,qwen_api_calls,omni_api_calls
-pass,R8003_M8001,R8003_M8001,outputs/realtime_batch/smoke/items/R8003_M8001,15,1,scored_with_cached_reference,0.35889333333333334,0.4537866666666667,9.489333333333338,True,pass,164,0,0.6715989112854004,0,0,0
-pass,R8009_M8019,R8009_M8019,outputs/realtime_batch/smoke/items/R8009_M8019,15,1,scored_with_cached_reference,0.05651333333333333,0.12774666666666668,7.123333333333334,True,pass,147,0,0.5656089782714844,0,0,0
+pass,R8003_M8001,R8003_M8001,outputs/realtime_batch/smoke/items/R8003_M8001,15,1,scored_with_cached_reference,0.35889333333333334,0.4537866666666667,9.489333333333338,True,pass,164,0,0.8590571880340576,0,0,0
+pass,R8009_M8019,R8009_M8019,outputs/realtime_batch/smoke/items/R8009_M8019,15,1,scored_with_cached_reference,0.05651333333333333,0.12774666666666668,7.123333333333334,True,pass,147,0,0.770979642868042,0,0,0

@@ -1,7 +1,0 @@
-timing_id,priority,phase,planned_calls,parallel_workers,estimated_waves,estimated_wall_seconds,estimate_source,claim_status,blocking_state,next_action
-credential_preflight,P0,preflight,0,0,0,0.0,env_presence_gate_only,gate_only_no_latency_claim,blocked_missing_credentials,set API key env in shell and rerun live readiness; do not write secret values to artifacts
-deepseek_max20_resume_live_call,P0,primary_live_call,139,8,18,384.444,split20_simulated_p95_call_seconds_x_parallel_waves,not_claimable_until_resume_output_and_scoring,blocked_by_provider_quota_or_capacity,run max20 resume first when credentials/quota are ready
-deepseek_postrun_audit_and_scoring,P0,postrun_scoring,0,0,0,,not_estimated_waits_for_live_jsonl,not_claimable_until_output_audit_and_safety_comparison_pass,blocked_waiting_live_outputs,"run output audit, safety summary, split comparison, then refresh validation"
-omni48_label_only_live,P1,label_only_live_call,96,0,0,,clip_model_seconds_proxy_768.0_needs_live_latency,label_only_not_timeline_writeback_not_guard_latency_claim,blocked_missing_credentials,run only after P0 or when explicitly spending Omni quota
-qwen_full_backup_optional,P1,fallback_live_call,147,8,19,836.456,top4_5_backup_wall_seconds_x_parallel_waves,fallback_only_not_primary_latency_claim,blocked_missing_credentials,keep as backup; current evidence is slower than original max
-refresh_report_ppt_validation,P0,refresh_and_validate,0,0,0,,local_refresh_runtime_not_live_latency,validation_only,waiting_for_live_outputs,rerun refresh after live outputs and scoring artifacts exist

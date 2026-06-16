@@ -47,16 +47,16 @@ true-heldout split.
 - Benchmark CLI for AliMeeting diarization experiments:
   `alimeeting_diarization_bench/run.py` / `alimeeting-bench`
 - One-command quick start:
-  `scripts/entrypoints/quick_start.py` / `alimeeting-quick-start`
+  `alimeeting_diarization_bench/final/quick_start.py` / `alimeeting-quick-start`
 - Model wrappers for Sortformer, DiariZen, PyAnnote, Qwen/DashScope, Omni, and
   GPT audio paths under `alimeeting_diarization_bench/models/`.
 - Offline realtime enhancement pipeline:
-  `scripts/entrypoints/run_realtime_diarization_system.py` / `alimeeting-realtime`
+  `alimeeting_diarization_bench/final/realtime_system.py` / `alimeeting-realtime`
 - Batch runner with per-recording output directories:
-  `scripts/entrypoints/run_realtime_batch.py` / `alimeeting-batch`
+  `alimeeting_diarization_bench/final/realtime_batch.py` / `alimeeting-batch`
 - End-to-end regression runner:
-  `scripts/entrypoints/run_realtime_system_regression.py` / `alimeeting-regression`
-- Self-check and audit scripts for timeline integrity, baseline fairness,
+  `alimeeting_diarization_bench/final/regression.py` / `alimeeting-regression`
+- Self-check and audit modules for timeline integrity, baseline fairness,
   source inventory, promotion readiness, and true-heldout readiness.
 - Reproducible output artifacts under `outputs/`.
 
@@ -160,19 +160,11 @@ runtime-safe, auditable enhancement layer over the baseline outputs.
 ```text
 alimeeting_diarization_bench/
   run.py                         # Benchmark CLI
+  cli.py                         # Installed final-submission command dispatcher
+  final/                         # Final offline runtime, batch, regression, audits
   evaluation/runner.py           # Segment evaluation and CSV/JSON export
   models/                        # Model adapters
   metrics/der.py                 # DER scoring
-scripts/
-  README.md                      # Script navigation and maintenance guide
-  entrypoints/                   # Reviewer-facing quick start, realtime, batch, checks
-  builders/                      # Deterministic artifact builders
-  search/                        # Selector, overlay, and readiness searches
-  audits/                        # Fairness, consistency, baseline, and stability audits
-  analysis/                      # Analysis/summarization scripts retained for traceability
-  llm/                           # LLM/Omni policy, guard, and writeback support
-  live/                          # Opt-in live-run planning and post-live scoring
-  model_runs/                    # Local model setup and shell wrappers
 outputs/
   system_demo/all_cached_recordings/
   realtime_batch/
@@ -261,10 +253,10 @@ Run the shortest offline reproduction path:
 alimeeting-quick-start
 ```
 
-Equivalent direct file-path form:
+Equivalent module form:
 
 ```bash
-python scripts/entrypoints/quick_start.py
+python -m alimeeting_diarization_bench.final.quick_start
 ```
 
 This regenerates the all-cached default system under:
@@ -296,7 +288,7 @@ It does not call any live API.
 ### 1. Run the all-cached offline system
 
 ```bash
-python scripts/entrypoints/run_realtime_diarization_system.py \
+python -m alimeeting_diarization_bench.final.realtime_system \
   --all-cached-recordings \
   --output-dir outputs/system_demo/all_cached_recordings
 ```
@@ -326,7 +318,7 @@ metrics.omni_api_calls = 0
 ### 2. Run timeline integrity
 
 ```bash
-python scripts/entrypoints/check_timeline_integrity.py
+python -m alimeeting_diarization_bench.final.timeline_integrity
 ```
 
 Expected artifact:
@@ -346,7 +338,7 @@ warn_count = 0
 ### 3. Run the batch path
 
 ```bash
-python scripts/entrypoints/run_realtime_batch.py \
+python -m alimeeting_diarization_bench.final.realtime_batch \
   --all-cached-recordings \
   --output-dir outputs/realtime_batch/all_cached
 ```
@@ -373,7 +365,7 @@ summary.omni_api_calls = 0
 ### 4. Audit batch consistency
 
 ```bash
-python scripts/audits/audit_realtime_batch_consistency.py
+python -m alimeeting_diarization_bench.final.audit_realtime_batch_consistency
 ```
 
 Expected artifact:
@@ -394,7 +386,7 @@ summary.final_der_abs_gap_pp = 0.0
 ### 5. Run full regression
 
 ```bash
-python scripts/entrypoints/run_realtime_system_regression.py
+python -m alimeeting_diarization_bench.final.regression
 ```
 
 Expected artifact:
@@ -427,43 +419,43 @@ Use this when you need to debug one stage at a time. The full regression runner
 above executes these stages in order.
 
 ```bash
-python scripts/builders/build_audio_window_features.py
-python scripts/search/validate_guarded_slow_selector.py
-python scripts/search/search_system_selector_policies.py
-python scripts/search/search_rare_selector_overlay_policies.py
-python scripts/search/search_slow_sanitization_policies.py
-python scripts/search/search_speaker_track_sanitization_policies.py
-python scripts/search/search_audio_guided_sanitization_policies.py
-python scripts/search/search_audio_boundary_adjustment_policies.py
-python scripts/entrypoints/run_realtime_diarization_system.py \
+python -m alimeeting_diarization_bench.final.build_audio_window_features
+python -m alimeeting_diarization_bench.final.validate_guarded_slow_selector
+python -m alimeeting_diarization_bench.final.search_system_selector_policies
+python -m alimeeting_diarization_bench.final.search_rare_selector_overlay_policies
+python -m alimeeting_diarization_bench.final.search_slow_sanitization_policies
+python -m alimeeting_diarization_bench.final.search_speaker_track_sanitization_policies
+python -m alimeeting_diarization_bench.final.search_audio_guided_sanitization_policies
+python -m alimeeting_diarization_bench.final.search_audio_boundary_adjustment_policies
+python -m alimeeting_diarization_bench.final.realtime_system \
   --all-cached-recordings \
   --output-dir outputs/system_demo/all_cached_recordings
-python scripts/entrypoints/run_realtime_batch.py \
+python -m alimeeting_diarization_bench.final.realtime_batch \
   --recording-ids R8003_M8001,R8009_M8019 \
   --output-dir outputs/realtime_batch/smoke
-python scripts/entrypoints/run_realtime_batch.py \
+python -m alimeeting_diarization_bench.final.realtime_batch \
   --all-cached-recordings \
   --output-dir outputs/realtime_batch/all_cached
-python scripts/audits/audit_realtime_batch_consistency.py
-python scripts/entrypoints/check_timeline_integrity.py
-python scripts/audits/audit_clipped_baselines.py
-python scripts/audits/audit_baseline_leaderboard.py
-python scripts/audits/audit_runtime_overlay_contributions.py
-python scripts/audits/audit_recording_level_stability.py
-python scripts/search/search_recording_balanced_overlays.py
-python scripts/search/search_recording_balanced_overlays.py \
+python -m alimeeting_diarization_bench.final.audit_realtime_batch_consistency
+python -m alimeeting_diarization_bench.final.timeline_integrity
+python -m alimeeting_diarization_bench.final.audit_clipped_baselines
+python -m alimeeting_diarization_bench.final.audit_baseline_leaderboard
+python -m alimeeting_diarization_bench.final.audit_runtime_overlay_contributions
+python -m alimeeting_diarization_bench.final.audit_recording_level_stability
+python -m alimeeting_diarization_bench.final.search_recording_balanced_overlays
+python -m alimeeting_diarization_bench.final.search_recording_balanced_overlays \
   --previous-window-context \
   --output-dir outputs/recording_context_overlay_search
-python scripts/audits/audit_external_candidate_source_inventory.py
-python scripts/search/search_external_candidate_surfaces.py
-python scripts/builders/build_external_candidate_reproduction_plan.py
-python scripts/audits/audit_baseline_headroom.py
-python scripts/builders/build_system_promotion_gate.py
-python scripts/search/diagnose_true_heldout_readiness.py
-python scripts/search/diagnose_selector_robustness.py
-python scripts/search/diagnose_recording_stability_blockers.py
-python scripts/builders/build_research_next_experiment_queue.py
-python scripts/entrypoints/check_realtime_system_outputs.py
+python -m alimeeting_diarization_bench.final.audit_external_candidate_source_inventory
+python -m alimeeting_diarization_bench.final.search_external_candidate_surfaces
+python -m alimeeting_diarization_bench.final.build_external_candidate_reproduction_plan
+python -m alimeeting_diarization_bench.final.audit_baseline_headroom
+python -m alimeeting_diarization_bench.final.build_system_promotion_gate
+python -m alimeeting_diarization_bench.final.diagnose_true_heldout_readiness
+python -m alimeeting_diarization_bench.final.diagnose_selector_robustness
+python -m alimeeting_diarization_bench.final.diagnose_recording_stability_blockers
+python -m alimeeting_diarization_bench.final.build_research_next_experiment_queue
+python -m alimeeting_diarization_bench.final.self_check
 ```
 
 The final command writes:
@@ -520,13 +512,13 @@ reported as eval-only diagnostics.
 Inventory all candidate sources:
 
 ```bash
-python scripts/audits/audit_external_candidate_source_inventory.py
+python -m alimeeting_diarization_bench.final.audit_external_candidate_source_inventory
 ```
 
 Search deployable external overlays:
 
 ```bash
-python scripts/search/search_external_candidate_surfaces.py
+python -m alimeeting_diarization_bench.final.search_external_candidate_surfaces
 ```
 
 Expected current status:
@@ -689,15 +681,15 @@ python -m py_compile \
   alimeeting_diarization_bench/run.py \
   alimeeting_diarization_bench/cli.py \
   alimeeting_diarization_bench/evaluation/runner.py \
-  scripts/entrypoints/run_realtime_diarization_system.py \
-  scripts/entrypoints/run_realtime_batch.py \
-  scripts/entrypoints/run_realtime_system_regression.py \
-  scripts/entrypoints/check_realtime_system_outputs.py \
-  scripts/search/search_external_candidate_surfaces.py
+  alimeeting_diarization_bench/final/realtime_system.py \
+  alimeeting_diarization_bench/final/realtime_batch.py \
+  alimeeting_diarization_bench/final/regression.py \
+  alimeeting_diarization_bench/final/self_check.py \
+  alimeeting_diarization_bench/final/search_external_candidate_surfaces.py
 
 python -m alimeeting_diarization_bench.run --help
 python -m alimeeting_diarization_bench.cli --help
-python scripts/entrypoints/run_realtime_system_regression.py
+python -m alimeeting_diarization_bench.final.regression
 ```
 
 The submission is reproducible only if the final regression still reports:

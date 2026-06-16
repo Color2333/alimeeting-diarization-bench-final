@@ -1,4 +1,0 @@
-surface_id,kind,expected_calls,expected_parent_windows,output_exists,summary_exists,observed_calls,successful_calls,failed_calls,missing_calls,observed_parent_windows,missing_parent_windows,duplicate_call_ids,extra_call_ids,avg_call_seconds,p95_call_seconds,max_call_seconds,status,claim_gate
-deepseek_resume_after_top3,llm_split20_primary,139,101,False,False,0,0,0,139,0,101,0,0,0.0,0.0,0.0,missing_output,blocked_missing_output
-qwen_full_backup,llm_split20_backup,147,104,False,False,0,0,0,147,0,104,0,0,0.0,0.0,0.0,missing_output,blocked_missing_output
-omni48_label_only,omni_label_only,96,48,False,False,0,0,0,96,0,48,0,0,0.0,0.0,0.0,missing_output,blocked_missing_output

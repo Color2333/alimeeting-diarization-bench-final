@@ -1,7 +1,7 @@
 # True-Heldout Readiness
 
 - Status: `blocked_missing_sealed_split_and_new_recordings`
-- Split file: `data/selector_true_heldout_split.csv`
+- Split file: `None`
 - True-heldout recordings: `0/8`
 - Eligible local candidates: `0`
 - Missing new recordings: `8`
@@ -12,8 +12,8 @@
 
 | Status | Gate | Evidence |
 |---|---|---|
-| `blocked` | `sealed_split_exists` | `"data/selector_true_heldout_split.csv"` |
-| `blocked` | `required_columns_present` | `{"missing_required_columns": 4, "required_columns": ["recording_id", "split", "source_manifest", "audio_path"]}` |
+| `blocked` | `sealed_split_exists` | `null` |
+| `blocked` | `required_columns_present` | `{"missing_required_columns": 0, "required_columns": null}` |
 | `blocked` | `true_heldout_count` | `"0/8"` |
 | `blocked` | `no_development_overlap` | `{"overlap_recordings": [], "overlap_with_development": 0}` |
 | `blocked` | `local_candidate_pool_available` | `{"eligible_local_candidates": 0, "minimum_true_heldout_recordings": 8}` |
