@@ -12,8 +12,9 @@ AliMeeting diarization development-pool result.
 - `alimeeting_diarization_bench/`: benchmark package and model/evaluation code.
 - `scripts/`: reproducibility, batch, regression, self-check, audit, and search
   scripts. `scripts/quick_start.py` is the shortest offline reproduction
-  entrypoint. Presentation-generation scripts are intentionally excluded from
-  the final code package; only the finished deck is retained.
+  entrypoint, and `scripts/README.md` is the script navigation guide.
+  Presentation-generation scripts are intentionally excluded from the final code
+  package; only the finished deck is retained.
 - `docs/`: report-generation support files retained from the source workspace.
 - `outputs/`: curated result and cache subset needed for the documented
   offline reproduction paths.

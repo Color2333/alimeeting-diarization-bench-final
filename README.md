@@ -164,6 +164,8 @@ alimeeting_diarization_bench/
   models/                        # Model adapters
   metrics/der.py                 # DER scoring
 scripts/
+  README.md                      # Script navigation and maintenance guide
+  quick_start.py                 # Shortest offline reproduction path
   run_realtime_diarization_system.py
   run_realtime_batch.py
   run_realtime_system_regression.py
