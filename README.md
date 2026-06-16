@@ -42,6 +42,39 @@ generalization claim. The promotion gate is still blocked by weak selector
 robustness, weak recording-level stability, and the absence of a sealed
 true-heldout split.
 
+## Models And Dataset
+
+Dataset:
+
+- Corpus: AliMeeting.
+- Split used by the submitted offline result: AliMeeting Eval set.
+- Evaluation pool: 8 Eval recordings, sampled as 120 windows.
+- Window size: 30 seconds.
+- Cached-window audio evaluated by the default reproduction path: 3600.0
+  seconds.
+- Expected local data layout for live/non-cached reruns:
+  `~/data/AliMeeting/Eval_Ali/Eval_Ali_far/audio_dir/` and
+  `~/data/AliMeeting/AliMeeting_manifests/`.
+
+Core submitted model sources:
+
+- Fast baseline: Sortformer, cached summary under
+  `outputs/sortformer_uv_120/nemo-sortformer-4spk-v1/default__spk_none/summary.json`.
+- Slow baseline: DiariZen, cached summary under
+  `outputs/diarizen_uv_120/diarizen-large-v2/default__spk_none/summary.json`.
+- Final system: an offline enhancement layer over cached Sortformer and
+  DiariZen outputs using frozen gates, guards, selector evidence, and
+  rule-recover overlays.
+
+Additional model adapters retained in the benchmark package:
+
+- PyAnnote / PyAnnote Community.
+- Qwen/DashScope paths: Fun-ASR, Paraformer v2, ASR Flash, Omni Plus.
+- GPT audio path: GPT-4o audio adapter.
+
+The default submitted run does not call live model APIs. It replays cached
+Sortformer/DiariZen outputs and frozen enhancement artifacts.
+
 ## What Is Delivered
 
 - Benchmark CLI for AliMeeting diarization experiments:
