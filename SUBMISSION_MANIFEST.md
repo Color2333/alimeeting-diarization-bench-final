@@ -11,6 +11,9 @@ AliMeeting diarization development-pool result.
   framework, method, experiments, metrics, reproducibility, and limitations.
 - `output/pdf/alimeeting_diarization_paper.pdf`: exported PDF version of
   `PAPER.md` for direct submission.
+- `output/docx/2026AI微专业综合设计报告_说话人分离系统.docx`: Word report
+  rewritten according to the official 2026 AI micro-specialty comprehensive
+  design report template.
 - `TECHNICAL_REPORT.md`: formal Chinese technical report for submission.
 - `DOWNLOAD_MANIFEST.md`: external dataset, model, and dependency checklist.
 - `pyproject.toml`, `requirements.txt`, `.env.example`: install and environment
