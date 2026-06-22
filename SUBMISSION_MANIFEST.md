@@ -7,6 +7,8 @@ AliMeeting diarization development-pool result.
 
 - `README.md`: end-to-end reproducibility guide, metrics, artifacts, and
   promotion boundaries.
+- `PAPER.md`: complete Chinese course-paper style write-up covering motivation,
+  framework, method, experiments, metrics, reproducibility, and limitations.
 - `TECHNICAL_REPORT.md`: formal Chinese technical report for submission.
 - `DOWNLOAD_MANIFEST.md`: external dataset, model, and dependency checklist.
 - `pyproject.toml`, `requirements.txt`, `.env.example`: install and environment
