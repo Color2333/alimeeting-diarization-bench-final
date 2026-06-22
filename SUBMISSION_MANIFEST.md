@@ -9,6 +9,8 @@ AliMeeting diarization development-pool result.
   promotion boundaries.
 - `PAPER.md`: complete Chinese course-paper style write-up covering motivation,
   framework, method, experiments, metrics, reproducibility, and limitations.
+- `output/pdf/alimeeting_diarization_paper.pdf`: exported PDF version of
+  `PAPER.md` for direct submission.
 - `TECHNICAL_REPORT.md`: formal Chinese technical report for submission.
 - `DOWNLOAD_MANIFEST.md`: external dataset, model, and dependency checklist.
 - `pyproject.toml`, `requirements.txt`, `.env.example`: install and environment
